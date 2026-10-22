@@ -95,10 +95,8 @@ def _rates_vol():
     """금리 변동성 동반 여부: FRED 10년물 8주 변화 + MOVE 지수(Yahoo)"""
     out = {}
     try:
-        r = requests.get("https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10", timeout=20)
-        r.raise_for_status()
-        rows = [ln.split(",") for ln in r.text.strip().splitlines()[1:]]
-        rows = [(a, float(b)) for a, b in (x for x in rows if len(x) == 2) if b not in (".", "")]
+        import markets          # 같은 FRED 받기 함수 사용 (API 키가 있으면 공식 API)
+        rows = [tuple(x) for x in markets.fred("DGS10")]
         last = rows[-1]
         cut = (datetime.fromisoformat(last[0]) - timedelta(weeks=8)).date().isoformat()
         base = [x for x in rows if x[0] <= cut][-1]

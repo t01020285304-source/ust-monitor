@@ -6,7 +6,7 @@
   국채 구성(Bills 비중)    미 재무부 MSPD mspd_table_1
   TGA                      미 재무부 DTS operating_cash_balance
   ON RRP · SRF             NY 연준 Markets API
-  금리 · 신용 · 레포 · SOMA · 대출 · 물가 · 고용 · 이자     FRED (fredgraph CSV, 키 불필요)
+  금리 · 신용 · 레포 · SOMA · 대출 · 물가 · 고용 · 이자     FRED (공식 API — FRED_API_KEY, 없으면 fredgraph CSV)
   MOVE · ETF · 금 · S&P    Yahoo Finance
   일본 국채 금리           일본 재무성 jgbcme_all.csv / jgbcme.csv
   일본 해외채권 주간 플로우 일본 재무성 week.csv (Shift-JIS)

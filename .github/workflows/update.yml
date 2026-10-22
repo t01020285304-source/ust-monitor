@@ -44,6 +44,8 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: 데이터 만들기
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}   # 저장소 Settings → Secrets and variables → Actions 에 등록
         run: python builder/build.py out/ust.json
 
       - name: data 브랜치에 올리기

@@ -1,5 +1,6 @@
 """국채 위기 모니터용 최소 시세 도구 — 원본(가격결정자_리서치/markets.py)에서 FRED·Yahoo 차트 함수만 옮김"""
 import json
+import os
 import threading
 import time
 from datetime import date, datetime, timedelta
@@ -57,6 +58,20 @@ def fred(series, start=None, age=6 * 3600):
     start = start or (date.today() - timedelta(days=800)).isoformat()
 
     def load():
+        key = os.environ.get("FRED_API_KEY", "").strip()
+        if key:     # GitHub 서버 등 클라우드에서는 fredgraph CSV가 막혀서 공식 API(무료 키)로 받는다
+            r = requests.get("https://api.stlouisfed.org/fred/series/observations", timeout=40,
+                             params={"series_id": series, "observation_start": start, "api_key": key, "file_type": "json"})
+            r.raise_for_status()
+            rows = []
+            for o in r.json().get("observations", []):
+                try:
+                    rows.append([o["date"], float(o["value"])])
+                except (ValueError, KeyError):
+                    pass
+            if not rows:
+                raise ValueError(f"FRED {series} 데이터 없음")
+            return rows
         # FRED 는 '브라우저 흉내' 헤더를 단 스크립트 요청을 지연·차단한다 → 솔직한 식별자로 요청
         r = requests.get("https://fred.stlouisfed.org/graph/fredgraph.csv", params={"id": series, "cosd": start},
                          headers={"User-Agent": "MangoResearch/1.0 (personal research)"}, timeout=40)

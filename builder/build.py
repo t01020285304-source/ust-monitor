@@ -45,6 +45,10 @@ def main():
     for e in errs:
         print("  -", e)
     # 핵심 자료(입찰 결과)가 없으면 실패로 끝내서, 이전에 올라간 정상 데이터가 그대로 유지되게 한다
+    fred_bad = sum(1 for e in errs if "stlouisfed" in e or "FRED" in e)
+    if fred_bad >= 10:
+        print(f"FRED 자료 {fred_bad}개를 받지 못해 이번 갱신을 건너뜁니다 (FRED_API_KEY 확인).")
+        sys.exit(1)
     if not ((s.get("auctions") or {}).get("rows")):
         print("입찰 결과를 받지 못해 이번 갱신을 건너뜁니다.")
         sys.exit(1)
