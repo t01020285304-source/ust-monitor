@@ -1,0 +1,21 @@
+# Netlify 설정 — site 폴더를 그대로 올림 (빌드 없음)
+# 데이터는 GitHub Actions가 data 브랜치에 갱신하므로, 데이터가 바뀔 때마다 Netlify에 다시 배포할 필요가 없어요.
+# (Netlify 무료 플랜은 배포 1번에 15크레딧 · 월 300크레딧 → 자주 배포하면 금방 소진)
+
+[build]
+  publish = "site"
+  command = ""
+  # data 브랜치나 builder 폴더만 바뀐 커밋은 배포하지 않음 → 크레딧 절약
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- site/ netlify.toml"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "no-cache"

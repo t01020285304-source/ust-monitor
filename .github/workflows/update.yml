@@ -1,0 +1,74 @@
+# 하루 4번 국채 위기 모니터 데이터를 새로 만들어 data 브랜치에 올림 (공개 저장소면 무료)
+# 시간은 UTC 기준 — 한국시간: 07:10 · 12:10 · 18:10 · 새벽 03:40(미 국채 입찰 결과 발표 뒤)
+name: 데이터 갱신
+
+on:
+  schedule:
+    - cron: "10 22 * * *"
+    - cron: "10 3 * * *"
+    - cron: "10 9 * * *"
+    - cron: "40 18 * * *"
+  workflow_dispatch: {}        # Actions 탭에서 'Run workflow'로 바로 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 지난 데이터·캐시 가져오기 (data 브랜치)
+        run: |
+          git fetch origin data --depth=1 || true
+          mkdir -p out builder/data
+          if git rev-parse --verify -q origin/data >/dev/null; then
+            git --work-tree=out checkout origin/data -- . || true
+            git reset -q
+            [ -d out/cache ] && cp -r out/cache builder/data/ || true
+          fi
+          # 복원한 캐시는 '오래된 것'으로 표시 → 매번 새로 받고, 받기에 실패한 FRED 자료만 예비로 씀
+          find builder/data -type f -exec touch -d '2000-01-01' {} + || true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: 데이터 만들기
+        run: python builder/build.py out/ust.json
+
+      - name: data 브랜치에 올리기
+        run: |
+          rm -rf out/cache && mkdir -p out/cache && cp -r builder/data/cache/. out/cache/ || true
+          cd out
+          git init -q
+          git config user.name "ust-monitor-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -b data
+          git add -A
+          git commit -q -m "데이터 갱신 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" data
+
+  # GitHub는 60일 동안 저장소에 활동이 없으면 예약 실행을 멈춤 → 매달 1일 main 에 빈 커밋으로 깨워 둠
+  keepalive:
+    if: github.event.schedule == '10 22 * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 매달 1일 활동 기록
+        run: |
+          if [ "$(date -u +%d)" = "01" ]; then
+            git config user.name "ust-monitor-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -q -m "keepalive: 예약 실행 유지"
+            git push -q
+          fi
