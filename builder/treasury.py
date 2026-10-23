@@ -320,7 +320,7 @@ FRED_SET = {**absorb.FRED_NEED,
     "DRTSCILM": 1200, "SUBLPDMOSXWBNQ": 1200, "BUSLOANS": 900,
     "A091RC1Q027SBEA": 1200, "W018RC1Q027SBEA": 1200, "GFDEBTN": 1200, "GDP": 800,
 }
-YH_SET = ["^MOVE", "HYG", "JNK", "LQD", "TLT", "GC=F", "^GSPC"]
+YH_SET = ["^MOVE", "^VIX", "HYG", "JNK", "LQD", "TLT", "GC=F", "^GSPC"]
 
 
 def _collect():
@@ -655,7 +655,10 @@ def build_state():
     boj = X.get("boj") or []
     nboj = next((b for b in boj if b["date"] >= (date.today() - timedelta(days=2)).isoformat()), None)
     dboj = (date.fromisoformat(nboj["date"]) - date.today()).days if nboj else None
-    vix, hyb = L("VIXCLS"), hyv
+    # VIX: Yahoo(장중 최대 15분 지연)를 우선, 실패하면 FRED VIXCLS(전날 종가, 하루 늦게 올라옴) — 더 최근 날짜 쪽을 씀
+    vix_c = [r for r in ((Y.get("^VIX") or [])[-1:] + (F.get("VIXCLS") or [])[-1:]) if r and r[1] is not None]
+    vix_r = max(vix_c, key=lambda r: r[0]) if vix_c else None
+    vix, vix_date, hyb = (vix_r[1] if vix_r else None), (vix_r[0] if vix_r else None), hyv
     st2 = j1m is not None and (j1m >= 15 or ((j10 or 0) >= 1.5 and j1m >= 10))      # 수준이 아니라 1개월 상승폭
     seq = [
         {"n": 1, "name": "BOJ 회의", "active": dboj is not None and -2 <= dboj <= 7, "text": "날짜 정보 없음" if dboj is None else f"🚨 회의 {dboj}일 전" if 0 < dboj <= 7 else "회의 진행 중/직후" if -2 <= dboj <= 0 else f"⏳ {nboj['date']} ({dboj}일 후)"},
@@ -683,10 +686,10 @@ def build_state():
     eu30 = (eu[-1][1] / (_ago_d(eu, 30) or eu[-1][1]) - 1) * 100 if eu else None
     gold, spx = _last(Y.get("GC=F") or []), _last(Y.get("^GSPC") or [])
     S["contra"] = {"move": mv, "move_badge": lvl(mv, [(150, "위기"), (120, "긴장"), (100, "보통"), (80, "평온"), (-1e9, "매우 평온")]), "move_hist": move_r,
-                   "eurusd": _last(eu), "eurusd_30": eu30, "sofr": L("SOFR"), "vix": vix, "vix_badge": lvl(vix, [(30, "공포"), (20, "경계"), (-1e9, "평온")]),
+                   "eurusd": _last(eu), "eurusd_30": eu30, "sofr": L("SOFR"), "vix": vix, "vix_date": vix_date, "vix_badge": lvl(vix, [(30, "공포"), (20, "경계"), (-1e9, "평온")]),
                    "hy": hyv, "hy_badge": lvl(hyv, [(800, "공포"), (600, "경계"), (400, "중립"), (-1e9, "낙관")]),
                    "gold_spx": gold / spx if gold and spx else None, "gold": gold, "spx": spx,
-                   "src": [_link("Yahoo ^MOVE", "https://finance.yahoo.com/quote/%5EMOVE/"), _link("FRED VIXCLS", FU("VIXCLS")), _link("FRED DEXUSEU", FU("DEXUSEU"))]}
+                   "src": [_link("Yahoo ^MOVE", "https://finance.yahoo.com/quote/%5EMOVE/"), _link("Yahoo ^VIX", "https://finance.yahoo.com/quote/%5EVIX/"), _link("FRED VIXCLS", FU("VIXCLS")), _link("FRED DEXUSEU", FU("DEXUSEU"))]}
 
     # ── 10. 경기침체 선행 (SLOOS · C&I 대출 · HY) ──────────────────
     sl_ci, sl_all = F.get("DRTSCILM") or [], F.get("SUBLPDMOSXWBNQ") or []
