@@ -85,7 +85,61 @@ def _auctions_raw():
                                  "filter": f"auction_date:gte:{(date.today() - timedelta(days=200)).isoformat()}"})
         r.raise_for_status()
         return r.json()["data"]
-    return sources._cached("ust_auctions_full.json", 3 * 3600, load)
+    return _merge_td(sources._cached("ust_auctions_full.json", 3 * 3600, load))
+
+
+def _td_raw():
+    """TreasuryDirect 입찰 결과 (발표 당일 반영) — Fiscal Data는 결과 칸을 며칠 늦게 채워서 최근 입찰이 빠지는 문제 보완"""
+    def load():
+        r = requests.get("https://www.treasurydirect.gov/TA_WS/securities/auctioned", params={"format": "json", "days": "45"}, headers=UA, timeout=40)
+        r.raise_for_status()
+        return r.json()
+    return sources._cached("ust_td_auctioned.json", 3600, load)
+
+
+def _td_to_fd(t):
+    """TreasuryDirect 필드 → Fiscal Data(auctions_query) 필드 이름으로 바꿔 같은 판독 코드를 그대로 쓴다"""
+    g = lambda k: t.get(k) if t.get(k) not in ("", None) else None
+    d10 = lambda k: (g(k) or "")[:10] or None
+    num = lambda k: _num(g(k)) or 0
+    fima_a, sub_nc = num("fimaNoncompetitiveParAwarded"), num("subtotalNoncompetitiveParAwardedInsideOfOfferingAmount")
+    comp_a = num("subtotalCompetitiveParAwardedInsideOfOfferingAmount") + num("subtotalCompetitiveParAwardedOutsideOfOfferingAmount")
+    comp_t = num("subtotalCompetitiveParRecognizedInsideOfOfferingAmount") + num("subtotalCompetitiveParRecognizedOutsideOfOfferingAmount")
+    typ = g("type") or g("securityType")
+    return {"auction_date": d10("competitiveAuctionCloseDate") or d10("auctionDate"), "security_type": g("securityType"), "security_term": g("securityTerm"),
+            "cusip": g("cusip"), "reopening": g("reopening"), "original_security_term": g("originalSecurityTerm"),
+            "issue_date": d10("issueDate"), "maturity_date": d10("maturityDate"), "announcemt_date": d10("announcementDate"),
+            "inflation_index_security": "Yes" if typ == "TIPS" else "No", "floating_rate": "Yes" if typ == "FRN" else (g("floatingRate") or "No"),
+            "bid_to_cover_ratio": g("bidToCoverRatio"), "high_yield": g("highYield"), "high_discnt_rate": g("highRate"), "high_investment_rate": g("investmentRate"),
+            "avg_med_yield": g("medianYield"), "avg_med_discnt_rate": g("medianRate"), "low_yield": g("lowYield"), "low_discnt_rate": g("lowRate"),
+            "allocation_pctage": g("allottedAtHighYieldPercentage") or g("allottedAtHighRatePercentage") or g("allottedAtHighDiscountMarginPercentage"),
+            "price_per100": g("highPrice"), "int_rate": g("interestRate"), "offering_amt": g("offeringAmount"),
+            "total_accepted": g("grandTotalParAwarded"), "total_tendered": g("grandTotalParRecognized"),
+            "comp_accepted": comp_a or None, "comp_tendered": comp_t or None, "noncomp_accepted": (sub_nc - fima_a) if sub_nc else None,
+            "fima_noncomp_accepted": g("fimaNoncompetitiveParAwarded"), "fima_noncomp_tendered": g("fimaNoncompetitiveParRecognized"),
+            "soma_accepted": g("somaNoncompetitiveParAwarded"), "soma_tendered": g("somaNoncompetitiveParRecognized"),
+            "primary_dealer_accepted": g("primaryDealersCompetitiveParAwarded"), "primary_dealer_tendered": g("primaryDealersCompetitiveParRecognized"),
+            "direct_bidder_accepted": g("directBiddersCompetitiveParAwarded"), "direct_bidder_tendered": g("directBiddersCompetitiveParRecognized"),
+            "indirect_bidder_accepted": g("indirectBiddersCompetitiveParAwarded"), "indirect_bidder_tendered": g("indirectBiddersCompetitiveParRecognized"),
+            "treas_retail_accepted": g("retailNoncompetitiveParAwarded"), "pdf_filenm_comp_results": g("treasuryAuctionResultsPressReleaseFileName"),
+            "cash_management_bill_cmb": g("cashManagementBill"), "src_td": True}
+
+
+def _merge_td(fd_rows):
+    """Fiscal Data 행 중 결과(응찰배율)가 비어 있거나 아예 없는 최근 입찰을 TreasuryDirect 결과로 채움"""
+    try:
+        td = [_td_to_fd(t) for t in (_td_raw() or [])]
+    except Exception as e:
+        print(f"[td] TreasuryDirect 실패: {str(e)[:80]}")
+        return fd_rows
+    td = {(x["cusip"], x["auction_date"]): x for x in td if x.get("cusip") and x.get("auction_date") and _num(x.get("bid_to_cover_ratio"))}
+    out, seen = [], set()
+    for x in fd_rows or []:
+        k = (x.get("cusip"), x.get("auction_date"))
+        seen.add(k)
+        out.append(td[k] if not _num(x.get("bid_to_cover_ratio")) and k in td else x)
+    out += [x for k, x in td.items() if k not in seen]
+    return sorted(out, key=lambda x: x.get("auction_date") or "", reverse=True)
 
 
 def _upcoming_raw():
