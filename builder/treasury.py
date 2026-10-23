@@ -53,6 +53,11 @@ def _last(rows):
     return rows[-1][1] if rows else None
 
 
+def _last_row(rows):
+    rows = [r for r in (rows or []) if r and r[1] is not None]
+    return rows[-1] if rows else None
+
+
 def _ago_n(rows, n):
     """n 관측치 전 값"""
     return rows[-1 - n][1] if rows and len(rows) > n else None
@@ -140,6 +145,53 @@ def _merge_td(fd_rows):
         out.append(td[k] if not _num(x.get("bid_to_cover_ratio")) and k in td else x)
     out += [x for k, x in td.items() if k not in seen]
     return sorted(out, key=lambda x: x.get("auction_date") or "", reverse=True)
+
+
+def _tsy_curve():
+    """미 재무부 일일 국채 금리(명목·실질) — FRED DGS·DFII 시리즈의 원자료. 재무부는 당일 저녁(미국) 공개, FRED는 다음 날 반영"""
+    def load():
+        out = {}
+        yrs = sorted({date.today().year, (date.today() - timedelta(days=20)).year})
+        for typ, key in (("daily_treasury_yield_curve", "nom"), ("daily_treasury_real_yield_curve", "real")):
+            rows = {}
+            for y in yrs:
+                u = (f"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{y}/all"
+                     f"?type={typ}&field_tdr_date_value={y}&page&_format=csv")
+                r = requests.get(u, headers=UA, timeout=40)
+                r.raise_for_status()
+                for row in csv.DictReader(io.StringIO(r.text)):
+                    m, d_, yy = (row.get("Date") or "").split("/") if (row.get("Date") or "").count("/") == 2 else (None, None, None)
+                    if m:
+                        rows[f"{yy}-{int(m):02d}-{int(d_):02d}"] = {k.strip().upper(): _num(v) for k, v in row.items() if k != "Date"}
+            out[key] = sorted(rows.items())
+        if not out.get("nom"):
+            raise ValueError("재무부 금리 자료가 비어 있어요")
+        return out
+    return sources._cached("ust_tsy_curve.json", 3600, load)
+
+
+# FRED 시리즈 → 더 빨리 나오는 같은 값(공식 원자료 또는 시장 시세)으로 최근 며칠을 이어 붙임
+FRESH_MAP = {"DGS2": ("nom", "2 YR"), "DGS3": ("nom", "3 YR"), "DGS5": ("nom", "5 YR"), "DGS7": ("nom", "7 YR"), "DGS10": ("nom", "10 YR"),
+             "DGS20": ("nom", "20 YR"), "DGS30": ("nom", "30 YR"), "DFII10": ("real", "10 YR"),
+             "VIXCLS": ("y", "^VIX"), "DEXJPUS": ("y", "JPY=X"), "DEXUSEU": ("y", "EURUSD=X")}
+FRESH_SRC = {"nom": "미 재무부 일일 국채 금리", "real": "미 재무부 일일 실질금리", "y": "Yahoo Finance 시세"}
+
+
+def _extend_fresh(F, Y, X):
+    """FRED 마지막 날짜 이후 값을 재무부(당일 공개)·Yahoo(장중)로 채움 → 기준일 정보를 돌려줌"""
+    fresh = {}
+    tc = X.get("tcurve") or {}
+    for k, (kind, col) in FRESH_MAP.items():
+        base = [r for r in (F.get(k) or []) if r and r[1] is not None]
+        last = base[-1][0] if base else ""
+        if kind == "y":
+            ext = [[d, v] for d, v in (Y.get(col) or []) if d > last and v is not None]
+        else:
+            ext = [[d, row.get(col)] for d, row in (tc.get(kind) or []) if d > last and row.get(col) is not None]
+        if ext:
+            F[k] = base + ext
+        fresh[k] = {"last": (F.get(k) or [[None]])[-1][0], "fred_last": last or None, "src": FRESH_SRC[kind] if ext else "FRED"}
+    return fresh
 
 
 def _upcoming_raw():
@@ -320,7 +372,7 @@ FRED_SET = {**absorb.FRED_NEED,
     "DRTSCILM": 1200, "SUBLPDMOSXWBNQ": 1200, "BUSLOANS": 900,
     "A091RC1Q027SBEA": 1200, "W018RC1Q027SBEA": 1200, "GFDEBTN": 1200, "GDP": 800,
 }
-YH_SET = ["^MOVE", "^VIX", "HYG", "JNK", "LQD", "TLT", "GC=F", "^GSPC"]
+YH_SET = ["^MOVE", "^VIX", "JPY=X", "EURUSD=X", "HYG", "JNK", "LQD", "TLT", "GC=F", "^GSPC"]
 
 
 def _collect():
@@ -328,7 +380,7 @@ def _collect():
     jobs = {("F", k): (lambda k=k, d=d: _fr(k, d)) for k, d in FRED_SET.items()}
     jobs.update({("Y", s): (lambda s=s: _yahoo(s)) for s in YH_SET})
     jobs.update({("X", k): f for k, f in {"auctions": _auctions_raw, "upcoming": _upcoming_raw, "mspd": _mspd_latest, "tga": _tga_raw, "rrp": _rrp_raw,
-                                         "srf": _srf_raw, "jgb": _jgb_curve, "jflow": _japan_flow, "fomc": _fomc_dates, "boj": _boj_dates}.items()})
+                                         "srf": _srf_raw, "tcurve": _tsy_curve, "jgb": _jgb_curve, "jflow": _japan_flow, "fomc": _fomc_dates, "boj": _boj_dates}.items()})
 
     def run(item):
         k, f = item
@@ -451,8 +503,16 @@ def _news_comment(a):
 
 def build_state():
     F, Y, X, errs = _collect()
+    fresh = _extend_fresh(F, Y, X)
     today = date.today().isoformat()
     S = {"errors": errs, "fetched_at": datetime.now().isoformat(timespec="minutes")}
+    # 화면 위쪽 '자료 기준일' — 무엇이 언제 자료인지 한눈에
+    _ld = lambda k: (_last_row(F.get(k)) or [None])[0]
+    S["asof"] = [{"k": "국채 금리", "d": fresh["DGS10"]["last"], "src": fresh["DGS10"]["src"]},
+                 {"k": "VIX", "d": fresh["VIXCLS"]["last"], "src": fresh["VIXCLS"]["src"] if fresh["VIXCLS"]["src"] != "FRED" else "FRED (CBOE)"},
+                 {"k": "달러/엔", "d": fresh["DEXJPUS"]["last"], "src": fresh["DEXJPUS"]["src"] if fresh["DEXJPUS"]["src"] != "FRED" else "FRED (연준 H.10)"},
+                 {"k": "SOFR", "d": _ld("SOFR"), "src": "FRED (NY 연준)"}, {"k": "하이일드 스프레드", "d": _ld("BAMLH0A0HYM2"), "src": "FRED (ICE BofA)"},
+                 {"k": "연준 대차대조표", "d": _ld("WALCL"), "src": "FRED (연준 H.4.1, 주 1회)"}]
     L = lambda k: _last(F.get(k))
 
     # ── 1. 입찰 ───────────────────────────────────────────
@@ -572,7 +632,7 @@ def build_state():
             else:
                 rc.update(key="drop_mixed", title="⚪ 혼합 하락", badge="하락 혼합", desc="여러 요인이 섞여서 내렸어요.")
     rc["liq_note"] = "유동성 교차확인: " + ("⚠ SOFR 30일 +10bp 이상 또는 역레포 $100B 미만 — 유동성도 빡빡해요" if liq_stress else "단기 자금시장은 안정적이에요")
-    rc["src"] = [_link("FRED DGS10", FU("DGS10")), _link("FRED DFII10 (실질금리)", FU("DFII10")), _link("FRED T10YIE (기대인플레)", FU("T10YIE"))]
+    rc["src"] = [_link("미 재무부 일일 국채 금리 (당일 공개)", "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve"), _link("FRED DGS10", FU("DGS10")), _link("FRED DFII10 (실질금리)", FU("DFII10")), _link("FRED T10YIE (기대인플레)", FU("T10YIE"))]
     S["rates"] = rc
 
     # ── 5. 레포 심층 ───────────────────────────────────────
@@ -656,8 +716,7 @@ def build_state():
     nboj = next((b for b in boj if b["date"] >= (date.today() - timedelta(days=2)).isoformat()), None)
     dboj = (date.fromisoformat(nboj["date"]) - date.today()).days if nboj else None
     # VIX: Yahoo(장중 최대 15분 지연)를 우선, 실패하면 FRED VIXCLS(전날 종가, 하루 늦게 올라옴) — 더 최근 날짜 쪽을 씀
-    vix_c = [r for r in ((Y.get("^VIX") or [])[-1:] + (F.get("VIXCLS") or [])[-1:]) if r and r[1] is not None]
-    vix_r = max(vix_c, key=lambda r: r[0]) if vix_c else None
+    vix_r = _last_row(F.get("VIXCLS"))      # FRED 뒤에 Yahoo ^VIX 최신값이 이어 붙어 있음 (_extend_fresh)
     vix, vix_date, hyb = (vix_r[1] if vix_r else None), (vix_r[0] if vix_r else None), hyv
     st2 = j1m is not None and (j1m >= 15 or ((j10 or 0) >= 1.5 and j1m >= 10))      # 수준이 아니라 1개월 상승폭
     seq = [

@@ -85,3 +85,4 @@ span.mk-chiplink { display: inline-block; border: 1px solid var(--amber); border
 .ust-bbm i { display: block; width: 18px; background: var(--accent); border-radius: 3px 3px 0 0; }
 .ust-bbm em { font-style: normal; font-size: 10.5px; color: var(--muted); } .ust-bbm b { font-size: 11px; font-family: var(--mono); }
 .pk-chips { display: flex; flex-wrap: wrap; gap: 6px; } .pk-chip { border: 1px solid var(--line2); border-radius: 14px; padding: 3px 10px; font-size: 13px; }
+.ust-asof{margin:4px 0 8px;line-height:1.7}.ust-asof span[title]{cursor:help;margin-right:2px}

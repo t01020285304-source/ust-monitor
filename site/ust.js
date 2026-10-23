@@ -65,6 +65,7 @@
     const D = ST.D, y = window.scrollY;
     $('#uBody').innerHTML = `<div class="ust-top"><span class="mk-sub">${esc((D.built_at || D.fetched_at).replace('T', ' ').slice(0, 16))} (한국시간) 판독 · 평일 매시간 자동 갱신 · 이 화면은 10분마다 새 자료 확인 ${ageNote(D)}</span> <button class="btn sm" id="uRe">⟳ 다시 불러오기</button>
         ${D.errors.length ? `<span class="mk-sub bad" title="${esc(D.errors.join('\n'))}">일부 자료 ${D.errors.length}개를 받지 못했어요</span>` : ''}</div>
+      ${(D.asof || []).length ? `<div class="ust-asof mk-sub">📅 자료 기준일 (미국 날짜): ${D.asof.map(x => `<span title="${esc(x.src)}">${esc(x.k)} <b>${esc((x.d || '—').slice(5).replace('-', '/'))}</b></span>`).join(' · ')} <span class="tiny">— 공식 통계는 발표 주기대로(대부분 하루 1번), 시세는 최대 15분 지연</span></div>` : ''}
       <div class="pf-tabs">${TABS.map(([k, l]) => `<button class="${ST.tab === k ? 'on' : ''}" data-ut="${k}">${l}</button>`).join('')}</div><div id="uTab"></div>`;
     $('#uRe').onclick = async () => { $('#uRe').textContent = '받는 중…'; await load(true); };
     document.querySelectorAll('[data-ut]').forEach(b => b.onclick = () => go(b.dataset.ut));
