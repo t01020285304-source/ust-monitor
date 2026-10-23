@@ -52,13 +52,18 @@
       <div id="uBody"><div class="mk-loading">최신 판독 결과를 불러오는 중…</div></div>`;
     await load(false);
   }
+  // 화면을 열어 둔 동안 10분마다 새 판독 결과가 있는지 확인 (바뀌었을 때만 다시 그림)
+  setInterval(async () => {
+    if (document.hidden || !ST.D || location.protocol === 'file:') return;
+    try { const d = await api(); if ((d.built_at || d.fetched_at) !== (ST.D.built_at || ST.D.fetched_at)) { ST.D = d; draw(); } } catch (e) { }
+  }, 6e5);
   async function load(force) {
     try { ST.D = await api(); } catch (e) { $('#uBody').innerHTML = `<div class="mk-err">불러오지 못했어요 — ${esc(e.message)}</div>`; return; }
     draw();
   }
   function draw() {
     const D = ST.D, y = window.scrollY;
-    $('#uBody').innerHTML = `<div class="ust-top"><span class="mk-sub">${esc((D.built_at || D.fetched_at).replace('T', ' ').slice(0, 16))} (한국시간) 판독 · 하루 4번 자동 갱신 ${ageNote(D)}</span> <button class="btn sm" id="uRe">⟳ 다시 불러오기</button>
+    $('#uBody').innerHTML = `<div class="ust-top"><span class="mk-sub">${esc((D.built_at || D.fetched_at).replace('T', ' ').slice(0, 16))} (한국시간) 판독 · 평일 매시간 자동 갱신 · 이 화면은 10분마다 새 자료 확인 ${ageNote(D)}</span> <button class="btn sm" id="uRe">⟳ 다시 불러오기</button>
         ${D.errors.length ? `<span class="mk-sub bad" title="${esc(D.errors.join('\n'))}">일부 자료 ${D.errors.length}개를 받지 못했어요</span>` : ''}</div>
       <div class="pf-tabs">${TABS.map(([k, l]) => `<button class="${ST.tab === k ? 'on' : ''}" data-ut="${k}">${l}</button>`).join('')}</div><div id="uTab"></div>`;
     $('#uRe').onclick = async () => { $('#uRe').textContent = '받는 중…'; await load(true); };

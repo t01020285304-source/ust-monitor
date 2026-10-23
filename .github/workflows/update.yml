@@ -1,13 +1,12 @@
-# 하루 4번 국채 위기 모니터 데이터를 새로 만들어 data 브랜치에 올림 (공개 저장소면 무료)
-# 시간은 UTC 기준 — 한국시간: 07:10 · 12:10 · 18:10 · 새벽 03:40(미 국채 입찰 결과 발표 뒤)
+# 국채 위기 모니터 데이터를 새로 만들어 data 브랜치에 올림 (공개 저장소면 무료)
+# 평일(미국 시장일)은 매시간, 주말은 하루 2번 — 원자료 자체가 대부분 '하루 1번·주 1번' 발표라 이 정도면 발표 직후 반영돼요
+# 시간은 UTC 기준 (GitHub 사정으로 몇 분~수십 분 늦게 시작할 수 있어요)
 name: 데이터 갱신
 
 on:
   schedule:
-    - cron: "10 22 * * *"
-    - cron: "10 3 * * *"
-    - cron: "10 9 * * *"
-    - cron: "40 18 * * *"
+    - cron: "17 * * * 1-5"
+    - cron: "17 0,12 * * 0,6"
   workflow_dispatch: {}        # Actions 탭에서 'Run workflow'로 바로 실행
 
 permissions:
@@ -50,6 +49,8 @@ jobs:
 
       - name: data 브랜치에 올리기
         run: |
+          if [ -f out/SKIP ]; then echo "건너뜀: $(cat out/SKIP)"; exit 0; fi
+          rm -f out/ust-data.js            # 웹 화면은 ust.json 만 읽음 (더블클릭용 파일은 data 브랜치에 불필요)
           rm -rf out/cache && mkdir -p out/cache && cp -r builder/data/cache/. out/cache/ || true
           cd out
           git init -q
@@ -60,15 +61,15 @@ jobs:
           git commit -q -m "데이터 갱신 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
           git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" data
 
-  # GitHub는 60일 동안 저장소에 활동이 없으면 예약 실행을 멈춤 → 매달 1일 main 에 빈 커밋으로 깨워 둠
+  # GitHub는 60일 동안 저장소에 활동이 없으면 예약 실행을 멈춤 → 매달 첫 주말 main 에 빈 커밋으로 깨워 둠
   keepalive:
-    if: github.event.schedule == '10 22 * * *'
+    if: github.event.schedule == '17 0,12 * * 0,6'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 매달 1일 활동 기록
+      - name: 매달 첫 주말 활동 기록
         run: |
-          if [ "$(date -u +%d)" = "01" ]; then
+          if [ "$(date -u +%d)" -le "07" ] && [ "$(date -u +%H)" = "00" ]; then
             git config user.name "ust-monitor-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit --allow-empty -q -m "keepalive: 예약 실행 유지"
