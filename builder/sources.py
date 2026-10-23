@@ -27,7 +27,18 @@ def _cached(name, max_age_sec, loader):
             return json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             pass
-    data = loader()
+    try:
+        data = loader()
+    except Exception as e:
+        # 출처가 일시적으로 막히면(예: 재무부 홈페이지가 클라우드 서버 접속 차단) 마지막으로 받아 둔 파일을 대신 씀
+        if path.exists():
+            try:
+                old = json.loads(path.read_text(encoding="utf-8"))
+                print(f"[cache] {name}: 새로 받기 실패({str(e)[:60]}) → 저장본 사용")
+                return old
+            except Exception:
+                pass
+        raise
     path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
     return data
 
