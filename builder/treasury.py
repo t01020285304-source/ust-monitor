@@ -1042,10 +1042,15 @@ def build_state():
 
 
 def _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh):
-    wd = "월화수목금토일"[date.today().weekday()]
+    # 날짜는 '데이터를 만든 한국 날짜'가 아니라 '자료의 기준일(미국 장 마감)' — 주말·새벽에 열어도 언제 자료인지 헷갈리지 않게
+    try:
+        bd = date.fromisoformat(next(a["d"] for a in S.get("asof", []) if a["k"] == "국채 금리"))
+    except Exception:
+        bd = date.today()
+    wd = "월화수목금토일"[bd.weekday()]
     rc = S["rates"]
     P = []
-    p1 = f"{date.today().month}월 {date.today().day}일({wd}) 미국 국채 시장의 분위기는 「{S['mood']['label']}」이에요. "
+    p1 = f"{bd.month}월 {bd.day}일({wd}) 미국 장 마감 기준, 미국 국채 시장의 분위기는 「{S['mood']['label']}」이에요. "
     if rc.get("y10") is not None:
         k = rc.get("key")
         dn = rc.get("d_nom")
