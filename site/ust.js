@@ -7,7 +7,7 @@
   'use strict';
   let M, $, esc, fN, sgn, src, lineSvg, main;
   const ST = { tab: 'op', D: null, sel: 0 };
-  const TABS = [['op', '⭐ 종합 의견'], ['auc', '🏷️ 입찰 결과'], ['chain', '🔗 입찰 붕괴 연쇄'], ['cal', '📅 이벤트 일정'], ['liq', '💧 유동성 완충'], ['repo', '🔄 레포'],
+  const TABS = [['op', '⭐ 종합 의견'], ['force', '🧯 강제매도 진단'], ['auc', '🏷️ 입찰 결과'], ['chain', '🔗 입찰 붕괴 연쇄'], ['cal', '📅 이벤트 일정'], ['liq', '💧 유동성 완충'], ['repo', '🔄 레포'],
     ['absorb', '🧲 흡수력'], ['rates', '📈 금리 원인'], ['issue', '🏛️ 발행 구조'], ['int', '💸 이자 부담'], ['credit', '⚠️ 신용위기'], ['japan', '🗾 일본·캐리'], ['contra', '🔀 역발상'], ['guide', '📖 해석법·용어']];
   const STL = { ok: '정상', warn: '경계', bad: '위험', na: '—' };
 
@@ -69,7 +69,7 @@
       <div class="pf-tabs">${TABS.map(([k, l]) => `<button class="${ST.tab === k ? 'on' : ''}" data-ut="${k}">${l}</button>`).join('')}</div><div id="uTab"></div>`;
     $('#uRe').onclick = async () => { $('#uRe').textContent = '받는 중…'; await load(true); };
     document.querySelectorAll('[data-ut]').forEach(b => b.onclick = () => go(b.dataset.ut));
-    $('#uTab').innerHTML = ({ op: tOp, auc: tAuc, chain: tChain, cal: tCal, liq: tLiq, repo: tRepo, absorb: tAbsorb, rates: tRates, issue: tIssue, int: tInt, credit: tCredit, japan: tJapan, contra: tContra, guide: tGuide }[ST.tab])(D);
+    $('#uTab').innerHTML = ({ op: tOp, force: D => stressHtml(D.stress8), auc: tAuc, chain: tChain, cal: tCal, liq: tLiq, repo: tRepo, absorb: tAbsorb, rates: tRates, issue: tIssue, int: tInt, credit: tCredit, japan: tJapan, contra: tContra, guide: tGuide }[ST.tab])(D);
     bind();
     window.scrollTo(0, y);
   }
@@ -112,6 +112,7 @@
         <div class="mk-big2">${esc(D.mood.label)}</div>
         <ol class="ust-3">${D.three.map(t => `<li>${esc(t)}</li>`).join('')}</ol></div>
       <div class="ust-scores">${D.scores.map(s => `<div class="mk-card st-${s.st || 'na'}"><div class="mk-sub">${esc(s.k)}</div><div class="mk-fv">${s.v == null ? '—' : esc(s.v)}${typeof s.v === 'number' ? '<span class="mk-sub">/100</span>' : ''}</div>${badge(s.st, s.badge)}<div class="mk-foot">${esc(s.why)}</div></div>`).join('')}</div>
+      ${D.stress8 ? `<div class="s8-mini st-${D.stress8.case.lv}"><b>🧯 강제매도 진단</b> ${esc(D.stress8.case.t)} — ${D.stress8.questions.map(q => `${q.q.slice(0, 1)} ${q.yes ? '⚠️' : '✅'}`).join(' ')} <a href="#" data-go="force">자세히 ›</a></div>` : ''}
       ${card('📰 오늘의 시황 — 쉽게 읽는 국채·금융 이야기 ' + badge({ bad: 'bad', warn: 'warn', good: 'ok', neutral: 'na' }[D.mood.key], D.mood.label), D.narrative.map(p => `<p class="ust-p">${esc(p)}</p>`).join(''))}
       ${card(`🚰 미국 국채 시스템 배관도 ${badge(P.st, P.title)}`, `${plumbSvg(P)}<div class="small" style="margin-top:6px">9개 지점 중 <b class="bad">이상 ${P.bad}</b> · <b class="warn">경계 ${P.warn}</b> — 상자를 누르면 해당 탭으로 이동해요. 가장 위험한 조합: <b>10년물 압력계 ↑ + 유동성 저수조 ↓ + 레포 분산 ↑</b> (2019년 레포 위기 패턴)</div>
         <div class="mk-foot">전이 경로 A: 국채 입찰 → Primary Dealer → 레포 → 신용 (빠름, ${esc(D.repo.pathA)}) · 경로 B: 은행·사모신용 (분기 공시 기반이라 자동 판정하지 않아요)</div>`)}
@@ -134,6 +135,32 @@
           <li>10년물이 하루 ±10bp 움직였다면 원인은? (<a href="#" data-go="rates">금리 원인</a>)</li><li>MOVE 120 이상인가? (<a href="#" data-go="contra">역발상</a>)</li><li>이번 주 일정이 몰린 날(클러스터)은? (<a href="#" data-go="cal">일정</a>)</li><li>이 탭의 분위기·3줄 다시 읽기</li></ol>`)}
       </div>
       <div class="mk-foot">자동 판독 결과이며 투자 권유가 아니에요. 원본 대시보드의 고정 문구(특정 날짜의 3줄 요약 등)는 매일 바뀌는 실제 자료로 대체했어요.</div>`;
+  }
+  // ══ 🧯 강제매도 위험 진단 (8지표) — 국채 모니터 탭 · 기존 지표 탭 · 공개 사이트가 같은 화면을 씀 ══════
+  function stressHtml(S8, opt = {}) {
+    const Mk = window.MK, e_ = Mk.esc, n_ = Mk.fN;
+    if (!S8 || !S8.rows) return '<div class="mk-sub">강제매도 진단 자료를 받지 못했어요.</div>';
+    const ic = { ok: '🟢', warn: '🟠', bad: '🔴', na: '·' }, cls = { ok: 'ok', warn: 'warn', bad: 'bad', na: 'na' };
+    const val = r => r.v == null ? '—' : r.disp === '%' ? n_(r.v, 2) + '%' : r.unit === 'bp' ? n_(r.v, 0) + 'bp' : r.unit === '%p' ? n_(r.v, 1) + '%p' : n_(r.v, 2);
+    const chg = (r, x) => x == null ? '—' : r.unit === 'bp' ? (x > 0 ? '+' : '') + n_(x, 0) + 'bp' : (x > 0 ? '+' : '') + n_(x, r.key === 'vix' || r.unit === '%p' ? 1 : 2);
+    const C = S8.case;
+    const head = `<div class="mk-card mk-over st-${cls[C.lv]}"><div class="mk-sub">🧯 강제매도 위험 진단 — 누군가 버티지 못하고 팔아야 하는 상황이 커지나 (8대 지표)</div>
+      <div class="mk-big2">${ic[C.lv]} ${e_(C.t)}</div><div class="small">${e_(C.d)}</div>
+      <div class="s8-q">${S8.questions.map(q => `<div class="s8-qi ${q.yes ? 'yes' : ''}"><b>${q.yes ? '⚠️ 예' : '✅ 아니오'}</b> ${e_(q.q)}<div class="mk-sub">${e_(q.ev)}</div></div>`).join('')}</div></div>`;
+    if (opt.compact) return head;
+    const tbl = `<div class="tablewrap"><table class="t s8-t"><tr><th>지표</th><th class="r">지금</th><th class="r">1주 변화</th><th class="r">1개월 변화</th><th>상태</th><th>무엇을 보나</th></tr>
+      ${S8.rows.map(r => `<tr><td><b>${e_(r.name)}</b><div class="mk-sub">${e_(r.sid || '')} · ${e_(r.date || '')}</div></td><td class="r mono">${val(r)}</td><td class="r mono">${chg(r, r.c1w)}</td><td class="r mono">${chg(r, r.c1m)}${r.key === 'sloos' ? '<div class="mk-sub">직전 분기 대비</div>' : ''}</td>
+        <td>${ic[r.lv]} ${{ ok: '안정', warn: '주의', bad: '위험', na: '—' }[r.lv]}${r.txt ? `<div class="mk-sub">${e_(r.txt)}</div>` : ''}</td><td class="small">${e_(r.why)}${r.rule ? `<div class="mk-sub">${e_(r.rule)}</div>` : ''}${r.url ? ` <a class="mk-src" href="${e_(r.url)}" target="_blank" rel="noopener">원문 ↗</a>` : ''}</td></tr>`).join('')}</table></div>
+      ${S8.ccc_lead ? '<div class="small warn" style="margin-top:6px">⚠️ CCC 스프레드가 하이일드 전체보다 두드러지게 커지고 있어요 — 가장 약한 기업부터 돈줄이 막히는 모습이에요.</div>' : ''}`;
+    const wk = `<details style="margin-top:10px"><summary class="small"><b>📅 매주 금요일 기록</b> — 최근 6주 (자료 기록에서 자동)</summary><div class="tablewrap"><table class="t small mono"><tr><th>지표</th>${S8.weeks.map(d => `<th class="r">${d.slice(5).replace('-', '/')}</th>`).join('')}</tr>
+      ${S8.weekly.map(w => `<tr><td>${e_(w.name)}</td>${w.vals.map(v => `<td class="r">${v == null ? '—' : w.unit === '%' ? n_(v, 2) : w.unit === 'bp' ? n_(v, 0) : n_(v, 2)}</td>`).join('')}</tr>`).join('')}</table></div></details>`;
+    const ex = `<details style="margin-top:6px"><summary class="small"><b>📖 판단 예시 4가지</b></summary><ol class="small">
+      <li><b>실질금리만 상승 · 신용 안정</b> → 기업 부실보다 금리·밸류에이션 충격을 먼저 검토</li>
+      <li><b>CCC·하이일드 확대</b> → 위험기업 자금조달 압박·부실 가능성 집중 점검</li>
+      <li><b>우량채까지 확대 + 단기자금시장 불안</b> → 신용시장 전반 확산 여부 확인 · 차입·레버리지·유동성 재점검</li>
+      <li><b>VIX만 급등 · 신용·자금시장 안정</b> → 주가 급락만으로 금융시스템 위기라 결론 내리지 않기</li></ol>
+      <div class="mk-sub">폭락이 언제 오는지 아는 사람보다, 폭락이 와도 팔지 않아도 되는 사람이 훨씬 강하다 — 지표가 경고할 때 내 보유 기업의 현금 · 2년 내 채무 만기 · 차입비용 · 현금흐름을 확인하세요.${opt.pfLink ? ' <a href="#pf">💼 내 포트폴리오의 \'버팀\' 확인 ›</a>' : ''}</div></details>`;
+    return `<section class="mk-card s8">${head}${tbl}${wk}${ex}<div class="mk-foot">${e_(S8.note)} · ${e_(S8.src)}</div></section>`;
   }
   function recessionCard(R) {
     return card(`💰 경기침체 선행지표 — 은행이 돈줄을 잠그고 있나요? ${badge(R.trig >= 2 ? 'bad' : R.trig || R.warn >= 2 ? 'warn' : 'ok', R.badge)}`, `<div class="mk-big2" style="font-size:18px">${esc(R.title)}</div>
@@ -568,5 +595,5 @@
         <div class="mk-foot">원본 대시보드에서 뺀 것: 2026년 4~6월 고정 일정, 관세 정책 옵션 트리, 특정 날짜의 고정 3줄 요약, 손으로 넣는 은행·사모신용 지표(PIK·Non-accrual 등) — 매일 바뀌는 공개 자료가 없거나 시점이 지나서예요.</div>`)}`;
   }
 
-  window.UST = { page };
+  window.UST = { page, stressHtml };
 })();

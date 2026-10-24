@@ -363,7 +363,7 @@ def _boj_dates():
     return sources._cached("ust_boj.json", 7 * 24 * 3600, load)
 
 
-FRED_SET = {**absorb.FRED_NEED, 
+FRED_SET = {"NFCI": 500, **absorb.FRED_NEED, 
     "DGS10": 500, "DGS30": 120, "DGS2": 120, "DFII10": 120, "T10YIE": 120, "SOFR": 120, "IORB": 120, "SOFR25": 120, "SOFR75": 120,
     "VIXCLS": 400, "BAMLH0A0HYM2": 400, "BAMLC0A0CM": 200, "BAMLH0A3HYC": 200, "WSHOBL": 120, "TREAST": 120, "WRESBAL": 400, "WALCL": 120,
     "DEXUSEU": 60, "DEXJPUS": 120, "DFEDTARU": 400, "DFEDTARL": 400, "PCEPILFE": 500, "A191RL1Q225SBEA": 800,
@@ -506,6 +506,11 @@ def build_state():
     fresh = _extend_fresh(F, Y, X)
     today = date.today().isoformat()
     S = {"errors": errs, "fetched_at": datetime.now().isoformat(timespec="minutes")}
+    try:                                   # 🧯 강제매도 위험 진단 8지표 (stress8.py — 가격결정자 기존 지표 탭과 같은 계산)
+        import stress8
+        S["stress8"] = stress8.compute(lambda sid, days: F.get(sid) or _fr(sid, days))
+    except Exception as e:
+        errs.append(f"강제매도 진단: {str(e)[:60]}")
     # 화면 위쪽 '자료 기준일' — 무엇이 언제 자료인지 한눈에
     _ld = lambda k: (_last_row(F.get(k)) or [None])[0]
     S["asof"] = [{"k": "국채 금리", "d": fresh["DGS10"]["last"], "src": fresh["DGS10"]["src"]},

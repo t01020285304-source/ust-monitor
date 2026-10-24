@@ -86,3 +86,11 @@ span.mk-chiplink { display: inline-block; border: 1px solid var(--amber); border
 .ust-bbm em { font-style: normal; font-size: 10.5px; color: var(--muted); } .ust-bbm b { font-size: 11px; font-family: var(--mono); }
 .pk-chips { display: flex; flex-wrap: wrap; gap: 6px; } .pk-chip { border: 1px solid var(--line2); border-radius: 14px; padding: 3px 10px; font-size: 13px; }
 .ust-asof{margin:4px 0 8px;line-height:1.7}.ust-asof span[title]{cursor:help;margin-right:2px}
+/* 🧯 강제매도 진단 */
+.s8 .mk-over{margin-bottom:10px}
+.s8-q{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.s8-qi{border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:13px}
+.s8-qi.yes{border-color:var(--amber);background:rgba(245,197,66,.07)}
+.s8-mini{border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:13.5px}
+.s8-mini.st-warn{border-left-color:var(--amber)}.s8-mini.st-bad{border-left-color:var(--red)}.s8-mini.st-ok{border-left-color:var(--green)}
+@media (max-width:760px){.s8-q{grid-template-columns:1fr}}
