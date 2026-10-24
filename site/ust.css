@@ -94,3 +94,4 @@ span.mk-chiplink { display: inline-block; border: 1px solid var(--amber); border
 .s8-mini{border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:13.5px}
 .s8-mini.st-warn{border-left-color:var(--amber)}.s8-mini.st-bad{border-left-color:var(--red)}.s8-mini.st-ok{border-left-color:var(--green)}
 @media (max-width:760px){.s8-q{grid-template-columns:1fr}}
+.s8-nar p{margin:6px 0;line-height:1.65}.s8-nar .s8-lead{font-weight:700;font-size:15px}

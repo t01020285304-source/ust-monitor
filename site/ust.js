@@ -144,12 +144,16 @@
     const val = r => r.v == null ? '—' : r.disp === '%' ? n_(r.v, 2) + '%' : r.unit === 'bp' ? n_(r.v, 0) + 'bp' : r.unit === '%p' ? n_(r.v, 1) + '%p' : n_(r.v, 2);
     const chg = (r, x) => x == null ? '—' : r.unit === 'bp' ? (x > 0 ? '+' : '') + n_(x, 0) + 'bp' : (x > 0 ? '+' : '') + n_(x, r.key === 'vix' || r.unit === '%p' ? 1 : 2);
     const C = S8.case;
+    const FREQ = { real: '미 재무부 · 매일(당일 저녁 공개)', ccc: 'ICE BofA · 매일(하루 뒤 공개)', hy: 'ICE BofA · 매일(하루 뒤 공개)', ig: 'ICE BofA · 매일(하루 뒤 공개)',
+      sofr: 'NY 연준 · 매일(다음 날 아침 공개)', nfci: '시카고 연은 · 매주(수요일 공개)', sloos: '연준 · 분기 조사', vix: 'Cboe · 장중(최대 15분 지연)' };
+    const nar = (S8.narrative || []).length ? `<section class="mk-card s8-nar"><h3>📝 종합 해설 <span class="mk-sub">8개 지표를 한 번에 읽기 — 폭락 예측이 아니라 '위험의 종류' 진단</span></h3>${S8.narrative.map((t, i) => `<p class="${i === 0 ? 's8-lead' : ''}">${e_(t)}</p>`).join('')}</section>` : '';
     const head = `<div class="mk-card mk-over st-${cls[C.lv]}"><div class="mk-sub">🧯 강제매도 위험 진단 — 누군가 버티지 못하고 팔아야 하는 상황이 커지나 (8대 지표)</div>
       <div class="mk-big2">${ic[C.lv]} ${e_(C.t)}</div><div class="small">${e_(C.d)}</div>
       <div class="s8-q">${S8.questions.map(q => `<div class="s8-qi ${q.yes ? 'yes' : ''}"><b>${q.yes ? '⚠️ 예' : '✅ 아니오'}</b> ${e_(q.q)}<div class="mk-sub">${e_(q.ev)}</div></div>`).join('')}</div></div>`;
     if (opt.compact) return head;
+    if (opt.mini) return `<div class="s8-mini st-${C.lv}"><b>🧯 강제매도 진단</b> ${e_(C.t)} — ${S8.questions.map(q => `${q.q.slice(0, 1)} ${q.yes ? '⚠️' : '✅'}`).join(' ')} <a href="${opt.href || '#'}">8개 지표 자세히 ›</a></div>`;
     const tbl = `<div class="tablewrap"><table class="t s8-t"><tr><th>지표</th><th class="r">지금</th><th class="r">1주 변화</th><th class="r">1개월 변화</th><th>상태</th><th>무엇을 보나</th></tr>
-      ${S8.rows.map(r => `<tr><td><b>${e_(r.name)}</b><div class="mk-sub">${e_(r.sid || '')} · ${e_(r.date || '')}</div></td><td class="r mono">${val(r)}</td><td class="r mono">${chg(r, r.c1w)}</td><td class="r mono">${chg(r, r.c1m)}${r.key === 'sloos' ? '<div class="mk-sub">직전 분기 대비</div>' : ''}</td>
+      ${S8.rows.map(r => `<tr><td><b>${e_(r.name)}</b><div class="mk-sub">${e_(r.sid || '')} · <b>${e_(r.date || '')}</b> 기준</div><div class="mk-sub">${e_(FREQ[r.key] || '')}</div></td><td class="r mono">${val(r)}</td><td class="r mono">${chg(r, r.c1w)}</td><td class="r mono">${chg(r, r.c1m)}${r.key === 'sloos' ? '<div class="mk-sub">직전 분기 대비</div>' : ''}</td>
         <td>${ic[r.lv]} ${{ ok: '안정', warn: '주의', bad: '위험', na: '—' }[r.lv]}${r.txt ? `<div class="mk-sub">${e_(r.txt)}</div>` : ''}</td><td class="small">${e_(r.why)}${r.rule ? `<div class="mk-sub">${e_(r.rule)}</div>` : ''}${r.url ? ` <a class="mk-src" href="${e_(r.url)}" target="_blank" rel="noopener">원문 ↗</a>` : ''}</td></tr>`).join('')}</table></div>
       ${S8.ccc_lead ? '<div class="small warn" style="margin-top:6px">⚠️ CCC 스프레드가 하이일드 전체보다 두드러지게 커지고 있어요 — 가장 약한 기업부터 돈줄이 막히는 모습이에요.</div>' : ''}`;
     const wk = `<details style="margin-top:10px"><summary class="small"><b>📅 매주 금요일 기록</b> — 최근 6주 (자료 기록에서 자동)</summary><div class="tablewrap"><table class="t small mono"><tr><th>지표</th>${S8.weeks.map(d => `<th class="r">${d.slice(5).replace('-', '/')}</th>`).join('')}</tr>
@@ -160,7 +164,7 @@
       <li><b>우량채까지 확대 + 단기자금시장 불안</b> → 신용시장 전반 확산 여부 확인 · 차입·레버리지·유동성 재점검</li>
       <li><b>VIX만 급등 · 신용·자금시장 안정</b> → 주가 급락만으로 금융시스템 위기라 결론 내리지 않기</li></ol>
       <div class="mk-sub">폭락이 언제 오는지 아는 사람보다, 폭락이 와도 팔지 않아도 되는 사람이 훨씬 강하다 — 지표가 경고할 때 내 보유 기업의 현금 · 2년 내 채무 만기 · 차입비용 · 현금흐름을 확인하세요.${opt.pfLink ? ' <a href="#pf">💼 내 포트폴리오의 \'버팀\' 확인 ›</a>' : ''}</div></details>`;
-    return `<section class="mk-card s8">${head}${tbl}${wk}${ex}<div class="mk-foot">${e_(S8.note)} · ${e_(S8.src)}</div></section>`;
+    return `${nar}<section class="mk-card s8">${head}${tbl}${wk}${ex}<div class="mk-foot">${e_(S8.note)} · ${e_(S8.src)}</div></section>`;
   }
   function recessionCard(R) {
     return card(`💰 경기침체 선행지표 — 은행이 돈줄을 잠그고 있나요? ${badge(R.trig >= 2 ? 'bad' : R.trig || R.warn >= 2 ? 'warn' : 'ok', R.badge)}`, `<div class="mk-big2" style="font-size:18px">${esc(R.title)}</div>

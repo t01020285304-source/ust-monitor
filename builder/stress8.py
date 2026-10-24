@@ -131,7 +131,31 @@ def compute(get):
     weekly = [{"key": r["key"], "name": r["name"], "unit": r.get("disp", r.get("unit", "")),
                "vals": [None if (v := _at(series_of.get(r["key"], []), d)) is None else round(v * (100 if r.get("unit") == "bp" and r["key"] not in ("sofr", "real") else 1), 2) for d in weeks]}
               for r in rows if r["key"] != "sloos"]
-    return {"rows": rows, "questions": Q, "case": case, "ccc_lead": ccc_lead, "weeks": weeks, "weekly": weekly, "errors": errs,
+    # ── 종합 해설 (초보자용 — 숫자를 몰라도 '지금 어떤 종류의 위험인지') ──
+    def g(k, f="c1m"):
+        return R.get(k, {}).get(f)
+    asof = max((r.get("date") or "") for r in rows if r.get("key") in ("real", "hy", "vix")) or None
+    wd = "월화수목금토일"[date.fromisoformat(asof).weekday()] if asof else ""
+    nar = []
+    nar.append((f"{int(asof[5:7])}월 {int(asof[8:])}일({wd}) 미국 장 마감 기준, " if asof else "") + f"강제매도 위험 진단은 「{case['t']}」이에요. {case['d']}")
+    rr = R.get("real", {})
+    if rr.get("v") is not None:
+        nar.append(f"① 금리: 10년 실질금리는 {rr['v']:.2f}%로 한 달 {_f(g('real'), 'bp')} — " +
+                   ("올라서 성장주 가치를 누르고 있어요." if rr.get("lv") != "ok" else "큰 변화가 없어 할인율 충격은 아니에요."))
+    c_, h_, i_ = R.get("ccc", {}), R.get("hy", {}), R.get("ig", {})
+    if h_.get("v") is not None:
+        nar.append(f"② 기업 신용: 가장 약한 기업(CCC) 스프레드는 {c_.get('v', 0):,.0f}bp로 한 달 {_f(g('ccc'), 'bp')}, 하이일드 전체는 {h_['v']:,.0f}bp로 {_f(g('hy'), 'bp')} — " +
+                   ("CCC가 훨씬 빠르게 벌어져 약한 기업부터 돈줄이 조여지는 모습이에요." if ccc_lead else
+                    "위험기업이 돈 빌리기가 비싸지고 있어요." if q2 else "기업 신용시장은 차분해요."))
+    s_, n_ = R.get("sofr", {}), R.get("nfci", {})
+    nar.append(f"③ 자금시장: 우량 회사채 스프레드 {i_.get('v', 0):,.0f}bp(한 달 {_f(g('ig'), 'bp')}), 은행 간 하루 자금 {s_.get('txt') or '—'}, 금융여건 지수(NFCI) {n_.get('v', 0):+.2f}(한 달 {_f(g('nfci'), '')}) — " +
+               ("우량기업·자금시장까지 긴장이 번지고 있어요." if q3 else "우량기업과 단기자금시장은 아직 안정적이라 위험이 시스템 전체로 번지진 않았어요."))
+    v_ = R.get("vix", {})
+    if v_.get("v") is not None:
+        nar.append(f"주식시장 공포지수(VIX)는 {v_['v']:.1f}" + (" — 주식 참여자들이 변동성을 비싸게 보고 있어요." if vix else " — 보통 수준이에요.") +
+                   f" 은행 대출태도(SLOOS, 분기)는 {R.get('sloos', {}).get('txt') or '—'}.")
+    nar.append("결론: 폭락 시점을 맞히기보다, 지표가 경고할 때 내 보유 기업이 현금·2년 내 만기·이자비용·현금흐름 면에서 팔지 않고 버틸 수 있는지를 먼저 확인하세요.")
+    return {"rows": rows, "questions": Q, "case": case, "narrative": nar, "asof": asof, "ccc_lead": ccc_lead, "weeks": weeks, "weekly": weekly, "errors": errs,
             "src": "FRED (미 재무부 DFII10 · ICE BofA 스프레드 · 시카고 연은 NFCI · 연준 SLOOS · Cboe VIX) · NY 연준 SOFR · 연준 IORB",
             "note": "폭락 확정 신호가 아니라 위험의 종류를 구별하는 진단이에요. 기준 숫자(1개월 변화 폭)는 원문에 없어 사이트가 정한 값이에요."}
 
