@@ -7,7 +7,7 @@
   'use strict';
   let M, $, esc, fN, sgn, src, lineSvg, main;
   const ST = { tab: 'op', D: null, sel: 0 };
-  const TABS = [['op', '⭐ 종합 의견'], ['force', '🧯 강제매도 진단'], ['auc', '🏷️ 입찰 결과'], ['chain', '🔗 입찰 붕괴 연쇄'], ['cal', '📅 이벤트 일정'], ['liq', '💧 유동성 완충'], ['repo', '🔄 레포'],
+  const TABS = [['op', '⭐ 종합 의견'], ['force', '🧯 강제매도 진단'], ['pipes', '💧 돈의 배관 18'], ['auc', '🏷️ 입찰 결과'], ['chain', '🔗 입찰 붕괴 연쇄'], ['cal', '📅 이벤트 일정'], ['liq', '💧 유동성 완충'], ['repo', '🔄 레포'],
     ['absorb', '🧲 흡수력'], ['rates', '📈 금리 원인'], ['issue', '🏛️ 발행 구조'], ['int', '💸 이자 부담'], ['credit', '⚠️ 신용위기'], ['japan', '🗾 일본·캐리'], ['contra', '🔀 역발상'], ['guide', '📖 해석법·용어']];
   const STL = { ok: '정상', warn: '경계', bad: '위험', na: '—' };
 
@@ -69,7 +69,7 @@
       <div class="pf-tabs">${TABS.map(([k, l]) => `<button class="${ST.tab === k ? 'on' : ''}" data-ut="${k}">${l}</button>`).join('')}</div><div id="uTab"></div>`;
     $('#uRe').onclick = async () => { $('#uRe').textContent = '받는 중…'; await load(true); };
     document.querySelectorAll('[data-ut]').forEach(b => b.onclick = () => go(b.dataset.ut));
-    $('#uTab').innerHTML = ({ op: tOp, force: D => stressHtml(D.stress8), auc: tAuc, chain: tChain, cal: tCal, liq: tLiq, repo: tRepo, absorb: tAbsorb, rates: tRates, issue: tIssue, int: tInt, credit: tCredit, japan: tJapan, contra: tContra, guide: tGuide }[ST.tab])(D);
+    $('#uTab').innerHTML = ({ op: tOp, force: D => stressHtml(D.stress8), pipes: D => pipesHtml(D.pipes18, D.bdc), auc: tAuc, chain: tChain, cal: tCal, liq: tLiq, repo: tRepo, absorb: tAbsorb, rates: tRates, issue: tIssue, int: tInt, credit: tCredit, japan: tJapan, contra: tContra, guide: tGuide }[ST.tab])(D);
     bind();
     window.scrollTo(0, y);
   }
@@ -113,6 +113,7 @@
         <ol class="ust-3">${D.three.map(t => `<li>${esc(t)}</li>`).join('')}</ol></div>
       <div class="ust-scores">${D.scores.map(s => `<div class="mk-card st-${s.st || 'na'}"><div class="mk-sub">${esc(s.k)}</div><div class="mk-fv">${s.v == null ? '—' : esc(s.v)}${typeof s.v === 'number' ? '<span class="mk-sub">/100</span>' : ''}</div>${badge(s.st, s.badge)}<div class="mk-foot">${esc(s.why)}</div></div>`).join('')}</div>
       ${D.stress8 ? `<div class="s8-mini st-${D.stress8.case.lv}"><b>🧯 강제매도 진단</b> ${esc(D.stress8.case.t)} — ${D.stress8.questions.map(q => `${q.q.slice(0, 1)} ${q.yes ? '⚠️' : '✅'}`).join(' ')} <a href="#" data-go="force">자세히 ›</a></div>` : ''}
+      ${D.pipes18 ? `<div class="s8-mini st-${D.pipes18.state.lv}"><b>💧 돈의 배관 18</b> ${esc(D.pipes18.state.t)} — 압력 ${D.pipes18.rows.filter(r => r.lv === 'warn' || r.lv === 'bad').map(r => r.n + '번').join(' · ') || '없음'} <a href="#" data-go="pipes">자세히 ›</a></div>` : ''}
       ${card('📰 오늘의 시황 — 쉽게 읽는 국채·금융 이야기 ' + badge({ bad: 'bad', warn: 'warn', good: 'ok', neutral: 'na' }[D.mood.key], D.mood.label), D.narrative.map(p => `<p class="ust-p">${esc(p)}</p>`).join(''))}
       ${card(`🚰 미국 국채 시스템 배관도 ${badge(P.st, P.title)}`, `${plumbSvg(P)}<div class="small" style="margin-top:6px">9개 지점 중 <b class="bad">이상 ${P.bad}</b> · <b class="warn">경계 ${P.warn}</b> — 상자를 누르면 해당 탭으로 이동해요. 가장 위험한 조합: <b>10년물 압력계 ↑ + 유동성 저수조 ↓ + 레포 분산 ↑</b> (2019년 레포 위기 패턴)</div>
         <div class="mk-foot">전이 경로 A: 국채 입찰 → Primary Dealer → 레포 → 신용 (빠름, ${esc(D.repo.pathA)}) · 경로 B: 은행·사모신용 (분기 공시 기반이라 자동 판정하지 않아요)</div>`)}
@@ -135,6 +136,31 @@
           <li>10년물이 하루 ±10bp 움직였다면 원인은? (<a href="#" data-go="rates">금리 원인</a>)</li><li>MOVE 120 이상인가? (<a href="#" data-go="contra">역발상</a>)</li><li>이번 주 일정이 몰린 날(클러스터)은? (<a href="#" data-go="cal">일정</a>)</li><li>이 탭의 분위기·3줄 다시 읽기</li></ol>`)}
       </div>
       <div class="mk-foot">자동 판독 결과이며 투자 권유가 아니에요. 원본 대시보드의 고정 문구(특정 날짜의 3줄 요약 등)는 매일 바뀌는 실제 자료로 대체했어요.</div>`;
+  }
+  // ══ 💧 돈의 배관 18지표 — 공급 계획 → 결제 → 완충재 → 가격 → 긴급 창구 → 레버리지 → 사모신용 → 은행 → 달러 → MMF ══════
+  function pipesHtml(P, B) {
+    if (!P || !P.rows) return '<div class="mk-sub">돈의 배관 18지표 자료를 받지 못했어요.</div>';
+    const ic = { ok: '🟢', warn: '🟠', bad: '🔴', na: '·' }, S = P.state;
+    const grps = []; P.rows.forEach(r => { let g = grps.find(x => x.g === r.grp); if (!g) grps.push(g = { g: r.grp, rows: [] }); g.rows.push(r); });
+    const flow = `<div class="p18-flow">${grps.map(g => { const w = g.rows.some(r => r.lv === 'bad') ? 'bad' : g.rows.some(r => r.lv === 'warn') ? 'warn' : g.rows.every(r => !r.avail || r.lv === 'na') ? 'na' : 'ok';
+      return `<span class="p18-st st-${w}">${esc(g.g)}</span>`; }).join('<span class="p18-ar">→</span>')}</div>`;
+    const head = `<div class="mk-card mk-over st-${S.lv}"><div class="mk-sub">💧 돈의 배관 18지표 — 정부가 빌린 돈이 어디서 막히는지 (공급 계획부터 MMF까지 순서대로)</div>
+      <div class="mk-big2">${ic[S.lv]} ${esc(S.t)}</div><div class="small">${esc(S.d)}</div><div class="small" style="margin-top:4px">지금 할 일: <b>${esc(S.act)}</b></div>${flow}
+      <div class="mk-sub" style="margin-top:6px">3단계: 🟢 완화·정상화 → 🟠 선택적 조정(일부 구간만 압력) → 🔴 전이성 충격(여러 구간이 동시에 압력)</div></div>`;
+    const nar = `<section class="mk-card s8-nar"><h3>📝 종합 해설</h3>${(P.narrative || []).map((t, i) => `<p class="${i === 0 ? 's8-lead' : ''}">${esc(t)}</p>`).join('')}</section>`;
+    const tbl = `<div class="tablewrap"><table class="t p18-t"><tr><th>#</th><th>지표</th><th class="r">지금</th><th>변화</th><th>상태</th><th>무엇을 보나</th></tr>
+      ${grps.map(g => `<tr class="p18-g"><td colspan="6">${esc(g.g)}</td></tr>` + g.rows.map(r => `<tr class="${r.avail ? '' : 'p18-off'}"><td class="mono">${r.n}</td><td><b>${esc(r.name)}</b>${r.asof ? `<div class="mk-sub"><b>${esc(r.asof)}</b>${/^\d{4}-/.test(r.asof) ? ' 기준' : ''}</div>` : ''}</td>
+        <td class="r mono">${esc(r.val)}</td><td class="small">${esc(r.chg || '')}</td><td>${r.avail ? `${ic[r.lv]} ${{ ok: '안정', warn: '주의', bad: '위험', na: '참고' }[r.lv]}` : '<span class="mk-sub">대체 확인</span>'}</td>
+        <td class="small">${esc(r.why)}${r.how ? `<div class="mk-sub">↳ ${esc(r.how)}</div>` : ''}${r.tab && r.tab !== 'pipes' ? ` <a href="#" data-go="${r.tab}">자세히 ›</a>` : ''}${r.tab === 'pipes' ? ' <a href="#" onclick="document.getElementById(&quot;p18bdc&quot;).scrollIntoView({behavior:&quot;smooth&quot;});return false">아래 표 ›</a>' : ''}${r.url ? ` <a class="mk-src" href="${esc(r.url)}" target="_blank" rel="noopener">원문 ↗</a>` : ''}</td></tr>`).join('')).join('')}</table></div>`;
+    const pc1 = v => v == null ? '—' : fN(v * 100, 1) + '%', na = a => !a ? '—' : fN(a[0], 1) + '%' + (a.length > 1 ? ` <span class="mk-sub">(직전 ${fN(a[1], 1)}%)</span>` : '');
+    const bdc = !B || !B.rows || !B.rows.length ? `<div class="mk-sub">사모신용 공시를 받지 못했어요${B && B.errors && B.errors.length ? ' — ' + esc(B.errors[0]) : ''}.</div>` : `<div class="tablewrap"><table class="t"><tr><th>펀드</th><th>공시</th><th class="r">펀드 빚 ÷ 순자산</th><th class="r">PIK 이자 비중</th><th class="r">Non-accrual 원가</th><th class="r">Non-accrual 공정가치</th><th class="r">남은 차입 한도</th></tr>
+      ${B.rows.map(r => `<tr><td><b>${esc(r.name)}</b><div class="mk-sub">${esc(r.desc)}</div></td><td class="small"><a class="mk-src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.form)} ↗</a><div class="mk-sub">${esc(r.period)} 기준 · ${esc(r.filed)} 공시</div>${r.tender ? `<a class="mk-src" href="${esc(r.tender)}" target="_blank" rel="noopener">환매(공개매수) 공시 ↗</a>` : ''}</td>
+        <td class="r mono ${r.lev >= 1.25 ? 'warn' : ''}">${r.lev == null ? '—' : fN(r.lev, 2) + '배'}</td><td class="r mono ${r.pik >= 0.12 ? 'bad' : r.pik >= 0.08 ? 'warn' : ''}">${pc1(r.pik)}${r.pik_period ? `<div class="mk-sub">${esc(r.pik_period)}</div>` : ''}</td>
+        <td class="r mono">${na(r.na_cost)}</td><td class="r mono ${r.na_fv && r.na_fv[0] >= 3 ? 'bad' : r.na_fv && r.na_fv[0] >= 1.5 ? 'warn' : ''}">${na(r.na_fv)}</td><td class="r mono">${r.room == null ? '—' : usd(r.room)}</td></tr>`).join('')}</table></div>
+      <div class="small" style="margin-top:6px">읽는 법: <b>PIK</b>가 오르면 이자를 현금으로 못 받는 대출이 늘어난 것 · <b>Non-accrual</b>은 원가보다 공정가치가 훨씬 낮으면 이미 손실을 반영하는 중 · <b>남은 한도</b>가 줄면 펀드가 새 대출·환매에 쓸 돈이 줄어요. 기준: PIK 8%↑ 주의 · 12%↑ 위험, Non-accrual(공정가치) 1.5%↑ 주의 · 3%↑ 위험.</div>
+      <div class="mk-foot">${esc(B.note)} · ${esc(B.src)}${B.errors && B.errors.length ? ' · 받지 못한 펀드: ' + esc(B.errors.join(' / ')) : ''}</div>`;
+    return `${head}${nar}<section class="mk-card">${tbl}<div class="mk-foot">📚 ${esc(P.basis)} · 출처: ${esc(P.src)} · 회색 줄은 공식 무료 자료가 없어 ‘대체 확인’ 방법을 적어 둔 항목이에요.</div></section>
+      <section class="mk-card" id="p18bdc"><h3>🏦 사모신용(BDC) 모니터 ${badge(B && B.lv, { ok: '안정', warn: '주의', bad: '위험' }[B && B.lv] || '—')} <span class="mk-sub">대형 BDC 5곳 · 분기 공시</span></h3>${bdc}</section>`;
   }
   // ══ 🧯 강제매도 위험 진단 (8지표) — 국채 모니터 탭 · 기존 지표 탭 · 공개 사이트가 같은 화면을 씀 ══════
   function stressHtml(S8, opt = {}) {

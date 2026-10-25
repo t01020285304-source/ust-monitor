@@ -1039,6 +1039,13 @@ def build_state():
     S["mood"] = {"key": mood, "label": {"bad": "🔴 긴장", "warn": "🟠 경계", "good": "🟢 평온", "neutral": "🔵 중립"}[mood]}
     S["narrative"] = _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh)
     S["three"] = _three_lines(S)
+    try:                                   # 🏦 사모신용(BDC) · 💧 돈의 배관 18지표 (bdc.py · pipes18.py — 「돈을 기다리는 사람들」 보고서)
+        import bdc
+        import pipes18
+        S["bdc"] = bdc.monitor()
+        S["pipes18"] = pipes18.build(S, lambda sid, days: F.get(sid) or _fr(sid, days), sources._cached, S["bdc"])
+    except Exception as e:
+        errs.append(f"돈의 배관 18: {str(e)[:80]}")
     S["three"].append(f"국채 흡수력: {TF['verdict']} — 기간프리미엄 1년 {TF['tp']['d1y']:+.0f}bp · 최근 45일 꼬리 입찰 {TF['tail']['n1']}/{TF['tail']['n']}건 · Primary Dealer 국채 보유 8주 {TF['dealer']['ust_pct'] if TF['dealer']['ust_pct'] is not None else 0:+.1f}%" if TF['tp']['d1y'] is not None else f"국채 흡수력: {TF['verdict']}")
     S["narrative"].insert(-2, "국채를 '누가 받아 갔는지'를 보면, " + (f"최근 중장기물 입찰 {len(QU[:6])}건 중 흡수 실패 의심 {len([q for q in QU[:6] if q['n'] >= 2])}건, 일부 약함 {len([q for q in QU[:6] if q['n'] == 1])}건이에요. " if QU else "")
                        + (f"장기채를 오래 들고 있는 대가인 기간프리미엄은 {TF['tp']['v']:.2f}%" + (f"로 1년 동안 {TF['tp']['d1y']:+.0f}bp 움직였어요. " if TF['tp']['d1y'] is not None else ". ") if TF['tp']['v'] is not None else "기간프리미엄 자료(FRED)를 지금 받지 못했어요. ")

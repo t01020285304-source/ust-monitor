@@ -95,3 +95,10 @@ span.mk-chiplink { display: inline-block; border: 1px solid var(--amber); border
 .s8-mini.st-warn{border-left-color:var(--amber)}.s8-mini.st-bad{border-left-color:var(--red)}.s8-mini.st-ok{border-left-color:var(--green)}
 @media (max-width:760px){.s8-q{grid-template-columns:1fr}}
 .s8-nar p{margin:6px 0;line-height:1.65}.s8-nar .s8-lead{font-weight:700;font-size:15px}
+
+.p18-flow{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-top:8px}
+.p18-st{border:1px solid var(--line);border-left:4px solid var(--st,var(--muted));border-radius:6px;padding:2px 7px;font-size:12.5px}
+.p18-ar{color:var(--muted);font-size:12px}
+.p18-t tr.p18-g td{background:rgba(127,127,127,.08);font-weight:700;font-size:12.5px;padding:4px 8px}
+.p18-t tr.p18-off td{opacity:.62}
+.p18-t td:nth-child(5){white-space:nowrap}
