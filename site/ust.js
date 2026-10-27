@@ -65,7 +65,7 @@
     const D = ST.D, y = window.scrollY;
     $('#uBody').innerHTML = `<div class="ust-top"><span class="mk-sub">${esc((D.built_at || D.fetched_at).replace('T', ' ').slice(0, 16))} (한국시간) 판독 · 평일 매시간 자동 갱신 · 이 화면은 10분마다 새 자료 확인 ${ageNote(D)}</span> <button class="btn sm" id="uRe">⟳ 다시 불러오기</button>
         ${D.errors.length ? `<span class="mk-sub bad" title="${esc(D.errors.join('\n'))}">일부 자료 ${D.errors.length}개를 받지 못했어요</span>` : ''}</div>
-      ${(D.asof || []).length ? `<div class="ust-asof mk-sub">📅 자료 기준일 (미국 날짜): ${D.asof.map(x => `<span title="${esc(x.src)}">${esc(x.k)} <b>${esc((x.d || '—').slice(5).replace('-', '/'))}</b></span>`).join(' · ')} <span class="tiny">— 공식 통계는 발표 주기대로(대부분 하루 1번), 시세는 최대 15분 지연</span></div>` : ''}
+      ${(D.asof || []).length ? `<div class="ust-asof mk-sub">📅 자료 기준일 (미국 날짜): ${D.asof.map(x => `<span title="${esc(x.src)}">${esc(x.k)} <b>${esc((x.d || '—').slice(5).replace('-', '/'))}</b></span>`).join(' · ')} <span class="tiny">— 공식 통계는 발표 주기대로(대부분 하루 1번), 시세는 최대 15분 지연</span>${freshLine(D)}</div>` : ''}
       <div class="pf-tabs">${TABS.map(([k, l]) => `<button class="${ST.tab === k ? 'on' : ''}" data-ut="${k}">${l}</button>`).join('')}</div><div id="uTab"></div>`;
     $('#uRe').onclick = async () => { $('#uRe').textContent = '받는 중…'; await load(true); };
     document.querySelectorAll('[data-ut]').forEach(b => b.onclick = () => go(b.dataset.ut));
@@ -104,6 +104,22 @@
         ${lines(p.text).map((t, i) => `<text x="${x + 12}" y="${y + 48 + i * 17}" class="ust-ns">${esc(t)}</text>`).join('')}</g>`; }).join('')}</svg>`;
   }
 
+
+  // 국채 금리가 '지금 받을 수 있는 최신'인지 판정 — 재무부는 미국 영업일 장 마감 금리를 그날 저녁(동부 18시경 = 한국 다음 날 오전 7시경)에 공개
+  function freshLine(D) {
+    const a = (D.asof || []).find(x => x.k === '국채 금리'); if (!a || !a.d) return '';
+    const et = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const prevBiz = d => { const x = new Date(d); do { x.setDate(x.getDate() - 1); } while (x.getDay() === 0 || x.getDay() === 6); return x; };
+    const nextBiz = d => { const x = new Date(d); do { x.setDate(x.getDate() + 1); } while (x.getDay() === 0 || x.getDay() === 6); return x; };
+    const wk = et.getDay() !== 0 && et.getDay() !== 6;
+    const exp = wk && et.getHours() >= 18 ? new Date(et) : prevBiz(et);              // 평일 18시(동부) 이후면 오늘 마감값, 아니면 직전 영업일 마감값이 최신
+    const want = iso(exp), nxt = nextBiz(exp), kr = new Date(nxt); kr.setDate(kr.getDate() + 1);
+    const md = s => `${+s.slice(5, 7)}/${+s.slice(8, 10)}`, built = String(D.fetched_at || '').replace('T', ' ').slice(5, 16);
+    return a.d >= want
+      ? `<div class="tiny" style="margin-top:2px">✅ 국채 금리는 지금 받을 수 있는 최신(${md(a.d)} 미국 장 마감)이에요 · 다음 공식 발표: ${md(iso(nxt))} 장 마감 금리 → 한국 시간 ${md(iso(kr))} 오전 7시경${built ? ` · 마지막 갱신 ${built}` : ''} <span class="dim">(미국 공휴일은 계산에서 제외)</span></div>`
+      : `<div class="tiny warn" style="margin-top:2px">⚠ 재무부가 ${md(want)} 장 마감 금리를 이미 공개했을 시간인데 아직 반영 전이에요 — 다음 갱신 때 들어와요${built ? ` · 마지막 갱신 ${built}` : ''} <span class="dim">(미국 공휴일이면 정상)</span></div>`;
+  }
   // ══ 1. 종합 의견 ══════════════════════════════════════════════
   function tOp(D) {
     const V = D.verdicts, R = D.recession, P = D.plumb;

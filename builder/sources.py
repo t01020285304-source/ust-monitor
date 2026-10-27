@@ -21,6 +21,10 @@ CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def _cached(name, max_age_sec, loader):
+    # GitHub 반복 실행(15분마다) 때는 저장 시간을 CACHE_CAP초 이하로 — 매일 발표 자료를 다음 반복에서 바로 받게
+    cap = os.environ.get("CACHE_CAP")
+    if cap:
+        max_age_sec = min(max_age_sec, int(cap))
     path = CACHE_DIR / name
     if path.exists() and time.time() - path.stat().st_mtime < max_age_sec:
         try:
