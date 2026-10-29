@@ -1037,7 +1037,7 @@ def build_state():
         {"k": "내러티브 괴리", "v": narr, "badge": "괴리 큼" if narr >= 65 else "중립" if narr >= 40 else "일치", "st": "warn" if narr >= 65 else "ok", "why": "유동성은 마르는데 공포 지수는 낮은가 (안심이 지나친가)"},
     ]
     S["mood"] = {"key": mood, "label": {"bad": "🔴 긴장", "warn": "🟠 경계", "good": "🟢 평온", "neutral": "🔵 중립"}[mood]}
-    S["narrative"] = _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh)
+    S["narrative"] = _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh, F)
     S["three"] = _three_lines(S)
     try:                                   # 🏦 사모신용(BDC) · 💧 돈의 배관 18지표 (bdc.py · pipes18.py — 「돈을 기다리는 사람들」 보고서)
         import bdc
@@ -1053,7 +1053,48 @@ def build_state():
     return S
 
 
-def _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh):
+def _day_moves(S, F, bd):
+    """그날(기준일) 하루 동안 무엇이 움직였나 — 한 달·1년 변화만 쓰면 매일 같은 글처럼 보여서, 전 영업일 대비 변화와 그날 입찰·다음 일정을 붙인다"""
+    up = bd.isoformat()
+
+    def dchg(k):
+        rows = [r for r in (F.get(k) or []) if r and r[1] is not None and r[0] <= up]
+        return (rows[-1][1], rows[-1][1] - rows[-2][1], rows[-2][0]) if len(rows) >= 2 and rows[-1][0] == up else None
+    y10, y2, vx, hy, jp = dchg("DGS10"), dchg("DGS2"), dchg("VIXCLS"), dchg("BAMLH0A0HYM2"), dchg("DEXJPUS")
+    if not y10:
+        return ""
+    d10 = y10[1] * 100
+    pv = date.fromisoformat(y10[2])
+    t = f"그날 하루만 보면, 10년물 금리는 전 영업일({pv.month}/{pv.day})보다 {d10:+.0f}bp"
+    if y2:
+        t += f", 2년물은 {y2[1] * 100:+.0f}bp({y2[0]:.2f}%)"
+    t += " 움직였어요 — " + ("하루 변화로는 꽤 큰 편이에요. " if abs(d10) >= 8 else "평범한 하루 움직임이에요. " if abs(d10) >= 3 else "거의 제자리였어요. ")
+    if y2:
+        t += f"장단기 금리차(10년−2년)는 {(y10[0] - y2[0]) * 100:+.0f}bp예요. "
+    o = []
+    if vx:
+        o.append(f"VIX {vx[0]:.1f}({vx[1]:+.1f})")
+    if hy:
+        o.append(f"하이일드 스프레드 {hy[0] * 100:.0f}bp({hy[1] * 100:+.0f}bp)")
+    if jp:
+        o.append(f"달러/엔 {jp[0]:.1f}엔({jp[1]:+.1f}엔)")
+    if o:
+        t += "같은 날 " + " · ".join(o) + "였어요. "
+    today_ev = [e["title"] for e in (S.get("events_auto") or []) if e.get("date") == up and e.get("type") != "auction"]
+    if today_ev:
+        t += "이날 " + " · ".join(today_ev) + "이 있었어요. "
+    au = [r for r in ((S.get("auctions") or {}).get("rows") or []) if r.get("date") == up]
+    if au:
+        t += "이날 입찰: " + ", ".join(f"{r.get('type_kr') or r.get('type')} {r.get('term')}(응찰 {r['btc']:.2f}배 · {r.get('grade') or '-'}등급)" for r in au[:3] if r.get("btc")) + ". "
+    ev = [e for e in (S.get("events_auto") or []) if e.get("date", "") > up and e.get("type") != "auction"][:2]
+    nx = [r for r in (S.get("upcoming") or []) if r.get("date", "") > up and r.get("type") != "Bill"][:2]
+    nxt = [f"{int(r['date'][5:7])}/{int(r['date'][8:10])} {r.get('term')} {r.get('type')} 입찰" for r in nx] + [f"{int(e['date'][5:7])}/{int(e['date'][8:10])} {e['title']}" for e in ev]
+    if nxt:
+        t += "다음에 볼 일정: " + " · ".join(nxt) + "."
+    return t.strip()
+
+
+def _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh, F=None):
     # 날짜는 '데이터를 만든 한국 날짜'가 아니라 '자료의 기준일(미국 장 마감)' — 주말·새벽에 열어도 언제 자료인지 헷갈리지 않게
     try:
         bd = date.fromisoformat(next(a["d"] for a in S.get("asof", []) if a["k"] == "국채 금리"))
@@ -1071,6 +1112,9 @@ def _narrative(S, mood, ab, ad, rv, si, s75, hyv, vix, mv, j10, carry, lastf, sh
                "supply": "국채 공급 부담(기간프리미엄)이 끌어올렸어요 — 재정 걱정 신호예요.", "crisis": "기간프리미엄 상승과 유동성 악화가 함께 나타났어요 — 2019년 레포 위기와 비슷한 조합이라 가장 주의할 상황이에요.",
                "fear": "경기 둔화 걱정으로 안전자산에 돈이 몰리며 내렸어요.", "disinfl": "물가 걱정이 줄면서 내렸어요 — 위험자산엔 우호적이에요."}.get(k, "큰 방향성 없이 움직였어요.")
     P.append(p1)
+    pd_ = _day_moves(S, F or {}, bd)
+    if pd_:
+        P.append(pd_)
     p2 = "국채라는 수도관을 보면, "
     if ab:
         p2 += f"최근 중장기물 입찰 응찰배율 평균은 {ab:.2f}배로 " + ("국채가 잘 흡수되고 있어요. " if ab >= 2.5 else "보통 수준이에요. " if ab >= 2.3 else "수요가 약해지는 조짐이 있어요. " if ab >= 2.0 else "수요가 부진해요. ")

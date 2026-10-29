@@ -88,11 +88,11 @@ IC_KR = {"soma": "연준(SOMA)", "depository": "은행", "individuals": "개인"
 def investor_class():
     def load():
         h = requests.get(TSY + "/data/investor-class-auction-allotments", headers=UA, timeout=40).text
-        m = re.search(r"href=\"?(/system/files/276/[^\"\s>]*IC-Coupons\.xls)", h)
+        m = re.search(r"href=\"?/system/+(files/276/[^\"\s>]*IC-Coupons\.xls)", h)     # 재무부가 '/system//files/'처럼 슬래시를 겹쳐 쓰기도 함
         if not m:
             raise ValueError("배정 파일 링크를 찾지 못했어요")
         import xlrd
-        url = TSY + m.group(1)
+        url = TSY + "/system/" + m.group(1)
         wb = xlrd.open_workbook(file_contents=requests.get(url, headers=UA, timeout=60).content)
         sh = wb.sheet_by_index(0)
         rows = []

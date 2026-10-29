@@ -35,7 +35,7 @@ def main():
     s["built_at"] = datetime.now(KST).isoformat(timespec="minutes")
     s.pop("my", None)
     errs = s.get("errors") or []
-    print(f"판독 완료 ({time.time() - t0:.0f}초) · 받지 못한 자료 {len(errs)}개")
+    print(f"판독 완료 ({time.time() - t0:.0f}초) · 받지 못한 자료 {len(errs)}개 · 자료 기준일 " + ", ".join(f"{a['k']} {a['d']}" for a in (s.get("asof") or [])[:3]))
     for e in errs:
         print("  -", e)
     # 자료가 크게 빠진 날은 저장하지 않고 건너뜀 → 이전에 올라간 정상 데이터가 그대로 유지
