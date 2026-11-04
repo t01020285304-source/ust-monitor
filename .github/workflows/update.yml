@@ -47,6 +47,7 @@ jobs:
       - name: 데이터 만들기 · 올리기 (평일은 약 5시간 동안 15분마다 반복)
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}   # 저장소 Settings → Secrets and variables → Actions 에 등록
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}     # 원자재 레이더 — EIA 주간 원유·천연가스 재고
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # 평일 예약·수동 실행은 반복(GitHub가 예약을 건너뛰어도 갱신이 끊기지 않게), 주말은 한 번만
           LOOP_MIN: ${{ (github.event_name == 'schedule' && github.event.schedule == '17 0,12 * * 0,6') && '0' || '320' }}

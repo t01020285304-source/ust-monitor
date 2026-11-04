@@ -60,5 +60,25 @@ def main():
     print(f"저장: {out} ({out.stat().st_size / 1024:.0f} KB)")
 
 
+def build_radar():
+    """🛢️ 원자재 레이더 → radar.json (국채 모니터와 따로 — 여기서 실패해도 ust.json 갱신에는 영향 없음, 직전 radar.json 유지)"""
+    if os.environ.get("RADAR_SKIP"):
+        print(f"원자재 레이더 건너뜀: {os.environ['RADAR_SKIP']}")
+        return
+    out = (Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).parent.parent / "site" / "data" / "ust.json").with_name("radar.json")
+    try:
+        import radar
+        d = _clean(radar.build())
+        tmp = out.with_suffix(".tmp")
+        tmp.write_text(json.dumps(d, ensure_ascii=False, allow_nan=False, separators=(",", ":")), encoding="utf-8")
+        tmp.replace(out)
+        print(f"저장: {out} ({out.stat().st_size / 1024:.0f} KB)")
+    except Exception as e:
+        print(f"원자재 레이더 실패 — 직전 자료 유지: {str(e)[:120]}")
+
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        build_radar()

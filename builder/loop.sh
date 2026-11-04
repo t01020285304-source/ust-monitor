@@ -24,6 +24,9 @@ publish() {
   ) && echo "올림: $(TZ=Asia/Seoul date '+%H:%M') KST"
 }
 
+# 원자재 레이더 계산 테스트 — 실패하면 원자재 부분만 건너뛰고 직전 radar.json 유지 (국채 모니터는 그대로 갱신)
+if ! python builder/tests/test_radar.py; then export RADAR_SKIP="계산 테스트 실패"; echo "::warning::원자재 레이더 테스트 실패 — 원자재 갱신 건너뜀"; fi
+
 i=0
 while true; do
   i=$((i + 1))
