@@ -102,6 +102,47 @@ def inv_5y(rows, obs, years=5, min_years=3):
     return {"avg": sum(vals) / len(vals), "lo": min(vals), "hi": max(vals), "n": len(vals)}
 
 
+def real_rows(px, cpi):
+    """명목 월간 가격 → 오늘 물가 기준 실질가격 (CPI가 없는 달은 빼고, 추정으로 채우지 않음)"""
+    c = dict((o[:7], v) for o, v in cpi)
+    if not c:
+        return []
+    last = cpi[-1][1]
+    return [(o, v * last / c[o[:7]]) for o, v in px if o[:7] in c]
+
+
+def cycle_pos(real, months=240):
+    """20년(240개월) 실질가격 중 지금 위치 · 10년 평균 대비 · 12개월 변화 — 표본 10년 미만이면 None"""
+    win = [v for _, v in real[-months:]]
+    if len(win) < 120:
+        return None
+    cur = win[-1]
+    pct = round((sum(1 for v in win if v < cur) + 0.5 * sum(1 for v in win if v == cur)) / len(win) * 100, 1)
+    avg10 = sum(win[-120:]) / 120
+    prev = find_near(real, (_d(real[-1][0]) - timedelta(days=365)).isoformat(), tol=16)
+    return {"obs": real[-1][0], "pct": pct, "vs10": (cur / avg10 - 1) * 100, "mom12": (cur / prev - 1) * 100 if prev else None,
+            "n": len(win), "years": round(len(win) / 12)}
+
+
+PHASE = {
+    "trough": ("① 바닥권", "실질가격이 20년 중 낮은 곳에 있고 아직 내려가는 중이에요. 이런 시기에는 생산자가 투자를 줄여서, 수요가 돌아서면 다음 상승의 씨앗이 되기도 해요."),
+    "recovery": ("② 회복기", "낮거나 중간 높이에서 오르기 시작했어요. 재고가 줄고 투기자금이 따라붙는지 확인하는 단계예요."),
+    "boom": ("③ 과열·고점권", "실질가격이 20년 중 높은 곳에서 더 오르고 있어요. 높은 가격은 증산 투자와 수요 감소를 부르기 때문에, 이 단계는 오래가지 않는 경우가 많아요."),
+    "downturn": ("④ 하강기", "중간 이상 높이에서 내려오는 중이에요. 늘어난 공급이나 줄어든 수요가 가격을 누르는 단계예요."),
+    "mid": ("중간 지대", "20년 기준으로 높지도 낮지도 않고, 방향도 뚜렷하지 않아요."),
+}
+
+
+def phase(pct, mom12):
+    """규칙 기반 '해석' — 실질가격 위치(20년 백분위)와 1년 방향만으로 나눔 (확정 사실이 아님)"""
+    if pct is None or mom12 is None:
+        return None
+    k = ("boom" if pct >= 70 and mom12 > 0 else "downturn" if pct >= 40 and mom12 <= 0 else
+         "trough" if pct <= 30 and mom12 <= 0 else "recovery" if mom12 > 0 else "mid")
+    lab, txt = PHASE[k]
+    return {"key": k, "label": lab, "text": txt}
+
+
 def units_ok(code, units_text):
     exp = M.CONTRACTS[code]["units_text"].replace(" ", "").upper()
     return exp in (units_text or "").replace(" ", "").upper()
@@ -190,19 +231,28 @@ def collect_eia(st, errs):
     return add, rev
 
 
+def fred_jobs():
+    since = (date.today() - timedelta(days=365 * YEARS + 30)).isoformat()
+    long_ = f"{date.today().year - M.CYCLE_YEARS - 1}-01-01"
+    six = (date.today() - timedelta(days=365 * 6)).isoformat()
+    jobs = {c["price"][1]: since for c in M.COMMODITIES if c["price"]}
+    jobs.update({c["cyc"]: long_ for c in M.COMMODITIES if c.get("cyc")})
+    jobs.update({M.MACRO["cpi"][0]: long_, M.MACRO["usd"][0]: six, M.MACRO["real"][0]: six})
+    return jobs
+
+
 def collect_fred(st, errs):
     today = datetime.now(timezone.utc).date()
-    since = (date.today() - timedelta(days=365 * YEARS + 30)).isoformat()
     add = rev = 0
-    for s in sorted({c["price"][1] for c in M.COMMODITIES if c["price"]}):
-        monthly = s.startswith("P")
+    for s, since in sorted(fred_jobs().items()):
+        monthly = s.startswith("P") or s == "CPIAUCSL"
         try:
             data = markets.fred(s, start=since)
         except Exception as ex:
             errs.append(f"FRED {s}: {str(ex)[:80]}")
             continue
         rows = [{"sid": f"px.{s}", "obs": o, "v": v, "unit": "USD", "pub": (pub := (_d(o) + timedelta(days=45 if monthly else 7)).isoformat()),
-                 "pk": "estimated" if (today - _d(pub)).days > 7 else "seen", "src": "fred_imf" if monthly else "fred_eia"} for o, v in data]
+                 "pk": "estimated" if (today - _d(pub)).days > 7 else "seen", "src": "fred_imf" if s.startswith("P") else "fred"} for o, v in data]
         a, r = RS.upsert(st, rows)
         add, rev = add + a, rev + r
     return add, rev
@@ -237,8 +287,102 @@ def _stale(obs, kind):
     return days if days > M.STALE_DAYS[kind] else None
 
 
-def _item(c, st, ymove):
+FRED_S = "https://fred.stlouisfed.org/series/{}"
+
+
+def _sources(c):
+    """원자재별 공식 출처 — 화면의 모든 숫자 옆 링크"""
+    out = {}
+    if c["price"]:
+        s = c["price"][1]
+        orig = ({"label": "IMF 1차 상품 가격 (원자료)", "url": "https://www.imf.org/en/Research/commodity-prices"} if s.startswith("P") else
+                {"label": "EIA 천연가스 현물 (원자료)", "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm"} if s == "DHHNGSP" else
+                {"label": "EIA 원유 현물 (원자료)", "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm"})
+        out["price"] = [{"label": f"FRED {s}", "url": FRED_S.format(s)}, orig]
+    if c["move"]:
+        src, s = c["move"]
+        out["move"] = ([{"label": f"FRED {s}", "url": FRED_S.format(s)}] if src == "fred" else
+                       [{"label": f"Yahoo {s} (참고)", "url": M.YAHOO_Q.format(s.replace("=", "%3D"))}])
+    if c["cot"]:
+        out["cot"] = [{"label": "CFTC 주간 보고서 (원문)", "url": f"https://www.cftc.gov/dea/futures/{M.COT_PAGE[c['cot']]}.htm"},
+                      {"label": "CFTC 공개 데이터셋", "url": M.COT_DATASET}]
+    if c["inv"]:
+        e = M.EIA_INV[c["inv"]]
+        out["inv"] = [{"label": f"EIA {e['series']}", "url": e["url"]}, {"label": e["report"][0], "url": e["report"][1]}]
+    if c.get("cyc"):
+        out["cyc"] = [{"label": f"FRED {c['cyc']} (IMF 월평균)", "url": FRED_S.format(c["cyc"])}, {"label": "FRED CPIAUCSL (물가 보정)", "url": FRED_S.format("CPIAUCSL")}]
+    return out
+
+
+def macro(st):
+    """사이클 공통 지표 — 달러(원자재는 달러로 거래돼 달러가 강하면 다른 나라에선 비싸져 수요가 줄어요) · 실질금리(금·은의 기회비용)"""
+    out = {}
+    u = RS.series(st, f"px.{M.MACRO['usd'][0]}")
+    if u:
+        o, v = u[-1]
+        p3 = find_before(u, (_d(o) - timedelta(days=91)).isoformat(), back=7)
+        win = [x for d_, x in u if d_ >= (_d(o) - timedelta(days=365 * 5)).isoformat()]
+        out["usd"] = {"name": M.MACRO["usd"][1], "obs": o, "v": v, "c3m": (v / p3 - 1) * 100 if p3 else None,
+                      "pct5": round(sum(1 for x in win if x < v) / len(win) * 100, 1) if len(win) > 900 else None,
+                      "src": [{"label": "FRED DTWEXBGS", "url": FRED_S.format("DTWEXBGS")}, {"label": "연준 H.10 (원자료)", "url": "https://www.federalreserve.gov/releases/h10/"}]}
+    r = RS.series(st, f"px.{M.MACRO['real'][0]}")
+    if r:
+        o, v = r[-1]
+        p1 = find_before(r, (_d(o) - timedelta(days=365)).isoformat(), back=7)
+        out["real"] = {"name": M.MACRO["real"][1], "obs": o, "v": v, "c1y": (v - p1) * 100 if p1 is not None else None,
+                       "src": [{"label": "FRED DFII10", "url": FRED_S.format("DFII10")}]}
+    return out
+
+
+def _cycle(c, st, out, mac):
+    """사이클 4층: 장기 실질가격 위치 · 재고 · 투기자금 쏠림 · 거시(달러·실질금리) — CAPEX(공급 투자)는 3차"""
+    cy = {"layers": [], "counter": []}
+    if c.get("cyc"):
+        real = real_rows(RS.series(st, f"px.{c['cyc']}"), RS.series(st, f"px.{M.MACRO['cpi'][0]}"))
+        pos = cycle_pos(real)
+        if pos:
+            cy["long"] = dict(pos, phase=phase(pos["pct"], pos["mom12"]))
+            cy["layers"].append({"k": "장기 가격 위치", "v": f"{pos['years']}년 실질가격 중 {pos['pct']:.0f}% 높이",
+                                 "st": "warn" if pos["pct"] >= 80 else "ok" if pos["pct"] <= 30 else "na", "d": pos["obs"], "src": "cyc",
+                                 "note": f"10년 평균보다 {pos['vs10']:+.0f}%" + (f" · 1년 {pos['mom12']:+.0f}%" if pos["mom12"] is not None else "")})
+    inv = out.get("inv")
+    if inv and inv.get("vs5") is not None:
+        tight = inv["lo5"] is not None and inv["v"] < inv["lo5"]
+        loose = inv["hi5"] is not None and inv["v"] > inv["hi5"]
+        cy["layers"].append({"k": "재고", "v": "5년 평균과 비슷" if abs(inv["vs5"]) < 0.5 else f"5년 평균보다 {inv['vs5']:+.1f}%", "st": "warn" if tight else "ok" if loose else "na", "d": inv["obs"], "src": "inv",
+                             "note": "5년 범위보다 적음 (빠듯)" if tight else "5년 범위보다 많음 (넉넉)" if loose else "5년 범위 안"})
+    cot = out.get("cot")
+    pt = cot["groups"]["mm"]["pctile"] if cot and c["status"] == "ok" else None
+    if pt is not None:
+        cy["layers"].append({"k": "투기자금 쏠림", "v": f"3년 중 {pt:.0f}% 높이", "st": "warn" if pt >= 90 or pt <= 10 else "na", "d": cot["obs"], "src": "cot",
+                             "note": "매수 쏠림 극단" if pt >= 90 else "매도·비관 극단" if pt <= 10 else "극단 아님"})
+    u = mac.get("usd")
+    if u and u.get("c3m") is not None:
+        cy["layers"].append({"k": "달러", "v": f"3개월 {u['c3m']:+.1f}%", "st": "warn" if u["c3m"] >= 3 else "ok" if u["c3m"] <= -3 else "na", "d": u["obs"], "src": "usd",
+                             "note": "달러 강세 — 원자재에 역풍" if u["c3m"] >= 3 else "달러 약세 — 원자재에 순풍" if u["c3m"] <= -3 else "큰 변화 없음"})
+    rr = mac.get("real")
+    if c["group"] == "precious" and rr and rr.get("c1y") is not None:
+        cy["layers"].append({"k": "실질금리", "v": f"{rr['v']:.2f}% (1년 {rr['c1y']:+.0f}bp)", "st": "warn" if rr["c1y"] >= 50 else "ok" if rr["c1y"] <= -50 else "na",
+                             "d": rr["obs"], "src": "real",
+                             "note": "금·은을 들고 있는 기회비용이 커짐 (역풍)" if rr["c1y"] >= 50 else "기회비용이 줄어듦 (순풍)" if rr["c1y"] <= -50 else "큰 변화 없음"})
+    cy["layers"].append({"k": "공급 투자(CAPEX)", "v": "준비 중 (3차)", "st": "na", "d": None, "src": None, "note": "생산기업 설비투자 추이 — SEC 공시로 3차 개발 예정"})
+    ph = ((cy.get("long") or {}).get("phase") or {}).get("key")
+    if ph in ("boom", "recovery") and inv and inv.get("vs5") is not None and inv["vs5"] > 5:
+        cy["counter"].append("가격은 오름세인데 재고는 5년 평균보다 많아요 — 실물이 받쳐 주지 않는 상승일 수 있어요.")
+    if ph in ("trough", "downturn") and inv and inv.get("vs5") is not None and inv["vs5"] < -5:
+        cy["counter"].append("가격은 약세인데 재고는 5년 평균보다 적어요 — 실물은 빠듯해 반등 여지가 있어요.")
+    if pt is not None and pt >= 90:
+        cy["counter"].append("투기자금 매수가 3년 중 극단이라, 새로 살 사람이 적어 되돌림 위험이 커요.")
+    elif pt is not None and pt <= 10:
+        cy["counter"].append("투기자금 비관이 3년 중 극단이라, 조금만 좋아져도 되사기(숏 커버)로 튈 수 있어요.")
+    if not c.get("cyc"):
+        cy["missing"] = "장기 가격 사이클: 이 원자재는 공식 무료 장기 가격 자료(IMF·EIA)가 없어 판단하지 않았어요."
+    return cy
+
+
+def _item(c, st, ymove, mac=None):
     out = {k: c.get(k) for k in ("id", "name", "group", "status", "why", "alt", "see")}
+    out["src"] = _sources(c)
     out["group_kr"] = M.GROUPS[c["group"]]
     warn = []
     # 가격 숫자 (공식)
@@ -336,7 +480,137 @@ def _item(c, st, ymove):
                 warn.append(f"EIA가 발표 예정일({out['inv']['next'][5:]})보다 {out['inv']['stale']}일 늦어요 — 공식 지연일 수 있어 값을 채우지 않았어요")
     out["warn"] = warn
     out["line"] = (out.get("quad") or {}).get("label")
+    out["cycle"] = _cycle(c, st, out, mac or {})
     return out
+
+
+# ══ 원자재 보드 종합 해설 (공식 숫자로만 쓰는 서술문 · 문단마다 출처) ══════
+def _jo(word, a, b):
+    """받침에 맞는 조사 — 마지막 한글 글자 기준 (은/는 · 이에요/예요 · 이/가)"""
+    for ch in reversed(word):
+        if "가" <= ch <= "힣":
+            return a if (ord(ch) - 0xAC00) % 28 else b
+    return b
+
+
+def _chg(v, unit="계약"):
+    return "그대로였어요" if not v else f"{abs(v):,}{unit} {'늘었어요' if v > 0 else '줄었어요'}"
+
+
+def _vs(v, base="5년 평균"):
+    return f"{base}과 비슷해요" if v is None or abs(v) < 0.5 else f"{base}보다 {abs(v):.1f}% {'많아요' if v > 0 else '적어요'}"
+
+
+def _p(v, d=1):
+    return "—" if v is None else f"{v:+.{d}f}%"
+
+
+def _ptxt(p):
+    return ("표본 부족" if p is None else "3년 중 가장 높은 쪽(쏠림 극단)" if p >= 90 else "3년 중 높은 편" if p >= 70 else
+            "3년 중 가장 낮은 쪽(비관 극단)" if p <= 10 else "3년 중 낮은 편" if p <= 30 else "3년 중 중간")
+
+
+def _md(s):
+    return f"{int(s[5:7])}월 {int(s[8:10])}일" if s else "—"
+
+
+def _srcs(*lists):
+    seen, out = set(), []
+    for L in lists:
+        for x in L or []:
+            if x["url"] not in seen:
+                seen.add(x["url"])
+                out.append(x)
+    return out
+
+
+def _one(it):
+    """원자재 한 개를 한두 문장으로 — 가격 · 투기자금 · 재고 · 장기 사이클"""
+    t = []
+    p, m, c, inv, cy = it.get("price"), it.get("move"), it.get("cot"), it.get("inv"), it.get("cycle") or {}
+    if p and not p["freq"].startswith("월평균"):
+        t.append(f"{it['name']} 가격은 {_md(p['obs'])} 기준 {p['v']:,.2f}{p['unit'].replace('달러/', '달러/')}이고 1주 동안 {_p(m and m['w1'])} 움직였어요.")
+    elif p:
+        t.append(f"{it['name']}의 공식 월평균 가격은 {int(p['obs'][5:7])}월 {p['v']:,.0f}{p['unit']}이에요" + (f"(이번 주 선물 등락률은 참고로 {_p(m['w1'])})." if m else "."))
+    elif m:
+        t.append(f"{it['name']}{_jo(it['name'], '은', '는')} 공식 무료 가격이 없어 참고 등락률만 보면 1주 {_p(m['w1'])}, 4주 {_p(m['w4'])}예요.")
+    if c and it["status"] == "ok":
+        mm = c["groups"]["mm"]
+        side = f"{mm['net']:,}계약 순매수" if mm["net"] >= 0 else f"{-mm['net']:,}계약 순매도"
+        t.append(f"투기자금은 {side}로 {_ptxt(mm['pctile'])}에 있고, 4주 동안 순매수가 {_chg(mm['c4'])}." if mm.get("c4") is not None else f"투기자금은 {side}로 {_ptxt(mm['pctile'])}에 있어요.")
+        if it.get("quad"):
+            t.append(f"가격과 짝지어 보면 「{it['quad']['label']}」이에요.")
+    if inv and inv.get("vs5") is not None:
+        t.append(f"실물 재고는 {inv['v']:,.0f} {inv['unit']}로 {_vs(inv['vs5'])}" + (". 5년 같은 주 최저치보다도 적어 빠듯한 편이에요." if inv["lo5"] is not None and inv["v"] < inv["lo5"] else ". 5년 같은 주 최고치보다도 많아 넉넉한 편이에요." if inv["hi5"] is not None and inv["v"] > inv["hi5"] else ". 5년 같은 주 범위 안이에요."))
+    lg = cy.get("long")
+    if lg and lg.get("phase"):
+        t.append(f"물가를 뺀 20년 실질가격으로 보면 지금은 아래에서 {lg['pct']:.0f}% 높이이고, 사이클 규칙으로는 「{lg['phase']['label']}」에 해당해요.")
+    return " ".join(t)
+
+
+def summary(items, mac):
+    by = {i["id"]: i for i in items}
+    g = lambda grp: [i for i in items if i["group"] == grp]
+    cot_obs = next((i["cot"]["obs"] for i in items if i.get("cot")), None)
+    inv_obs = next((i["inv"]["obs"] for i in items if i.get("inv")), None)
+    paras = []
+    # 0. 한눈에
+    ok = [i for i in items if i.get("cot") and i["status"] == "ok"]
+    ext = [i for i in ok if i["cot"]["groups"]["mm"]["pctile"] is not None and (i["cot"]["groups"]["mm"]["pctile"] >= 90 or i["cot"]["groups"]["mm"]["pctile"] <= 10)]
+    qs = {}
+    for i in ok:
+        if i.get("quad"):
+            qs.setdefault(i["quad"]["label"], []).append(i["name"])
+    ph = {}
+    for i in items:
+        lg = (i.get("cycle") or {}).get("long")
+        if lg and lg.get("phase"):
+            ph.setdefault(lg["phase"]["label"], []).append(i["name"])
+    t0 = (f"이 해설은 CFTC 투기자금 포지션({_md(cot_obs)} 화요일 기준, 금요일 발표), EIA 실물 재고({_md(inv_obs)} 주 기준), 공식 가격(EIA 일간·IMF 월평균)으로 자동 작성했어요. "
+          "원자재 시장은 ‘얼마에 거래되나(가격)’보다 ‘돈이 어느 쪽에 쏠렸나(포지션)’와 ‘실물이 넉넉한가(재고)’를 함께 볼 때 움직임의 이유가 보여요. ")
+    if qs:
+        t0 += "이번 주 가격과 투기자금 방향을 짝지은 결과는 " + ", ".join(f"「{k}」 {len(v)}개({', '.join(v)})" for k, v in sorted(qs.items())) + "예요. "
+    en = ", ".join(i["name"] for i in ext)
+    t0 += (f"투기자금이 3년 기준으로 한쪽 끝에 몰린 원자재는 {en}{_jo(en, '이에요', '예요')} — 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요. " if ext else
+           "투기자금이 3년 기준 극단(상위·하위 10%)에 몰린 원자재는 없어요. ")
+    if ph:
+        t0 += "20년 실질가격 사이클로 나누면 " + " / ".join(f"{k}: {', '.join(v)}" for k, v in sorted(ph.items())) + " 쪽이에요."
+    paras.append({"h": "한눈에 보기", "t": t0, "src": _srcs([{"label": "CFTC COT", "url": M.SOURCES["cftc"]["url"]}], [{"label": "EIA 주간 재고", "url": M.SOURCES["eia"]["url"]}], [{"label": "FRED", "url": "https://fred.stlouisfed.org/"}])})
+    # 1~4. 그룹별
+    intro = {"energy": "에너지는 경기와 계절(난방·운전 수요), 산유국 공급 결정에 가장 민감한 원자재예요. ",
+             "precious": "귀금속은 이자가 나오지 않는 자산이라 실질금리와 달러에 크게 반응하고, 불안할 때 피난처 역할을 해요. ",
+             "industrial": "산업금속은 공장·건설·전력망에 쓰여서 세계 경기, 특히 중국 제조업의 체온계 역할을 해요. ",
+             "agri": "농산물은 날씨와 수확 전망(재배 면적·작황)에 따라 계절적으로 크게 움직이고, 투기자금 포지션이 자주 극단까지 가요. "}
+    for grp, name in M.GROUPS.items():
+        its = g(grp)
+        t = intro[grp] + " ".join(x for x in (_one(i) for i in its) if x)
+        if grp == "precious" and mac.get("real") and mac["real"].get("c1y") is not None:
+            r = mac["real"]
+            t += f" 금·은의 기회비용인 미국 10년 실질금리는 {_md(r['obs'])} 기준 {r['v']:.2f}%로 1년 동안 {r['c1y']:+.0f}bp 움직였어요" + (" — 오른 만큼 귀금속에는 역풍이에요." if r["c1y"] >= 25 else " — 내린 만큼 귀금속에는 순풍이에요." if r["c1y"] <= -25 else " — 큰 변화는 아니에요.")
+        for i in its:
+            if i["status"] == "check":
+                t += f" {i['name']}{_jo(i['name'], '은', '는')} 대표 계약 문제로 투기자금 숫자를 빼고 봤어요."
+        srcs = _srcs(*[s for i in its for s in (i.get("src") or {}).values()], (mac.get("real") or {}).get("src") if grp == "precious" else None)
+        paras.append({"h": name, "t": t, "src": srcs})
+    # 5. 달러
+    u = mac.get("usd")
+    if u:
+        t = (f"모든 원자재에 공통으로 영향을 주는 건 달러예요. 원자재는 대부분 달러로 거래돼서, 달러가 강해지면 다른 나라 사람에게는 같은 원자재가 비싸져 수요가 줄고 가격이 눌리기 쉬워요. "
+             f"연준이 발표하는 달러지수(Nominal Broad)는 {_md(u['obs'])} 기준 {u['v']:.1f}로 3개월 동안 {_p(u['c3m'])} 움직였어요" +
+             (f"(최근 5년 중 {u['pct5']:.0f}% 높이)" if u.get("pct5") is not None else "") + ". " +
+             ("달러가 뚜렷하게 강해져 원자재 전반에 역풍이에요." if (u["c3m"] or 0) >= 3 else "달러가 뚜렷하게 약해져 원자재 전반에 순풍이에요." if (u["c3m"] or 0) <= -3 else "달러는 큰 방향 없이 움직여 원자재에 주는 영향이 크지 않아요.") +
+             " (흔히 쓰는 DXY는 민간 거래소 상표 지수라, 공식 자료인 연준 달러지수로 대신 봐요.)")
+        paras.append({"h": "공통 바람 — 달러", "t": t, "src": u["src"]})
+    # 6. 반대 근거와 다음 일정
+    cnt = [f"{i['name']}: {x}" for i in items for x in (i.get("cycle") or {}).get("counter", [])]
+    nxt_c = next((i["cot"]["next"] for i in items if i.get("cot")), None)
+    nxt = [f"CFTC 다음 발표 {_md(nxt_c)}(금, 미국 오후 — 한국 토요일 새벽)" if nxt_c else None] + \
+          [f"{i['inv']['name']} 다음 발표 {_md(i['inv']['next'])}" for i in items if i.get("inv")] + ["IMF 월평균 가격(매월 초 전달 값)"]
+    t = ("한 방향으로만 읽지 않도록, 같은 자료에서 반대로 읽히는 신호도 적어 둘게요. " + (" ".join(cnt) if cnt else "이번 주에는 장기 사이클·재고·투기자금이 서로 크게 엇갈리는 원자재가 없어요.") +
+         " 다음에 확인할 일정은 " + ", ".join(x for x in nxt if x) + " 순서예요. 이 해설은 매수·매도 추천이 아니라, 공식 숫자가 지금 무엇을 말하는지 정리한 자동 요약이에요.")
+    paras.append({"h": "반대 근거 · 다음에 볼 것", "t": t, "src": [{"label": "CFTC 발표 일정", "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm"},
+                                                         {"label": "EIA 발표 일정", "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php"}]})
+    return {"paras": paras, "chars": sum(len(x["t"]) for x in paras)}
 
 
 def build(errs=None):
@@ -357,15 +631,16 @@ def build(errs=None):
                 ymove[c["move"][1]] = _yahoo_daily(c["move"][1])
             except Exception as ex:
                 errs.append(f"참고 등락률 {c['move'][1]}: {str(ex)[:60]}")
+    mac = macro(st)
     items = []
     for c in M.COMMODITIES:
         try:
-            items.append(_item(c, st, ymove))
+            items.append(_item(c, st, ymove, mac))
         except Exception as ex:
             errs.append(f"원자재 {c['id']}: {str(ex)[:100]}")
     since = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%dT%H:%MZ")
     revs = [{"sid": r["sid"], "obs": r["obs"], "prev": r.get("prev"), "v": r["v"], "seen": r["seen"]} for r in RS.revisions(st, since)][-40:]
     print(f"원자재 레이더 ({time.time() - t0:.0f}초) · 추가/정정 {log} · 오류 {len(errs)}개")
     return {"schema": 1, "built_at": datetime.now(timezone(timedelta(hours=9))).isoformat(timespec="minutes"),
-            "groups": M.GROUPS, "items": items, "revisions": revs, "errors": errs, "sources": M.SOURCES,
+            "groups": M.GROUPS, "items": items, "macro": mac, "summary": summary(items, mac), "revisions": revs, "errors": errs, "sources": M.SOURCES,
             "store": {"rows": len(st["rows"])}}

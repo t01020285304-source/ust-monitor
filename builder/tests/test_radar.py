@@ -124,6 +124,26 @@ def test_store_roundtrip():
         assert RS.load("x", base=t)["rows"][0]["v"] == 1
 
 
+def test_11_cycle_real_price_and_phase():
+    cpi = [(f"{2000 + i // 12}-{i % 12 + 1:02d}-01", 100 + i) for i in range(300)]
+    px = [(o, 50.0) for o, _ in cpi]
+    real = R.real_rows(px, cpi)
+    assert real[-1][1] == 50.0 and round(real[0][1], 2) == round(50 * 399 / 100, 2)   # 오늘 물가 기준으로 환산
+    assert R.real_rows(px, cpi[:-12])[-1][0] == cpi[-13][0]                             # CPI 없는 달은 빼고 채우지 않음
+    rising = [(o, float(i)) for i, (o, _) in enumerate(cpi)]
+    pos = R.cycle_pos(rising)
+    assert pos["pct"] == round(239.5 / 240 * 100, 1) and pos["mom12"] > 0 and pos["years"] == 20
+    assert R.cycle_pos(rising[:119]) is None                                              # 10년 미만이면 판단 안 함
+    assert R.phase(95, 5)["key"] == "boom" and R.phase(80, -1)["key"] == "downturn"
+    assert R.phase(20, -3)["key"] == "trough" and R.phase(20, 4)["key"] == "recovery"
+    assert R.phase(35, -1)["key"] == "mid" and R.phase(50, None) is None
+
+
+def test_12_korean_particles():
+    assert R._jo("브렌트유", "은", "는") == "는" and R._jo("금", "은", "는") == "은"
+    assert R._jo("소맥 (SRW)", "은", "는") == "은" and R._jo("천연가스 (헨리허브)", "은", "는") == "는"
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):
