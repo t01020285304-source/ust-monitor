@@ -31,6 +31,10 @@ i=0
 while true; do
   i=$((i + 1))
   rm -f out/SKIP
+  # 실행 도중 main 에 올라온 계산 코드도 다음 반복부터 쓰게 (이 스크립트 자체는 바꾸지 않음)
+  if [ "$i" -gt 1 ] && git fetch -q --depth 1 origin main 2>/dev/null; then
+    git checkout -q FETCH_HEAD -- builder ':!builder/loop.sh' 2>/dev/null && echo "계산 코드 최신화 $(git rev-parse --short FETCH_HEAD)"
+  fi
   echo "── ${i}번째 갱신 $(TZ=Asia/Seoul date '+%H:%M') KST"
   if python builder/build.py out/ust.json; then publish; else echo "만들기 실패 — 다음 반복에서 다시"; fi
   [ "$(date +%s)" -ge "$END" ] && break
