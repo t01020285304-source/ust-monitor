@@ -1,4 +1,16 @@
 {
+ "${0}T (전체의 {1}%)": {
+  "en": "${0}T ({1}% of total)",
+  "zh": "${0}T（佔整體 {1}%）"
+ },
+ "'돈의 가격(금리)은 내려도 돈의 문(대출 심사)이 닫혀 있으면' 경기는 살아나지 않아요.": {
+  "en": "Even when the price of money (interest rates) falls, 'if the door to money (loan approval) stays closed' the economy won't recover.",
+  "zh": "即使錢的價格(利率)下降,'只要錢的大門(放款審查)還關著',景氣就不會復甦。"
+ },
+ "'돈이 필요한 것보다 장기금리가 더 무서운 상태'": {
+  "en": "'A state where long-term yields are scarier than needing money'",
+  "zh": "「長期殖利率比缺錢更可怕的狀態」"
+ },
  "({0}/{1}(화) 기준)": {
   "en": "(as of {0}/{1} (Tue))",
   "zh": "（截至 {0}/{1}（二））"
@@ -51,6 +63,14 @@
   "en": "(tight)",
   "zh": "(吃緊)"
  },
+ "(사들이는 중)": {
+  "en": "(buying)",
+  "zh": "（買進中）"
+ },
+ "(숨은 지원군 등장 가능성)": {
+  "en": "(a hidden supporter may be emerging)",
+  "zh": "(可能出現隱形支撐力量)"
+ },
  "(연방준비제도 보유분)": {
   "en": "(Held by the Federal Reserve)",
   "zh": "（聯準會持有部分）"
@@ -71,9 +91,17 @@
   "en": "(Tendered)",
   "zh": "（投標金額）"
  },
+ "(자동 생성 요약": {
+  "en": "(auto-generated summary",
+  "zh": "(自動產生的摘要"
+ },
  "(직전 {0}%)": {
   "en": "(previous {0}%)",
   "zh": "（前次 {0}%）"
+ },
+ "(직전 분기 {0})": {
+  "en": "(previous quarter {0})",
+  "zh": "(前一季 {0})"
  },
  "(최고 낙찰 할인율): 낙찰된 가장 높은 할인율(금리). 이보다 낮은 금리로 응찰한 물량은 모두 낙찰됨.": {
   "en": " (High discount rate): the highest discount rate (yield) that was accepted. All bids at lower yields were accepted.",
@@ -91,9 +119,29 @@
   "en": ") net buying (contracts)",
   "zh": "）淨買超（口數）"
  },
+ "+ 경제전망(SEP·점도표)": {
+  "en": "+ Summary of Economic Projections (SEP, dot plot)",
+  "zh": "+ 經濟預測摘要(SEP、點陣圖)"
+ },
  "+ 공급 투자(CAPEX, {0}차 예정)": {
   "en": "+ Supply investment (CAPEX, planned for stage {0})",
   "zh": "+ 供給投資（CAPEX，預定第{0}階段）"
+ },
+ "+ 전망보고서": {
+  "en": "+ Outlook report",
+  "zh": "+ 展望報告"
+ },
+ "+{0}{1} 이상 위험": {
+  "en": "+{0}{1} or more: Danger",
+  "zh": "+{0}{1} 以上:危險"
+ },
+ ", {0}년물은 {1}bp({2}%)": {
+  "en": ", the {0}-year yield by {1}bp ({2}%)",
+  "zh": ",{0}年期殖利率 {1}bp({2}%)"
+ },
+ ", 응찰배율은 {0}": {
+  "en": ", and the bid-to-cover ratio was {0}",
+  "zh": ",投標倍數 {0}"
  },
  ". {0}%↑ 강함": {
   "en": ". {0}%↑ strong",
@@ -211,6 +259,10 @@
   "en": " = one commodity. On the left, the",
   "zh": "＝一項原物料。左側的"
  },
+ "ABS + 변동금리채": {
+  "en": "ABS + floating-rate notes",
+  "zh": "ABS + 浮動利率債"
+ },
  "August {0} 발표 대비 덜 빌림": {
   "en": "Borrowing less than the August {0} announcement",
   "zh": "較 August {0} 公布的估計少借"
@@ -218,6 +270,14 @@
  "B {0}배↑·{1}%↓": {
   "en": "B {0}x↑ · {1}%↓",
   "zh": "B {0} 倍↑・{1}%↓"
+ },
+ "BCRED 등 공개매수(SC TO) 공시 링크에서 확인": {
+  "en": "Check BCRED and others via tender offer (SC TO) filing links",
+  "zh": "BCRED 等請至公開收購(SC TO)申報連結確認"
+ },
+ "BDC = 기업에 직접 대출하는 미국 상장·비상장 펀드.": {
+  "en": "BDC = a US-listed or unlisted fund that lends directly to companies.",
+  "zh": "BDC = 直接放款給企業的美國上市或非上市基金。"
  },
  "BOJ 회의": {
   "en": "BOJ meeting",
@@ -227,6 +287,10 @@
   "en": "Bill share",
   "zh": "Bill 占比"
  },
+ "Bills 비중 {0}%": {
+  "en": "Bills share {0}%",
+  "zh": "Bills 占比 {0}%"
+ },
  "Bills 비중은 오르는데 장기물 발행은 그대로 = 주황불 ({0}년 옐런 사례)": {
   "en": "Bills share rising while long-term issuance stays flat = orange light (Yellen's {0} case)",
   "zh": "短債占比上升但長債發行不變 = 橘燈（{0} 年葉倫案例）"
@@ -234,6 +298,10 @@
  "C {0}배↑·{1}%↓": {
   "en": "C {0}x↑ · {1}%↓",
   "zh": "C {0} 倍↑・{1}%↓"
+ },
+ "C&I 대출 증가율 {0}년 전 대비": {
+  "en": "C&I loan growth vs. {0} year(s) ago",
+  "zh": "C&I 放款較 {0} 年前的成長率"
  },
  "C&I 대출 증가율 {0}년 전 대비:": {
   "en": "C&I loan growth vs {0} year ago:",
@@ -251,9 +319,21 @@
   "en": "CCC-and-below spread",
   "zh": "CCC 以下利差"
  },
+ "CCC·하이일드 스프레드 확대": {
+  "en": "CCC and high-yield spreads widening",
+  "zh": "CCC 與高收益債利差擴大"
+ },
  "CCC·하이일드 확대": {
   "en": "CCC and high yield widening",
   "zh": "CCC 與高收益債利差擴大"
+ },
+ "CCC가 두드러지게 확대": {
+  "en": "CCC widening notably",
+  "zh": "CCC 利差明顯擴大"
+ },
+ "CCC가 훨씬 빠르게 벌어져 약한 기업부터 돈줄이 조여지는 모습이에요.": {
+  "en": "CCC is widening much faster, so funding is tightening first for the weakest companies.",
+  "zh": "CCC 利差擴大得快得多,顯示資金最先從體質較弱的企業開始收緊。"
  },
  "CFTC {0} 계약 단위 문구가 기준표와 달라요 — 확인 필요": {
   "en": "CFTC {0} contract unit wording differs from the reference table — needs check",
@@ -322,6 +402,10 @@
  "Coupon {0}% ({1}년: Bill {2}B": {
   "en": "Coupon {0}% ({1}: Bills {2}B",
   "zh": "Coupon {0}%（{1} 年：Bill {2}B"
+ },
+ "Coupon {0}bp (윌리엄 칼럼 {1} 인용)": {
+  "en": "Coupon {0}bp (citing William's column {1})",
+  "zh": "Coupon {0}bp(引用威廉專欄 {1})"
  },
  "D 그 외. 줄을 누르면 아래 신문형 리포트가 그 입찰로 바뀌어요. 테일(낙찰금리 − 발행 전 시세)은 발행 전 시세(WI) 자료가 공개되지 않아 계산하지 않아요.": {
   "en": "D anything else. Click a row to switch the newspaper-style report below to that auction. The tail (accepted yield − when-issued yield) is not calculated because when-issued (WI) data is not public.",
@@ -447,6 +531,18 @@
   "en": "FRED (NY Fed)",
   "zh": "FRED（紐約聯準銀行）"
  },
+ "FRED (미 재무부 DFII{0}": {
+  "en": "FRED (US Treasury DFII{0}",
+  "zh": "FRED(美國財政部 DFII{0}"
+ },
+ "FRED (연준 H.{0})": {
+  "en": "FRED (Fed H.{0})",
+  "zh": "FRED(聯準會 H.{0})"
+ },
+ "FRED (연준 H.{0}, 주 {1}회)": {
+  "en": "FRED (Fed H.{0}, {1} times a week)",
+  "zh": "FRED(聯準會 H.{0},每週 {1} 次)"
+ },
  "FRED (원자료 EIA 현물 가격)": {
   "en": "FRED (raw data: EIA spot prices)",
   "zh": "FRED(原始資料:EIA 現貨價格)"
@@ -463,6 +559,10 @@
   "en": "FRED (raw data: IMF Primary Commodity Prices) ↗",
   "zh": "FRED（原始資料：IMF Primary Commodity Prices） ↗"
  },
+ "FRED CCC 스프레드": {
+  "en": "FRED CCC spread",
+  "zh": "FRED CCC 利差"
+ },
  "FRED CCC 스프레드 ↗": {
   "en": "FRED CCC spread ↗",
   "zh": "FRED CCC 利差 ↗"
@@ -475,6 +575,10 @@
   "en": "FRED CPIAUCSL (inflation adjustment) ↗",
   "zh": "FRED CPIAUCSL（物價調整） ↗"
  },
+ "FRED DFII{0} (실질금리)": {
+  "en": "FRED DFII{0} (real yield)",
+  "zh": "FRED DFII{0}(實質殖利率)"
+ },
  "FRED DFII{0} (실질금리) ↗": {
   "en": "FRED DFII{0} (real yield) ↗",
   "zh": "FRED DFII{0}（實質利率）↗"
@@ -483,9 +587,17 @@
   "en": "FRED PALUMUSDM (IMF monthly avg.)",
   "zh": "FRED PALUMUSDM(IMF 月平均)"
  },
+ "FRED PALUMUSDM (IMF 월평균) ↗": {
+  "en": "FRED PALUMUSDM (IMF monthly avg.) ↗",
+  "zh": "FRED PALUMUSDM（IMF 月平均）↗"
+ },
  "FRED PCOPPUSDM (IMF 월평균)": {
   "en": "FRED PCOPPUSDM (IMF monthly avg.)",
   "zh": "FRED PCOPPUSDM(IMF 月平均)"
+ },
+ "FRED PCOPPUSDM (IMF 월평균) ↗": {
+  "en": "FRED PCOPPUSDM (IMF monthly avg.) ↗",
+  "zh": "FRED PCOPPUSDM（IMF 月平均）↗"
  },
  "FRED PMAIZMTUSDM (IMF 월평균)": {
   "en": "FRED PMAIZMTUSDM (IMF monthly avg.)",
@@ -535,33 +647,65 @@
   "en": "FRED PWHEAMTUSDM (IMF monthly average) ↗",
   "zh": "FRED PWHEAMTUSDM（IMF 月平均） ↗"
  },
+ "FRED SLOOS 대기업·중견 C&I 대출 기준 (DRTSCILM)": {
+  "en": "FRED SLOOS lending standards for large and mid-sized firms, C&I loans (DRTSCILM)",
+  "zh": "FRED SLOOS 大型與中型企業 C&I 放款標準 (DRTSCILM)"
+ },
  "FRED SLOOS 대기업·중견 C&I 대출 기준 (DRTSCILM) ↗": {
   "en": "FRED SLOOS large & mid-sized firm C&I lending standards (DRTSCILM) ↗",
   "zh": "FRED SLOOS 大中型企業 C&I 放款標準（DRTSCILM）↗"
+ },
+ "FRED SLOOS 전체": {
+  "en": "FRED SLOOS overall",
+  "zh": "FRED SLOOS 整體"
  },
  "FRED SLOOS 전체 ↗": {
   "en": "FRED SLOOS overall ↗",
   "zh": "FRED SLOOS 整體 ↗"
  },
+ "FRED SOFR {0}·{1} 분위": {
+  "en": "FRED SOFR {0}·{1} percentile",
+  "zh": "FRED SOFR 第 {0}、{1} 百分位"
+ },
  "FRED SOFR {0}·{1} 분위 ↗": {
   "en": "FRED SOFR {0}th and {1}th percentiles ↗",
   "zh": "FRED SOFR 第 {0}、{1} 百分位 ↗"
+ },
+ "FRED THREEFYTP{0} (연준 Kim-Wright {1}년 기간프리미엄)": {
+  "en": "FRED THREEFYTP{0} (Fed Kim-Wright {1}-year term premium)",
+  "zh": "FRED THREEFYTP{0}(聯準會 Kim-Wright {1} 年期期限溢酬)"
  },
  "FRED THREEFYTP{0} (연준 Kim-Wright {1}년 기간프리미엄) ↗": {
   "en": "FRED THREEFYTP{0} (Fed Kim-Wright {1}-year term premium) ↗",
   "zh": "FRED THREEFYTP{0}（聯準會 Kim-Wright {1} 年期限溢酬）↗"
  },
+ "FRED TREAST (연준 보유 국채)": {
+  "en": "FRED TREAST (Treasuries held by the Fed)",
+  "zh": "FRED TREAST(聯準會持有的公債)"
+ },
  "FRED TREAST (연준 보유 국채) ↗": {
   "en": "FRED TREAST (Fed Treasury holdings) ↗",
   "zh": "FRED TREAST（聯準會持有公債）↗"
+ },
+ "FRED T{0}YIE (기대인플레)": {
+  "en": "FRED T{0}YIE (expected inflation)",
+  "zh": "FRED T{0}YIE(預期通膨)"
  },
  "FRED T{0}YIE (기대인플레) ↗": {
   "en": "FRED T{0}YIE (expected inflation) ↗",
   "zh": "FRED T{0}YIE（預期通膨）↗"
  },
+ "FRED WRESBAL (은행 지준)": {
+  "en": "FRED WRESBAL (bank reserves)",
+  "zh": "FRED WRESBAL(銀行準備金)"
+ },
  "FRED WRESBAL (은행 지준) ↗": {
   "en": "FRED WRESBAL (bank reserves) ↗",
   "zh": "FRED WRESBAL（銀行準備金）↗"
+ },
+ "FRED WSHOBL (연준 보유 T-Bill)": {
+  "en": "FRED WSHOBL (T-Bills held by the Fed)",
+  "zh": "FRED WSHOBL(聯準會持有的 T-Bill)"
  },
  "FRED WSHOBL (연준 보유 T-Bill) ↗": {
   "en": "FRED WSHOBL (Fed T-bill holdings) ↗",
@@ -571,21 +715,45 @@
   "en": "FRED {0} (IMF monthly avg.)",
   "zh": "FRED {0}(IMF 月平均)"
  },
+ "FRED 연방부채 총액": {
+  "en": "FRED total federal debt",
+  "zh": "FRED 聯邦政府債務總額"
+ },
  "FRED 연방부채 총액 ↗": {
   "en": "FRED total federal debt ↗",
   "zh": "FRED 聯邦債務總額 ↗"
+ },
+ "FRED 연방정부 경상수입 (연율)": {
+  "en": "FRED federal current receipts (annualized)",
+  "zh": "FRED 聯邦政府經常性收入(年化)"
  },
  "FRED 연방정부 경상수입 (연율) ↗": {
   "en": "FRED federal government current receipts (annualized) ↗",
   "zh": "FRED 聯邦政府經常性收入（年率）↗"
  },
+ "FRED 연방정부 이자 지출 (연율)": {
+  "en": "FRED federal interest payments (annualized)",
+  "zh": "FRED 聯邦政府利息支出(年化)"
+ },
  "FRED 연방정부 이자 지출 (연율) ↗": {
   "en": "FRED federal government interest payments (annualized) ↗",
   "zh": "FRED 聯邦政府利息支出（年率）↗"
  },
+ "FRED 자료 {0}개를 받지 못했어요 (FRED_API_KEY 확인)": {
+  "en": "{0} FRED series could not be retrieved (check FRED_API_KEY)",
+  "zh": "有 {0} 項 FRED 資料未取得（請確認 FRED_API_KEY）"
+ },
+ "FRED 투자등급 스프레드": {
+  "en": "FRED investment-grade spread",
+  "zh": "FRED 投資等級利差"
+ },
  "FRED 투자등급 스프레드 ↗": {
   "en": "FRED investment-grade spread ↗",
   "zh": "FRED 投資等級債利差 ↗"
+ },
+ "FRED 하이일드 스프레드": {
+  "en": "FRED high-yield spread",
+  "zh": "FRED 高收益債利差"
  },
  "FRED 하이일드 스프레드 ↗": {
   "en": "FRED high-yield spread ↗",
@@ -607,13 +775,37 @@
   "en": "February {0} {1} (borrowing estimate)",
   "zh": "February {0} {1}（借款估計）"
  },
+ "February {0} {1} 갱신 예정": {
+  "en": "February {0} {1} update scheduled",
+  "zh": "預定 February {0} {1} 更新"
+ },
+ "Fed 이사회 「Repo Markets and the Fed’s Balance Sheet」 추정({0}~{1}): 순발행 {2}억당 레포 금리 Bill {3}bp": {
+  "en": "Fed Board 「Repo Markets and the Fed’s Balance Sheet」 estimate ({0}~{1}): repo rate vs. Bill {3}bp per {2} hundred million of net issuance",
+  "zh": "Fed 理事會 「Repo Markets and the Fed’s Balance Sheet」 估計({0}~{1}):每淨發行 {2} 億,附買回利率對 Bill {3}bp"
+ },
+ "Fed가 가만히 있어도 장기금리가 스스로 오를 수 있는 상태": {
+  "en": "A state where long-term yields can rise on their own even if the Fed does nothing",
+  "zh": "即使聯準會按兵不動,長期殖利率也可能自行上升的狀態"
+ },
+ "Fiscal Data 예정": {
+  "en": "Fiscal Data scheduled",
+  "zh": "Fiscal Data 預定"
+ },
  "HY ÷ IG 비율": {
   "en": "HY ÷ IG ratio",
   "zh": "HY ÷ IG 比率"
  },
+ "HY 스프레드 {0}일 변화": {
+  "en": "HY spread {0}-day change",
+  "zh": "高收益債利差 {0} 日變化"
+ },
  "HY 스프레드 {0}일 변화:": {
   "en": "HY spread {0}-day change:",
   "zh": "HY 利差 {0} 日變化："
+ },
+ "ICE BofA 스프레드": {
+  "en": "ICE BofA spread",
+  "zh": "ICE BofA 利差"
  },
  "ICE 거래소 WTI({0})도 있지만 기준 계약인 NYMEX만 보여 줘요 (두 계약을 더하지 않아요).": {
   "en": "ICE also lists WTI ({0}), but only the benchmark NYMEX contract is shown (the two are not added together).",
@@ -655,9 +847,17 @@
   "en": "Indirect Bidder does not mean foreigners",
   "zh": "間接投標人不等於外國人"
  },
+ "Indirect Bidder 비중": {
+  "en": "Indirect Bidder share",
+  "zh": "Indirect Bidder 占比"
+ },
  "Indirect Bidder 비중이 평소보다 {0}%p 이상 낮음": {
   "en": "Indirect Bidder share is {0} percentage points or more below usual",
   "zh": "間接投標人占比比平常低 {0} 個百分點以上"
+ },
+ "MBS (모기지채)": {
+  "en": "MBS (mortgage bonds)",
+  "zh": "MBS（房貸債券）"
  },
  "MMF 단기자금 주차장": {
   "en": "MMF short-term cash parking",
@@ -671,9 +871,17 @@
   "en": "A window where MMFs and others deposit cash with the Fed overnight",
   "zh": "貨幣市場基金等把資金隔夜存放在聯準會的窗口"
  },
+ "MMF가 국채·레포에서 빠지면 국채 흡수 여력 감소 (정부형 MMF 잔액은 ICI가 접속을 막아 OFR 보유 내역으로 대신)": {
+  "en": "If MMFs pull out of Treasuries and repo, capacity to absorb Treasuries shrinks (government MMF balances use OFR holdings instead, because ICI blocks access)",
+  "zh": "MMF 若從公債與附買回撤出,公債的承接能力就會下降(政府型 MMF 餘額因 ICI 限制存取,改以 OFR 的持有明細代替)"
+ },
  "MMF가 받쳐 주는 시장": {
   "en": "A market backed by MMFs",
   "zh": "由貨幣市場基金撐住的市場"
+ },
+ "MMF의 국채 + 국채 레포 보유": {
+  "en": "MMF holdings of Treasuries + Treasury repo",
+  "zh": "MMF 持有的公債 + 公債附買回"
  },
  "MOVE (채권 변동성)": {
   "en": "MOVE (bond volatility)",
@@ -695,17 +903,37 @@
   "en": "NFCI (financial conditions)",
   "zh": "NFCI（金融情勢）"
  },
+ "NFCI {0} ({1}개월)": {
+  "en": "NFCI {0} ({1} months)",
+  "zh": "NFCI {0}({1} 個月)"
+ },
  "NY 연준": {
   "en": "NY Fed",
   "zh": "紐約聯準銀行"
+ },
+ "NY 연준 ACM 기간프리미엄": {
+  "en": "NY Fed ACM term premium",
+  "zh": "NY Fed ACM 期限溢酬"
  },
  "NY 연준 ACM 기간프리미엄 ↗": {
   "en": "NY Fed ACM term premium ↗",
   "zh": "紐約聯準銀行 ACM 期限溢酬 ↗"
  },
+ "NY 연준 Primary Dealer Statistics (매주 목요일 갱신, 단위 백만 달러)": {
+  "en": "NY Fed Primary Dealer Statistics (updated every Thursday, in millions of dollars)",
+  "zh": "紐約聯邦準備銀行 Primary Dealer Statistics（每週四更新，單位為百萬美元）"
+ },
+ "NY 연준 Primary Dealer 목록": {
+  "en": "NY Fed Primary Dealer list",
+  "zh": "NY Fed Primary Dealer 名單"
+ },
  "NY 연준 Primary Dealer 목록 ↗": {
   "en": "NY Fed Primary Dealer list ↗",
   "zh": "紐約聯準銀行 初級交易商名單 ↗"
+ },
+ "NY 연준 Primary Dealer 통계": {
+  "en": "NY Fed Primary Dealer statistics",
+  "zh": "NY Fed Primary Dealer 統計"
  },
  "NY 연준 Primary Dealer 통계 ↗": {
   "en": "NY Fed Primary Dealer statistics ↗",
@@ -715,6 +943,10 @@
   "en": "NY Fed SOFR",
   "zh": "紐約聯準銀行 SOFR"
  },
+ "NY 연준 SRF 결과": {
+  "en": "NY Fed SRF results",
+  "zh": "NY Fed SRF 結果"
+ },
  "NY 연준 SRF 결과 ↗": {
   "en": "NY Fed SRF results ↗",
   "zh": "紐約聯準銀行 SRF 結果 ↗"
@@ -723,9 +955,21 @@
   "en": "NY Fed ↗",
   "zh": "紐約聯準銀行 ↗"
  },
+ "NY 연준 상설 레포(SRF)": {
+  "en": "NY Fed Standing Repo Facility (SRF)",
+  "zh": "NY Fed 常設附買回機制(SRF)"
+ },
+ "NY 연준 역레포(ON RRP)": {
+  "en": "NY Fed reverse repo (ON RRP)",
+  "zh": "NY Fed 逆回購(ON RRP)"
+ },
  "NY 연준 역레포(ON RRP) ↗": {
   "en": "NY Fed reverse repo (ON RRP) ↗",
   "zh": "紐約聯準銀行 逆回購（ON RRP）↗"
+ },
+ "Non-accrual (공정가치, 중간값)": {
+  "en": "Non-accrual (fair value, median)",
+  "zh": "Non-accrual(公允價值,中位數)"
  },
  "Non-accrual 공정가치": {
   "en": "Non-accrual at fair value",
@@ -739,6 +983,10 @@
   "en": "ON RRP (reverse repo)",
   "zh": "ON RRP（逆回購）"
  },
+ "ON RRP (역레포), {0}.": {
+  "en": "ON RRP (reverse repo), {0}.",
+  "zh": "ON RRP(逆回購),{0}。"
+ },
  "Other Reportables (기타 대형)": {
   "en": "Other Reportables (other large traders)",
   "zh": "Other Reportables(其他大型交易人)"
@@ -751,17 +999,37 @@
   "en": "PIK interest share",
   "zh": "PIK 利息占比"
  },
+ "PIK 이자 비중 (대형 BDC 중간값)": {
+  "en": "PIK interest share (median of large BDCs)",
+  "zh": "PIK 利息占比(大型 BDC 中位數)"
+ },
+ "PIK 이자 비중 (대형 BDC 중간값), {0}.": {
+  "en": "PIK interest share (median of large BDCs), {0}.",
+  "zh": "PIK 利息占比(大型 BDC 中位數),{0}。"
+ },
  "Primary Dealer / 평소": {
   "en": "Primary Dealer / usual",
   "zh": "初級交易商 / 平常"
+ },
+ "Primary Dealer {0}% 초과 + Indirect Bidder 비중 하락": {
+  "en": "Primary Dealer above {0}% + Indirect Bidder share falling",
+  "zh": "Primary Dealer 超過 {0}% + Indirect Bidder 占比下降"
  },
  "Primary Dealer {0}%)으로 해요.": {
   "en": "Primary Dealer {0}%).",
   "zh": "Primary Dealer {0}%）。"
  },
+ "Primary Dealer 국채 보유 {0}주 {1}%": {
+  "en": "Primary Dealer Treasury holdings {0}-week {1}%",
+  "zh": "Primary Dealer 公債持有 {0} 週 {1}%"
+ },
  "Primary Dealer 떠안음": {
   "en": "Primary Dealer takeup",
   "zh": "初級交易商承接量"
+ },
+ "Primary Dealer 비중": {
+  "en": "Primary Dealer share",
+  "zh": "Primary Dealer 占比"
  },
  "Primary Dealer 비중이 평소보다 {0}%p 이상 높음": {
   "en": "Primary Dealer share is {0} percentage points or more above usual",
@@ -775,6 +1043,22 @@
   "en": "How much more Treasury supply Primary Dealers can take on and distribute. If holdings are {0}% or more and repo is {1}% or more, they are using a lot of balance sheet (weak)",
   "zh": "初級交易商還能再承接並分銷多少公債。持有 {0}% 以上且附買回 {1}% 以上，代表正大量動用資產負債表（轉弱）"
  },
+ "Primary Dealer가 떠안은 비중은 {0}%로": {
+  "en": "the share taken by Primary Dealers is {0}%,",
+  "zh": "Primary Dealer 承接的占比為 {0}%,"
+ },
+ "Primary Dealer가 떠안은 비중은 {0}%로 매우 낮아 시장 수요가 건강해요.": {
+  "en": "The share Primary Dealers took on is very low at {0}%, a healthy sign of market demand.",
+  "zh": "Primary Dealer 承接的比重僅 {0}%,非常低,代表市場需求健康。"
+ },
+ "Primary Dealer가 떠안은 비중은 {0}%로 정상이에요.": {
+  "en": "The share Primary Dealers took on is {0}%, which is normal.",
+  "zh": "Primary Dealer 承接的比重為 {0}%,屬正常。"
+ },
+ "Primary Dealer가 받아 간 비중은 {0}%예요": {
+  "en": "Primary Dealers took {0}%",
+  "zh": "Primary Dealer 承接了 {0}%"
+ },
  "Primary Dealer가 팔려고 내놓은 물량 ÷ 매입": {
   "en": "Amount Primary Dealers offered to sell ÷ amount purchased",
   "zh": "Primary Dealer 提出想賣的數量 ÷ 買進量"
@@ -787,9 +1071,29 @@
   "en": "Institutions that bid directly for their own account without going through a Primary Dealer",
   "zh": "不經過 Primary Dealer、以自有帳戶直接投標的機構"
  },
+ "Primary Dealer를 통한 국내외 고객 주문": {
+  "en": "domestic and foreign client orders placed through Primary Dealers",
+  "zh": "透過 Primary Dealer 下單的國內外客戶訂單"
+ },
  "Primary Dealer를 통한 국내외 고객 주문 (외국인만이 아님)": {
   "en": "Domestic and foreign customer orders via Primary Dealers (not only foreigners)",
   "zh": "透過 Primary Dealer 的國內外客戶委託（不只是外國人）"
+ },
+ "Primary Dealer를 통한 국내외 고객 주문인 Indirect Bidder 비중은 {0}%로": {
+  "en": "the share of Indirect Bidder orders, which are domestic and foreign client orders through Primary Dealers, was {0}%,",
+  "zh": "透過 Primary Dealer 的國內外客戶委託(Indirect Bidder)占比為 {0}%,"
+ },
+ "Primary Dealer를 통한 국내외 고객 주문인 Indirect Bidder 비중은 {0}%로 낮아 최종 투자자 수요가 약해 보여요.": {
+  "en": "The Indirect Bidder share, meaning customer orders from home and abroad placed through Primary Dealers, is low at {0}%, so end-investor demand looks weak.",
+  "zh": "透過 Primary Dealer 下單的國內外客戶訂單(Indirect Bidder)占比偏低,僅 {0}%,最終投資人的需求看起來偏弱。"
+ },
+ "Primary Dealer를 통한 국내외 고객 주문인 Indirect Bidder 비중은 {0}%로 양호한 편이에요.": {
+  "en": "The Indirect Bidder share, meaning customer orders from home and abroad placed through Primary Dealers, is {0}%, which is decent.",
+  "zh": "透過 Primary Dealer 下單的國內外客戶訂單(Indirect Bidder)占比為 {0}%,算是不錯。"
+ },
+ "Primary Dealer를 통한 국내외 고객 주문인 Indirect Bidder 비중은 {0}%로 평균 수준이에요.": {
+  "en": "The Indirect Bidder share, meaning customer orders from home and abroad placed through Primary Dealers, is {0}%, which is about average.",
+  "zh": "透過 Primary Dealer 下單的國內外客戶訂單(Indirect Bidder)占比為 {0}%,屬平均水準。"
  },
  "Primary Dealer를 통해 들어온 국내외 고객 주문. 외국 중앙은행도 포함되지만": {
   "en": "Domestic and foreign customer orders placed through Primary Dealers. Includes foreign central banks, but ",
@@ -799,6 +1103,10 @@
   "en": "Producer/Merchant (producers & end users)",
   "zh": "Producer/Merchant(生產商與實際需求者)"
  },
+ "QRA (분기 국채 차환 계획)": {
+  "en": "QRA (quarterly Treasury refinancing plan)",
+  "zh": "QRA(季度公債再融資計畫)"
+ },
  "QRA(국채 발행 계획)": {
   "en": "QRA (Treasury issuance plan)",
   "zh": "QRA（公債發行計畫）"
@@ -806,6 +1114,14 @@
  "QRA는 재무부 관행({0}·{1}·{2}·{3}월 첫째 주 월·수)으로 추정한 날짜예요. 물가·고용 발표일은 공개 일정 자료가 없어 직접 추가해 주세요.": {
   "en": "QRA dates are estimates based on Treasury practice (Mon/Wed of the first week of {0}, {1}, {2}, {3}). There is no public schedule for inflation and jobs releases, so please add those yourself.",
   "zh": "QRA 日期是依財政部慣例（{0}、{1}、{2}、{3} 月第一週的週一、週三）推估的。物價與就業報告的發布日沒有公開時程資料，請自行新增。"
+ },
+ "QT/중립": {
+  "en": "QT / neutral",
+  "zh": "QT / 中性"
+ },
+ "Repo (딜러 차입)": {
+  "en": "Repo (dealer borrowing)",
+  "zh": "附買回（交易商借款）"
  },
  "Repo·단기자금 심층 판독": {
   "en": "Repo and short-term funding: in-depth reading",
@@ -819,9 +1135,21 @@
   "en": "SEC (BDC filings)",
   "zh": "SEC（BDC 揭露）"
  },
+ "SLOOS (대출기준 강화 비율)": {
+  "en": "SLOOS (share of banks tightening lending standards)",
+  "zh": "SLOOS(收緊放款標準的銀行比例)"
+ },
+ "SLOOS {0}{1}{2} 조사": {
+  "en": "SLOOS {0}{1}{2} survey",
+  "zh": "SLOOS {0}{1}{2} 調查"
+ },
  "SOFR (담보부 하루 금리)": {
   "en": "SOFR (secured overnight rate)",
   "zh": "SOFR（擔保隔夜利率）"
+ },
+ "SOFR {0}{1} 분위 간격": {
+  "en": "SOFR {0}{1} percentile spread",
+  "zh": "SOFR {0}{1} 百分位間距"
  },
  "SOFR {0}분위 − {1}분위": {
   "en": "SOFR {0}th − {1}th percentile",
@@ -831,6 +1159,10 @@
   "en": "SOFR − IORB trend (bp)",
   "zh": "SOFR − IORB 走勢（bp）"
  },
+ "SOFR−IORB 최근 {0}주(월말 제외) 중간값 {1}bp": {
+  "en": "SOFR−IORB median over the last {0} weeks (excluding month-end) {1}bp",
+  "zh": "SOFR−IORB 最近 {0} 週(不含月底)中位數 {1}bp"
+ },
  "SOFR가 IORB보다 높아지면 은행이 연준에 맡겨 두는 것보다 레포로 빌려주는 게 이득": {
   "en": "When SOFR rises above IORB, banks earn more by lending in repo than by leaving cash at the Fed",
   "zh": "當 SOFR 高於 IORB，銀行把錢拿去附買回放貸，比存在聯準會更划算"
@@ -838,6 +1170,10 @@
  "SRF (상설 레포)": {
   "en": "SRF (Standing Repo Facility)",
   "zh": "SRF（常設附買回機制）"
+ },
+ "SRF (연준 상설 레포) 이용": {
+  "en": "SRF (Fed standing repo) usage",
+  "zh": "SRF(聯準會常設附買回)使用量"
  },
  "SRF 사용액이 늘면 민간 레포가 막혔다는 뜻이에요.": {
   "en": "If SRF usage grows, it means private repo is clogged.",
@@ -855,9 +1191,25 @@
   "en": "Concentrated T-bill purchases",
   "zh": "集中買進短期國庫券"
  },
+ "TBAC 권고 {0}~{1}%": {
+  "en": "TBAC recommendation {0}% to {1}%",
+  "zh": "TBAC 建議 {0}% 至 {1}%"
+ },
+ "TBAC 권고 {0}~{1}% 초과: 재무부가 장기금리를 자극하지 않으려 단기물로 버티는 중": {
+  "en": "Above the TBAC-recommended {0}~{1}%: Treasury is leaning on short-term debt to avoid pushing up long-term yields",
+  "zh": "超過 TBAC 建議的 {0}~{1}%:財政部為了避免推升長期殖利率,改靠短期債券支撐"
+ },
  "TBAC(재무부 차입자문위원회) 권고 범위 {0}~{1}%": {
   "en": "TBAC (Treasury Borrowing Advisory Committee) recommended range {0}–{1}%",
   "zh": "TBAC（財政部借款諮詢委員會）建議區間 {0}~{1}%"
+ },
+ "TGA ${0}B ({1}일 {2}B)": {
+  "en": "TGA ${0}B ({1}-day {2}B)",
+  "zh": "TGA {0}B 美元({1}日 {2}B)"
+ },
+ "TGA (재무부 현금 통장)": {
+  "en": "TGA (Treasury's cash account)",
+  "zh": "TGA(財政部的現金帳戶)"
  },
  "TGA (정부 통장)": {
   "en": "TGA (government account)",
@@ -867,6 +1219,10 @@
   "en": "TGA = the government's faucet",
   "zh": "TGA = 政府的水龍頭"
  },
+ "TGA {0}B ({1}일 {2}B)": {
+  "en": "TGA {0}B ({1}-day {2}B)",
+  "zh": "TGA {0}B({1} 日 {2}B)"
+ },
  "TGA 잔고 ($B)": {
   "en": "TGA balance ($B)",
   "zh": "TGA 餘額（$B）"
@@ -874,6 +1230,14 @@
  "TGA가 줄었다고 곧바로 유동성 공급은 아니에요": {
   "en": "A falling TGA does not immediately mean liquidity is being supplied",
   "zh": "TGA 減少不代表立刻在供給流動性"
+ },
+ "TIPS (물가연동채)": {
+  "en": "TIPS (inflation-linked bonds)",
+  "zh": "TIPS（抗通膨公債）"
+ },
+ "TreasuryDirect 입찰 결과": {
+  "en": "TreasuryDirect auction results",
+  "zh": "TreasuryDirect 標售結果"
  },
  "TreasuryDirect 입찰 결과 ↗": {
   "en": "TreasuryDirect auction results ↗",
@@ -883,6 +1247,10 @@
   "en": "VIX (stock-market fear)",
   "zh": "VIX（股市恐慌）"
  },
+ "VIX (주식 공포지수)": {
+  "en": "VIX (stock fear gauge)",
+  "zh": "VIX(股市恐慌指數)"
+ },
  "VIX 낮은데 MOVE 높음": {
   "en": "VIX low but MOVE high",
   "zh": "VIX 低但 MOVE 高"
@@ -891,9 +1259,17 @@
   "en": "Only VIX spikes",
   "zh": "只有 VIX 飆升"
  },
+ "VIX만 오르고 신용·자금시장은 안정": {
+  "en": "Only VIX is rising while credit and funding markets are stable",
+  "zh": "只有 VIX 上升,信用與資金市場穩定"
+ },
  "WTI 원유": {
   "en": "WTI crude oil",
   "zh": "WTI 原油"
+ },
+ "XBRL (분기 공시, 새 공시가 나오면 자동 재계산)": {
+  "en": "XBRL (quarterly filings, recalculated automatically when new filings appear)",
+  "zh": "XBRL(季度申報,有新申報時自動重新計算)"
  },
  "Yahoo Finance 선물 시세 (등락률만, 참고)": {
   "en": "Yahoo Finance futures quotes (change rates only, reference)",
@@ -902,6 +1278,10 @@
  "Yahoo Finance 선물 시세 (등락률만, 참고) ↗": {
   "en": "Yahoo Finance futures quotes (% change only, reference) ↗",
   "zh": "Yahoo Finance 期貨報價（僅漲跌幅，參考） ↗"
+ },
+ "Yahoo Finance 시세": {
+  "en": "Yahoo Finance quotes",
+  "zh": "Yahoo Finance 報價"
  },
  "Yahoo Finance)를 자동으로 판독한 결과예요. 투자 권유가 아니며, 숫자 옆 출처 링크로 원문을 꼭 확인하세요.": {
   "en": "Yahoo Finance). It is not investment advice; please check the original source via the link next to each number.",
@@ -975,9 +1355,33 @@
   "en": "{0} Bcf — similar to the {1}-year average",
   "zh": "{0} Bcf — 與 {1} 年平均相近"
  },
+ "{0} Fed가 가만히 있어도 장기금리는": {
+  "en": "{0} Even if the Fed stays put, long-term yields",
+  "zh": "{0} 就算聯準會按兵不動,長期殖利率也會"
+ },
  "{0} {1} ({2}) · {0}주 {3}": {
   "en": "{0} {1} ({2}) · {0}W {3}",
   "zh": "{0} {1}({2})· {0}週 {3}"
+ },
+ "{0} {1} 입찰": {
+  "en": "{0} {1} auction",
+  "zh": "{0} {1} 標售"
+ },
+ "{0} {1} 입찰 (결과: {2}등급, 응찰 {3}배)": {
+  "en": "{0} {1} auction (result: grade {2}, bid-to-cover {3}x)",
+  "zh": "{0} {1} 標售(結果:{2} 級,投標倍數 {3} 倍)"
+ },
+ "{0} {1}(응찰 {2}배": {
+  "en": "{0} {1} (bid-to-cover {2}x",
+  "zh": "{0} {1}(投標倍數 {2} 倍"
+ },
+ "{0} 거대자본이 {1}개월마다 보는 이면의 진실": {
+  "en": "{0} The hidden truth that big capital checks every {1} months",
+  "zh": "{0} 大資金每 {1} 個月都會看的幕後真相"
+ },
+ "{0} 국채 입찰은 누가 받아갔는지": {
+  "en": "{0} Who took the Treasury auctions",
+  "zh": "{0} 公債標售是誰承接的"
  },
  "{0} 달러/MMBtu ({1}월 {2}일) · {3}주 {4}%": {
   "en": "{0} USD/MMBtu ({1}/{2}) · {3}W {4}%",
@@ -986,6 +1390,14 @@
  "{0} 달러/배럴 ({1}월 {2}일) · {3}주 {4}%": {
   "en": "{0} USD/bbl ({1}/{2}) · {3}W {4}%",
   "zh": "{0} 美元/桶({1}/{2})· {3}週 {4}%"
+ },
+ "{0} 리펀딩 {1}·{2}·{3}년물 ${4}B ({5}개월 전 ${6}B, {7}%)": {
+  "en": "{0} refunding: {1}-, {2}- and {3}-year ${4}B ({5} months ago ${6}B, {7}%)",
+  "zh": "{0} 再融資:{1}年期、{2}年期、{3}年期 {4}B 美元({5}個月前 {6}B 美元,{7}%)"
+ },
+ "{0} 실시된 {1} {2} 입찰은 {3}B 달러 규모로 {4} {5}%, 응찰배율 {6}배를 기록했어요.": {
+  "en": "The {1} {2} auction held on {0} was ${3}B in size, with {4} at {5}% and a bid-to-cover ratio of {6}x.",
+  "zh": "{0} 舉行的 {1} {2} 標售規模為 {3}B 美元,{4}為 {5}%,投標倍數為 {6} 倍。"
  },
  "{0} 위면 사 둔 쪽이 많고, 아래면 팔아 둔 쪽이 많아요": {
   "en": "Above {0} means more is bought; below means more is sold",
@@ -999,6 +1411,10 @@
   "en": "{0} or below",
   "zh": "{0} 以下"
  },
+ "{0} 재무부가 자기 국채를 다시 사들이는 이유": {
+  "en": "{0} Why the Treasury is buying back its own debt",
+  "zh": "{0} 財政部為什麼要買回自己發行的公債"
+ },
  "{0} 정상": {
   "en": "{0} normal",
   "zh": "{0} 正常"
@@ -1010,6 +1426,10 @@
  "{0} 천 배럴 — {1}년 평균보다 {2}% 적어요 (빠듯)": {
   "en": "{0} thousand barrels — {2}% below the {1}-year average (tight)",
   "zh": "{0} 千桶 — 比 {1} 年平均少 {2}%(吃緊)"
+ },
+ "{0}% (TBAC 권고 {1}~{2}%)": {
+  "en": "{0}% (TBAC recommendation {1}~{2}%)",
+  "zh": "{0}%(TBAC 建議 {1}~{2}%)"
  },
  "{0}% ({0}년 {1}bp)": {
   "en": "{0}% ({0}-yr {1}bp)",
@@ -1023,9 +1443,17 @@
   "en": "Above {0}%, watch for an “Interest Expense Spiral”",
   "zh": "超過 {0}% 就要提防「利息惡性循環（Interest Expense Spiral）」"
  },
+ "{0}% 아래 = 대출이 줄어드는 중": {
+  "en": "Below {0}% = loans are shrinking",
+  "zh": "低於 {0}% = 放款正在減少"
+ },
  "{0}% 이상 & {1}년 하락 = ④ 하강기": {
   "en": "At or above {0}% & falling over {1} years = ④ Downturn",
   "zh": "達 {0}% 以上且{1}年下降 ＝ ④ 下行期"
+ },
+ "{0}% 이상이면서 {1}년 {2}%p, 또는 {3}년 {4}%p 이상 = 경계 (사이트 설정)": {
+  "en": "{0}% or more with {1}-year {2}pp, or {3}-year {4}pp or more = Caution (site setting)",
+  "zh": "占比達 {0}% 以上且 {1}年 {2}pp，或 {3}年 {4}pp 以上 = 警戒（本站設定）"
  },
  "{0}% 이하 & {1}년 하락 = ① 바닥권": {
   "en": "At or below {0}% & falling over {1} years = ① Trough",
@@ -1034,6 +1462,10 @@
  "{0}% 초과 = 빨간불": {
   "en": "Above {0}% = red light",
   "zh": "超過 {0}% = 紅燈"
+ },
+ "{0}%p 이상 = 긴축 뚜렷": {
+  "en": "{0}%p or more = clear tightening",
+  "zh": "{0}%p 以上 = 明顯緊縮"
  },
  "{0}%↑ = Bills Pivot 확정": {
   "en": "{0}%↑ = Bills Pivot confirmed",
@@ -1083,6 +1515,10 @@
   "en": "{0}. Is the Treasury increasing only bills without raising coupon (medium/long-term) issuance?",
   "zh": "{0}. 財政部是否只增加短期債，而沒有增加附息（中長期）公債發行？"
  },
+ "{0}/{1} {2} {3} 입찰": {
+  "en": "{0}/{1} {2} {3} auction",
+  "zh": "{0}/{1} {2} {3} 標售"
+ },
  "{0}/{1} 경보": {
   "en": "{0}/{1} alerts",
   "zh": "{0}/{1} 警報"
@@ -1119,6 +1555,14 @@
   "en": "{0}B↑ emergency",
   "zh": "{0}B↑ 緊急"
  },
+ "{0}T (전체의 {1}%)": {
+  "en": "{0}T ({1}% of total)",
+  "zh": "{0}T(占整體 {1}%)"
+ },
+ "{0}bp 이상 = 경계": {
+  "en": "{0}bp or more = Caution",
+  "zh": "{0}bp 以上 = 警戒"
+ },
  "{0}bp 이상 위험": {
   "en": "Danger at {0}bp or more",
   "zh": "{0}bp 以上為危險"
@@ -1131,6 +1575,10 @@
   "en": "{0}bp↑ serious.",
   "zh": "{0}bp↑ 嚴重。"
  },
+ "{0}{1} 리펀딩 {2}·{3}·{4}년물 {5}B ({6}개월 전 {7}B, {8}%)": {
+  "en": "{0}{1} refunding {2}·{3}·{4}-year {5}B ({6} months ago {7}B, {8}%)",
+  "zh": "{0}{1} 再融資 {2}·{3}·{4} 年期 {5}B({6} 個月前 {7}B,{8}%)"
+ },
  "{0}{1}{2} (전망보고서)": {
   "en": "{0}{1}{2} (Outlook Report)",
   "zh": "{0}{1}{2}（展望報告）"
@@ -1138,6 +1586,10 @@
  "{0}{1}{2} {3}:{4} (한국시간) 판독": {
   "en": "Assessed {0}{1}{2} {3}:{4} (KST)",
   "zh": "{0}{1}{2} {3}:{4}（韓國時間）判讀"
+ },
+ "{0}{1}{2} {3}bp 변경": {
+  "en": "{0}{1}{2} changed by {3}bp",
+  "zh": "{0}{1}{2} 變動 {3}bp"
  },
  "{0}{1}{2} 공시": {
   "en": "Filed {0}{1}{2}",
@@ -1150,6 +1602,22 @@
  "{0}{1}{2} 분기": {
   "en": "{0}{1}{2} quarter",
   "zh": "{0}{1}{2} 季"
+ },
+ "{0}{1}{2} 실시된 단기채(Bill) {3}-Week 입찰은 {4}B 달러 규모로 투자수익률 {5}%, 응찰배율 {6}배를 기록했어요.": {
+  "en": "The {3}-Week T-bill auction held on {0}{1}{2} was ${4}B in size, with an investment rate of {5}% and a bid-to-cover ratio of {6}x.",
+  "zh": "{0}{1}{2} 舉行的 {3}-Week 短期國庫券(Bill)標售,規模 {4}B 美元,投資收益率 {5}%,投標倍數 {6} 倍。"
+ },
+ "{0}{1}{2} 실시된 물가연동(TIPS) {3}-Year 입찰은 {4}B 달러 규모로 낙찰금리 {5}%, 응찰배율 {6}배를 기록했어요.": {
+  "en": "The {3}-Year TIPS auction held on {0}{1}{2} was ${4}B in size, with a high yield of {5}% and a bid-to-cover ratio of {6}x.",
+  "zh": "{0}{1}{2} 舉行的 {3}-Year 抗通膨公債(TIPS)標售,規模 {4}B 美元,得標利率 {5}%,投標倍數 {6} 倍。"
+ },
+ "{0}{1}{2} 실시된 장기채(Bond) {3}-Year {4}-Month 입찰은 {5}B 달러 규모로 낙찰금리 {6}%, 응찰배율 {7}배를 기록했어요.": {
+  "en": "The {3}-Year {4}-Month Bond auction held on {0}{1}{2} was ${5}B in size, with a high yield of {6}% and a bid-to-cover ratio of {7}x.",
+  "zh": "{0}{1}{2} 舉行的 {3}-Year {4}-Month 長期公債(Bond)標售,規模 {5}B 美元,得標利率 {6}%,投標倍數 {7} 倍。"
+ },
+ "{0}{1}{2} 실시된 중기채(Note) {3}-Year 입찰은 {4}B 달러 규모로 낙찰금리 {5}%, 응찰배율 {6}배를 기록했어요.": {
+  "en": "The {3}-Year Note auction held on {0}{1}{2} was ${4}B in size, with a high yield of {5}% and a bid-to-cover ratio of {6}x.",
+  "zh": "{0}{1}{2} 舉行的 {3}-Year 中期公債(Note)標售,規模 {4}B 美元,得標利率 {5}%,投標倍數 {6} 倍。"
  },
  "{0}~{1} (직전보다 ↓)": {
   "en": "{0}–{1} (lower than previous)",
@@ -1231,6 +1699,22 @@
   "en": "All {0} normal",
   "zh": "{0} 項皆正常"
  },
+ "{0}가지 모두 정상」 상태예요": {
+  "en": "All {0} are Normal」",
+  "zh": "{0} 項全部正常」"
+ },
+ "{0}가지 신호 동시 악화": {
+  "en": "All {0} signals worsening at the same time",
+  "zh": "{0} 項訊號同時惡化"
+ },
+ "{0}가지 신호 모두 악화": {
+  "en": "All {0} signals have worsened",
+  "zh": "{0} 項訊號全數惡化"
+ },
+ "{0}가지 신호 악화 (나머지 추세 주시)": {
+  "en": "{0} signals worsening (watching the rest of the trend)",
+  "zh": "{0} 項訊號惡化(持續觀察其餘趨勢)"
+ },
  "{0}가지 체크포인트": {
   "en": "{0} checkpoints",
   "zh": "{0} 個檢查重點"
@@ -1242,6 +1726,14 @@
  "{0}개 양호 / {1}개 일부 약함 / {2}개 이상 흡수 실패 의심. 응찰배율 하나만 높다고 성공이 아니에요": {
   "en": "{0} healthy / {1} partly weak / {2} suspected absorption failure. A high bid-to-cover alone is not success",
   "zh": "{0} 項良好 / {1} 項部分偏弱 / {2} 項疑似承接失敗。只有投標倍數高，不代表成功"
+ },
+ "{0}개 중 압력 신호 {1}개": {
+  "en": "{1} of {0} indicators show pressure signals",
+  "zh": "{0} 項指標中有 {1} 項出現壓力訊號"
+ },
+ "{0}개 중 압력 신호 {1}개: {2}.": {
+  "en": "{1} of {0} show pressure signals: {2}.",
+  "zh": "{0} 項中有 {1} 項出現壓力訊號:{2}。"
  },
  "{0}개 지점 중": {
   "en": "Out of {0} points",
@@ -1255,6 +1747,10 @@
   "en": "{0} months",
   "zh": "{0} 個月"
  },
+ "{0}개월 +{1}{2} 이상 주의": {
+  "en": "{0} months +{1}{2} or more: Caution",
+  "zh": "{0} 個月 +{1}{2} 以上:警戒"
+ },
  "{0}개월 {0}": {
   "en": "{0}-mo {0}",
   "zh": "{0} 個月 {0}"
@@ -1262,6 +1758,10 @@
  "{0}개월 {0}%": {
   "en": "{0}-mo {0}%",
   "zh": "{0} 個月 {0}%"
+ },
+ "{0}개월 {1} 이상 주의": {
+  "en": "Caution at {1} or more over {0} months",
+  "zh": "{0} 個月內 {1} 以上需注意"
  },
  "{0}개월 {1}%": {
   "en": "{0} months {1}%",
@@ -1271,6 +1771,10 @@
   "en": "{0} months {1}bp",
   "zh": "{0} 個月 {1}bp"
  },
+ "{0}개월 {1}bp 이상 주의": {
+  "en": "Caution at {1}bp or more over {0} months",
+  "zh": "{0} 個月內 {1}bp 以上需注意"
+ },
  "{0}개월 변화": {
   "en": "{0}-month change",
   "zh": "{0} 個月變化"
@@ -1279,9 +1783,33 @@
   "en": "{0} auctions",
   "zh": "{0} 場"
  },
+ "{0}계약 = {1} MMBtu": {
+  "en": "{0} contracts = {1} MMBtu",
+  "zh": "{0} 口 = {1} MMBtu"
+ },
+ "{0}계약 = {1} kg": {
+  "en": "{0} contracts = {1} kg",
+  "zh": "{0} 口 = {1} 公斤"
+ },
+ "{0}계약 = {1} 배럴": {
+  "en": "{0} contracts = {1} barrels",
+  "zh": "{0} 口 = {1} 桶"
+ },
  "{0}계약 = {1} 부셸": {
-  "en": "{0} contract = {1} bushels",
-  "zh": "{0}口合約＝{1}英斗"
+  "en": "{0} contracts = {1} bushels",
+  "zh": "{0} 口 = {1} 英斗"
+ },
+ "{0}계약 = {1} 온스": {
+  "en": "{0} contracts = {1} ounces",
+  "zh": "{0} 口 = {1} 盎司"
+ },
+ "{0}계약 = {1} 톤": {
+  "en": "{0} contracts = {1} tonnes",
+  "zh": "{0} 口 = {1} 公噸"
+ },
+ "{0}계약 = {1} 파운드": {
+  "en": "{0} contracts = {1} pounds",
+  "zh": "{0} 口 = {1} 磅"
  },
  "{0}계약 순매도": {
   "en": "net short {0} contracts",
@@ -1335,6 +1863,10 @@
   "en": "{0} years {1}%",
   "zh": "{0}年 {1}%"
  },
+ "{0}년 {1}%p": {
+  "en": "{1} percentage points over {0} years",
+  "zh": "{0}年間 {1} 個百分點"
+ },
  "{0}년 {1}bp": {
   "en": "{1}bp over {0} years",
   "zh": "{0} 年 {1}bp"
@@ -1363,6 +1895,18 @@
   "en": "debt maturing within {0} years,",
   "zh": "{0} 年內到期的債務、"
  },
+ "{0}년 레포 위기와 비슷한 조합이라 가장 주의할 상황이에요.": {
+  "en": "It resembles the {0} repo crisis, so it is the situation that most needs care.",
+  "zh": "與 {0} 年的附買回危機相似,是最需要小心的情況。"
+ },
+ "{0}년 레포 위기와 비슷한 조합이에요.": {
+  "en": "It is a combination similar to the {0} repo crisis.",
+  "zh": "與 {0} 年的附買回危機類似的組合。"
+ },
+ "{0}년 말 이후 구조적으로 바닥이라, 지금 완충 여부는 은행 지준과 SOFR−IORB로 봐요(현재 위험).": {
+  "en": "Structurally at the floor since the end of {0}, so whether the buffer is adequate now is judged from bank reserves and SOFR−IORB (currently Danger).",
+  "zh": "自 {0} 年底起已結構性見底,所以現在緩衝是否足夠,要看銀行準備金與 SOFR−IORB(目前為危險)。"
+ },
  "{0}년 백분위": {
   "en": "{0}-year percentile",
   "zh": "{0}年百分位"
@@ -1375,9 +1919,21 @@
   "en": "Within {0}-year range",
   "zh": "在{0}年區間內"
  },
+ "{0}년 범위 안이에요": {
+  "en": "within the {0}-year range",
+  "zh": "在{0}年區間內"
+ },
+ "{0}년 범위보다 많아요 (공급 넉넉)": {
+  "en": "above the {0}-year range (ample supply)",
+  "zh": "高於{0}年區間（供給充裕）"
+ },
  "{0}년 범위보다 많음 (넉넉)": {
   "en": "Above the {0}-year range (ample)",
   "zh": "高於 {0} 年範圍(充裕)"
+ },
+ "{0}년 범위보다 적어요 (공급 빠듯)": {
+  "en": "below the {0}-year range (tight supply)",
+  "zh": "低於{0}年區間（供給吃緊）"
  },
  "{0}년 범위보다 적음 (빠듯)": {
   "en": "Below the {0}-year range (tight)",
@@ -1511,6 +2067,10 @@
   "en": "{0}-year {1}B",
   "zh": "{0} 年期 {1}B"
  },
+ "{0}년물 {1}주일 {2}bp 이상": {
+  "en": "{0}-year {1}-week {2}bp or more",
+  "zh": "{0} 年期 {1} 週 {2}bp 以上"
+ },
  "{0}년물 ≈ 실질금리 + 기대인플레 + 기간프리미엄": {
   "en": "{0}-year yield ≈ real yield + expected inflation + term premium",
   "zh": "{0} 年期殖利率 ≈ 實質殖利率 + 預期通膨 + 期限溢酬"
@@ -1519,9 +2079,21 @@
   "en": "{0}-year yield ({1} yrs)",
   "zh": "{0} 年期殖利率（{1} 年）"
  },
+ "{0}년물 금리는 {1}%": {
+  "en": "the {0}-year yield is {1}%",
+  "zh": "{0}年期殖利率為 {1}%"
+ },
+ "{0}년물 금리는 {1}%로 한 달 동안 {2}bp 움직였는데, 경기 둔화 걱정으로 안전자산에 돈이 몰리며 내렸어요.": {
+  "en": "The {0}-year yield is {1}%, having moved {2}bp over the past month; it fell as money flowed into safe-haven assets on worries about an economic slowdown.",
+  "zh": "{0} 年期殖利率為 {1}%,一個月內變動 {2}bp;因擔憂景氣放緩,資金湧入避險資產而下滑。"
+ },
  "{0}년물 압력계 ↑ + 유동성 저수조 ↓ + 레포 분산 ↑": {
   "en": "{0}-year yield gauge ↑ + liquidity reservoir ↓ + repo dispersion ↑",
   "zh": "{0} 年期壓力計 ↑ + 流動性水庫 ↓ + 附買回分歧 ↑"
+ },
+ "{0}년물이 말하는 앞으로의 금리 {1}bp": {
+  "en": "Future rates implied by the {0}-year, {1}bp",
+  "zh": "{0} 年期所反映的未來利率 {1}bp"
  },
  "{0}년물이 하루 ±{1}bp 움직였다면 원인은? (": {
   "en": "If the {0}-year yield moved ±{1}bp in a day, what was the cause? (",
@@ -1538,6 +2110,10 @@
  "{0}단계: 🟢 완화·정상화": {
   "en": "Stage {0}: 🟢 Easing · normalizing",
   "zh": "第 {0} 階段：🟢 緩和・正常化"
+ },
+ "{0}등급)": {
+  "en": "grade {0})",
+  "zh": "{0} 級)"
  },
  "{0}만": {
   "en": "{0} x10k",
@@ -1564,8 +2140,8 @@
   "zh": "{0} 倍↓ 疲弱"
  },
  "{0}번": {
-  "en": "{0} times",
-  "zh": "{0} 次"
+  "en": "No. {0}",
+  "zh": "第 {0} 項"
  },
  "{0}보다 {1}% {2}": {
   "en": "{1}% {2} than {0}",
@@ -1579,9 +2155,25 @@
   "en": "{0}/{1}",
   "zh": "{0}/{1}"
  },
+ "{0}월 {1}일({2}) 미국 장 마감 기준,": {
+  "en": "As of the U.S. market close on {0}/{1} ({2}),",
+  "zh": "截至美股 {0} 月 {1} 日({2})收盤,"
+ },
+ "{0}월 {1}일({2}) 미국 장 마감 기준, 미국 국채 시장의 분위기는 「{3}」이에요.": {
+  "en": "As of the U.S. market close on {0}/{1} ({2}), the mood of the U.S. Treasury market is 「{3}」.",
+  "zh": "截至美股 {0} 月 {1} 日({2})收盤,美國公債市場的氣氛為「{3}」。"
+ },
  "{0}월 {1}일({2}일)과 비교": {
   "en": "vs. {0}/{1} ({2})",
   "zh": "與 {0} 月 {1} 日（{2}）相比"
+ },
+ "{0}월 {1}일(수) 미국 장 마감 기준, 강제매도 위험 진단은 「위험기업 자금조달 압박」이에요.": {
+  "en": "As of the US market close on Wednesday {0}/{1}, the forced-selling risk diagnosis is 「Funding pressure on risky companies」.",
+  "zh": "截至 {0} 月 {1} 日(週三)美股收盤,被迫拋售風險的診斷為「風險企業資金調度壓力」。"
+ },
+ "{0}월 {1}일(수) 미국 장 마감 기준, 미국 국채 시장의 분위기는 「🟠 경계」이에요.": {
+  "en": "As of the US market close on Wednesday {0}/{1}, the mood of the US Treasury market is 「🟠 Caution」.",
+  "zh": "截至 {0} 月 {1} 日(週三)美股收盤,美國公債市場的氣氛為「🟠 警戒」。"
  },
  "{0}월 기준)": {
   "en": ", as of month {0})",
@@ -1602,6 +2194,10 @@
  "{0}월 평균 {1} 달러/톤 · 이번 주 선물 {2}% (참고)": {
   "en": "Month {0} average {1} USD/t · this week's futures {2}% (reference)",
   "zh": "{0} 月平均 {1} 美元/公噸 · 本週期貨 {2}%(參考)"
+ },
+ "{0}은 평균일 뿐 폭락 기준선이 아님": {
+  "en": "{0} is just an average, not a crash threshold",
+  "zh": "{0} 只是平均值,不是崩盤的門檻"
  },
  "{0}일": {
   "en": "{0} days",
@@ -1626,6 +2222,10 @@
  "{0}일 {1}bp 또는 {2}년 {3}bp 이상이면 약화": {
   "en": "Weak if {1}bp over {0} days, or {3}bp over {2} years, or more",
   "zh": "{0} 日 {1}bp 或 {2} 年 {3}bp 以上即視為轉弱"
+ },
+ "{0}일 변화 {1}bp": {
+  "en": "{0}-day change {1}bp",
+  "zh": "{0} 日變動 {1}bp"
  },
  "{0}일 변화 분해": {
   "en": "Breakdown of {0}-day change",
@@ -1671,6 +2271,10 @@
   "en": "{0}W change is in contracts",
   "zh": "{0}週變化單位為口"
  },
+ "{0}주 보유 증가분 중 Bills {1}%": {
+  "en": "Bills were {1}% of the {0}-week increase in holdings",
+  "zh": "{0} 週持有增加額中,Bills 占 {1}%"
+ },
  "{0}주간 T-Bill 보유 변화": {
   "en": "T-bill holdings change over {0} weeks",
   "zh": "{0} 週 T-Bill 持有變化"
@@ -1703,21 +2307,57 @@
   "en": "· CFTC positions: observed {0}/{1} (Tue)",
   "zh": "· CFTC 持倉：觀察日 {0}/{1}（二）"
  },
+ "· {0} {1}bp 변경": {
+  "en": "· {0} changed by {1}bp",
+  "zh": "· {0} 調整 {1}bp"
+ },
  "· {0}년 {0}%": {
   "en": "· {0}-yr {0}%",
   "zh": "· {0}年 {0}%"
+ },
+ "· {0}년물이 말하는 앞으로의 금리 {1}bp": {
+  "en": "· What the {0}-year yield says about future rates: {1}bp",
+  "zh": "· {0}年期殖利率所反映的未來利率:{1}bp"
  },
  "· {0}주 동안 순매수 {0}계약 {1}": {
   "en": "· {0} weeks: net long {0} contracts, {1}",
   "zh": "· {0} 週內淨買超 {0} 口,{1}"
  },
+ "· 가격: 관측 {0}/{1}(화)": {
+  "en": "· Price: observed {0}/{1} (Tue)",
+  "zh": "· 價格：觀察日 {0}/{1}（二）"
+ },
  "· 가격: 관측 {0}월 평균": {
   "en": "· Price: observed monthly average of month {0}",
   "zh": "· 價格：觀察期為{0}月平均"
  },
+ "· 공식 무료 자료가 없어 대체 지표로 보는 항목 {0}개({1}번).": {
+  "en": "· {0} items are tracked with substitute indicators because no free official data exists (No. {1}).",
+  "zh": "· 因為沒有官方免費資料，改用替代指標觀察的項目有 {0} 項（第 {1} 項）。"
+ },
+ "· 근원 PCE {0}%": {
+  "en": "· Core PCE {0}%",
+  "zh": "· 核心 PCE {0}%"
+ },
+ "· 다음 회의 {0}": {
+  "en": "· Next meeting {0}",
+  "zh": "· 下次會議 {0}"
+ },
+ "· 대차대조표 {0} ({1}주 {2}B)": {
+  "en": "· Balance sheet {0} ({1}-week {2}B)",
+  "zh": "· 資產負債表 {0}({1}週 {2}B)"
+ },
+ "· 대형 정기예금 {0}주 {1}%": {
+  "en": "· Large time deposits, {0} weeks: {1}%",
+  "zh": "· 大額定存 {0} 週 {1}%"
+ },
  "· 등락률: 관측 {0}/{1}(목)": {
   "en": "· % change: observed {0}/{1} (Thu)",
   "zh": "· 漲跌幅：觀察日 {0}/{1}（四）"
+ },
+ "· 엔/달러 {0}개월 {1}% ({2})": {
+  "en": "· USD/JPY {0}-month {1}% ({2})",
+  "zh": "· 美元/日圓 {0} 個月 {1}%({2})"
  },
  "· 이번 주 선물 {0} (참고)": {
   "en": "· this week's futures {0} (reference)",
@@ -1727,9 +2367,29 @@
   "en": "· Long-term cycle: monthly average through month {0}",
   "zh": "· 長期循環：資料到{0}月月平均"
  },
+ "· 재고: 관측 {0}/{1}(금)": {
+  "en": "· Inventory: observed {0}/{1} (Fri)",
+  "zh": "· 庫存：觀察日 {0}/{1}（五）"
+ },
  "· 참고": {
   "en": "· Reference",
   "zh": "・參考"
+ },
+ "· 최근 {0}년물 {1}": {
+  "en": "· Recent {0}-year {1}",
+  "zh": "· 近期 {0}年期 {1}"
+ },
+ "· 최근 {0}일 동결": {
+  "en": "· Held for the last {0} days",
+  "zh": "· 近 {0} 日維持不變"
+ },
+ "— CCC가 두드러지게 확대": {
+  "en": "— CCC clearly widening",
+  "zh": "— CCC 明顯擴大"
+ },
+ "— {0}년 말 이후 구조적으로 바닥이라, 지금 완충 여부는 은행 지준과 SOFR−IORB로 봐요(현재": {
+  "en": "— structurally at the floor since the end of {0}, so whether the buffer works now is judged by bank reserves and SOFR−IORB (currently",
+  "zh": "— 自 {0} 年底起結構性見底,現在緩衝是否有效,要看銀行準備金與 SOFR−IORB(目前"
  },
  "— 공식 통계는 발표 주기대로(대부분 하루 {0}번), 시세는 최대 {1}분 지연": {
   "en": "— Official statistics follow their release schedule (mostly {0} per day); market quotes lag by up to {1} min",
@@ -1739,9 +2399,37 @@
   "en": "— the bold line is the one-line reading; below are the supporting numbers",
   "zh": "— 粗體為一句話解讀，下方為依據數字"
  },
+ "— 낮은 수준이에요.": {
+  "en": "— it is at a low level.",
+  "zh": "— 處於低水準。"
+ },
+ "— 보통 수준이에요.": {
+  "en": "— It is at a normal level.",
+  "zh": "— 處於正常水準。"
+ },
  "— 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요.": {
   "en": "— when crowding is extreme, even small news can trigger a big move the other way.",
   "zh": "— 擁擠到極端時,一點小消息也可能引發大幅反向波動。"
+ },
+ "— 안정적이에요.": {
+  "en": "— it is stable.",
+  "zh": "— 很穩定。"
+ },
+ "— 엔 캐리 트레이드 청산 압력이 매우 높은 수준이에요.": {
+  "en": "— the pressure to unwind the yen carry trade is at a very high level.",
+  "zh": "— 日圓套利交易的平倉壓力處於非常高的水準。"
+ },
+ "— 완충장치가 얇아진 상태예요.": {
+  "en": "— the safety cushion has become thin.",
+  "zh": "— 緩衝機制變薄了。"
+ },
+ "— 일본에서 돈을 빌리는 비용이 오르고 있어요.": {
+  "en": "— the cost of borrowing from Japan is rising.",
+  "zh": "— 在日本借錢的成本正在上升。"
+ },
+ "— 주식 참여자들이 변동성을 비싸게 보고 있어요.": {
+  "en": "— Stock investors see volatility as expensive.",
+  "zh": "— 股票投資人認為波動性偏貴。"
  },
  "‘Indirect Bidder = 외국인’이 아니라 실제로 누가 받았는지": {
   "en": "Not \"Indirect Bidder = foreigners\" but who actually took it",
@@ -1787,6 +2475,22 @@
   "en": "“Bonds are truth, stocks are drama”",
   "zh": "「債市是真相，股市是戲劇」"
  },
+ "ℹ️ ICE 거래소 WTI({0})도 있지만 기준 계약인 NYMEX만 보여 줘요 (두 계약을 더하지 않아요).": {
+  "en": "ℹ️ ICE also lists WTI ({0}), but only the benchmark NYMEX contract is shown (the two are not added together).",
+  "zh": "ℹ️ ICE 交易所也有 WTI（{0}），但只顯示基準的 NYMEX 合約（兩者不相加）。"
+ },
+ "ℹ️ ICE 거래소 천연가스({0})는 계약 크기가 {1} MMBtu로 달라서 더하지 않아요.": {
+  "en": "ℹ️ ICE natural gas ({0}) has a different contract size ({1} MMBtu), so it is not added.",
+  "zh": "ℹ️ ICE 交易所天然氣（{0}）合約規模為 {1} MMBtu，規格不同所以不相加。"
+ },
+ "ℹ️ 세계 기준 시장인 런던금속거래소(LME) 구리는 CFTC 보고 대상이 아니라, 미국 COMEX 구리만 보여 줘요.": {
+  "en": "ℹ️ Copper on the London Metal Exchange (LME), the global benchmark, is not reported to the CFTC, so only US COMEX copper is shown.",
+  "zh": "ℹ️ 全球基準的倫敦金屬交易所（LME）銅不在 CFTC 申報範圍內，因此只顯示美國 COMEX 銅。"
+ },
+ "ℹ️ 소형 계약(Micro Gold, {0})은 제외했어요.": {
+  "en": "ℹ️ The small contract (Micro Gold, {0}) is excluded.",
+  "zh": "ℹ️ 已排除小型合約（Micro Gold，{0}）。"
+ },
  "ℹ️ 시카고 연질 적색 겨울밀(SRW) 기준이에요. 경질밀(HRW, {0})·봄밀({1})은 다른 계약이라 더하지 않아요.": {
   "en": "ℹ️ This is based on Chicago soft red winter wheat (SRW). Hard red winter (HRW, {0}) and spring wheat ({1}) are different contracts and are not added together.",
   "zh": "ℹ️ 以芝加哥軟紅冬小麥（SRW）為準。硬紅冬小麥（HRW，{0}）與春小麥（{1}）屬於不同合約，不會加總。"
@@ -1794,6 +2498,54 @@
  "← 싼 쪽": {
   "en": "← cheap",
   "zh": "← 便宜"
+ },
+ "→ WTI 원유 보기": {
+  "en": "→ See WTI crude oil",
+  "zh": "→ 查看WTI 原油"
+ },
+ "→ 구리 보기": {
+  "en": "→ See Copper",
+  "zh": "→ 查看銅"
+ },
+ "→ 금 보기": {
+  "en": "→ See Gold",
+  "zh": "→ 查看黃金"
+ },
+ "→ 대두 보기": {
+  "en": "→ See Soybeans",
+  "zh": "→ 查看大豆"
+ },
+ "→ 리튬 보기": {
+  "en": "→ See Lithium",
+  "zh": "→ 查看鋰"
+ },
+ "→ 백금 보기": {
+  "en": "→ See Platinum",
+  "zh": "→ 查看鉑金"
+ },
+ "→ 브렌트유 보기": {
+  "en": "→ See Brent crude oil",
+  "zh": "→ 查看布蘭特原油"
+ },
+ "→ 소맥 (SRW) 보기": {
+  "en": "→ See Wheat (SRW)",
+  "zh": "→ 查看小麥（SRW）"
+ },
+ "→ 알루미늄 보기": {
+  "en": "→ See Aluminum",
+  "zh": "→ 查看鋁"
+ },
+ "→ 옥수수 보기": {
+  "en": "→ See Corn",
+  "zh": "→ 查看玉米"
+ },
+ "→ 은 보기": {
+  "en": "→ See Silver",
+  "zh": "→ 查看白銀"
+ },
+ "→ 천연가스 (헨리허브) 보기": {
+  "en": "→ See Natural gas (Henry Hub)",
+  "zh": "→ 查看天然氣（亨利港）"
  },
  "↳ BCRED 등 공개매수(SC TO) 공시 링크에서 확인": {
   "en": "↳ Check via tender offer (SC TO) filing links such as BCRED",
@@ -1831,9 +2583,21 @@
   "en": "≥{0} neutral",
   "zh": "≥{0} 中性"
  },
+ "⏳ {0} ({1}일 후)": {
+  "en": "⏳ {0} (in {1} days)",
+  "zh": "⏳ {0}({1} 日後)"
+ },
+ "⏳ {0}{1}{2} ({3}일 후)": {
+  "en": "⏳ {0}{1}{2} (in {3} days)",
+  "zh": "⏳ {0}{1}{2}({3} 天後)"
+ },
  "⏳ 아직 긴축 지속": {
   "en": "⏳ Tightening still continues",
   "zh": "⏳ 緊縮仍在持續"
+ },
+ "⏳ 아직 둔화": {
+  "en": "⏳ Not yet slowing",
+  "zh": "⏳ 尚未放緩"
  },
  "⏳ 아직 확대 중": {
   "en": "⏳ Still widening",
@@ -1854,6 +2618,14 @@
  "① 금리 문제인가?": {
   "en": "① Is it a rate problem?",
   "zh": "① 是利率問題嗎？"
+ },
+ "① 금리: {0}년 실질금리는 {1}%로 한 달 {2} —": {
+  "en": "① Yields: the {0}-year real yield is {1}%, {2} over one month —",
+  "zh": "① 殖利率:{0}年期實質殖利率為 {1}%,一個月 {2} —"
+ },
+ "① 금리: {0}년 실질금리는 {1}%로 한 달 {2}bp": {
+  "en": "① Yields: the {0}-year real yield is {1}%, {2}bp over the month",
+  "zh": "① 殖利率:{0} 年期實質殖利率為 {1}%,一個月 {2}bp"
  },
  "① 기간프리미엄 (Term Premium)": {
   "en": "① Term premium",
@@ -1879,6 +2651,10 @@
   "en": "① Trend buying",
   "zh": "① 趨勢買進"
  },
+ "① 투기자금 순포지션과 가격": {
+  "en": "① Speculative net position and price",
+  "zh": "① 投機資金淨部位與價格"
+ },
  "① 투기자금 순포지션과 가격 흐름({0}년 전 = {1})": {
   "en": "① Speculative net position vs. price trend ({0} years ago = {1})",
   "zh": "① 投機資金淨部位與價格走勢（{0}年前＝{1}）"
@@ -1894,6 +2670,18 @@
  "② {0}층(재고)이 그 국면을 확인해 주는지 보고": {
   "en": "② Check whether layer {0} (inventory) confirms that phase",
   "zh": "② 看第{0}層（庫存）是否印證該階段"
+ },
+ "② 기업 신용 문제인가?": {
+  "en": "② Is it a corporate credit problem?",
+  "zh": "② 是企業信用出問題嗎?"
+ },
+ "② 기업 신용: 가장 약한 기업(CCC) 스프레드는 {0}bp로 한 달 {1}, 하이일드 전체는 {2}bp로 {3} —": {
+  "en": "② Corporate credit: the spread of the weakest companies (CCC) is {0}bp, {1} over one month, and the overall high-yield spread is {2}bp, {3} —",
+  "zh": "② 企業信用:最弱企業(CCC)的利差為 {0}bp,一個月 {1};整體高收益債利差為 {2}bp,{3} —"
+ },
+ "② 기업 신용: 가장 약한 기업(CCC) 스프레드는 {0}bp로 한 달 {1}bp, 하이일드 전체는 {2}bp로 {3}bp": {
+  "en": "② Corporate credit: the spread for the weakest companies (CCC) is {0}bp, {1}bp over the month, and overall high yield is {2}bp, {3}bp",
+  "zh": "② 企業信用:最弱企業(CCC)利差為 {0}bp,一個月 {1}bp,高收益債整體為 {2}bp,{3}bp"
  },
  "② 돈 없이 상승": {
   "en": "② Rising without money",
@@ -1951,6 +2739,18 @@
   "en": "③ Overheated / near peak",
   "zh": "③ 過熱・高點區"
  },
+ "③ 금융시장 자금조달 문제까지 번졌나?": {
+  "en": "③ Has it spread to financial market funding?",
+  "zh": "③ 有蔓延到金融市場的資金調度嗎?"
+ },
+ "③ 자금시장: 우량 회사채 스프레드 {0}bp(한 달 {1}), 은행 간 하루 자금 {2}, 금융여건 지수(NFCI) {3}(한 달 {4}) —": {
+  "en": "③ Funding markets: investment-grade corporate bond spread {0}bp (one month {1}), overnight interbank funding {2}, financial conditions index (NFCI) {3} (one month {4}) —",
+  "zh": "③ 資金市場:投資級公司債利差 {0}bp(一個月 {1}),銀行間隔夜資金 {2},金融情勢指數(NFCI){3}(一個月 {4})—"
+ },
+ "③ 자금시장: 우량 회사채 스프레드 {0}bp(한 달 {1}bp), 은행 간 하루 자금 최근 {2}주(월말 제외) 중간값 {3}bp, 금융여건 지수(NFCI) {4}(한 달 {5})": {
+  "en": "③ Funding markets: investment-grade corporate bond spread {0}bp ({1}bp over the month), interbank overnight funding median over the last {2} weeks (excluding month-end) {3}bp, financial conditions index (NFCI) {4} ({5} over the month)",
+  "zh": "③ 資金市場:投資級公司債利差 {0}bp(一個月 {1}bp),銀行間隔夜資金最近 {2} 週(不含月底)中位數 {3}bp,金融情勢指數(NFCI){4}(一個月 {5})"
+ },
  "③ 하락 중 매수": {
   "en": "③ Dip buying",
   "zh": "③ 下跌中買進"
@@ -1978,6 +2778,14 @@
  "④ 매도 추세 확인": {
   "en": "④ Selling trend confirmed",
   "zh": "④ 賣壓趨勢確認"
+ },
+ "④ 미국 원유 재고 (전략비축유 제외)": {
+  "en": "④ US crude oil inventory (excluding SPR)",
+  "zh": "④ 美國原油庫存（不含戰略儲備）"
+ },
+ "④ 미국 천연가스 저장량 (Lower {0})": {
+  "en": "④ US natural gas storage (Lower {0})",
+  "zh": "④ 美國天然氣儲存量（Lower {0}）"
  },
  "④ 재고": {
   "en": "④ Inventory",
@@ -2015,17 +2823,53 @@
   "en": "☕ {0}-minute morning checklist",
   "zh": "☕ 每日早晨 {0} 分鐘檢查清單"
  },
+ "⚖️ 고용 보통": {
+  "en": "⚖️ Jobs moderate",
+  "zh": "⚖️ 就業普通"
+ },
  "⚖️ 반대 근거": {
   "en": "⚖️ Counter-evidence",
   "zh": "⚖️ 反向證據"
+ },
+ "⚖️ 반대 근거: 투기자금 비관이 {0}년 중 극단이라, 조금만 좋아져도 되사기(숏 커버)로 튈 수 있어요.": {
+  "en": "⚖️ Counter-evidence: speculative pessimism is at a {0}-year extreme, so even slight improvement could trigger a short-covering bounce.",
+  "zh": "⚖️ 反向證據：投機資金悲觀處於{0}年極端，稍有好轉就可能因空單回補而反彈。"
+ },
+ "⚖️ 반대 근거: 투기자금 순매수가 {0}년 중 상위 {1}% 안이에요": {
+  "en": "⚖️ Counter-evidence: speculative net long is in the top {1}% of {0} years",
+  "zh": "⚖️ 反向證據：投機資金淨買超處於{0}年中最高 {1}%"
+ },
+ "⚖️ 반대 근거: 투기자금 순매수가 {0}년 중 하위 {1}% 안이에요": {
+  "en": "⚖️ Counter-evidence: speculative net long is in the bottom {1}% of {0} years",
+  "zh": "⚖️ 反向證據：投機資金淨買超處於{0}年中最低 {1}%"
+ },
+ "⚖️ 중립": {
+  "en": "⚖️ Neutral",
+  "zh": "⚖️ 中性"
  },
  "⚙️ 연준": {
   "en": "⚙️ Fed",
   "zh": "⚙️ 聯準會"
  },
+ "⚠ SOFR {0}일 {1}bp 이상 또는 역레포 {2}B 미만": {
+  "en": "⚠ SOFR off by {1}bp or more for {0} days, or reverse repo below {2}B",
+  "zh": "⚠ SOFR 連續 {0} 日偏離 {1}bp 以上,或逆回購低於 {2}B"
+ },
+ "⚠ 대표 계약이 아님을 알고 참고로 보기": {
+  "en": "⚠ View for reference, knowing it is not the representative contract",
+  "zh": "⚠ 了解這不是代表性合約，僅供參考"
+ },
  "⚠️ CCC 스프레드가 하이일드 전체보다 두드러지게 커지고 있어요": {
   "en": "⚠️ CCC spreads are widening noticeably more than high yield overall",
   "zh": "⚠️ CCC 利差擴大幅度明顯大於整體高收益債"
+ },
+ "⚠️ {0}개 지점 이상 감지": {
+  "en": "⚠️ Anomalies detected at {0} points",
+  "zh": "⚠️ 偵測到 {0} 個節點異常"
+ },
+ "⚠️ 경계 / 압박 증가": {
+  "en": "⚠️ Caution / pressure rising",
+  "zh": "⚠️ 警戒 / 壓力增加"
  },
  "⚠️ 공식 원자료(CFTC": {
   "en": "⚠️ This is an automatic reading of official raw data (CFTC",
@@ -2034,6 +2878,22 @@
  "⚠️ 공식 원자료(미 재무부 Fiscal Data": {
   "en": "⚠️ This is an automatic assessment of official raw data (US Treasury Fiscal Data",
   "zh": "⚠️ 這是自動判讀官方原始資料（美國財政部 Fiscal Data"
+ },
+ "⚠️ 높은 경보: Bills Pivot 레짐 진입": {
+  "en": "⚠️ High alert: entering the Bills Pivot regime",
+  "zh": "⚠️ 高度警報:進入 Bills Pivot 模式"
+ },
+ "⚠️ 단기 편중": {
+  "en": "⚠️ Short-term tilt",
+  "zh": "⚠️ 偏重短期"
+ },
+ "⚠️ 데이터 부족": {
+  "en": "⚠️ Not enough data",
+  "zh": "⚠️ 資料不足"
+ },
+ "⚠️ 매수→매도 전환 (지원군 이탈 신호)": {
+  "en": "⚠️ Switch from buying to selling (sign a supporter is leaving)",
+  "zh": "⚠️ 由買轉賣(支撐力量離場的訊號)"
  },
  "⚠️ 신용 시장": {
   "en": "⚠️ Credit market",
@@ -2051,9 +2911,33 @@
   "en": "⚠️ Do not make investment decisions from this screen alone",
   "zh": "⚠️ 請勿只憑本頁做投資決策"
  },
+ "⚠️ 자본 탈출 진행 중 (정크본드 팔고 국채로)": {
+  "en": "⚠️ Capital flight under way (selling junk bonds, buying Treasuries)",
+  "zh": "⚠️ 資金外逃進行中(賣出垃圾債、買進公債)"
+ },
+ "⚠️ 캐리 청산 압박": {
+  "en": "⚠️ Carry-unwind pressure",
+  "zh": "⚠️ 套利平倉壓力"
+ },
+ "⚪ 혼합 상승": {
+  "en": "⚪ Mixed rise",
+  "zh": "⚪ 混合上漲"
+ },
+ "⚪ 혼합 하락": {
+  "en": "⚪ Mixed decline",
+  "zh": "⚪ 混合下跌"
+ },
  "✅ 국채 금리는 지금 받을 수 있는 최신({0}/{1} 미국 장 마감)이에요": {
   "en": "✅ Treasury yields are the latest available now (US market close {0}/{1})",
   "zh": "✅ 公債殖利率為目前可取得的最新資料（美股收盤 {0}/{1}）"
+ },
+ "✅ 둔화 전환": {
+  "en": "✅ Turning to slowdown",
+  "zh": "✅ 轉為放緩"
+ },
+ "✅ 뚜렷한 하락": {
+  "en": "✅ Clear decline",
+  "zh": "✅ 明顯下降"
  },
  "✅ 매핑 확정": {
   "en": "✅ Mapping confirmed",
@@ -2063,6 +2947,10 @@
   "en": "✅ Rebounding",
   "zh": "✅ 回升中"
  },
+ "✅ 순매수 지속 중": {
+  "en": "✅ Net buying continues",
+  "zh": "✅ 持續淨買進"
+ },
  "✅ 아니오": {
   "en": "✅ No",
   "zh": "✅ 否"
@@ -2070,6 +2958,18 @@
  "✅ 연준 국채 보유가 {0}주간 늘어남": {
   "en": "✅ Fed Treasury holdings have risen for {0} weeks",
   "zh": "✅ 聯準會持有的公債已連續 {0} 週增加"
+ },
+ "✅ 위험자산 선호": {
+  "en": "✅ Risk appetite",
+  "zh": "✅ 風險偏好"
+ },
+ "✅ 정상": {
+  "en": "✅ Normal",
+  "zh": "✅ 正常"
+ },
+ "✅ 정상 (QT 또는 균형)": {
+  "en": "✅ Normal (QT or balanced)",
+  "zh": "✅ 正常(QT 或均衡)"
  },
  "✅ 투자등급 스프레드 {0}bp 미만": {
   "en": "✅ Investment-grade spread below {0}bp",
@@ -2127,6 +3027,10 @@
   "en": "“④ Downturn”",
   "zh": "「④ 下行期」"
  },
+ "「돈을 기다리는 사람들": {
+  "en": "「People waiting for money",
+  "zh": "「等待資金的人們"
+ },
  "「변화 거의 없음」": {
   "en": "“Little change”",
   "zh": "「幾乎沒有變化」"
@@ -2154,6 +3058,10 @@
  "가격": {
   "en": "Price",
   "zh": "價格"
+ },
+ "가격 ($": {
+  "en": "Price ($",
+  "zh": "價格（$"
  },
  "가격 (공식)": {
   "en": "Price (official)",
@@ -2243,6 +3151,10 @@
   "en": "Prices are trending up, but inventories are above the {0}-year average — the rise may lack physical support.",
   "zh": "價格呈上升趨勢,但庫存高於 {0} 年平均 — 這可能是缺乏實體支撐的上漲。"
  },
+ "가격은 올랐지만 투기자금은 오히려 줄였어요": {
+  "en": "Prices rose but speculative money actually cut positions",
+  "zh": "價格上漲，但投機資金反而減碼"
+ },
  "가격은 올랐지만 투기자금은 오히려 줄였어요 — 숏 커버(빌려 판 것 되사기)나 실수요가 끌어올린 상승일 수 있어 지속되는지 확인이 필요해요.": {
   "en": "Prices rose but speculative money actually cut back — the rise may be driven by short covering (buying back what was borrowed and sold) or by end users, so check whether it lasts.",
   "zh": "價格上漲,但投機資金反而減碼 — 這波上漲可能是空單回補(回頭買回先前借來賣掉的部位)或實際需求者推升,需確認能否持續。"
@@ -2250,6 +3162,10 @@
  "가격을 맞히려는 화면이 아니라, 가격을 움직이는 구조": {
   "en": "Not a screen for guessing prices, but for the structure that moves them:",
   "zh": "不是用來猜價格的頁面，而是看價格背後的結構："
+ },
+ "가격이 내리고 투기자금도 빠져나갔어요": {
+  "en": "Prices fell and speculative money also pulled out",
+  "zh": "價格下跌，投機資金也撤出"
  },
  "가격이 내리고 투기자금도 빠져나갔어요 — 하락 흐름을 돈이 확인해 주는 모습이에요.": {
   "en": "Prices fell and speculative money left too — money is confirming the downtrend.",
@@ -2263,17 +3179,57 @@
   "en": "Prices are rising and speculative money bought more too — money is following the rise.",
   "zh": "價格上漲,投機資金也加碼買進 — 資金跟著上漲趨勢進場。"
  },
+ "가로 = 그 주 가격 변화(%), 세로 = 투기자금 순매수 변화(미결제약정 대비 %). 회색 점선은 지난 {0}주 궤적, 주황 점이 이번 주. 가운데 회색 띠(±{1}%)는 “변화 거의 없음”.": {
+  "en": "Horizontal = that week's price change (%), vertical = change in speculative net long (% of open interest). The gray dotted line is the past {0}-week path; the orange dot is this week. The gray band in the middle (±{1}%) means “little change”.",
+  "zh": "橫軸＝當週價格變化（%），縱軸＝投機資金淨買超變化（占未平倉量 %）。灰色虛線是過去 {0} 週的軌跡，橘色點是本週。中間灰色帶（±{1}%）代表「幾乎沒有變化」。"
+ },
  "가로 = 그 주 가격 변화(%), 세로 = 투기자금 순매수 변화(미결제약정 대비 %). 회색 점선은 지난 {0}주 궤적, 주황 점이 이번 주. 가운데 회색 띠(±{1}%)는 “변화 거의 없음”. 가격 변화는 Yahoo 선물 등락률(참고)이에요.": {
   "en": "Horizontal = that week's price change (%), vertical = change in speculative net buying (% of open interest). The gray dotted line is the past {0}-week path and the orange dot is this week. The gray band in the middle (±{1}%) means “little change.” Price change is the Yahoo futures % change (reference).",
   "zh": "橫軸＝該週價格變化（%），縱軸＝投機資金淨買超變化（占未平倉量 %）。灰色虛線是過去{0}週的軌跡，橘色點是本週。中間的灰色區帶（±{1}%）代表「幾乎沒有變化」。價格變化採用 Yahoo 期貨漲跌幅（參考）。"
+ },
+ "가속": {
+  "en": "Accelerating",
+  "zh": "加速"
+ },
+ "가장 약한 기업부터 돈줄이 막히나": {
+  "en": "Is funding getting cut off from the weakest companies first",
+  "zh": "資金是否從最弱的企業開始被切斷"
  },
  "가장 약한 기업부터 돈줄이 막히는 모습이에요.": {
   "en": "It looks like funding is drying up first for the weakest companies.",
   "zh": "看起來最弱的企業會最先被切斷資金。"
  },
+ "가장 위험한 조합이에요.": {
+  "en": "It is the most dangerous combination.",
+  "zh": "這是最危險的組合。"
+ },
+ "각 BDC 최신 {0}-Q/{1}-K 원문 표": {
+  "en": "Source tables for each BDC's latest {0}-Q/{1}-K",
+  "zh": "各 BDC 最新 {0}-Q/{1}-K 原文表格"
+ },
  "각 칸 아래": {
   "en": "Under each cell",
   "zh": "各格下方"
+ },
+ "감속": {
+  "en": "Decelerating",
+  "zh": "減速"
+ },
+ "감액": {
+  "en": "Cut",
+  "zh": "縮減"
+ },
+ "강제매도 압력 낮음": {
+  "en": "Low forced-selling pressure",
+  "zh": "被迫拋售壓力低"
+ },
+ "강제매도 위험 진단은 「{0}」이에요.": {
+  "en": "The forced-selling risk diagnosis is 「{0}」.",
+  "zh": "被迫拋售風險診斷為「{0}」。"
+ },
+ "강제매도 진단: {0}": {
+  "en": "Forced-selling diagnosis: {0}",
+  "zh": "被迫拋售診斷:{0}"
  },
  "강해져 원자재 전반에 역풍": {
   "en": "is strengthening, a headwind for commodities overall",
@@ -2287,6 +3243,14 @@
   "en": "What matters is whether the same text has been getting worse for several days.",
   "zh": "重點是同樣的內容是否連續好幾天惡化。"
  },
+ "같은 날": {
+  "en": "On the same day",
+  "zh": "同一天"
+ },
+ "같은 날 VIX {0}({1})": {
+  "en": "VIX {0} ({1}) the same day",
+  "zh": "同日 VIX {0}({1})"
+ },
  "같은 날 {0}개 이상 = 클러스터 (변동성 커질 수 있는 날)": {
   "en": "{0} or more on the same day = cluster (a day when volatility may rise)",
   "zh": "同一天有 {0} 件以上 = 集中日（波動可能放大的日子）"
@@ -2299,6 +3263,10 @@
   "en": "the previous auction of the same type",
   "zh": "同類型的前一次標售"
  },
+ "같은 주 중장기물 D등급 {0}건 이상": {
+  "en": "{0} or more D-grade coupon auctions (notes & bonds) in the same week",
+  "zh": "同一週內中長期公債出現 {0} 次以上 D 級"
+ },
  "같은 주 화요일": {
   "en": "Tuesday of the same week",
   "zh": "同週週二"
@@ -2306,6 +3274,10 @@
  "개인": {
   "en": "Individuals",
   "zh": "個人"
+ },
+ "갱신 예정": {
+  "en": "Update pending",
+  "zh": "待更新"
  },
  "갱신 주기": {
   "en": "Update frequency",
@@ -2323,6 +3295,30 @@
   "en": "Macro winds (multi-month)",
   "zh": "總體風向（以數月為單位）"
  },
+ "거시 배관은 대체로 작동하지만 일부 신용·사모신용·자금시장 지표가 압력": {
+  "en": "The macro plumbing mostly works, but some credit, private credit, and funding market indicators are under pressure",
+  "zh": "總體資金管線大致運作正常，但部分信用、私募信貸與資金市場指標承壓"
+ },
+ "거의 소진": {
+  "en": "Almost exhausted",
+  "zh": "幾乎耗盡"
+ },
+ "거의 제자리였어요.": {
+  "en": "It barely moved.",
+  "zh": "幾乎沒有變動。"
+ },
+ "건강": {
+  "en": "Healthy",
+  "zh": "健康"
+ },
+ "결과가 약하면 {0}년물 금리가 따라 오를 수 있어요.": {
+  "en": "If the results are weak, the {0}-year yield could rise.",
+  "zh": "若結果偏弱,{0} 年期殖利率可能跟著上升。"
+ },
+ "결론: 폭락 시점을 맞히기보다, 지표가 경고할 때 내 보유 기업이 현금·{0}년 내 만기·이자비용·현금흐름 면에서 팔지 않고 버틸 수 있는지를 먼저 확인하세요.": {
+  "en": "Bottom line: rather than trying to call the timing of a crash, when the indicators warn, first check whether the companies you hold can hang on without selling, in terms of cash, debt maturing within {0} years, interest costs, and cash flow.",
+  "zh": "結論:與其預測崩盤時點,不如在指標發出警訊時,先確認自己持有的企業在現金、{0} 年內到期債務、利息成本與現金流方面,能不能撐住而不必賣出。"
+ },
  "경계": {
   "en": "Caution",
   "zh": "警戒"
@@ -2331,9 +3327,29 @@
   "en": "Caution {0}",
   "zh": "警戒 {0}"
  },
+ "경계 구간": {
+  "en": "Caution zone",
+  "zh": "警戒區間"
+ },
+ "경계 수준이에요.": {
+  "en": "it is at a Caution level.",
+  "zh": "處於警戒水準。"
+ },
+ "경계할 지점이 보여요.": {
+  "en": "There are points to watch out for.",
+  "zh": "有需要留意的地方。"
+ },
+ "경기 둔화 걱정으로 안전자산에 돈이 몰리며 내렸어요.": {
+  "en": "It fell as money rushed into safe assets on recession worries.",
+  "zh": "因擔憂經濟衰退,資金湧入避險資產,殖利率因而下跌。"
+ },
  "경기·계절(난방·운전 수요)·산유국 공급 결정에 가장 민감해요.": {
   "en": "Most sensitive to the economy, seasons (heating and driving demand), and oil-producer supply decisions.",
   "zh": "對景氣、季節(暖氣與開車需求)和產油國的供給決策最敏感。"
+ },
+ "경기침체는 뉴스보다 은행 대출 창구에서 먼저 시작돼요.": {
+  "en": "A recession starts at the bank lending window before it shows up in the news.",
+  "zh": "經濟衰退比起新聞,更早從銀行的放款窗口開始。"
  },
  "경로 A(빠른 전이) 상태:": {
   "en": "Path A (fast transmission) status:",
@@ -2350,6 +3366,10 @@
  "경매 수요": {
   "en": "Auction demand",
   "zh": "標售需求"
+ },
+ "경매 수요가 충분하고 유동성 완충도 넉넉해요.": {
+  "en": "Auction demand is sufficient and the liquidity buffer is ample.",
+  "zh": "標售需求充足,流動性緩衝也很充裕。"
  },
  "경보": {
   "en": "Alert",
@@ -2371,9 +3391,21 @@
   "en": "Total competitive bids",
   "zh": "競爭性投標合計"
  },
+ "경제가 좋아질 거라는 기대로 오르는 금리예요": {
+  "en": "Yields are rising on expectations that the economy will improve",
+  "zh": "殖利率是因為預期經濟好轉而上升"
+ },
  "경제전망(점도표) 포함": {
   "en": "Includes economic projections (dot plot)",
   "zh": "含經濟預測（點陣圖）"
+ },
+ "경제활동참가율 {0}% ({1})": {
+  "en": "Labor force participation rate {0}% ({1})",
+  "zh": "勞動參與率 {0}%({1})"
+ },
+ "경제활동참가율 {0}% ({1}{2})": {
+  "en": "Labor force participation rate {0}% ({1}{2})",
+  "zh": "勞動參與率 {0}%({1}{2})"
  },
  "계약": {
   "en": "contracts",
@@ -2431,9 +3463,17 @@
   "en": "No official free price · futures change {0}W {1}%, {2}W {3}% (reference)",
   "zh": "無官方免費價格 · 期貨漲跌幅 {0}週 {1}%、{2}週 {3}%(參考)"
  },
+ "공식 무료 가격 자료가 없어요": {
+  "en": "No free official price data",
+  "zh": "沒有免費的官方價格資料"
+ },
  "공식 무료 자료 없음": {
   "en": "No official free data",
   "zh": "無官方免費資料"
+ },
+ "공식 무료 자료가 없어 대체 지표로 보는 항목 {0}개({1} {2} {3} {4}번).": {
+  "en": "{0} items are tracked with substitute indicators because no official free data exists (No. {1} {2} {3} {4}).",
+  "zh": "因為沒有官方免費資料,改用替代指標追蹤的項目有 {0} 個(第 {1} {2} {3} {4} 項)。"
  },
  "공식 발표 없이 사실상 돈을 푸는 효과": {
   "en": "Effectively injects money without an official announcement",
@@ -2459,9 +3499,21 @@
   "en": "Common tailwinds/headwinds",
   "zh": "共同風向"
  },
+ "공포": {
+  "en": "Fear",
+  "zh": "恐慌"
+ },
  "공포 달러": {
   "en": "Fear dollar",
   "zh": "恐慌美元"
+ },
+ "공포 지수 상승 (VIX)": {
+  "en": "Fear gauge rising (VIX)",
+  "zh": "恐慌指數上升(VIX)"
+ },
+ "공포에 가까워요.": {
+  "en": "it is close to fear.",
+  "zh": "接近恐慌。"
  },
  "과 비교해요.": {
   "en": ".",
@@ -2511,6 +3563,10 @@
   "en": "Treasuries",
   "zh": "公債"
  },
+ "국채 공급 부담(기간프리미엄)이 끌어올렸어요": {
+  "en": "Treasury supply burden (term premium) pushed it up",
+  "zh": "公債供給負擔(期限溢酬)推升了殖利率"
+ },
  "국채 공급 지도": {
   "en": "Treasury supply map",
   "zh": "公債供給地圖"
@@ -2523,9 +3579,17 @@
   "en": "Treasury yields",
   "zh": "公債殖利率"
  },
+ "국채 매수·매도 호가 스프레드": {
+  "en": "Treasury bid-ask spread",
+  "zh": "公債買賣報價價差"
+ },
  "국채 베이시스 트레이드": {
   "en": "Treasury basis trade",
   "zh": "公債基差交易"
+ },
+ "국채 수급·자금시장·신용 모두 큰 압력 없음": {
+  "en": "No major pressure in Treasury supply and demand, funding markets, or credit",
+  "zh": "國債供需、資金市場與信用都沒有明顯壓力"
  },
  "국채 시장조성 능력을 사는 중": {
   "en": "Buying Treasury market-making capacity",
@@ -2535,6 +3599,10 @@
   "en": "The “bond-market VIX” seen through Treasury options",
   "zh": "從公債選擇權看「債市版 VIX」"
  },
+ "국채 입찰 (중장기물 {0}건)": {
+  "en": "Treasury auctions ({0} coupon auctions)",
+  "zh": "公債標售(中長期公債 {0} 次)"
+ },
  "국채 입찰 결과": {
   "en": "Treasury auction results",
   "zh": "公債標售結果"
@@ -2543,17 +3611,69 @@
   "en": "Treasury debt composition",
   "zh": "公債餘額結構"
  },
+ "국채 중 단기물(Bills) 비중 {0}%": {
+  "en": "Bills share of Treasuries {0}%",
+  "zh": "公債中短期債券(Bills)占比 {0}%"
+ },
+ "국채 중 단기물(Bills) 비중 구조적 상승": {
+  "en": "Bills share of Treasuries rising structurally",
+  "zh": "公債中短期債券(Bills)占比結構性上升"
+ },
+ "국채 중 단기물(T-bill) 비중": {
+  "en": "T-bill share of Treasuries",
+  "zh": "國債中短期國庫券占比"
+ },
  "국채 평균 잔존 만기": {
   "en": "Average remaining maturity of Treasury debt",
   "zh": "公債平均剩餘到期年限"
+ },
+ "국채 현물·선물 베이시스": {
+  "en": "Treasury cash-futures basis",
+  "zh": "公債現貨與期貨基差"
  },
  "국채 흡수력 {0}요소": {
   "en": "{0} factors of Treasury absorption capacity",
   "zh": "公債承接力 {0} 大要素"
  },
+ "국채 흡수력: {0}": {
+  "en": "Treasury absorption: {0}",
+  "zh": "公債承接力:{0}"
+ },
+ "국채 흡수력: 🔵 한 가지 약함": {
+  "en": "Treasury absorption: 🔵 one weak spot",
+  "zh": "公債承接力:🔵 一項偏弱"
+ },
+ "국채 흡수력은 양호해요.": {
+  "en": "Treasury absorption is good.",
+  "zh": "公債承接力良好。"
+ },
  "국채→달러": {
   "en": "Treasuries → dollar",
   "zh": "公債 → 美元"
+ },
+ "국채가 너무 많이 나와서, 오래 빌려주는 대가(기간프리미엄)가 올라요": {
+  "en": "Too many Treasuries are being issued, so the reward for lending long (term premium) rises",
+  "zh": "公債發行太多,所以長期借出的報酬(期限溢酬)上升"
+ },
+ "국채가 잘 흡수되고 있어요.": {
+  "en": "Treasuries are being absorbed well.",
+  "zh": "公債被順利承接。"
+ },
+ "국채라는 수도관을 보면,": {
+  "en": "Looking at Treasuries as a water pipe,",
+  "zh": "如果把公債比作水管,"
+ },
+ "국채라는 수도관을 보면, 최근 중장기물 입찰 응찰배율 평균은 {0}배로 국채가 잘 흡수되고 있어요.": {
+  "en": "Looking at the Treasury 'pipe,' the average bid-to-cover ratio of recent coupon auctions is {0}x, so Treasuries are being absorbed well.",
+  "zh": "從公債這條水管來看,最近中長期公債標售的投標倍數平均為 {0} 倍,公債承接得很順利。"
+ },
+ "국채를 '누가 받아 갔는지'를 보면,": {
+  "en": "Looking at 'who took the Treasuries',",
+  "zh": "如果看「公債是誰接走的」,"
+ },
+ "국채를 '누가 받아 갔는지'를 보면, 최근 중장기물 입찰 {0}건 중 흡수 실패 의심 {1}건, 일부 약함 {2}건이에요.": {
+  "en": "Looking at 'who took' the Treasuries, of the last {0} coupon auctions, {1} were suspected absorption failures and {2} were partly weak.",
+  "zh": "從公債'被誰承接'來看,最近 {0} 次中長期公債標售中,疑似承接失敗 {1} 次,部分偏弱 {2} 次。"
  },
  "권고 {0}~{1}%": {
   "en": "Recommended {0}–{1}%",
@@ -2587,6 +3707,14 @@
   "en": "As of that week's Tuesday",
   "zh": "以該週週二為基準"
  },
+ "그날 하루만 보면, {0}년물 금리는 전 영업일({1}/{2})보다 {3}bp": {
+  "en": "Looking at that day alone, the {0}-year yield was {3}bp versus the previous business day ({1}/{2})",
+  "zh": "只看當天,{0}年期殖利率比前一個營業日({1}/{2}){3}bp"
+ },
+ "그날 하루만 보면, {0}년물 금리는 전 영업일({1}/{2})보다 {3}bp, {4}년물은 {5}bp({6}%) 움직였어요": {
+  "en": "Looking at that day alone, the {0}-year yield moved {3}bp from the previous business day ({1}/{2}), and the {4}-year moved {5}bp ({6}%)",
+  "zh": "只看當天,{0} 年期殖利率較前一個營業日({1}/{2})變動 {3}bp,{4} 年期變動 {5}bp({6}%)"
+ },
  "그대로였어요": {
   "en": "Unchanged",
   "zh": "沒有變化"
@@ -2606,6 +3734,10 @@
  "근거: 윌리엄 「지금 놓치면 평생 후회로 남을 시리즈」 {0} 국채와 미국의 진정한 힘": {
   "en": "Source: William's \"The series you'll regret missing for life\" {0}, Treasuries and America's true power",
   "zh": "依據：William「現在錯過會後悔一輩子的系列」{0}，公債與美國的真正實力"
+ },
+ "근원 CPI {0}년 {1}%": {
+  "en": "Core CPI {0}-year {1}%",
+  "zh": "核心 CPI {0} 年 {1}%"
  },
  "근원 PCE {0}%": {
   "en": "Core PCE {0}%",
@@ -2635,6 +3767,10 @@
   "en": "The opportunity cost of holding gold and silver rises (headwind)",
   "zh": "持有黃金、白銀的機會成本上升(逆風)"
  },
+ "금·현금 비중 점검": {
+  "en": "Check gold and cash allocation",
+  "zh": "檢視黃金與現金比重"
+ },
  "금리": {
   "en": "Yields",
   "zh": "殖利率"
@@ -2647,9 +3783,17 @@
   "en": "Yield drivers",
   "zh": "殖利率成因"
  },
+ "금리·밸류에이션 충격": {
+  "en": "Rate and valuation shock",
+  "zh": "利率與估值衝擊"
+ },
  "금리·신용·레포·SOMA·물가·고용·이자": {
   "en": "Yields, credit, repo, SOMA, inflation, jobs, interest",
   "zh": "利率、信用、附買回、SOMA、物價、就業、利息"
+ },
+ "금리·신용·자금시장 모두 큰 변화 없음": {
+  "en": "No big changes in yields, credit, or funding markets",
+  "zh": "利率、信用與資金市場都沒有大幅變化"
  },
  "금리↑": {
   "en": "Yields↑",
@@ -2659,9 +3803,17 @@
   "en": "Yields↑ vicious cycle",
   "zh": "殖利率↑ 惡性循環"
  },
+ "금리가 '돈을 오래 빌려주기 무서워서' 오르는데 단기 자금시장까지 빡빡해요": {
+  "en": "Yields are rising 'because lenders are afraid to lend for a long time', and even the short-term funding market is tight",
+  "zh": "殖利率因為「大家不敢把錢長期借出去」而上升,連短期資金市場也吃緊"
+ },
  "금융 시스템의 혈액량": {
   "en": "The blood volume of the financial system",
   "zh": "金融體系的血液量"
+ },
+ "금융시장 전체가 돈 빌리기 불리해지나": {
+  "en": "Is borrowing getting harder across the whole financial market",
+  "zh": "整個金融市場借錢是否變得不利"
  },
  "급하면 위의 {0}줄만": {
   "en": "In a hurry, read only the top {0} lines",
@@ -2678,6 +3830,22 @@
  "기간프리미엄 (공급·재정 부담, 나머지)": {
   "en": "Term premium (supply and fiscal burden, remainder)",
   "zh": "期限溢酬（供給與財政負擔，剩餘項）"
+ },
+ "기간프리미엄 {0}년 {1}bp": {
+  "en": "Term premium {0}-year {1}bp",
+  "zh": "期限溢酬 {0} 年期 {1}bp"
+ },
+ "기간프리미엄 상승과 유동성 악화가 함께 나타났어요": {
+  "en": "A rising term premium and worsening liquidity appeared together",
+  "zh": "期限溢酬上升與流動性惡化同時出現"
+ },
+ "기간프리미엄 자료(FRED)를 지금 받지 못했어요.": {
+  "en": "The term premium data (FRED) could not be retrieved right now.",
+  "zh": "目前無法取得期限溢酬資料(FRED)。"
+ },
+ "기간프리미엄·꼬리 입찰·Primary Dealer 부담이 동시에 나빠져 Fed가 가만히 있어도 장기금리가 스스로 오를 수 있는 상태예요.": {
+  "en": "The term premium, tail auctions and the Primary Dealer burden have worsened at the same time, so long-term yields can rise on their own even if the Fed does nothing.",
+  "zh": "期限溢酬、尾差標售與 Primary Dealer 的負擔同時惡化,即使聯準會按兵不動,長期殖利率也可能自行上升。"
  },
  "기관": {
   "en": "Institution",
@@ -2703,17 +3871,45 @@
   "en": "Basic info",
   "zh": "基本資訊"
  },
+ "기업 대출 잔액 {0}년 증가율 (C&I)": {
+  "en": "Business loan balance {0}-year growth (C&I)",
+  "zh": "企業放款餘額 {0} 年成長率(C&I)"
+ },
+ "기업 부실 위험이 퍼지나": {
+  "en": "Is corporate distress risk spreading",
+  "zh": "企業財務困難的風險是否正在擴散"
+ },
  "기업 부실보다 금리·밸류에이션 충격을 먼저 검토": {
   "en": "Check rate and valuation shock before corporate distress",
   "zh": "先檢視利率與估值衝擊，再考慮企業財務惡化"
+ },
+ "기업 부실보다 할인율 상승(성장주 압박)을 먼저 검토하세요 (예시 {0})": {
+  "en": "Look first at a rising discount rate (pressure on growth stocks) rather than corporate distress (e.g. {0})",
+  "zh": "請先檢視折現率上升(成長股承壓),而不是企業財務惡化(例如 {0})"
+ },
+ "기업 신용시장은 차분해요.": {
+  "en": "The corporate credit market is calm.",
+  "zh": "企業信用市場相當平靜。"
  },
  "기업 투자 ↓": {
   "en": "Corporate investment ↓",
   "zh": "企業投資 ↓"
  },
+ "기업별 가치평가 갱신": {
+  "en": "Update each company's valuation",
+  "zh": "更新各企業的估值"
+ },
+ "기업별 가치평가 갱신에 집중": {
+  "en": "Focus on updating each company's valuation",
+  "zh": "專注於更新各企業的估值"
+ },
  "기준": {
   "en": "Threshold",
   "zh": "標準"
+ },
+ "기준 숫자({0}개월 변화 폭)는 원문에 없어 사이트가 정한 값이에요.": {
+  "en": "The benchmark number ({0}-month change) isn't in the source, so it's a value set by this site.",
+  "zh": "基準數字({0} 個月變化幅度)原文沒有,是本網站自行設定的值。"
  },
  "기준: {0}%p 이하 완화적 / {1}~{2} 조짐 / {3} 이상 뚜렷한 긴축 / {4} 이상 신용경색": {
   "en": "Thresholds: {0}%p or below easing / {1}~{2} early signs / {3} or above clear tightening / {4} or above credit crunch",
@@ -2723,6 +3919,10 @@
   "en": "Policy rate {0}%",
   "zh": "政策利率 {0}%"
  },
+ "기준금리 {0}% ·": {
+  "en": "Policy rate {0}% ·",
+  "zh": "政策利率 {0}% ·"
+ },
  "기준금리 상단 {0}%": {
   "en": "Policy rate upper bound {0}%",
   "zh": "政策利率上限 {0}%"
@@ -2730,6 +3930,10 @@
  "기준일": {
   "en": "As-of date",
   "zh": "資料基準日"
+ },
+ "기타": {
+  "en": "Other",
+  "zh": "其他"
  },
  "기회비용이 줄어듦 (순풍)": {
   "en": "Opportunity cost falls (tailwind)",
@@ -2743,6 +3947,14 @@
   "en": "Emergency facilities & market access",
   "zh": "緊急窗口與市場管道"
  },
+ "긴장": {
+  "en": "Tense",
+  "zh": "緊張"
+ },
+ "긴장 신호가 여러 곳에서 켜졌어요.": {
+  "en": "Signs of tension have turned on in several places.",
+  "zh": "多處亮起緊張訊號。"
+ },
  "꼬리(근사)": {
   "en": "Tail (approx.)",
   "zh": "尾差（近似）"
@@ -2754,6 +3966,14 @@
  "낙관 극단 {0}": {
   "en": "Extreme bullish {0}",
   "zh": "樂觀極端 {0}"
+ },
+ "낙관이 극단이라 반대로 꺾일 위험이 있어요.": {
+  "en": "Optimism is extreme, so there is a risk of a reversal.",
+  "zh": "樂觀已到極端，有反轉的風險。"
+ },
+ "낙찰금리": {
+  "en": "high yield",
+  "zh": "得標利率"
  },
  "낙찰금리 > 쿠폰 = 할인 발행(수요 부진), < 쿠폰 = 수요 강함.": {
   "en": "Auction yield > coupon = sold at a discount (weak demand); < coupon = strong demand.",
@@ -2771,6 +3991,10 @@
   "en": "Date",
   "zh": "日期"
  },
+ "날짜 정보 없음": {
+  "en": "No date information",
+  "zh": "無日期資訊"
+ },
  "남는 돈이 국채(T-Bill)로 옮겨 가는 단계. 아직 괜찮아요.": {
   "en": "Spare cash moves into T-bills. Still fine for now.",
   "zh": "閒置資金轉往短期國庫券（T-Bill）的階段。目前還沒問題。"
@@ -2779,6 +4003,10 @@
   "en": "Remaining borrowing capacity",
   "zh": "剩餘借款額度"
  },
+ "남은 차입 한도는 아래 표": {
+  "en": "See the table below for remaining borrowing capacity",
+  "zh": "剩餘借款額度見下表"
+ },
  "남은 한도": {
   "en": "Remaining capacity",
   "zh": "剩餘額度"
@@ -2786,6 +4014,14 @@
  "낮거나 중간 높이에서 오르기 시작했어요. 재고가 줄고 투기자금이 따라붙는지 확인하는 단계예요.": {
   "en": "It has started rising from a low or middle level. This is the stage to check whether inventories are falling and speculative money is following.",
   "zh": "價格從低檔或中間水準開始上漲。這個階段要確認庫存是否減少、投機資金是否跟進。"
+ },
+ "낮아 최종 투자자 수요가 약해 보여요.": {
+  "en": "so low that final-investor demand looks weak.",
+  "zh": "偏低,最終投資人的需求看起來偏弱。"
+ },
+ "낮아져 수요 경쟁이 약해졌어요.": {
+  "en": "lower, so competition for the bonds weakened.",
+  "zh": "下降,需求競爭減弱。"
  },
  "낮음": {
   "en": "Low",
@@ -2807,13 +4043,37 @@
   "en": "fell, a tailwind for gold and silver",
   "zh": "下降,對黃金、白銀是順風"
  },
+ "내려 차입 부담이 줄었고": {
+  "en": "it fell, easing the borrowing burden, and",
+  "zh": "下降,借款負擔減輕,而且"
+ },
  "내림": {
   "en": "down",
   "zh": "下跌"
  },
+ "네 가지가 함께 움직이면 '장기금리 통제와 재정 스트레스 동시 확대': ① 쿠폰 증액 없이 단기물만 증가 ② 단기물 비중 구조적 상승 ③ 연준의 단기 구간 매입 ④ 장기물 입찰 약화": {
+  "en": "When these four move together, it means 'long-term yield control and fiscal stress expanding at once': ① only T-bills rise with no coupon increase ② the T-bill share rises structurally ③ the Fed buys in the short end ④ long-term auctions weaken",
+  "zh": "四項同時出現時，代表「長期殖利率管控與財政壓力同步擴大」：① 中長期公債未增發，只增加短期國庫券 ② 短期債占比結構性上升 ③ 聯準會買進短天期債券 ④ 長期公債標售轉弱"
+ },
  "농산물": {
   "en": "Agriculture",
   "zh": "農產品"
+ },
+ "높아 '강제 매수(Forced Buying)'에 가까워요": {
+  "en": "so high that it is close to 'Forced Buying'",
+  "zh": "偏高,接近「被迫買進(Forced Buying)」"
+ },
+ "높아 레포 시장이 빡빡해요.": {
+  "en": "high, so the repo market is tight.",
+  "zh": "偏高,附買回市場吃緊。"
+ },
+ "높아져 수요 경쟁이 강해졌어요.": {
+  "en": "higher, so competition for the bonds strengthened.",
+  "zh": "上升,需求競爭增強。"
+ },
+ "높음": {
+  "en": "High",
+  "zh": "偏高"
  },
  "누가 국채를 사는가": {
   "en": "Who buys Treasuries",
@@ -2843,6 +4103,10 @@
   "en": "Usually the one sounding alarms",
   "zh": "通常是愛發警告的一方"
  },
+ "늘면 은행 준비금이 빠질 수 있음 ({0}대{1} 법칙은 아님)": {
+  "en": "If it grows, bank reserves may drain (not a {0}-to-{1} rule)",
+  "zh": "增加時,銀行準備金可能被抽走(並非 {0} 比 {1} 的法則)"
+ },
  "늘었어요": {
   "en": "Increased",
   "zh": "增加"
@@ -2850,6 +4114,22 @@
  "늦게 움직임": {
   "en": "Slow to move",
   "zh": "行動較慢"
+ },
+ "다가오는 물가(CPI)·고용·입찰 결과가 다음 방향을 정할 거예요.": {
+  "en": "Upcoming inflation (CPI), jobs and auction results will decide the next direction.",
+  "zh": "接下來的物價(CPI)、就業與標售結果,將決定下一個方向。"
+ },
+ "다소 높아요.": {
+  "en": "it is somewhat high.",
+  "zh": "略為偏高。"
+ },
+ "다소 높은 편이에요.": {
+  "en": "It is on the somewhat high side.",
+  "zh": "略為偏高。"
+ },
+ "다소 아쉬운 입찰이었어요.": {
+  "en": "It was a somewhat disappointing auction.",
+  "zh": "這是一場略為遜色的標售。"
  },
  "다시 부족": {
   "en": "shortage again",
@@ -2871,17 +4151,65 @@
   "en": "Next release",
   "zh": "下次公布"
  },
+ "다음 발표 February {0} {1}": {
+  "en": "Next release February {0} {1}",
+  "zh": "下次公布 February {0} {1}"
+ },
  "다음 예정 {0}/{1}(금)": {
   "en": "Next scheduled {0}/{1} (Fri)",
   "zh": "下次預定 {0}/{1}（五）"
+ },
+ "다음 입찰들을 이어서 보세요.": {
+  "en": "Keep watching the next auctions.",
+  "zh": "請持續觀察接下來的標售。"
+ },
+ "다음 입찰을 꼭 확인하세요.": {
+  "en": "Be sure to check the next auction.",
+  "zh": "請務必確認下一場標售。"
+ },
+ "다음 주에도 이어지는지 확인하세요": {
+  "en": "Check whether it continues next week",
+  "zh": "請確認下週是否持續"
+ },
+ "다음 회의 {0}{1}{2}": {
+  "en": "Next meeting {0}{1}{2}",
+  "zh": "下次會議 {0}{1}{2}"
  },
  "다음에 볼 것": {
   "en": "What to watch next",
   "zh": "接下來觀察"
  },
+ "다음에 볼 일정:": {
+  "en": "Upcoming schedule to watch:",
+  "zh": "接下來要注意的行程:"
+ },
+ "단기 자금 금리(SOFR)는 연준 기준선(IORB)보다 {0}bp": {
+  "en": "the short-term funding rate (SOFR) is {0}bp versus the Fed's baseline (IORB)",
+  "zh": "短期資金利率(SOFR)比聯準會基準線(IORB){0}bp"
+ },
+ "단기 자금 금리(SOFR)는 연준 기준선(IORB)보다 {0}bp 높아 레포 시장이 빡빡해요.": {
+  "en": "The short-term funding rate (SOFR) is {0}bp above the Fed's benchmark (IORB), so the repo market is tight.",
+  "zh": "短期資金利率(SOFR)比聯準會基準線(IORB)高 {0}bp,附買回市場偏緊。"
+ },
+ "단기 자금시장은 안정적이에요": {
+  "en": "The short-term funding market is stable",
+  "zh": "短期資金市場穩定"
+ },
  "단기 전망을 크게 바꿀 때": {
   "en": "When it sharply changes its short-term outlook",
   "zh": "當它大幅改變短期展望時"
+ },
+ "단기물 비중 안정": {
+  "en": "The share of short-term debt is stable",
+  "zh": "短期債占比穩定"
+ },
+ "단기물 비중이 구조적으로 오르는 중": {
+  "en": "The share of short-term debt is rising structurally",
+  "zh": "短期債占比結構性上升"
+ },
+ "단기물·장기물 발행 비중": {
+  "en": "Short-term vs. long-term issuance share",
+  "zh": "短期與長期債券發行比重"
  },
  "단기물로 버티다 금리 고착 시 이자 폭증": {
   "en": "Leaning on bills, then interest balloons once high rates stick",
@@ -2906,6 +4234,18 @@
  "단기채(Bills) 비중": {
   "en": "Bills share",
   "zh": "短期國庫券占比"
+ },
+ "단기채는 MMF 자금이 받쳐 주는 시장이라 보통 안정적이에요": {
+  "en": "T-bills are backed by money market fund cash, so they are usually stable",
+  "zh": "短期國庫券有貨幣市場基金資金支撐，通常很穩定"
+ },
+ "단기채는 원래 Primary Dealer 비중이 {0}~{1}%로 높은 시장이라": {
+  "en": "T-bills are a market where the Primary Dealer share is normally high, at {0}% to {1}%, so",
+  "zh": "短期國庫券本來就是 Primary Dealer 占比偏高的市場,約 {0}% 至 {1}%,所以"
+ },
+ "단기채는 원래 Primary Dealer 비중이 {0}~{1}%로 높은 시장이라 평소 범위예요.": {
+  "en": "T-bills normally have a high Primary Dealer share of {0}–{1}%, so this is within the usual range.",
+  "zh": "短期國庫券本來 Primary Dealer 占比就高達 {0}～{1}%，屬正常範圍。"
  },
  "단기채는 원래 Primary Dealer 비중이 높은 편이지만 {0}%를 넘으면 시장 수요가 부족했다는 신호예요.": {
   "en": "T-bills usually have a high Primary Dealer share, but above {0}% it signals weak market demand.",
@@ -2951,13 +4291,29 @@
   "en": "USD/MMBtu",
   "zh": "美元/MMBtu"
  },
+ "달러/MMBtu)": {
+  "en": "USD/MMBtu)",
+  "zh": "美元/MMBtu）"
+ },
  "달러/배럴": {
   "en": "USD/barrel",
   "zh": "美元/桶"
  },
+ "달러/배럴)": {
+  "en": "USD/bbl)",
+  "zh": "美元/桶）"
+ },
  "달러/엔": {
   "en": "USD/JPY",
   "zh": "美元/日圓"
+ },
+ "달러/엔 {0}엔({1}엔)": {
+  "en": "USD/JPY ¥{0} (¥{1})",
+  "zh": "美元/日圓 {0}日圓({1}日圓)"
+ },
+ "달러/엔 {0}엔({1}엔)였어요.": {
+  "en": "USD/JPY was {0} yen ({1} yen).",
+  "zh": "美元/日圓為 {0} 日圓({1} 日圓)。"
  },
  "달러/톤": {
   "en": "USD/ton",
@@ -2987,9 +4343,17 @@
   "en": "The dollar has no clear direction, so its effect is small · Real interest rates are rising, a headwind for gold and silver.",
   "zh": "美元沒有明顯方向,影響不大 · 實質利率上升,對黃金、白銀是逆風。"
  },
+ "달러자산 분산": {
+  "en": "Diversify dollar assets",
+  "zh": "分散美元資產"
+ },
  "달러자산 분산 검토": {
   "en": "Consider diversifying away from dollar assets",
   "zh": "評估分散美元資產"
+ },
+ "담보가치가 떨어지면 한도 축소": {
+  "en": "Limit is reduced if collateral value falls",
+  "zh": "擔保品價值下跌就會縮減額度"
  },
  "대기업 C&I {0}%p": {
   "en": "Large-firm C&I {0}%p",
@@ -3015,9 +4379,33 @@
   "en": "Response:",
   "zh": "因應："
  },
+ "대차대조표 확대(매입) ({0}주 {1}B)": {
+  "en": "Balance sheet expansion (purchases) ({0}-week {1}B)",
+  "zh": "資產負債表擴張(買進)({0} 週 {1}B)"
+ },
  "대체 확인": {
   "en": "Alternative check",
   "zh": "替代確認"
+ },
+ "대체 확인: CFTC 레버리지 펀드 국채 선물 포지션(가격결정자 윌리엄 매뉴얼 탭)": {
+  "en": "Alternative check: CFTC leveraged-fund Treasury futures positions (Price Setter William Manual tab)",
+  "zh": "替代確認:CFTC 槓桿基金公債期貨部位(價格決定者威廉手冊分頁)"
+ },
+ "대체 확인: Primary Dealer 국채 보유 변화(흡수력 탭)": {
+  "en": "Alternative check: change in Primary Dealer Treasury holdings (Absorption tab)",
+  "zh": "替代確認:Primary Dealer 公債持有變化(承接力分頁)"
+ },
+ "대체 확인: 연준 중앙은행 달러 스왑라인 이용액(가격결정자 윌리엄 매뉴얼 탭)": {
+  "en": "Alternative check: Fed central-bank dollar swap line usage (Price Setter William Manual tab)",
+  "zh": "替代確認:聯準會央行美元交換額度使用額(價格決定者威廉手冊分頁)"
+ },
+ "대체로 괜찮지만 일부 지표가 평소보다 약해요.": {
+  "en": "Mostly fine, but some indicators are weaker than usual.",
+  "zh": "大致不錯,但部分指標比平常偏弱。"
+ },
+ "대출 기준 분기 변화": {
+  "en": "Quarterly change in lending standards",
+  "zh": "放款標準的季度變化"
  },
  "대출 기준 분기 변화:": {
   "en": "Quarterly change in lending standards:",
@@ -3026,6 +4414,18 @@
  "대출 잔액은 경기에 늦게 반응": {
   "en": "Loan balances react to the economy with a lag",
   "zh": "放款餘額對景氣的反應較慢"
+ },
+ "대출기준 강화 비율 {0}%p": {
+  "en": "Share tightening lending standards {0}pp",
+  "zh": "收緊放款標準的比率 {0} 個百分點"
+ },
+ "대출기준 강화 비율 {0}%p (직전 분기 {1})": {
+  "en": "Share tightening lending standards {0}%p (prior quarter {1})",
+  "zh": "收緊放款標準的比例 {0}%p(上一季 {1})"
+ },
+ "대폭 증액": {
+  "en": "Large increase",
+  "zh": "大幅增加"
  },
  "대표 계약 문제로 숫자를 빼고 봤어요": {
   "en": "Numbers left out because of a benchmark-contract issue",
@@ -3042,6 +4442,14 @@
  "대형 정기예금": {
   "en": "Large time deposits",
   "zh": "大額定期存款"
+ },
+ "대형 정기예금 {0}주 {1}%": {
+  "en": "Large time deposits {0}-week {1}%",
+  "zh": "大額定期存款 {0} 週 {1}%"
+ },
+ "데이터 부족": {
+  "en": "Not enough data",
+  "zh": "資料不足"
  },
  "데이터를 몰라도 “오늘 무엇을 조심해야 하는지”만)": {
   "en": "even without knowing the data, just “what to watch out for today”)",
@@ -3066,6 +4474,10 @@
  "돈의 가격(금리)이 내려가도 돈의 문(은행 대출 심사)이 닫혀 있으면 돈이 실물로 흘러가지 않아요. 경기침체는 뉴스에서 발표되기 전에 은행 대출 창구에서 먼저 시작돼요.": {
   "en": "Even if the price of money (interest rates) falls, money does not flow into the real economy if the door to money (bank lending screening) is closed. A recession starts at the bank lending counter before it is announced in the news.",
   "zh": "即使資金的價格（利率）下降，只要資金的大門（銀行放款審查）仍然關閉，錢就不會流向實體經濟。景氣衰退在新聞公布之前，就先從銀行放款窗口開始了。"
+ },
+ "돈의 배관 {0}: {1}": {
+  "en": "Money plumbing {0}: {1}",
+  "zh": "資金管線 {0}:{1}"
  },
  "돈이 하락을 확인": {
   "en": "Money confirms the decline",
@@ -3099,6 +4511,22 @@
   "en": "% change (observed)",
   "zh": "漲跌幅（觀察日）"
  },
+ "디스인플레": {
+  "en": "Disinflation",
+  "zh": "通膨降溫"
+ },
+ "딜러가 많이 떠안으면 레포 차입 필요": {
+  "en": "If dealers take on a lot, they need repo borrowing",
+  "zh": "交易商承接越多,就越需要附買回借款"
+ },
+ "딜러가 재고를 떠안기 어려울 때 벌어짐": {
+  "en": "Happens when dealers struggle to take on inventory",
+  "zh": "當交易商難以吸收庫存時就會發生"
+ },
+ "뚜렷한 방향이 없는 상태예요.": {
+  "en": "There is no clear direction.",
+  "zh": "目前沒有明確方向。"
+ },
  "뜻": {
   "en": "Meaning",
   "zh": "意義"
@@ -3111,9 +4539,29 @@
   "en": "Repo",
   "zh": "附買回"
  },
+ "레포 비용이 오르면 현물 매도 압력": {
+  "en": "If repo costs rise, selling pressure on cash Treasuries",
+  "zh": "附買回成本上升,現貨賣壓就會增加"
+ },
+ "레포 차입 {0}T ({1}%)": {
+  "en": "Repo borrowing {0}T ({1}%)",
+  "zh": "附買回借款 {0}T（{1}%）"
+ },
+ "로 {0}년 동안 {1}bp 움직였어요.": {
+  "en": "and it moved {1}bp over {0} years.",
+  "zh": ",{0} 年內變動了 {1}bp。"
+ },
  "로 보여 줘요.": {
   "en": " is shown.",
   "zh": "顯示。"
+ },
+ "로 큰 차이가 없어요.": {
+  "en": "different, so no big gap.",
+  "zh": "差異不大。"
+ },
+ "로 한 달 동안 {0}bp 움직였는데,": {
+  "en": "and it moved {0}bp over one month,",
+  "zh": "一個月內變動了 {0}bp,"
  },
  "롤오버": {
   "en": "Rollover",
@@ -3150,6 +4598,10 @@
  "리펀딩": {
   "en": "Refunding",
   "zh": "再融資"
+ },
+ "리펀딩 장기물 {0}": {
+  "en": "Refunding long-term issues {0}",
+  "zh": "再融資長天期債券 {0}"
  },
  "리펀딩 장기물 유지": {
   "en": "Refunding keeps long-term issuance steady",
@@ -3211,9 +4663,25 @@
   "en": "We do not recommend buying or selling. This screen shows the evidence and the risks.",
   "zh": "本站不推薦買賣。這個畫面呈現的是依據與風險。"
  },
+ "매우 낮아 시장 수요가 건강해요.": {
+  "en": "so low that market demand is healthy.",
+  "zh": "非常低,市場需求健康。"
+ },
+ "매우 높아 재무부가 국채 바이백(되사기)에 적극 나설 가능성이 있어요.": {
+  "en": "so high that the Treasury may step in actively with Treasury buybacks.",
+  "zh": "非常高,財政部可能積極進行公債買回。"
+ },
+ "매우 높아 최종 투자자 수요가 탄탄해요.": {
+  "en": "so high that final-investor demand is solid.",
+  "zh": "非常高,最終投資人的需求穩健。"
+ },
  "매우 높음": {
   "en": "Very high",
   "zh": "非常高"
+ },
+ "매우 평온": {
+  "en": "Very calm",
+  "zh": "非常平穩"
  },
  "매월": {
   "en": "Monthly",
@@ -3275,6 +4743,10 @@
   "en": "Weekly (published Wednesdays)",
   "zh": "每週（週三公布）"
  },
+ "매파": {
+  "en": "hawkish",
+  "zh": "鷹派"
+ },
  "매핑": {
   "en": "Mapping",
   "zh": "合約對應"
@@ -3311,6 +4783,10 @@
   "en": "Purpose",
   "zh": "目的"
  },
+ "무난한 입찰이었어요.": {
+  "en": "It was an uneventful auction.",
+  "zh": "這是一場平穩的標售。"
+ },
  "무엇을 보나": {
   "en": "What it measures",
   "zh": "觀察重點"
@@ -3318,6 +4794,18 @@
  "문단마다 출처": {
   "en": "Source for every paragraph",
   "zh": "每段皆附資料來源"
+ },
+ "물가 걱정(기대인플레)이 끌어올렸어요": {
+  "en": "Inflation worries (expected inflation) pushed it up",
+  "zh": "物價擔憂(預期通膨)推升了殖利率"
+ },
+ "물가 걱정이 줄면서 내렸어요": {
+  "en": "It fell as inflation worries eased",
+  "zh": "因物價擔憂減輕而下跌"
+ },
+ "물가 걱정이 줄어서 금리가 내려요": {
+  "en": "Yields are falling because inflation worries are easing",
+  "zh": "殖利率因物價擔憂減輕而下降"
  },
  "물가 뺀 가격의 {0}년 중 높이": {
   "en": "inflation-adjusted price, position within {0} years",
@@ -3343,6 +4831,14 @@
   "en": "Inflation-adjusted price is higher than {1}% of the past {0} years → 「③ Overheated / near peak」",
   "zh": "扣除物價後的價格高於 {0} 年中的 {1}% → 「③ 過熱·高點區」"
  },
+ "물가 압력": {
+  "en": "Price pressure",
+  "zh": "物價壓力"
+ },
+ "물가가 다시 오를 거라는 걱정이 금리를 올려요": {
+  "en": "Worries that prices will rise again are pushing yields up",
+  "zh": "擔心物價再度上升,推高了殖利率"
+ },
  "물가를 뺀 실질가격이 지난 {0}년 중 어느 높이인지 봐요. 아주 높으면 생산자들이 증산 투자에 나서 몇 년 뒤 공급이 늘고, 아주 낮으면 투자를 줄여 몇 년 뒤 부족해져요.": {
   "en": "See where the inflation-adjusted real price stands within the past {0} years. When it is very high, producers invest in more output and supply grows a few years later; when it is very low, they cut investment and shortages follow a few years later.",
   "zh": "觀察扣除物價後的實質價格，位於近{0}年的哪個高度。價格很高時，生產商會投資擴產，幾年後供給增加；價格很低時，則會縮減投資，幾年後出現短缺。"
@@ -3355,9 +4851,17 @@
   "en": "TIPS (inflation-linked)",
   "zh": "抗通膨公債（TIPS）"
  },
+ "물가연동(TIPS) {0}-Year 입찰 (결과: B등급, 응찰 {1}배)": {
+  "en": "TIPS {0}-Year auction (result: grade B, bid {1}x)",
+  "zh": "抗通膨公債(TIPS){0}-Year 標售(結果:B 級,投標 {1} 倍)"
+ },
  "물탱크가 비면 이제 은행 지준이 직접 줄어요.": {
   "en": "Once the water tank is empty, bank reserves start to shrink directly.",
   "zh": "水塔一空，接下來就輪到銀行準備金直接減少。"
+ },
+ "미 국채 (TIPS 제외)": {
+  "en": "US Treasuries (excl. TIPS)",
+  "zh": "美國國債（不含 TIPS）"
  },
  "미 국채 순보유 {0}주 {1}%": {
   "en": "U.S. Treasury net holdings: {0}-week {1}%",
@@ -3367,13 +4871,29 @@
   "en": "US Treasury",
   "zh": "美國財政部"
  },
+ "미 재무부 Fiscal Data": {
+  "en": "US Treasury Fiscal Data",
+  "zh": "美國財政部 Fiscal Data"
+ },
  "미 재무부 Fiscal Data ↗": {
   "en": "US Treasury Fiscal Data ↗",
   "zh": "美國財政部 Fiscal Data ↗"
  },
+ "미 재무부 Investor Class Auction Allotments": {
+  "en": "US Treasury Investor Class Auction Allotments",
+  "zh": "美國財政部 Investor Class Auction Allotments"
+ },
  "미 재무부 Investor Class Auction Allotments ↗": {
   "en": "U.S. Treasury Investor Class Auction Allotments ↗",
   "zh": "美國財政部 Investor Class Auction Allotments ↗"
+ },
+ "미 재무부 MSPD": {
+  "en": "US Treasury MSPD",
+  "zh": "美國財政部 MSPD"
+ },
+ "미 재무부 MSPD (월간 국채 잔액)": {
+  "en": "US Treasury MSPD (monthly Treasury debt outstanding)",
+  "zh": "美國財政部 MSPD(每月公債餘額)"
  },
  "미 재무부 MSPD (월간 국채 잔액) ↗": {
   "en": "US Treasury MSPD (monthly Treasury debt outstanding) ↗",
@@ -3383,9 +4903,25 @@
   "en": "US Treasury OFR",
   "zh": "美國財政部 OFR"
  },
+ "미 재무부 일일 국채 금리": {
+  "en": "US Treasury daily Treasury yields",
+  "zh": "美國財政部每日公債殖利率"
+ },
+ "미 재무부 일일 국채 금리 (당일 공개)": {
+  "en": "US Treasury daily Treasury yields (released same day)",
+  "zh": "美國財政部每日公債殖利率(當日公布)"
+ },
  "미 재무부 일일 국채 금리 (당일 공개) ↗": {
   "en": "US Treasury daily Treasury yields (published same day) ↗",
   "zh": "美國財政部每日公債殖利率（當日公布）↗"
+ },
+ "미 재무부 일일 실질금리": {
+  "en": "U.S. Treasury daily real yield",
+  "zh": "美國財政部每日實質殖利率"
+ },
+ "미 재무부 일일 재정 보고서(DTS)": {
+  "en": "US Treasury Daily Treasury Statement (DTS)",
+  "zh": "美國財政部每日財政報告(DTS)"
  },
  "미 재무부 일일 재정 보고서(DTS) ↗": {
   "en": "U.S. Treasury Daily Treasury Statement (DTS) ↗",
@@ -3403,6 +4939,10 @@
   "en": "Open interest {0} contracts",
   "zh": "未平倉量 {0}口"
  },
+ "미결제약정 {0}계약 ({1}주 {2}).": {
+  "en": "Open interest {0} contracts ({1}W {2}).",
+  "zh": "未平倉量 {0} 口（{1}週 {2}）。"
+ },
  "미결제약정 대비": {
   "en": "% of open interest",
   "zh": "占未平倉量比例"
@@ -3412,12 +4952,12 @@
   "zh": "占未平倉量 {0}%"
  },
  "미결제약정도 늘어 새 돈이 들어온 움직임이에요.": {
-  "en": "Open interest also rose, which means new money is coming in.",
-  "zh": "未平倉量也增加,代表有新資金進場。"
+  "en": "Open interest also rose, so new money came in.",
+  "zh": "未平倉量也增加，代表有新資金進場。"
  },
  "미결제약정은 줄어 기존 포지션을 정리하는 움직임이에요.": {
-  "en": "Open interest fell, which means existing positions are being closed out.",
-  "zh": "未平倉量減少,代表正在了結既有部位。"
+  "en": "Open interest fell, so existing positions are being closed out.",
+  "zh": "未平倉量減少，代表既有部位在了結。"
  },
  "미결제약정이 함께 늘면 “새 돈이 들어온 움직임”, 줄면 “기존 포지션 정리”로 덧붙여 읽어요. 변화가 미결제약정의 {0}%보다 작으면 “변화 거의 없음”으로 봐요.": {
   "en": "If open interest rises too, read it as “new money entering”; if it falls, as “existing positions being closed.” If the change is smaller than {0}% of open interest, treat it as “little change.”",
@@ -3442,6 +4982,14 @@
  "미국 국채 위기 모니터": {
   "en": "US Treasury Crisis Monitor",
   "zh": "美國公債危機監測"
+ },
+ "미국 국채와 AI 인프라 그리고 사모신용이 만나는 지점」({0}{1}{2}) {3}개 지표": {
+  "en": "「Where US Treasuries, AI infrastructure and private credit meet」 ({0}{1}{2}) {3} indicators",
+  "zh": "「美國公債、AI 基礎建設與私募信貸交會之處」({0}{1}{2}) {3} 項指標"
+ },
+ "미국 국채의 '숨은 지원군'이 아직 있어요.": {
+  "en": "The 'hidden supporter' of U.S. Treasuries is still there.",
+  "zh": "美國公債的「隱形支撐力量」仍在。"
  },
  "미국 금요일 오후 발표 → 한국 토요일 새벽": {
   "en": "Released Friday afternoon in the US → early Saturday morning in Korea",
@@ -3479,9 +5027,25 @@
   "en": "New cash taken from the private sector",
   "zh": "從民間新吸收的現金"
  },
+ "바다 건너 일본에서는 {0}년물 국채 금리가 {1}%예요": {
+  "en": "Across the sea in Japan, the {0}-year government bond yield is {1}%",
+  "zh": "在海的另一邊的日本,{0} 年期公債殖利率為 {1}%"
+ },
+ "바닥 조짐": {
+  "en": "Signs of a bottom",
+  "zh": "出現落底跡象"
+ },
  "바닥 탐색 또는 성급한 매수": {
   "en": "Bottom-fishing or premature buying",
   "zh": "探底，或是過早買進"
+ },
+ "바닥이면 국채를 더 흡수할 완충 공간이 작음": {
+  "en": "If it is at the floor, there is little buffer room left to absorb more Treasuries",
+  "zh": "若已見底,能再承接公債的緩衝空間就很小"
+ },
+ "바이백 실적": {
+  "en": "Buyback results",
+  "zh": "買回實績"
  },
  "바이백 실적 ↗": {
   "en": "Buyback results ↗",
@@ -3494,6 +5058,14 @@
  "반대 근거": {
   "en": "Counter-evidence",
   "zh": "反面證據"
+ },
+ "반복·대규모 이용이면 민간 조달 대신 공식 창구 의존": {
+  "en": "Repeated or large-scale use means relying on the official window instead of private funding",
+  "zh": "若反覆或大規模使用,代表依賴官方窗口而非民間籌資"
+ },
+ "받지 못함 ({0})": {
+  "en": "Not received ({0})",
+  "zh": "未取得（{0}）"
  },
  "발표": {
   "en": "Release",
@@ -3531,6 +5103,22 @@
   "en": "Issue date",
   "zh": "發行日"
  },
+ "방어": {
+  "en": "Defensive",
+  "zh": "防禦"
+ },
+ "방어 패턴": {
+  "en": "Defensive pattern",
+  "zh": "防禦型態"
+ },
+ "배관 {0}": {
+  "en": "Plumbing {0}",
+  "zh": "管線 {0}"
+ },
+ "배관 🚨 다중 배관 이상: 시스템 스트레스 확인": {
+  "en": "Plumbing 🚨 Multiple pipes abnormal: system stress confirmed",
+  "zh": "資金管線 🚨 多處管線異常:確認系統性壓力"
+ },
  "배관도부터": {
   "en": "Start with the plumbing diagram",
   "zh": "先看管線圖"
@@ -3555,6 +5143,14 @@
   "en": "Platinum",
   "zh": "鉑金"
  },
+ "범위 미달": {
+  "en": "Below range",
+  "zh": "低於範圍"
+ },
+ "범위 안": {
+  "en": "Within range",
+  "zh": "範圍內"
+ },
  "범위 초과 (위험)": {
   "en": "Out of range (Danger)",
   "zh": "超出範圍（危險）"
@@ -3575,13 +5171,33 @@
   "en": "Little change",
   "zh": "幾乎沒有變化"
  },
+ "변화는 정확히 {0}·{1}·{2}주 전 화요일 자료와 비교하고, 그 주 자료가 없으면 비워 둬요.": {
+  "en": "Changes compare against the Tuesday data exactly {0}, {1} and {2} weeks earlier; if that week's data is missing, the cell is left blank.",
+  "zh": "變化與正好 {0}、{1}、{2} 週前週二的資料比較；若該週無資料則留白。"
+ },
  "보통": {
   "en": "Moderate",
   "zh": "中等"
  },
+ "보통 수준이에요.": {
+  "en": "It's at a normal level.",
+  "zh": "屬於普通水準。"
+ },
+ "보통이에요.": {
+  "en": "it is moderate.",
+  "zh": "普通。"
+ },
+ "부담이 꽤 커요.": {
+  "en": "the burden is quite heavy.",
+  "zh": "負擔相當沉重。"
+ },
  "부도 ↑": {
   "en": "Defaults ↑",
   "zh": "違約 ↑"
+ },
+ "부도 임박": {
+  "en": "Default imminent",
+  "zh": "違約在即"
  },
  "부셸": {
   "en": "bushels",
@@ -3590,6 +5206,10 @@
  "부족": {
   "en": "Insufficient",
   "zh": "不足"
+ },
+ "부진": {
+  "en": "Weak",
+  "zh": "疲弱"
  },
  "부터": {
   "en": "from",
@@ -3603,6 +5223,14 @@
   "en": "Quarterly filings",
   "zh": "季度揭露"
  },
+ "분기 국채 발행 계획 발표 (QRA 정책 발표)": {
+  "en": "Quarterly Treasury issuance plan announcement (QRA policy announcement)",
+  "zh": "公債季度發行計畫公布(QRA 政策公告)"
+ },
+ "분기 국채 발행 계획 발표 (QRA, 추정일)": {
+  "en": "Quarterly Treasury issuance plan announcement (QRA, estimated date)",
+  "zh": "公債季度發行計畫公布(QRA,預估日)"
+ },
  "분기 국채 발행 계획 발표 ({0}·{1}·{2}·{3}월)": {
   "en": "Quarterly Treasury issuance plan announcement (months {0}·{1}·{2}·{3})",
   "zh": "每季公債發行計畫公布（{0}·{1}·{2}·{3} 月）"
@@ -3611,9 +5239,17 @@
   "en": "Assumed end-of-quarter cash balance {0}B",
   "zh": "假設季末現金餘額 {0}B"
  },
+ "분기 자료(사모신용)는 일간 자료와 날짜가 다르니 기준일을 함께 보세요.": {
+  "en": "Quarterly data (private credit) has different dates from daily data, so check the as-of dates too.",
+  "zh": "季度資料(私募信貸)與每日資料的日期不同,請一併確認基準日。"
+ },
  "분기 조사": {
   "en": "Quarterly survey",
   "zh": "季度調查"
+ },
+ "분기 조사(늦게 나오는 정보)": {
+  "en": "Quarterly survey (information that comes out late)",
+  "zh": "季度調查(較晚公布的資訊)"
  },
  "분위 간격({0}{1})이 벌어지면 “누구는 싸게, 누구는 비싸게” 빌린다": {
   "en": "When the percentile gap ({0}{1}) widens, \"some borrow cheaply, others expensively\"",
@@ -3639,13 +5275,33 @@
   "en": "Extreme bearish {0}",
   "zh": "悲觀極端 {0}"
  },
+ "비관이 극단이라 반대로 튈 위험이 있어요.": {
+  "en": "Pessimism is extreme, so there is a risk of a snap-back the other way.",
+  "zh": "悲觀已到極端，有反向反彈的風險。"
+ },
+ "비둘기": {
+  "en": "dovish",
+  "zh": "鴿派"
+ },
  "비밀지표 {0}": {
   "en": "Hidden indicator {0}",
   "zh": "隱藏指標 {0}"
  },
+ "비상용 물탱크인 역레포에는 ${0}B가 남았어요": {
+  "en": "the reverse repo facility, the emergency water tank, has ${0}B left",
+  "zh": "作為備用水槽的逆回購還剩 {0}B 美元"
+ },
+ "비상장 BDC 환매 요청 vs 지급 한도": {
+  "en": "Unlisted BDC redemption requests vs. payout limits",
+  "zh": "非上市 BDC 贖回申請 vs. 給付上限"
+ },
  "비상장(환매 제한형)": {
   "en": "Non-listed (redemption-restricted)",
   "zh": "非上市（限制贖回型）"
+ },
+ "비슷했고": {
+  "en": "it was about the same, and",
+  "zh": "差不多,而且"
  },
  "비싼 쪽 →": {
   "en": "expensive →",
@@ -3695,6 +5351,10 @@
   "en": "Red",
   "zh": "紅色"
  },
+ "사고흐름 칼럼 {0} 「미국 재무부가 단기물 발행을 늘릴 때」": {
+  "en": "Thought-flow column {0} 「When the US Treasury increases T-bill issuance」",
+  "zh": "思考脈絡專欄 {0}「美國財政部增加短期國庫券發行時」"
+ },
  "사모신용": {
   "en": "Private credit",
   "zh": "私募信貸"
@@ -3714,6 +5374,14 @@
  "상단 주요 항목 설명": {
   "en": "Explanation of key items at top",
   "zh": "上方主要項目說明"
+ },
+ "상승: BXSL, FSK, BCRED": {
+  "en": "Up: BXSL, FSK, BCRED",
+  "zh": "上漲:BXSL、FSK、BCRED"
+ },
+ "상승: {0}": {
+  "en": "Up: {0}",
+  "zh": "上升：{0}"
  },
  "상승을 돈이 따라붙음": {
   "en": "Money follows the rise",
@@ -3767,6 +5435,18 @@
   "en": "The futures market has both companies that actually use the commodity (producers and end users) and speculative money betting on price trends. The US CFTC publishes every week “who has bought and sold how much.” When speculative money piles heavily to one side, it can push the price that way, but when it is too crowded, the reversal can be sharp.",
   "zh": "期貨市場裡，同時有實際使用原物料的公司（生產商與實際需求者），以及押注價格走勢的投機資金。美國 CFTC 每週公布「誰買了多少、賣了多少」。投機資金大量集中在單邊時，可能把價格推向那個方向，但太擁擠的話，反轉時波動會很劇烈。"
  },
+ "선택적 조정": {
+  "en": "Selective adjustment",
+  "zh": "選擇性修正"
+ },
+ "성장 기대가 꺾여 국채로 돈이 피난 오는 중이에요.": {
+  "en": "Growth expectations have faded, and money is fleeing into Treasuries.",
+  "zh": "成長預期轉弱,資金正湧入公債避險。"
+ },
+ "성장주 가치가 먼저 압박받나": {
+  "en": "Is the value of growth stocks getting pressured first",
+  "zh": "成長股的價值是否先受到壓力"
+ },
  "세 가지가 동시에 나빠지면 Fed가 아무것도 하지 않아도 장기금리가 스스로 올라갈 수 있어요.": {
   "en": "If all three worsen at once, long-term yields can rise on their own even if the Fed does nothing.",
   "zh": "三者同時惡化時，即使聯準會什麼都不做，長期殖利率也可能自行上升。"
@@ -3815,9 +5495,17 @@
   "en": "Depleted (structural)",
   "zh": "耗盡（結構性）"
  },
+ "소폭 증액": {
+  "en": "Slight increase",
+  "zh": "小幅增加"
+ },
  "소형 계약(Micro Gold, {0})은 제외했어요.": {
   "en": "Small contracts (Micro Gold, {0}) are excluded.",
   "zh": "已排除小型合約(Micro Gold,{0})。"
+ },
+ "숏 커버(빌려 판 것 되사기)나 실수요가 끌어올린 상승일 수 있어 지속되는지 확인이 필요해요.": {
+  "en": "The rise may come from short covering (buying back what was sold short) or real demand, so check whether it lasts.",
+  "zh": "這波上漲可能來自空單回補或實際需求，需要確認能否持續。"
  },
  "숏 커버·실수요 상승": {
   "en": "Short-covering / real-demand rise",
@@ -3827,6 +5515,10 @@
   "en": "Short (sell)",
   "zh": "空單（賣出）"
  },
+ "수급 압력": {
+  "en": "Supply pressure",
+  "zh": "供需壓力"
+ },
  "수요 양호": {
   "en": "Demand is healthy",
   "zh": "需求良好"
@@ -3835,9 +5527,33 @@
   "en": "Demand is concentrated in short-term paper (MMF money)",
   "zh": "需求集中在短期債（貨幣市場基金資金）"
  },
+ "수요가 매우 강한 입찰이었어요.": {
+  "en": "It was an auction with very strong demand.",
+  "zh": "這是一場需求非常強勁的標售。"
+ },
+ "수요가 부족한 입찰이었어요": {
+  "en": "It was an auction with weak demand",
+  "zh": "這是一場需求不足的標售"
+ },
+ "수요가 부진해요.": {
+  "en": "Demand is weak.",
+  "zh": "需求疲弱。"
+ },
+ "수요가 약해지는 조짐": {
+  "en": "Signs that demand is weakening",
+  "zh": "需求出現轉弱跡象"
+ },
+ "수요가 약해지는 조짐이 있어요.": {
+  "en": "There are signs that demand is weakening.",
+  "zh": "需求出現轉弱跡象。"
+ },
  "수요가 없어 딜러가 억지로 떠안음": {
   "en": "No demand, so dealers are forced to take it on",
   "zh": "沒有需求，交易商只好被迫硬接"
+ },
+ "수준이라 레포 시장은 안정적이에요.": {
+  "en": "so the repo market is stable.",
+  "zh": "水準,所以附買回市場穩定。"
  },
  "순 {0}계약": {
   "en": "Net {0} contracts",
@@ -3846,6 +5562,14 @@
  "순(롱−숏)": {
   "en": "Net (long − short)",
   "zh": "淨部位（多單 − 空單）"
+ },
+ "순매도했어요": {
+  "en": "were net sellers",
+  "zh": "淨賣出"
+ },
+ "순매수했어요": {
+  "en": "were net buyers",
+  "zh": "淨買進"
  },
  "순발행 = 재무부 MSPD 시장성 국채 잔액 변화": {
   "en": "Net issuance = change in Treasury MSPD marketable debt outstanding",
@@ -3863,13 +5587,33 @@
   "en": "Reading in this order makes the other tabs much easier to follow.",
   "zh": "依這個順序閱讀，其他分頁會好懂許多。"
  },
+ "순차입 (Repo − 역Repo)": {
+  "en": "Net borrowing (Repo − reverse repo)",
+  "zh": "淨借款（附買回 − 逆回購）"
+ },
  "순포지션": {
   "en": "Net position",
   "zh": "淨部位"
  },
+ "순포지션 = 롱 − 숏 (스프레드 포지션 제외, CFTC 정의).": {
+  "en": "Net position = long − short (excluding spread positions, per CFTC definition).",
+  "zh": "淨部位＝多單 − 空單（不含價差部位，依 CFTC 定義）。"
+ },
  "순포지션 = 롱 − 숏 (스프레드 포지션 제외, CFTC 정의). 투기자금 순매수 {0}계약은 실물로 ≈ {1}억 부셸이에요. 변화는 정확히 {2}·{3}·{4}주 전 화요일 자료와 비교하고, 그 주 자료가 없으면 비워 둬요. 미결제약정 {5}계약 ({6}주 {7}).": {
   "en": "Net position = long − short (excluding spread positions, per CFTC definition). Speculative net buying of {0} contracts equals roughly {1} hundred million bushels in physical terms. Changes are compared exactly with the data from {2}, {3} and {4} weeks earlier (Tuesday); if that week's data is missing, it is left blank. Open interest {5} contracts ({6} weeks {7}).",
   "zh": "淨部位＝多單 − 空單（不含價差部位，依 CFTC 定義）。投機資金淨買超 {0}口，換算成實物約為 {1}億英斗。變化會與正好{2}、{3}、{4}週前週二的資料比較，若該週沒有資料就留白。未平倉量 {5}口（{6}週 {7}）。"
+ },
+ "순포지션 감소 시작.": {
+  "en": "Net position has started to decline.",
+  "zh": "淨部位開始減少。"
+ },
+ "순포지션 급감 + Repo 의존도 증가.": {
+  "en": "Net position plunging and reliance on Repo rising.",
+  "zh": "淨部位驟減，對附買回的依賴上升。"
+ },
+ "순포지션 유지/증가.": {
+  "en": "Net position maintained or increasing.",
+  "zh": "淨部位維持或增加。"
  },
  "숫자 하나하나보다 색깔": {
   "en": "Colors matter more than each number",
@@ -3899,9 +5643,17 @@
   "en": "Market stress",
   "zh": "市場緊張度"
  },
+ "시장 수요가 부족했다는 뜻이에요.": {
+  "en": "it means market demand was lacking.",
+  "zh": "代表市場需求不足。"
+ },
  "시장 영향": {
   "en": "Market impact",
   "zh": "市場影響"
+ },
+ "시장 완충 장치 제거 중.": {
+  "en": "The market's liquidity buffer is being removed.",
+  "zh": "市場的流動性緩衝正在消失。"
  },
  "시장 전체의 ‘날씨’를 보는 도구예요.": {
   "en": "It is a tool for viewing the “weather” of the whole market.",
@@ -3915,6 +5667,10 @@
   "en": "Marketable Treasury debt",
   "zh": "可流通公債餘額"
  },
+ "시장성 국채 중 단기물 {0}%": {
+  "en": "T-bills are {0}% of marketable Treasuries",
+  "zh": "流通國債中短期國庫券占 {0}%"
+ },
  "시장에 걸려 있는 돈의 크기": {
   "en": "Size of the money riding on the market",
   "zh": "市場上投入資金的規模"
@@ -3926,6 +5682,10 @@
  "시장은 예상치를 이미 가격에 반영하니 차이가 더 중요해요. 다음 발표:": {
   "en": "The market has already priced in expectations, so the difference matters more. Next announcement:",
   "zh": "市場早已反映預期，所以差異更重要。下一次公布："
+ },
+ "시장을 떠받칠 의지 있음.": {
+  "en": "Willing to support the market.",
+  "zh": "有意願支撐市場。"
  },
  "시장의 비상용 물탱크": {
   "en": "The market's emergency water tank",
@@ -3951,6 +5711,14 @@
   "en": "Avoid new leverage",
   "zh": "避免新增槓桿"
  },
+ "신규 레버리지 자제, 유동성 보존": {
+  "en": "Hold off on new leverage and preserve liquidity",
+  "zh": "避免新增槓桿,保存流動性"
+ },
+ "신규 일자리 {0}천 명 ({1}개월 평균 {2}천)": {
+  "en": "New jobs {0}k ({1}-month average {2}k)",
+  "zh": "新增就業 {0} 千人({1} 個月平均 {2} 千人)"
+ },
  "신용": {
   "en": "Credit",
   "zh": "信用"
@@ -3975,9 +5743,25 @@
   "en": "Check whether it has spread across the credit market",
   "zh": "確認是否已擴散到整個信用市場"
  },
+ "신용시장 전반으로 확산 의심": {
+  "en": "Suspected spread to the credit market as a whole",
+  "zh": "疑似擴散到整個信用市場"
+ },
  "신용시장 전이 (HY)": {
   "en": "Spillover to credit markets (HY)",
   "zh": "信用市場傳導（HY）"
+ },
+ "신용시장에서 하이일드 스프레드는 {0}bp로": {
+  "en": "in the credit market the high-yield spread is {0}bp,",
+  "zh": "信用市場的高收益債利差為 {0}bp,"
+ },
+ "신용시장에서 하이일드 스프레드는 {0}bp로 투자자들이 낙관적이에요.": {
+  "en": "In credit markets the high-yield spread is {0}bp, so investors are optimistic.",
+  "zh": "在信用市場,高收益債利差為 {0}bp,投資人相當樂觀。"
+ },
+ "신용은 안정적이지만 자금조달 지표 일부가 긴장": {
+  "en": "Credit is stable, but some funding indicators are strained",
+  "zh": "信用穩定，但部分資金籌措指標偏緊"
  },
  "신용평가사": {
   "en": "Credit rating agencies",
@@ -4039,6 +5823,14 @@
   "en": "Real yield (growth expectations)",
   "zh": "實質殖利率（成長預期）"
  },
+ "실질금리 {0}개월": {
+  "en": "Real yield {0} months",
+  "zh": "實質殖利率 {0} 個月"
+ },
+ "실질금리 {0}개월 {1}bp": {
+  "en": "Real yield {0}-month {1}bp",
+  "zh": "實質殖利率 {0} 個月 {1}bp"
+ },
  "실질금리가 {0}": {
   "en": "Real interest rates {0}",
   "zh": "實質利率{0}"
@@ -4059,6 +5851,14 @@
   "en": "Only real yields rise",
   "zh": "只有實質殖利率上升"
  },
+ "실질금리만 오르고 신용시장은 안정": {
+  "en": "Only real yields are rising while the credit market is stable",
+  "zh": "只有實質殖利率上升,信用市場穩定"
+ },
+ "심각": {
+  "en": "Serious",
+  "zh": "嚴重"
+ },
  "아래 표 ›": {
   "en": "Table below ›",
   "zh": "見下表 ›"
@@ -4071,21 +5871,37 @@
   "en": "Preference for safe assets",
   "zh": "偏好避險資產"
  },
+ "안정": {
+  "en": "Stable",
+  "zh": "穩定"
+ },
  "안정 강조": {
   "en": "Stresses stability",
   "zh": "強調穩定"
+ },
+ "안정적이에요.": {
+  "en": "it is stable.",
+  "zh": "穩定。"
  },
  "알루미늄": {
   "en": "Aluminum",
   "zh": "鋁"
  },
  "압력 {0}번": {
-  "en": "Pressure {0} times",
-  "zh": "壓力 {0} 次"
+  "en": "Pressure: No. {0}",
+  "zh": "壓力：第 {0} 項"
  },
  "앞으로 몰린 날 없음": {
   "en": "No crowded days ahead",
   "zh": "未來沒有事件集中的日子"
+ },
+ "약간 초과 (경계)": {
+  "en": "Slightly exceeded (Caution)",
+  "zh": "略為超標(警戒)"
+ },
+ "약한 기업의 부실 가능성을 집중 점검하세요 (예시 {0})": {
+  "en": "Closely check weak companies for the likelihood of distress (example {0})",
+  "zh": "請重點檢查體質較弱企業陷入困境的可能性(例如 {0})"
  },
  "약해져 원자재 전반에 순풍": {
   "en": "is weakening, a tailwind for commodities overall",
@@ -4094,6 +5910,10 @@
  "양호": {
   "en": "Good",
   "zh": "良好"
+ },
+ "양호한 편이에요.": {
+  "en": "It is on the good side.",
+  "zh": "表現不錯。"
  },
  "얼마나 신청했는지가 아니라 누가 실제로 물량을 들고 갔는지가 중요해요.": {
   "en": "What matters is not how much was requested, but who actually took the supply.",
@@ -4115,13 +5935,49 @@
   "en": "Energy",
   "zh": "能源"
  },
+ "에너지 한 달 {0}%": {
+  "en": "Energy over one month {0}%",
+  "zh": "能源一個月 {0}%"
+ },
+ "에너지 한 달 {0}% ({1}{2})": {
+  "en": "Energy {0}% over the month ({1}{2})",
+  "zh": "能源一個月 {0}%({1}{2})"
+ },
  "에서 확인": {
   "en": " for details",
   "zh": "查看"
  },
+ "엔 강세": {
+  "en": "Strong yen",
+  "zh": "日圓升值"
+ },
+ "엔 약세": {
+  "en": "Weak yen",
+  "zh": "日圓貶值"
+ },
+ "엔 캐리 트레이드 청산 압력이 매우 높은 수준이에요.": {
+  "en": "Yen carry trade unwind pressure is at a very high level.",
+  "zh": "日圓套利交易的平倉壓力處於非常高的水準。"
+ },
+ "엔/달러 {0}개월 {1}% (엔 강세)": {
+  "en": "Yen/dollar {0}-month {1}% (yen stronger)",
+  "zh": "日圓/美元 {0} 個月 {1}%(日圓升值)"
+ },
+ "여러 요인이 섞여서 내렸어요.": {
+  "en": "It fell because of a mix of factors.",
+  "zh": "因多種因素交錯而下跌。"
+ },
+ "여러 요인이 섞여서 올랐어요.": {
+  "en": "It rose because of a mix of factors.",
+  "zh": "因多種因素交錯而上升。"
+ },
  "역레포": {
   "en": "Reverse repo",
   "zh": "逆回購"
+ },
+ "역레포 ${0}B": {
+  "en": "Reverse repo ${0}B",
+  "zh": "逆回購 {0}B 美元"
  },
  "역레포 (ON RRP)": {
   "en": "Reverse repo (ON RRP)",
@@ -4151,6 +6007,10 @@
   "en": "Reverse repo balance ($B)",
   "zh": "逆回購餘額（$B）"
  },
+ "역레포 잔고(바닥이면 지준·SOFR−IORB 완충 판정) + 은행 지준 {0}개월 변화": {
+  "en": "Reverse repo balance (if at the floor, buffer judged by reserves and SOFR−IORB) + {0}-month change in bank reserves",
+  "zh": "逆回購餘額(若見底,則以準備金與 SOFR−IORB 判定緩衝)+ 銀行準備金 {0} 個月變化"
+ },
  "역레포·지준 안정, 입찰 B등급 이상, {0}년물 하락": {
   "en": "Reverse repo and reserves stable, auctions grade B or better, {0}-year yield falling",
   "zh": "逆回購與準備金穩定、標售 B 級以上、{0} 年期殖利率下跌"
@@ -4174,6 +6034,10 @@
  "연방 이자 지출 (연율)": {
   "en": "Federal interest spending (annualized)",
   "zh": "聯邦利息支出（年率）"
+ },
+ "연쇄반응 {0}~{1}단계(장기 성장주·베이시스 트레이드)에 주의하세요.": {
+  "en": "Watch out for stages {0} to {1} of the chain reaction (long-duration growth stocks, basis trade).",
+  "zh": "請留意連鎖反應的第 {0} 至 {1} 階段(長天期成長股、基差交易)。"
  },
  "연준": {
   "en": "Fed",
@@ -4227,13 +6091,37 @@
   "en": "Treasuries that the Fed holds for monetary policy purposes. When analyzing market demand, SOMA is excluded from the calculation.",
   "zh": "聯準會（Fed）基於貨幣政策目的持有的公債。分析市場需求時，計算會排除 SOMA。"
  },
+ "연준(SOMA)": {
+  "en": "Fed (SOMA)",
+  "zh": "聯準會(SOMA)"
+ },
+ "연준의 단기물 보유 {0}개월 {1}B {2}": {
+  "en": "Fed T-bill holdings, {0} months: {1}B {2}",
+  "zh": "聯準會持有短期國庫券，{0}個月：{1}B {2}"
+ },
  "연준의 통화정책 목적 보유 (통계 계산 시 제외)": {
   "en": "Held by the Fed for monetary policy purposes (excluded from statistics)",
   "zh": "聯準會基於貨幣政策目的持有（統計時排除）"
  },
+ "연준이 단기 구간(T-Bill)을 사들이는가": {
+  "en": "Is the Fed buying the short end (T-Bills)",
+  "zh": "聯準會是否在買進短天期(T-Bill)"
+ },
+ "연준이 매파적으로 돌아설 수 있어요.": {
+  "en": "the Fed may turn hawkish.",
+  "zh": "聯準會可能轉向鷹派。"
+ },
+ "옅은 파란 띠 = 직전 {0}년 최저~최고 (올해는 평균에 넣지 않음, EIA 방식)": {
+  "en": "Light blue band = low–high of the previous {0} years (this year is excluded from the average, as EIA does)",
+  "zh": "淺藍色帶＝前{0}年最低～最高（今年不計入平均，比照 EIA 做法）"
+ },
  "예금 {0}주 {1}%": {
   "en": "Deposits {0}w {1}%",
   "zh": "存款 {0} 週 {1}%"
+ },
+ "예금이 빠지고 비싼 대형 정기예금(도매성 자금)이 급증하면 은행 조달비용 상승": {
+  "en": "If deposits leave and expensive large time deposits (wholesale funding) surge, bank funding costs rise",
+  "zh": "存款流出、而昂貴的大額定期存款(批發性資金)暴增時,銀行的資金成本就會上升"
  },
  "예상 레포 금리 압력": {
   "en": "Expected repo rate pressure",
@@ -4254,6 +6142,14 @@
  "오래갈까”가 보여요.": {
   "en": "and whether it will last.”",
   "zh": "以及會不會持續」。"
+ },
+ "오르면 먼 미래 이익의 현재가치가 낮아져요": {
+  "en": "When it rises, the present value of far-future earnings falls",
+  "zh": "上升時,遙遠未來獲利的現值會變低"
+ },
+ "오르면 현금 회수가 늦어짐": {
+  "en": "When it rises, cash collection gets slower",
+  "zh": "上升時,現金回收會變慢"
  },
  "오른쪽": {
   "en": "Further right",
@@ -4279,6 +6175,22 @@
   "en": "rose, a headwind for gold and silver",
   "zh": "上升,對黃金、白銀是逆風"
  },
+ "올라 정부의 차입 부담이 커졌고": {
+  "en": "it rose, raising the government's borrowing burden, and",
+  "zh": "上升,政府的借款負擔加重,而且"
+ },
+ "올라서 성장주 가치를 누르고 있어요.": {
+  "en": "rising and weighing on growth-stock valuations.",
+  "zh": "上升,壓低了成長股的價值。"
+ },
+ "올해 재고": {
+  "en": "This year's inventory",
+  "zh": "今年庫存"
+ },
+ "완화·정상화": {
+  "en": "Easing and normalization",
+  "zh": "緩和與正常化"
+ },
  "왜 중요한가": {
   "en": "Why it matters",
   "zh": "為什麼重要"
@@ -4303,13 +6215,37 @@
   "en": "Investment-grade corporate bond spread",
   "zh": "優質公司債利差"
  },
+ "우량기업·자금시장까지 긴장이 번지고 있어요.": {
+  "en": "Tension is spreading to investment-grade companies and the funding markets.",
+  "zh": "緊張情緒正蔓延到投資級企業與資金市場。"
+ },
+ "우량기업과 단기자금시장은 아직 안정적이라 위험이 시스템 전체로 번지진 않았어요.": {
+  "en": "High-quality companies and the short-term funding market are still stable, so the risk hasn't spread across the whole system.",
+  "zh": "優質企業與短期資金市場仍然穩定,風險尚未蔓延到整個系統。"
+ },
+ "우량채 {0}": {
+  "en": "Investment-grade bonds {0}",
+  "zh": "投資級債券 {0}"
+ },
  "우량채 {0}bp": {
   "en": "Investment-grade bonds {0}bp",
   "zh": "優質債 {0}bp"
  },
+ "우량채 스프레드·단기자금시장까지 불안": {
+  "en": "Even investment-grade spreads and the short-term funding market are uneasy",
+  "zh": "連投資級債券利差與短期資金市場也不安"
+ },
  "우량채까지 확대 + 단기자금시장 불안": {
   "en": "Widening even in investment-grade bonds + short-term funding market stress",
   "zh": "連優質債利差也擴大 + 短期資金市場不安"
+ },
+ "움직였어요 —": {
+  "en": "moved —",
+  "zh": "變動了 —"
+ },
+ "원가·공정가치 기준을 따로 봐야 함": {
+  "en": "Cost and fair-value bases must be viewed separately",
+  "zh": "必須分開看成本與公允價值基準"
  },
  "원래 그런 말 안 하던 사람이 말했다 = 진짜 신호": {
   "en": "Someone who doesn't usually say this said it = a real signal",
@@ -4318,6 +6254,10 @@
  "원문 ↗": {
   "en": "Source ↗",
   "zh": "原文 ↗"
+ },
+ "원문 인용: TBAC 시나리오상 단기물 비중 {0}%": {
+  "en": "Direct quote: T-bill share in the TBAC scenario is {0}%",
+  "zh": "原文引用：TBAC 情境中短期國庫券占比為 {0}%"
  },
  "원문 확인": {
   "en": "Check the source",
@@ -4387,6 +6327,10 @@
   "en": "A group of major Wall Street financial firms",
   "zh": "華爾街大型金融機構組成的團體"
  },
+ "월말·분기말 일시 상승은 제외": {
+  "en": "Temporary month-end and quarter-end spikes are excluded",
+  "zh": "排除月底、季底的暫時性上升"
+ },
  "월별 매입($B)": {
   "en": "Monthly purchases ($B)",
   "zh": "每月買進（$B）"
@@ -4398,6 +6342,14 @@
  "월평균 · IMF": {
   "en": "Monthly average · IMF",
   "zh": "月平均 · IMF"
+ },
+ "월화수목금토일": {
+  "en": "MTWTFSS",
+  "zh": "一二三四五六日"
+ },
+ "위 배관도에서 빨간색·주황색 지점을 먼저 확인하세요.": {
+  "en": "First check the red and orange spots on the plumbing diagram above.",
+  "zh": "請先確認上方管線圖中紅色與橘色的位置。"
  },
  "위 세 그룹에 속하지 않는 대형 보고 대상 거래자.": {
   "en": "Large reportable traders that do not belong to the three groups above.",
@@ -4415,6 +6367,10 @@
   "en": "Danger",
   "zh": "危險"
  },
+ "위험 수위": {
+  "en": "Danger level",
+  "zh": "危險水位"
+ },
  "위험 신호": {
   "en": "Danger signals",
   "zh": "危險訊號"
@@ -4427,6 +6383,10 @@
   "en": "Risk aversion begins",
   "zh": "風險趨避開始"
  },
+ "위험 흡수 비중 축소 중.": {
+  "en": "The share of risk absorption is shrinking.",
+  "zh": "承接風險的比重正在縮小。"
+ },
  "위험기업 자금조달 압박": {
   "en": "Funding pressure on risky companies",
   "zh": "高風險企業籌資壓力"
@@ -4435,13 +6395,45 @@
   "en": "Closely check funding pressure on risky companies and possible distress",
   "zh": "重點檢查高風險企業的籌資壓力與可能的財務危機"
  },
+ "위험기업이 돈 빌리기가 비싸지고 있어요.": {
+  "en": "Borrowing is getting more expensive for risky companies.",
+  "zh": "風險較高的企業借錢變貴了。"
+ },
+ "위험이 강한 기업까지 번지나": {
+  "en": "Is the risk spreading even to stronger companies",
+  "zh": "風險是否連體質較強的企業也波及了"
+ },
  "위험자산 유지": {
   "en": "Hold risk assets",
   "zh": "持有風險資產"
  },
+ "위험자산 일부 축소": {
+  "en": "Trim some risk assets",
+  "zh": "適度減少部分風險資產"
+ },
+ "위험자산에 우호적이에요.": {
+  "en": "It is friendly to risk assets.",
+  "zh": "對風險資產有利。"
+ },
+ "위험자산엔 우호적이에요.": {
+  "en": "It is friendly to risk assets.",
+  "zh": "對風險資產有利。"
+ },
+ "윌리엄 「지금 놓치면 평생 후회로 남을 시리즈」 {0} 국채와 미국의 진정한 힘": {
+  "en": "William's 「The Series You'll Regret Missing for the Rest of Your Life」 {0} Treasuries and America's True Power",
+  "zh": "威廉「現在錯過會後悔一輩子的系列」{0} 公債與美國真正的實力"
+ },
  "유동성": {
   "en": "Liquidity",
   "zh": "流動性"
+ },
+ "유동성 교차확인:": {
+  "en": "Liquidity cross-check:",
+  "zh": "流動性交叉檢查:"
+ },
+ "유동성 교차확인: ⚠ SOFR {0}일 {1}bp 이상 또는 역레포 {2}B 미만": {
+  "en": "Liquidity cross-check: ⚠ SOFR {0} days {1}bp or more, or reverse repo under {2}B",
+  "zh": "流動性交叉確認:⚠ SOFR {0} 日 {1}bp 以上,或逆回購低於 {2}B"
  },
  "유동성 보존": {
   "en": "Preserve liquidity",
@@ -4450,6 +6442,18 @@
  "유동성 상태": {
   "en": "Liquidity status",
   "zh": "流動性狀態"
+ },
+ "유동성 완충 약화(지준 감소·SOFR−IORB 상승) + 약한 중장기물 입찰(C등급 이하)": {
+  "en": "Liquidity buffer weakening (reserves falling, SOFR−IORB rising) + weak coupon auctions (grade C or below)",
+  "zh": "流動性緩衝轉弱(準備金減少、SOFR−IORB 上升)+ 中長期公債標售偏弱(C 級以下)"
+ },
+ "유동성 완충: 역레포 ${0}B ({1})": {
+  "en": "Liquidity buffer: reverse repo ${0}B ({1})",
+  "zh": "流動性緩衝:逆回購 {0}B 美元({1})"
+ },
+ "유동성 완충: 역레포 {0}B (소진 (구조적)": {
+  "en": "Liquidity buffer: reverse repo {0}B (depleted (structural)",
+  "zh": "流動性緩衝:逆回購 {0}B(已耗盡(結構性)"
  },
  "유동성 점수 {0}/{1}": {
   "en": "Liquidity score {0}/{1}",
@@ -4463,9 +6467,17 @@
   "en": "Liquidity is tight too",
   "zh": "流動性也吃緊"
  },
+ "유동성은 마르는데 공포 지수는 낮은가 (안심이 지나친가)": {
+  "en": "Liquidity is drying up but the fear gauge is low (is the complacency excessive)",
+  "zh": "流動性正在枯竭,恐慌指數卻很低(是不是過度安心了)"
+ },
  "유로/달러 (달러 조달 압력 대용)": {
   "en": "EUR/USD (proxy for dollar funding pressure)",
   "zh": "歐元/美元（美元資金壓力的代理指標）"
+ },
+ "유지": {
+  "en": "Maintain",
+  "zh": "維持"
  },
  "은": {
   "en": "Silver",
@@ -4515,9 +6527,33 @@
   "en": "Banks",
   "zh": "銀行"
  },
+ "은행 대출 기준 (SLOOS 대기업·중견 C&I)": {
+  "en": "Bank lending standards (SLOOS large and mid-sized firms C&I)",
+  "zh": "銀行放款標準(SLOOS 大型與中型企業 C&I)"
+ },
+ "은행 대출 창구를 보면 「{0}」 상태예요": {
+  "en": "the bank lending window is in 「{0}」 condition",
+  "zh": "銀行放款窗口處於「{0}」狀態"
+ },
+ "은행 대출 창구를 보면 「🟢 신용 환경 안정": {
+  "en": "Looking at the bank lending window, 「🟢 credit environment stable",
+  "zh": "從銀行放款窗口來看,「🟢 信用環境穩定"
+ },
+ "은행 대출태도(SLOOS, 분기)는 {0}.": {
+  "en": "Bank lending attitudes (SLOOS, quarterly) are {0}.",
+  "zh": "銀行放款態度(SLOOS,按季)為 {0}。"
+ },
+ "은행 대출태도(SLOOS, 분기)는 대출기준 강화 비율 {0}%p (직전 분기 {1}).": {
+  "en": "Bank lending attitudes (SLOOS, quarterly): the share tightening lending standards is {0}%p (prior quarter {1}).",
+  "zh": "銀行放款態度(SLOOS,季度)顯示,收緊放款標準的比例為 {0}%p(上一季 {1})。"
+ },
  "은행 등 스와프 딜러": {
   "en": "Swap dealers such as banks",
   "zh": "銀行等交換交易商"
+ },
+ "은행 시스템의 중앙은행 돈": {
+  "en": "Central bank money in the banking system",
+  "zh": "銀行體系中的央行資金"
  },
  "은행 준비금": {
   "en": "Bank reserves",
@@ -4526,6 +6562,10 @@
  "은행 지준": {
   "en": "Bank reserves",
   "zh": "銀行準備金"
+ },
+ "은행 지준 ${0}T": {
+  "en": "Bank reserves ${0}T",
+  "zh": "銀行準備金 {0}T 美元"
  },
  "은행 지준 ($T)": {
   "en": "Bank reserves ($T)",
@@ -4550,6 +6590,10 @@
  "은행이 돈줄을 잠그고 있나요?": {
   "en": "Are banks shutting off the money tap?",
   "zh": "銀行是否正在收緊資金水龍頭？"
+ },
+ "은행이 실제로 돈 빌려주기를 꺼리나": {
+  "en": "Are banks actually reluctant to lend",
+  "zh": "銀行是否真的不願放款"
  },
  "은행이 연준에 맡긴 돈": {
   "en": "Money banks park at the Fed",
@@ -4595,6 +6639,14 @@
   "en": "Bid-to-cover",
   "zh": "投標倍數"
  },
+ "응찰배율 {0}배 미만이나 Indirect Bidder 비중 {1}% 미만이 이어지면 장기금리 상승 압력이 커져요.": {
+  "en": "If the bid-to-cover ratio stays below {0}x or the Indirect Bidder share stays below {1}%, upward pressure on long-term yields grows.",
+  "zh": "若投標倍數持續低於 {0} 倍,或 Indirect Bidder 占比持續低於 {1}%,長期殖利率的上升壓力就會變大。"
+ },
+ "응찰배율이 {0}배를 밑돌거나 Primary Dealer 비중이 {1}%를 넘기 시작하면 단기 자금시장 긴장을 의심해요.": {
+  "en": "If the bid-to-cover ratio drops below {0}x or the Primary Dealer share starts to exceed {1}%, suspect stress in short-term funding markets.",
+  "zh": "若投標倍數跌破 {0} 倍，或 Primary Dealer 占比開始超過 {1}%，就要懷疑短期資金市場出現緊張。"
+ },
  "응찰액 ÷ 발행액": {
   "en": "Bids ÷ amount offered",
   "zh": "投標量 ÷ 發行金額"
@@ -4602,6 +6654,10 @@
  "응찰자 종류 설명": {
   "en": "About the bidder types",
   "zh": "應標者類型說明"
+ },
+ "의미 있는 움직임이 없어요.": {
+  "en": "There is no meaningful move.",
+  "zh": "沒有明顯的變動。"
  },
  "이 {0}%로 평균 수준이에요 (Indirect Bidder = 국내외 고객 주문": {
   "en": " is {0}%, an average level (Indirect Bidder = domestic and foreign customer orders,",
@@ -4623,6 +6679,10 @@
   "en": "This figure is “total interest payments” on a US Commerce Department (BEA) national accounts basis, so it comes out a bit higher than the Congressional Budget Office (CBO) “net interest” ratio.",
   "zh": "這個數字是美國商務部（BEA）國民帳基準的「利息支出總額」，因此會比國會預算辦公室（CBO）的「淨利息」比率略高。"
  },
+ "이 있었어요.": {
+  "en": "there was an event.",
+  "zh": "有這件事。"
+ },
  "이 탭의 분위기·{0}줄 다시 읽기": {
   "en": "Re-read this tab's mood and the {0} lines",
   "zh": "重讀本頁氛圍與 {0} 行重點"
@@ -4638,6 +6698,22 @@
  "이 화면의 숫자가 “언제 것인지, 늦어진 건 없는지”를 확인하는 탭이에요.": {
   "en": "This tab checks “when each number on this screen is from, and whether anything is late.”",
   "zh": "本頁用來確認這個畫面上每個數字「是哪一天的資料、有沒有延遲」。"
+ },
+ "이고,": {
+  "en": "and,",
+  "zh": "而且,"
+ },
+ "이날": {
+  "en": "That day",
+  "zh": "當天"
+ },
+ "이날 입찰:": {
+  "en": "Auctions that day:",
+  "zh": "當天的標售:"
+ },
+ "이날 입찰: 단기채(Bill) {0}-Week(응찰 {1}배": {
+  "en": "Auctions that day: T-bill {0}-Week (bid {1}x",
+  "zh": "當日標售:短期國庫券(Bill){0}-Week(投標 {1} 倍"
  },
  "이름을 누르면 자세히 봐요.": {
   "en": "Click a name for details.",
@@ -4682,6 +6758,10 @@
  "이번 주 일정이 몰린 날(클러스터)은? (": {
   "en": "Which days this week have clustered events? (",
   "zh": "本週哪幾天事件集中？（"
+ },
+ "이번 주 재고": {
+  "en": "This week's inventory",
+  "zh": "本週庫存"
  },
  "이번 주 중장기물 입찰": {
   "en": "This week's notes & bonds auctions",
@@ -4743,9 +6823,17 @@
   "en": "It pays no interest, so it reacts strongly to real interest rates and the dollar, and becomes a safe haven when people are anxious.",
   "zh": "它不會產生利息,所以對實質利率和美元反應很大,在不安時也會成為避險資產。"
  },
+ "이자를 현금 대신 원금에 얹어 받는 비율": {
+  "en": "The share of interest received by adding it to principal instead of paying cash",
+  "zh": "利息不以現金支付、而是加到本金上收取的比例"
+ },
  "이전 {0}B": {
   "en": "Previously {0}B",
   "zh": "先前 {0}B"
+ },
+ "일간": {
+  "en": "Daily",
+  "zh": "每日"
  },
  "일간 · EIA": {
   "en": "Daily · EIA",
@@ -4762,6 +6850,10 @@
  "일본 {0}년물 ({1}년)": {
   "en": "Japan {0}-year ({1} yrs)",
   "zh": "日本 {0} 年期（{1} 年）"
+ },
+ "일본 {0}년물 {1}%": {
+  "en": "Japan {0}-year {1}%",
+  "zh": "日本 {0} 年期 {1}%"
  },
  "일본 {0}년물 급등": {
   "en": "Japan {0}-year yield surges",
@@ -4787,9 +6879,17 @@
   "en": "Japan MOF ↗",
   "zh": "日本財務省 ↗"
  },
+ "일본 재무성 국채 금리": {
+  "en": "Japan's Ministry of Finance JGB yields",
+  "zh": "日本財務省公債殖利率"
+ },
  "일본 재무성 국채 금리 ↗": {
   "en": "Japan MOF JGB yields ↗",
   "zh": "日本財務省公債殖利率 ↗"
+ },
+ "일본 재무성 대외증권투자 주간": {
+  "en": "Japan's Ministry of Finance weekly overseas securities investment",
+  "zh": "日本財務省對外證券投資週報"
  },
  "일본 재무성 대외증권투자 주간 ↗": {
   "en": "Japan MOF weekly outward securities investment ↗",
@@ -4811,6 +6911,18 @@
   "en": "BOJ ↗",
   "zh": "日本央行 ↗"
  },
+ "일본은행 금융정책 결정": {
+  "en": "Bank of Japan monetary policy meeting",
+  "zh": "日本央行貨幣政策會議"
+ },
+ "일본은행 금융정책 결정 + 전망보고서": {
+  "en": "Bank of Japan monetary policy decision + Outlook Report",
+  "zh": "日本央行貨幣政策決議 + 展望報告"
+ },
+ "일본은행 금융정책회의 일정": {
+  "en": "Bank of Japan monetary policy meeting schedule",
+  "zh": "日本央行貨幣政策會議日程"
+ },
  "일본은행 금융정책회의 일정 ↗": {
   "en": "BOJ monetary policy meeting schedule ↗",
   "zh": "日本央行貨幣政策會議日程 ↗"
@@ -4822,6 +6934,10 @@
  "일본은행 회의(공식 일정)": {
   "en": "BOJ meetings (official schedule)",
   "zh": "日本央行會議（官方行程）"
+ },
+ "일부 단기 매입": {
+  "en": "Some short-term purchases",
+  "zh": "部分短期債券買進"
  },
  "일부 약함": {
   "en": "Partly weak",
@@ -4838,6 +6954,10 @@
  "일정": {
   "en": "Calendar",
   "zh": "行程"
+ },
+ "일치": {
+  "en": "Consistent",
+  "zh": "一致"
  },
  "읽는 법": {
   "en": "How to read",
@@ -4859,6 +6979,10 @@
   "en": "Auction grade D, Primary Dealer {0}%↑, dollar funding squeeze",
   "zh": "標售 D 級、Primary Dealer {0}%↑、美元資金緊縮"
  },
+ "입찰 건전성 종합 등급 (응찰배율·Primary Dealer 비중·유동성 완충)": {
+  "en": "Overall auction health grade (bid-to-cover ratio, Primary Dealer share, liquidity buffer)",
+  "zh": "標售健全度綜合評等(投標倍數、Primary Dealer 占比、流動性緩衝)"
+ },
  "입찰 건전성 종합 평가": {
   "en": "Overall auction health assessment",
   "zh": "標售健全度綜合評估"
@@ -4875,13 +6999,33 @@
   "en": "Auction results & schedule",
   "zh": "標售結果與時程"
  },
+ "입찰 결과를 받지 못했어요": {
+  "en": "Auction results could not be retrieved",
+  "zh": "未取得標售結果"
+ },
  "입찰 등급 C 이하가 나왔나? (": {
   "en": "Was there an auction grade of C or below? (",
   "zh": "是否出現 C 級以下的標售？（"
  },
+ "입찰 부진이 뚜렷해요": {
+  "en": "Weak auctions are clear",
+  "zh": "標售疲弱相當明顯"
+ },
+ "입찰 수요: 최근 중장기물 {0}건 평균 응찰 {1}배": {
+  "en": "Auction demand: average bid of {1}x across the last {0} coupon auctions",
+  "zh": "標售需求:最近 {0} 次中長期公債平均投標 {1} 倍"
+ },
  "입찰 약화": {
   "en": "Weaker auctions",
   "zh": "標售轉弱"
+ },
+ "입찰 응찰배율·Primary Dealer 비중 + MOVE + 하이일드 스프레드": {
+  "en": "Auction bid-to-cover ratio, Primary Dealer share + MOVE + high-yield spread",
+  "zh": "標售投標倍數、Primary Dealer 占比 + MOVE + 高收益債利差"
+ },
+ "입찰과 유동성이 동시에 나빠졌어요": {
+  "en": "Auctions and liquidity worsened at the same time",
+  "zh": "標售與流動性同時惡化"
  },
  "입찰마다 (주 {0}~{1}회)": {
   "en": "Every auction (weekly {0}–{1} times)",
@@ -4890,6 +7034,14 @@
  "입찰일": {
   "en": "Auction date",
   "zh": "標售日"
+ },
+ "자금시장 배관과 신용·사모신용이 함께 나빠져요": {
+  "en": "Money-market plumbing and credit/private credit are deteriorating together",
+  "zh": "資金市場管線與信用、私募信貸一起惡化"
+ },
+ "자금시장 일부 긴장": {
+  "en": "Some strain in funding markets",
+  "zh": "資金市場部分緊張"
  },
  "자동 생성 요약이에요 ({0}자). 매수·매도 추천이 아니며, 숫자 옆 출처 링크로 원문을 꼭 확인하세요.": {
   "en": "This is an auto-generated summary ({0} characters in Korean). It is not a buy/sell recommendation; please check the originals via the source links next to the numbers.",
@@ -4967,6 +7119,14 @@
   "en": "Long-duration tech stocks",
   "zh": "長天期科技股"
  },
+ "장기 듀레이션 비중 점검": {
+  "en": "Check long-duration exposure",
+  "zh": "檢視長天期部位比重"
+ },
+ "장기 듀레이션 자산(고밸류 성장주·장기채) 비중을 점검하되, 하루 숫자보다 며칠 이어지는지를 확인하세요.": {
+  "en": "Check your share of long-duration assets (high-valuation growth stocks, long bonds), but look at how many days it lasts rather than a single day's number.",
+  "zh": "請檢視長天期資產(高估值成長股、長期公債)的比重,但要看這個狀況持續幾天,而不是只看單日數字。"
+ },
  "장기 듀레이션 축소": {
   "en": "Shorten long duration",
   "zh": "縮短長天期存續期間"
@@ -4974,6 +7134,10 @@
  "장기 듀레이션·고밸류 축소, 현금·달러·금": {
   "en": "Cut long duration and high-valuation assets; hold cash, dollars, gold",
   "zh": "減碼長存續期間與高估值資產，持有現金、美元、黃金"
+ },
+ "장기 듀레이션·고밸류 축소, 현금·달러·금 점검": {
+  "en": "Trim long duration and high valuations; check cash, dollars and gold",
+  "zh": "減少長天期與高估值部位,並檢視現金、美元與黃金"
  },
  "장기 재정 비관": {
   "en": "Long-term fiscal pessimist",
@@ -4987,9 +7151,17 @@
   "en": "Long-term yields ↑",
   "zh": "長期殖利率 ↑"
  },
+ "장기금리 상승 압력": {
+  "en": "Upward pressure on long-term yields",
+  "zh": "長期殖利率的上升壓力"
+ },
  "장기금리를 자극하고 싶지 않다": {
   "en": "Doesn't want to stir up long-term yields",
   "zh": "不想刺激長期殖利率"
+ },
+ "장기물 공급이 늘면 장기금리 부담": {
+  "en": "If long-dated supply grows, long-term yields come under strain",
+  "zh": "長天期債券供給增加,長期殖利率就承壓"
  },
  "장기물 대신 단기물 발행을 늘리는 전략": {
   "en": "Strategy of increasing bill issuance instead of long-term issuance",
@@ -4998,6 +7170,10 @@
  "장기물 회당 최대": {
   "en": "Max per long-bond operation",
   "zh": "長天期單次上限"
+ },
+ "장기물이 늘면 장기금리 압력": {
+  "en": "If long-dated issuance grows, pressure on long-term yields",
+  "zh": "長天期債券發行增加,長期殖利率面臨壓力"
  },
  "장기채 비중": {
   "en": "Bonds share",
@@ -5010,6 +7186,22 @@
  "장기채(Bonds)": {
   "en": "Bonds",
   "zh": "長期債（Bonds）"
+ },
+ "장기채는 '가장 먼 미래'를 사는 입찰이라 재정 불안을 가장 먼저 반영해요": {
+  "en": "Bond auctions buy the 'farthest future', so they reflect fiscal worries first",
+  "zh": "長期公債標售買的是「最遙遠的未來」,因此最先反映財政疑慮"
+ },
+ "장기채를 오래 들고 있는 대가인 기간프리미엄은 {0}%": {
+  "en": "the term premium, the reward for holding long bonds for a long time, is {0}%",
+  "zh": "持有長期公債的報酬、也就是期限溢酬為 {0}%"
+ },
+ "장기채를 오래 들고 있는 대가인 기간프리미엄은 {0}%로 {1}년 동안 {2}bp 움직였어요.": {
+  "en": "The term premium, the reward for holding long bonds for a long time, is {0}%, and it moved {2}bp over {1} years.",
+  "zh": "期限溢酬(長期持有長期公債的報酬)為 {0}%,{1} 年來變動了 {2}bp。"
+ },
+ "장단기 금리차({0}년{1}년)는 {2}bp예요.": {
+  "en": "The yield curve spread ({0}-year vs. {1}-year) is {2}bp.",
+  "zh": "長短期利差({0} 年期與 {1} 年期)為 {2}bp。"
  },
  "장중(최대 {0}분 지연)": {
   "en": "Intraday (up to {0} min delay)",
@@ -5035,6 +7227,14 @@
   "en": "Inventories are ample while speculative money is coming in — the rise may lack physical support.",
   "zh": "庫存充裕,投機資金卻持續流入 — 這可能是缺乏實體支撐的上漲。"
  },
+ "재고가 평균보다 적으면 가격을 받치는 쪽, 많으면 누르는 쪽으로 작용해요. 발표: 매주 목요일 {0}:{1} (미국 동부)": {
+  "en": "Inventory below average tends to support prices; above average tends to weigh on them. Released every Thursday {0}:{1} (US Eastern).",
+  "zh": "庫存低於平均通常支撐價格，高於平均則壓抑價格。公布：每週四 {0}:{1}（美東時間）"
+ },
+ "재고가 평균보다 적으면 가격을 받치는 쪽, 많으면 누르는 쪽으로 작용해요. 발표: 매주 수요일 {0}:{1} (미국 동부)": {
+  "en": "Inventory below average tends to support prices; above average tends to weigh on them. Released every Wednesday {0}:{1} (US Eastern).",
+  "zh": "庫存低於平均通常支撐價格，高於平均則壓抑價格。公布：每週三 {0}:{1}（美東時間）"
+ },
  "재고는 원유·가스만": {
   "en": "inventory for crude oil and gas only",
   "zh": "庫存僅原油與天然氣"
@@ -5047,6 +7247,10 @@
   "en": "Treasury DTS ↗",
   "zh": "財政部 DTS ↗"
  },
+ "재무부 Investor Class Auction Allotments": {
+  "en": "Treasury Investor Class Auction Allotments",
+  "zh": "財政部 Investor Class Auction Allotments"
+ },
  "재무부 MSPD ↗": {
   "en": "Treasury MSPD ↗",
   "zh": "財政部 MSPD ↗"
@@ -5055,9 +7259,21 @@
   "en": "Treasury official results PDF ↗",
   "zh": "財政部官方結果 PDF ↗"
  },
+ "재무부 공표 일정": {
+  "en": "Treasury announcement schedule",
+  "zh": "財政部公布行程"
+ },
+ "재무부 관행": {
+  "en": "Treasury convention",
+  "zh": "財政部慣例"
+ },
  "재무부 리펀딩 ↗": {
   "en": "Treasury refunding ↗",
   "zh": "財政部再融資 ↗"
+ },
+ "재무부 바이백 안내": {
+  "en": "Treasury buyback announcements",
+  "zh": "財政部買回公告"
  },
  "재무부 바이백 안내 ↗": {
   "en": "Treasury buyback notice ↗",
@@ -5070,6 +7286,14 @@
  "재무부 분기 차입 전망": {
   "en": "Treasury quarterly borrowing estimate",
   "zh": "財政部季度借款預估"
+ },
+ "재무부 분기 차입 추정치 발표 (QRA {0}부)": {
+  "en": "Treasury quarterly borrowing estimate announcement (QRA part {0})",
+  "zh": "財政部季度借款預估公布(QRA 第 {0} 部分)"
+ },
+ "재무부 분기 차입 추정치 발표 (QRA {0}부, 추정일)": {
+  "en": "Treasury quarterly borrowing estimate announcement (QRA part {0}, estimated date)",
+  "zh": "財政部季度借款預估公布(QRA 第 {0} 部分,預估日)"
  },
  "재무부 원자료 ↗": {
   "en": "Treasury raw data ↗",
@@ -5095,9 +7319,17 @@
   "en": "The Treasury's account at the Fed",
   "zh": "財政部在聯準會的帳戶"
  },
+ "재정 걱정 신호예요.": {
+  "en": "It is a sign of fiscal worries.",
+  "zh": "這是財政疑慮的訊號。"
+ },
  "재정 악화 속도": {
   "en": "Pace of fiscal deterioration",
   "zh": "財政惡化速度"
+ },
+ "저수위": {
+  "en": "Low water level",
+  "zh": "低水位"
  },
  "적자↑": {
   "en": "Deficit↑",
@@ -5107,6 +7339,10 @@
   "en": "When they change the outlook to “negative”",
   "zh": "當它們把展望改為「負面」時"
  },
+ "전반적으로 평온해요.": {
+  "en": "Overall it is calm.",
+  "zh": "整體來說相當平穩。"
+ },
  "전이 경로 A: 국채 입찰": {
   "en": "Contagion path A: Treasury auctions",
   "zh": "傳導路徑 A：公債標售"
@@ -5114,6 +7350,10 @@
  "전이성 충격 의심": {
   "en": "Suspected contagious shock",
   "zh": "疑似傳染性衝擊"
+ },
+ "전주보다": {
+  "en": "vs. last week",
+  "zh": "較上週"
  },
  "전체": {
   "en": "All",
@@ -5134,6 +7374,10 @@
  "전체 국채": {
   "en": "Total Treasuries",
   "zh": "整體公債"
+ },
+ "전체 순포지션": {
+  "en": "Total net position",
+  "zh": "整體淨部位"
  },
  "점 하나 = 원자재 하나예요.": {
   "en": "Each dot is one commodity.",
@@ -5159,6 +7403,14 @@
   "en": "Collapse",
   "zh": "收合"
  },
+ "정부 통장(TGA)에는 ${0}B가 있고,": {
+  "en": "the government's account (TGA) holds ${0}B,",
+  "zh": "政府帳戶(TGA)有 {0}B 美元,"
+ },
+ "정부 통장(TGA)에는 {0}B가 있고, 비상용 물탱크인 역레포에는 {1}B가 남았어요": {
+  "en": "The government account (TGA) holds {0}B, and the emergency water tank, reverse repo, has {1}B left",
+  "zh": "政府帳戶(TGA)有 {0}B,而備用水槽逆回購還剩 {1}B"
+ },
  "정부 현금 관리": {
   "en": "Government cash management",
   "zh": "政府現金管理"
@@ -5166,6 +7418,14 @@
  "정부가 빌린 돈이 어디서 막히는지 (공급 계획부터 MMF까지 순서대로)": {
   "en": "Where the money the government borrowed gets stuck (in order, from the supply plan to MMFs)",
   "zh": "政府借來的錢卡在哪裡（依序從供給計畫到貨幣市場基金）"
+ },
+ "정부가 이만큼 빌릴 계획": {
+  "en": "This is how much the government plans to borrow",
+  "zh": "政府計畫借這麼多"
+ },
+ "정부기관채 (MBS 제외)": {
+  "en": "Agency debt (excl. MBS)",
+  "zh": "政府機構債（不含 MBS）"
  },
  "정상": {
   "en": "Normal",
@@ -5179,6 +7439,14 @@
   "en": "Normal above {0}bp / {1} Caution / below {2} unwind pressure",
   "zh": "正常 {0}bp↑ / {1} 警戒 / {2}↓ 平倉壓力"
  },
+ "정상 범위": {
+  "en": "Normal range",
+  "zh": "正常範圍"
+ },
+ "정상이에요.": {
+  "en": "it is normal.",
+  "zh": "正常。"
+ },
  "정정 이력": {
   "en": "Revision history",
   "zh": "更正紀錄"
@@ -5191,6 +7459,10 @@
   "en": "Junk → investment grade",
   "zh": "垃圾債 → 投資等級債"
  },
+ "조금 높은 편이에요.": {
+  "en": "it is a bit high.",
+  "zh": "略為偏高。"
+ },
  "종류": {
   "en": "Type",
   "zh": "種類"
@@ -5198,6 +7470,10 @@
  "종합 B등급 (보통)": {
   "en": "Overall grade B (average)",
   "zh": "綜合 B 級（普通）"
+ },
+ "종합 {0}등급 ({1})": {
+  "en": "Overall grade {0} ({1})",
+  "zh": "綜合 {0} 級({1})"
  },
  "종합 점수 {0} ({1}/{2})": {
   "en": "Overall score {0} ({1}/{2})",
@@ -5207,6 +7483,26 @@
   "en": "Overall commentary",
   "zh": "綜合解說"
  },
+ "종합하면": {
+  "en": "All in all,",
+  "zh": "綜合來看,"
+ },
+ "종합하면 무난한 입찰이었어요.": {
+  "en": "Overall, it was a solid auction.",
+  "zh": "整體來看是一場平穩的標售。"
+ },
+ "종합하면 수요가 매우 강한 입찰이었어요.": {
+  "en": "Overall, it was an auction with very strong demand.",
+  "zh": "整體而言,是一場需求非常強勁的標售。"
+ },
+ "종합하면,": {
+  "en": "All in all,",
+  "zh": "綜合來看,"
+ },
+ "종합하면, 경계할 지점이 보여요.": {
+  "en": "Overall, there are points to watch out for.",
+  "zh": "整體而言,有需要警戒的地方。"
+ },
  "주": {
   "en": "wk",
   "zh": "週"
@@ -5214,6 +7510,10 @@
  "주가 급락만으로 금융시스템 위기라 결론 내리지 않기": {
   "en": "Do not conclude a financial system crisis from a stock plunge alone",
   "zh": "不要只因股價重挫就斷定金融體系出現危機"
+ },
+ "주가 급락만으로 금융위기라 결론 내리지 마세요 (예시 {0})": {
+  "en": "Do not conclude it is a financial crisis from a stock-price plunge alone (e.g. {0})",
+  "zh": "不要只因股價重挫就斷定是金融危機(例如 {0})"
  },
  "주간 변화": {
   "en": "Weekly change",
@@ -5227,6 +7527,10 @@
   "en": "Weekly, last {0} years",
   "zh": "每週，近{0}年"
  },
+ "주거비 {0}개월 평균 {1}%": {
+  "en": "Shelter {0}-month average {1}%",
+  "zh": "居住成本 {0} 個月平均 {1}%"
+ },
  "주기": {
   "en": "Frequency",
   "zh": "頻率"
@@ -5235,13 +7539,45 @@
   "en": "Mostly absorbed by MMFs",
   "zh": "主要由貨幣市場基金吸收"
  },
+ "주로 실질금리(성장 기대)가 끌어올린 건강한 상승이에요.": {
+  "en": "It is a healthy rise, driven mainly by real yields (growth expectations).",
+  "zh": "這是主要由實質殖利率(成長預期)推升的健康上漲。"
+ },
  "주목할 때": {
   "en": "When to pay attention",
   "zh": "何時要留意"
  },
+ "주시": {
+  "en": "Watch",
+  "zh": "留意"
+ },
+ "주식 공포지수(VIX)는 {0},": {
+  "en": "the stock fear gauge (VIX) is {0},",
+  "zh": "股市恐慌指數(VIX)為 {0},"
+ },
+ "주식 공포지수(VIX)는 {0}, 채권 변동성(MOVE)은 {1}로 안정적이에요.": {
+  "en": "The stock fear gauge (VIX) is {0} and bond volatility (MOVE) is {1}, which is stable.",
+  "zh": "股市恐慌指數(VIX)為 {0},債市波動率(MOVE)為 {1},相當穩定。"
+ },
+ "주식 참여자들이 변동성을 비싸게 보나": {
+  "en": "Are equity investors pricing volatility as expensive",
+  "zh": "股市參與者是否認為波動率很貴"
+ },
  "주식 하락 선행 신호": {
   "en": "Leading signal of a stock decline",
   "zh": "股市下跌的領先訊號"
+ },
+ "주식시장 공포지수(VIX)는 {0}": {
+  "en": "The stock market fear gauge (VIX) is {0}",
+  "zh": "股市恐慌指數(VIX)為 {0}"
+ },
+ "주식시장 불안 (금융시스템 위기 아님)": {
+  "en": "Stock-market jitters (not a financial-system crisis)",
+  "zh": "股市不安(並非金融體系危機)"
+ },
+ "주식에 꼭 나쁘지 않아요.": {
+  "en": "It is not necessarily bad for stocks.",
+  "zh": "對股市不一定是壞事。"
  },
  "주식이 뒤따를 수 있어요": {
   "en": "Stocks may follow",
@@ -5283,6 +7619,10 @@
   "en": "In preparation (stage {0})",
   "zh": "準備中（第{0}階段）"
  },
+ "줄면 자금 조달 금리 상승 압력": {
+  "en": "If it shrinks, upward pressure on funding rates",
+  "zh": "減少時,籌資利率有上升壓力"
+ },
  "줄었어요": {
   "en": "Decreased",
   "zh": "減少"
@@ -5311,9 +7651,25 @@
   "en": "Note (medium-term)",
   "zh": "中期公債"
  },
+ "중기채(Note) {0}-Year 입찰 (결과: A등급, 응찰 {1}배)": {
+  "en": "Note {0}-Year auction (result: grade A, bid {1}x)",
+  "zh": "中期公債(Note){0}-Year 標售(結果:A 級,投標 {1} 倍)"
+ },
+ "중기채(Note) {0}-Year 입찰 (결과: B등급, 응찰 {1}배)": {
+  "en": "Note {0}-Year auction (result: grade B, bid {1}x)",
+  "zh": "中期公債(Note){0}-Year 標售(結果:B 級,投標 {1} 倍)"
+ },
  "중기채(Notes)": {
   "en": "Notes",
   "zh": "中期債（Notes）"
+ },
+ "중기채는 기간 프리미엄(오래 빌려주는 대가)의 온도계예요": {
+  "en": "Notes are the thermometer of the term premium (the reward for lending for a long time)",
+  "zh": "中期公債是期限溢酬(長期借出的報酬)的溫度計"
+ },
+ "중단": {
+  "en": "Halted",
+  "zh": "暫停"
  },
  "중립": {
   "en": "Neutral",
@@ -5327,6 +7683,14 @@
   "en": "Medium-high (watch {0}-year tail)",
   "zh": "中高（留意 {0} 年期尾差）"
  },
+ "중장기물 응찰배율 {0}배 미만 {1}회 연속": {
+  "en": "Coupon bid-to-cover below {0}x {1} times in a row",
+  "zh": "中長期公債投標倍數低於 {0} 倍,連續 {1} 次"
+ },
+ "중장기물 입찰 수요 약화": {
+  "en": "Weakening demand at coupon auctions",
+  "zh": "中長期公債標售需求轉弱"
+ },
  "중장기물 최근 {0}건 평균 {1}%": {
   "en": "Average of the last {0} notes & bonds auctions: {1}%",
   "zh": "中長期公債最近 {0} 場平均 {1}%"
@@ -5334,6 +7698,10 @@
  "중장기물 평균": {
   "en": "Notes & bonds average",
   "zh": "中長期公債平均"
+ },
+ "중장기물 평균 응찰 {0}배": {
+  "en": "Coupon average bid {0}x",
+  "zh": "中長期公債平均投標 {0} 倍"
  },
  "중장기물(Note·Bond) 최근 {0}건": {
   "en": "the last {0} notes & bonds auctions",
@@ -5395,9 +7763,25 @@
   "en": "What changed from the last announcement (most important)",
   "zh": "與上次公布相比的變化（最重要）"
  },
+ "지난주 일본 투자자는 해외 중장기채를 {0}억엔": {
+  "en": "Last week Japanese investors ¥{0} hundred million of overseas coupons (notes & bonds)",
+  "zh": "上週日本投資人對海外中長期公債 {0} 億日圓"
+ },
+ "지난주 일본 투자자는 해외 중장기채를 {0}억엔 순매도했어요": {
+  "en": "Last week Japanese investors were net sellers of ¥{0} hundred million of foreign notes and bonds",
+  "zh": "上週日本投資人淨賣出外國中長期債券 {0} 億日圓"
+ },
  "지속성 확인": {
   "en": "Check durability",
   "zh": "需確認持續性"
+ },
+ "지속적으로 + 이면 담보 현금 수요가 공급보다 강함": {
+  "en": "Persistently + means collateral cash demand is stronger than supply",
+  "zh": "持續為 + 代表擔保品現金需求強於供給"
+ },
+ "지준 ${0}T": {
+  "en": "Reserves ${0}T",
+  "zh": "準備金 {0}T 美元"
  },
  "지준 = 수도관 압력.": {
   "en": "reserves = water-pipe pressure.",
@@ -5435,17 +7819,65 @@
   "en": "When indicators warn, check the cash of the companies you hold,",
   "zh": "當指標發出警訊時，請確認你持有企業的現金、"
  },
+ "직전 {0}년 같은 주 평균": {
+  "en": "Average of the same week over the previous {0} years",
+  "zh": "前{0}年同週平均"
+ },
  "직전 {0}년 같은 주의 평균 재고. 올해 재고가 이보다 적으면 공급이 빠듯하다는 신호": {
   "en": "Average inventory for the same week over the previous {0} years. If this year's inventory is lower, it signals tight supply.",
   "zh": "前{0}年同一週的平均庫存。若今年庫存低於此數，代表供給吃緊。"
+ },
+ "직전 같은 만기 입찰({0})보다 {1}는 {2}bp": {
+  "en": "Versus the previous auction of the same maturity ({0}), {1} was {2}bp",
+  "zh": "和上一次相同年期的標售({0})相比,{1}為 {2}bp"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 낙찰금리는 {3}bp 내려 차입 부담이 줄었고, 응찰배율은 {4}로 큰 차이가 없어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the high yield fell {3}bp, easing the borrowing burden, and the bid-to-cover ratio differed by only {4}, so not much changed.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,得標利率下降 {3}bp,借款負擔減輕,投標倍數相差 {4},沒有太大差異。"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 낙찰금리는 {3}bp 비슷했고, 응찰배율은 {4}로 큰 차이가 없어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the high yield was about the same ({3}bp), and the bid-to-cover ratio differed by only {4}, so not much changed.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,得標利率差不多({3}bp),投標倍數相差 {4},沒有太大差異。"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 낙찰금리는 {3}bp 올라 정부의 차입 부담이 커졌고, 응찰배율은 {4}로 큰 차이가 없어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the high yield rose {3}bp, raising the government's borrowing burden, and the bid-to-cover ratio differed by only {4}, so not much changed.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,得標利率上升 {3}bp,政府的借款負擔加重,投標倍數相差 {4},沒有太大差異。"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 투자수익률는 {3}bp 내려 차입 부담이 줄었고, 응찰배율은 {4}로 큰 차이가 없어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the investment rate fell {3}bp, easing the borrowing burden, and the bid-to-cover ratio differed by only {4}, so not much changed.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,投資收益率下降 {3}bp,借款負擔減輕,投標倍數相差 {4},沒有太大差異。"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 투자수익률는 {3}bp 비슷했고, 응찰배율은 {4} 낮아져 수요 경쟁이 약해졌어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the investment rate was about the same ({3}bp), and the bid-to-cover ratio fell by {4}, so competition for the bonds weakened.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,投資收益率差不多({3}bp),投標倍數下降 {4},需求競爭減弱。"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 투자수익률는 {3}bp 비슷했고, 응찰배율은 {4} 높아져 수요 경쟁이 강해졌어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the investment rate was about the same ({3}bp), and the bid-to-cover ratio rose by {4}, so competition for the bonds strengthened.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,投資收益率差不多({3}bp),投標倍數上升 {4},需求競爭增強。"
+ },
+ "직전 같은 만기 입찰({0}{1}{2})보다 투자수익률는 {3}bp 비슷했고, 응찰배율은 {4}로 큰 차이가 없어요.": {
+  "en": "Versus the previous auction of the same maturity ({0}{1}{2}), the investment rate was about the same ({3}bp), and the bid-to-cover ratio differed by only {4}, so not much changed.",
+  "zh": "和上一次相同年期的標售({0}{1}{2})相比,投資收益率差不多({3}bp),投標倍數相差 {4},沒有太大差異。"
+ },
+ "직전 발표 대비 {0}B": {
+  "en": "{0}B vs. the previous release",
+  "zh": "較前次公布 {0}B"
  },
  "직전 분기 대비": {
   "en": "Vs. previous quarter",
   "zh": "較上一季"
  },
+ "집중 모니터링 필요": {
+  "en": "Needs close monitoring",
+  "zh": "需要密切監控"
+ },
  "차입 추정치 원문 ↗": {
   "en": "Original borrowing estimate ↗",
   "zh": "借款估計原文 ↗"
+ },
+ "차입·레버리지·유동성 위험을 재점검하세요 (예시 {0})": {
+  "en": "Re-check borrowing, leverage and liquidity risk (e.g. {0})",
+  "zh": "請重新檢視借款、槓桿與流動性風險(例如 {0})"
  },
  "차입·레버리지·유동성 재점검": {
   "en": "Re-check borrowing, leverage and liquidity",
@@ -5491,6 +7923,14 @@
   "en": "Bond ETF fund flows",
   "zh": "債券 ETF 資金流向"
  },
+ "채권 변동성 MOVE(역발상 탭)": {
+  "en": "Bond volatility MOVE (Contrarian tab)",
+  "zh": "債券波動率 MOVE(逆向觀點分頁)"
+ },
+ "채권 변동성(MOVE)은 {0}로": {
+  "en": "bond volatility (MOVE) is {0},",
+  "zh": "債券波動率(MOVE)為 {0},"
+ },
  "채권 시장이 먼저 움직이고 주식이 뒤따라요. “너무 빠졌는데 반등하지 않을까?”는 가장 흔한 함정이에요.": {
   "en": "The bond market moves first and stocks follow. “It has fallen so much, won't it bounce?” is the most common trap.",
   "zh": "債券市場先動，股市隨後跟上。「跌這麼多，不會反彈嗎？」是最常見的陷阱。"
@@ -5530,6 +7970,14 @@
  "체크 ①은 최근 리펀딩({0}·{1}·{2}·{3}월) {4}·{5}·{6}년물 발행 규모를 {7}개월 전과 비교해 자동 판정해요 (원본은 고정값).": {
   "en": "Check ① automatically judges recent refunding (months {0}·{1}·{2}·{3}) issuance of {4}-, {5}- and {6}-year securities versus {7} months earlier (the original used fixed values).",
   "zh": "檢查 ① 會自動比較最近再融資（{0}·{1}·{2}·{3} 月）{4}·{5}·{6} 年期公債的發行規模與 {7} 個月前的差異並判定（原版為固定值）。"
+ },
+ "초과: 재무부가 장기금리를 자극하지 않으려 단기물로 버티는 중": {
+  "en": "Exceeded: the Treasury is holding up with short-term issues so as not to stir long-term yields",
+  "zh": "超過:財政部為了避免刺激長期殖利率,正以短期債券撐住"
+ },
+ "초단기 자금시장에 압력이 생겼나": {
+  "en": "Is pressure building in the ultra-short-term funding market?",
+  "zh": "超短期資金市場是否出現壓力?"
  },
  "초록": {
   "en": "green",
@@ -5579,9 +8027,17 @@
   "en": "Net notes & bonds (Coupon) issuance over the last {0} months",
   "zh": "最近 {0} 個月中長期公債（Coupon）淨發行"
  },
+ "최근 {0}년물 일부 약함": {
+  "en": "Some recent {0}-year auctions were weak",
+  "zh": "近期部分 {0}年期標售偏弱"
+ },
  "최근 {0}일": {
   "en": "Last {0} days",
   "zh": "最近 {0} 日"
+ },
+ "최근 {0}일 꼬리 입찰 {1}/{2}건": {
+  "en": "Tail auctions in the last {0} days: {1}/{2}",
+  "zh": "近 {0} 日尾差標售 {1}/{2} 次"
  },
  "최근 {0}일 동안 CFTC·EIA·FRED가 과거 값을 고친 기록이 없어요. 고치면 이전 값을 지우지 않고 여기에 함께 남겨요.": {
   "en": "In the last {0} days, CFTC, EIA and FRED have not revised any past values. If they do, the previous value is kept here alongside the new one instead of being deleted.",
@@ -5603,9 +8059,25 @@
   "en": "Last {0} weeks (automatic from data records)",
   "zh": "最近 {0} 週（由資料紀錄自動產生）"
  },
+ "최근 {0}주(월말 제외) 중간값 {1}bp": {
+  "en": "Median over the last {0} weeks (excluding month-ends): {1}bp",
+  "zh": "近 {0} 週(不含月底)中位數 {1}bp"
+ },
  "최근 {0}회 평균": {
   "en": "Average of the last {0} operations",
   "zh": "最近 {0} 次平均"
+ },
+ "최근 중장기물 {0}건 평균 응찰 {1}배": {
+  "en": "Average bid-to-cover over the last {0} coupon (notes & bonds) auctions: {1}x",
+  "zh": "近 {0} 次中長期公債標售平均投標倍數 {1} 倍"
+ },
+ "최근 중장기물 입찰 {0}건 중 흡수 실패 의심 {1}건, 일부 약함 {2}건이에요.": {
+  "en": "Of the last {0} coupon (notes & bonds) auctions, {1} were suspected absorption failures and {2} were somewhat weak.",
+  "zh": "近 {0} 次中長期公債標售中,疑似承接失敗 {1} 次,部分偏弱 {2} 次。"
+ },
+ "최근 중장기물 입찰 응찰배율 평균은 {0}배로": {
+  "en": "the average bid-to-cover ratio of recent coupon (notes & bonds) auctions is {0}x,",
+  "zh": "近期中長期公債標售的平均投標倍數為 {0} 倍,"
  },
  "최대 {0}bp": {
   "en": "Max {0}bp",
@@ -5639,6 +8111,14 @@
   "en": "End-investor demand is below normal",
   "zh": "最終投資人的需求低於平常水準"
  },
+ "추세만 관찰": {
+  "en": "Just observe the trend",
+  "zh": "只需觀察趨勢"
+ },
+ "추이 관찰": {
+  "en": "Watch the trend",
+  "zh": "觀察趨勢"
+ },
  "출처": {
   "en": "Source",
   "zh": "資料來源"
@@ -5650,6 +8130,14 @@
  "출처: 미 재무부": {
   "en": "Source: US Treasury",
   "zh": "資料來源：美國財政部"
+ },
+ "취약 기업과 견고한 기업 분리": {
+  "en": "Separate weak companies from solid ones",
+  "zh": "區分體質脆弱與穩健的企業"
+ },
+ "취약 기업과 견고한 기업을 나눠 보세요": {
+  "en": "Separate weak companies from solid ones",
+  "zh": "請區分體質脆弱與穩健的企業"
  },
  "층": {
   "en": "Layer",
@@ -5683,6 +8171,10 @@
   "en": "Column {0}",
   "zh": "專欄 {0}"
  },
+ "칼럼 {0} 「국채와 미국의 진정한 힘」": {
+  "en": "Column {0} 「Treasuries and America's true power」",
+  "zh": "專欄 {0}「國債與美國的真正實力」"
+ },
  "칼럼 {0}: Fed가 돈의 가격을 보여 준다면 재무부는 시장이 받아내야 할 물량을 보여 줘요": {
   "en": "Column {0}: If the Fed shows the price of money, the Treasury shows the quantity the market has to absorb",
   "zh": "專欄 {0}：如果聯準會顯示的是資金的價格，財政部顯示的就是市場必須承接的數量"
@@ -5699,17 +8191,37 @@
   "en": "{1} checks for column {0}",
   "zh": "專欄 {0} 的 {1} 項檢查"
  },
+ "캐리 압력 {0}/{1}": {
+  "en": "Carry pressure {0}/{1}",
+  "zh": "套利壓力 {0}/{1}"
+ },
  "캐리 압력 점수": {
   "en": "Carry pressure score",
   "zh": "套利壓力分數"
+ },
+ "캐리 압력 점수는 {0}/{1}이에요.": {
+  "en": "The carry pressure score is {0}/{1}.",
+  "zh": "套利壓力分數為 {0}/{1}。"
  },
  "쿠폰 vs 낙찰금리": {
   "en": "Coupon vs. auction yield",
   "zh": "票面利率 vs. 得標利率"
  },
+ "쿠폰(중장기물) 증액 없이 단기물만 늘리는가": {
+  "en": "Is the Treasury adding only T-bills without increasing coupons (notes & bonds)?",
+  "zh": "財政部是否只增加短期國庫券、而不增加中長期公債?"
+ },
  "크로스커런시 베이시스": {
   "en": "Cross-currency basis",
   "zh": "跨幣別基差"
+ },
+ "큰 그림은 안정": {
+  "en": "The big picture is stable",
+  "zh": "大方向穩定"
+ },
+ "큰 방향성 없이 움직였어요.": {
+  "en": "it moved without a clear direction.",
+  "zh": "沒有明確方向。"
  },
  "큰 방향이 없어 영향이 작아요": {
   "en": "has no clear direction, so its effect is small",
@@ -5718,6 +8230,10 @@
  "큰 변화 없음": {
   "en": "No big change",
   "zh": "無明顯變化"
+ },
+ "큰 변화가 없어 할인율 충격은 아니에요.": {
+  "en": "There is no big change, so this is not a discount-rate shock.",
+  "zh": "沒有明顯變化,所以不是折現率衝擊。"
  },
  "큰 변화가 없어요": {
   "en": "show little change",
@@ -5783,6 +8299,118 @@
   "en": "Speculative net buying",
   "zh": "投機資金淨買超"
  },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 MMBtu예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k MMBtu in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬MMBtu。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 MMBtu이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k MMBtu in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬MMBtu。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 kg예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k kg in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬公斤。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 kg이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k kg in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬公斤。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 배럴예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k barrels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬桶。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 배럴이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k barrels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬桶。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 부셸예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k bushels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬英斗。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 부셸이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k bushels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬英斗。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 온스예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k ounces in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬盎司。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 온스이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k ounces in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬盎司。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 톤예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k tonnes in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬公噸。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 톤이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k tonnes in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬公噸。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 파운드예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k pounds in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬磅。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}만 파운드이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×10k pounds in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}萬磅。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 MMBtu예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M MMBtu in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億MMBtu。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 MMBtu이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M MMBtu in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億MMBtu。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 kg예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M kg in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億公斤。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 kg이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M kg in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億公斤。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 배럴예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M barrels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億桶。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 배럴이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M barrels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億桶。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 부셸예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M bushels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億英斗。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 부셸이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M bushels in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億英斗。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 온스예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M ounces in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億盎司。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 온스이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M ounces in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億盎司。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 톤예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M tonnes in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億公噸。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 톤이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M tonnes in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億公噸。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 파운드예요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M pounds in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億磅。"
+ },
+ "투기자금 순매수 {0}계약은 실물로 ≈ {1}억 파운드이에요.": {
+  "en": "A speculative net long of {0} contracts is roughly {1}×100M pounds in physical terms.",
+  "zh": "投機資金淨買超 {0} 口，換算實物約 {1}億磅。"
+ },
  "투기자금 순매수 ↑": {
   "en": "Speculative net buying ↑",
   "zh": "投機資金淨買超 ↑"
@@ -5808,8 +8436,8 @@
   "zh": "投機資金擁擠度（以數週為單位）"
  },
  "투기자금 포지션이 거의 그대로예요 ({0}주 변화가 전체 미결제약정의 {1}% 미만).": {
-  "en": "Speculative money positions are almost unchanged (the {0}-week change is under {1}% of total open interest).",
-  "zh": "投機資金的持倉幾乎沒變({0}週的變化不到整體未平倉量的 {1}%)。"
+  "en": "Speculative positions are almost unchanged (the {0}-week change is under {1}% of total open interest).",
+  "zh": "投機資金部位幾乎沒變（{0}週變化不到總未平倉量的 {1}%）。"
  },
  "투기자금(": {
   "en": "Speculative money (",
@@ -5871,6 +8499,14 @@
   "en": "Investment rate (annualized)",
   "zh": "投資報酬率（年化）"
  },
+ "투자자가 충분히 받아가는가": {
+  "en": "Are investors taking enough of the supply?",
+  "zh": "投資人是否充分承接?"
+ },
+ "투자자들이 낙관적이에요.": {
+  "en": "investors are optimistic.",
+  "zh": "投資人樂觀。"
+ },
  "투자펀드": {
   "en": "Investment funds",
   "zh": "投資基金"
@@ -5887,9 +8523,17 @@
   "en": "pounds",
   "zh": "磅"
  },
+ "판단 불가": {
+  "en": "Cannot judge",
+  "zh": "無法判斷"
+ },
  "판정": {
   "en": "Verdict",
   "zh": "判定"
+ },
+ "판정 불가": {
+  "en": "Cannot determine",
+  "zh": "無法判定"
  },
  "판정: 꼬리가 평소보다 {0}bp 이상": {
   "en": "Verdict: tail is {0}bp or more above usual",
@@ -5903,6 +8547,18 @@
   "en": "Fund debt ÷ net assets",
   "zh": "基金負債 ÷ 淨資產"
  },
+ "펀드 빚 ÷ 순자산 (중간값)": {
+  "en": "Fund debt ÷ net assets (median)",
+  "zh": "基金負債 ÷ 淨資產(中位數)"
+ },
+ "펀드가 빌린 돈은 '펀드의 빚'이며 대출받은 기업의 빚과 더하지 않아요.": {
+  "en": "The money a fund borrows is the 'fund's debt' and is not added to the debt of the companies it lent to.",
+  "zh": "基金借的錢是「基金的負債」,不會和被貸款企業的負債相加。"
+ },
+ "펀드의 빚(대출받은 기업의 빚과 합산 금지)": {
+  "en": "Fund debt (do not add to the debt of the borrowing companies)",
+  "zh": "基金負債(不與被貸款企業的負債相加)"
+ },
  "평균 Direct Bidder 낙찰": {
   "en": "Average Direct Bidder award",
   "zh": "平均直接投標人得標比例"
@@ -5915,9 +8571,21 @@
   "en": "Average Primary Dealer award",
   "zh": "平均 Primary Dealer 得標比例"
  },
+ "평균 수준이에요.": {
+  "en": "It is about average.",
+  "zh": "約在平均水準。"
+ },
  "평균 응찰배율 (최근 {0}건)": {
   "en": "Average bid-to-cover (last {0} auctions)",
   "zh": "平均投標倍數（最近 {0} 場）"
+ },
+ "평균은 평온해도 일부 참여자가 비싸게 조달하는지": {
+  "en": "Even if the average looks calm, are some participants funding at high cost?",
+  "zh": "就算平均值看起來平靜,是否仍有部分參與者以高成本籌資?"
+ },
+ "평범한 하루 움직임이에요.": {
+  "en": "It was an ordinary day's move.",
+  "zh": "這是平常一天的波動。"
  },
  "평소 = 같은 종류 직전 {0}회 평균": {
   "en": "Usual = average of the previous {0} auctions of the same type",
@@ -5926,6 +8594,14 @@
  "평소 {0}": {
   "en": "Usual {0}",
   "zh": "平常 {0}"
+ },
+ "평소 루틴대로 매주 확인": {
+  "en": "Check weekly as usual",
+  "zh": "照常每週確認"
+ },
+ "평소 범위예요.": {
+  "en": "It is within the usual range.",
+  "zh": "在平常的範圍內。"
  },
  "평소 성향": {
   "en": "Usual stance",
@@ -5939,6 +8615,10 @@
   "en": "Auctions with a tail {0}bp or more above normal",
   "zh": "尾差比平常大 {0}bp 以上的標售"
  },
+ "평소보다 많이 떠안았어요.": {
+  "en": "They took on more than usual.",
+  "zh": "承接量比平常多。"
+ },
  "평온": {
   "en": "Calm",
   "zh": "平靜"
@@ -5950,6 +8630,10 @@
  "폭락 예측이 아니라 '위험의 종류' 진단": {
   "en": "Not a crash prediction but a diagnosis of the “type of risk”",
   "zh": "不是預測崩盤，而是診斷「風險的類型」"
+ },
+ "폭락 확정 신호가 아니라 위험의 종류를 구별하는 진단이에요.": {
+  "en": "This is a diagnosis to tell the types of risk apart, not a signal that a crash is confirmed.",
+  "zh": "這是用來分辨風險類型的診斷,不是確定崩盤的訊號。"
  },
  "폭락이 언제 오는지 아는 사람보다, 폭락이 와도 팔지 않아도 되는 사람이 훨씬 강하다": {
   "en": "Someone who doesn't have to sell even when a crash comes is far stronger than someone who knows when a crash will come",
@@ -5967,6 +8651,14 @@
   "en": "One row in the table",
   "zh": "表格的一列"
  },
+ "피난": {
+  "en": "Safe haven",
+  "zh": "避險"
+ },
+ "하락 혼합": {
+  "en": "Mixed decline",
+  "zh": "混合下跌"
+ },
  "하락 흐름을 돈이 확인해 주는 모습이에요. 미결제약정도 늘어 새 돈이 들어온 움직임이에요.": {
   "en": "Money is confirming the downtrend. Open interest is also rising, so new money is entering.",
   "zh": "資金正在印證下跌趨勢。未平倉量也同步增加，代表有新資金進場。"
@@ -5979,9 +8671,21 @@
   "en": "1 day",
   "zh": "1 日"
  },
+ "하루 변화로는 꽤 큰 편이에요.": {
+  "en": "That is a fairly big move for a single day.",
+  "zh": "以單日變動來說算相當大。"
+ },
  "하이일드": {
   "en": "High yield",
   "zh": "高收益債"
+ },
+ "하이일드 {0} ({1}개월)": {
+  "en": "High-yield {0} ({1} months)",
+  "zh": "高收益債 {0}({1}個月)"
+ },
+ "하이일드 {0}bp ({1}개월)": {
+  "en": "High-yield spread {0}bp ({1} months)",
+  "zh": "高收益債利差 {0}bp({1}個月)"
  },
  "하이일드 스프레드": {
   "en": "High-yield spread",
@@ -5991,6 +8695,10 @@
   "en": "High-yield spread (bp)",
   "zh": "高收益債利差（bp）"
  },
+ "하이일드 스프레드 {0}bp({1}bp)": {
+  "en": "High-yield spread {0}bp ({1}bp)",
+  "zh": "高收益債利差 {0}bp({1}bp)"
+ },
  "하이일드 스프레드는 유동성에 민감": {
   "en": "High-yield spreads are sensitive to liquidity",
   "zh": "高收益債利差對流動性很敏感"
@@ -5998,6 +8706,10 @@
  "하이일드(정크본드) 스프레드": {
   "en": "High-yield (junk bond) spread",
   "zh": "高收益債（垃圾債）利差"
+ },
+ "하지만 '평온할 때가 가장 위험하다'는 말처럼 지나친 낙관은 경계하세요.": {
+  "en": "But as the saying goes, 'the calm is the most dangerous time', so beware of excessive optimism.",
+  "zh": "不過俗話說「平靜時最危險」,請小心過度樂觀。"
  },
  "한 달 {0}%": {
   "en": "One month {0}%",
@@ -6010,6 +8722,10 @@
  "한 줄 판단": {
   "en": "One-line assessment",
   "zh": "一句話判讀"
+ },
+ "한 지표가 나쁘다고 위기가 확정되는 게 아니라, 서로 다른 구간의 지표 {0}~{1}개가 같은 방향으로 움직일 때 해석을 바꿔요.": {
+  "en": "One bad indicator does not confirm a crisis; the interpretation changes when {0} to {1} indicators from different areas move in the same direction.",
+  "zh": "單一指標不佳並不代表危機確定;當不同領域的 {0} 至 {1} 項指標朝同一方向變動時,解讀才會改變。"
  },
  "한국 시간 {0}/{1} 오전 {2}시경": {
   "en": "Korea time {0}/{1} around {2} a.m.",
@@ -6031,6 +8747,14 @@
   "en": "Interpretation and takeaways",
   "zh": "解讀與啟示"
  },
+ "해외 기관의 달러 조달 비용": {
+  "en": "Dollar funding cost for overseas institutions",
+  "zh": "海外機構的美元借款成本"
+ },
+ "해외 수요가 빠져나가는 신호예요.": {
+  "en": "This is a sign that overseas demand is draining away.",
+  "zh": "這是海外需求流出的訊號。"
+ },
  "해외 중앙은행 등 FIMA 계정의 비경쟁 응찰": {
   "en": "Non-competitive bids from FIMA accounts, such as foreign central banks",
   "zh": "外國央行等 FIMA 帳戶的非競爭性投標"
@@ -6038,6 +8762,10 @@
  "해외 중앙은행 및 국제통화당국(Foreign and International Monetary Authorities)의 계정으로, 주로 외국 정부의 달러 보유 및 준비금 운용 목적의 비경쟁 입찰이에요.": {
   "en": "Accounts of foreign central banks and international monetary authorities (Foreign and International Monetary Authorities), mainly non-competitive bids for managing foreign governments' dollar holdings and reserves.",
   "zh": "外國與國際貨幣當局（Foreign and International Monetary Authorities）的帳戶，主要是外國政府為運用美元持有與準備金而進行的非競爭性投標。"
+ },
+ "해외 중장기채 {0}억엔": {
+  "en": "Overseas coupons (notes & bonds): ¥{0} hundred million",
+  "zh": "海外中長期公債 {0} 億日圓"
  },
  "해외·국제기구": {
   "en": "Foreign and international institutions",
@@ -6075,9 +8803,17 @@
   "en": "Cash {0}~{1}%, check events",
   "zh": "現金 {0}~{1}%，留意事件"
  },
+ "현금 비중을 {0}~{1}% 확보하고 다음 입찰·물가 지표를 지켜보세요.": {
+  "en": "Keep a cash allocation of {0}% to {1}% and watch the next auctions and inflation data.",
+  "zh": "現金比重維持在 {0}% 至 {1}%,並留意接下來的標售與物價數據。"
+ },
  "현금흐름을 확인하세요.": {
   "en": "and cash flow.",
   "zh": "以及現金流量。"
+ },
+ "혼합": {
+  "en": "Mixed",
+  "zh": "混合"
  },
  "화면 색 바꾸기 (화이트 / 블랙)": {
   "en": "Change screen color (White / Black)",
@@ -6091,6 +8827,10 @@
   "en": "Expanded",
   "zh": "擴大"
  },
+ "확대(매입)": {
+  "en": "Expanding (buying)",
+  "zh": "擴張(買進)"
+ },
  "확인 지표": {
   "en": "Indicators to check",
   "zh": "確認指標"
@@ -6103,6 +8843,14 @@
   "en": "Redemption (tender offer) filings ↗",
   "zh": "贖回（公開收購）揭露 ↗"
  },
+ "환매가 지급 한도를 여러 분기 연속 넘는지": {
+  "en": "Do redemptions exceed the payout limit for several quarters in a row?",
+  "zh": "贖回是否連續多個季度超過給付上限?"
+ },
+ "회사채 + 지방채": {
+  "en": "Corporate + municipal bonds",
+  "zh": "公司債 + 地方債"
+ },
  "회색 = 중립. 이름을 누르면 그 원자재의 ⑤ 사이클 위치로 가요.": {
   "en": "Gray = neutral. Click a name to go to that commodity's ⑤ cycle position.",
   "zh": "灰色＝中性。點選名稱可前往該原物料的 ⑤ 循環位置。"
@@ -6110,6 +8858,10 @@
  "회색 줄은 공식 무료 자료가 없어 ‘대체 확인’ 방법을 적어 둔 항목이에요.": {
   "en": "Gray rows have no official free data, so they list an “alternative check” method.",
   "zh": "灰色列沒有官方免費資料，因此列出「替代確認」的方法。"
+ },
+ "회의 진행 중/직후": {
+  "en": "Meeting in progress / just ended",
+  "zh": "會議進行中 / 剛結束"
  },
  "횟수": {
   "en": "Count",
@@ -6130,6 +8882,18 @@
  "흡수 양호": {
   "en": "Absorption healthy",
   "zh": "承接良好"
+ },
+ "흡수력 {0}: {1}": {
+  "en": "Absorption {0}: {1}",
+  "zh": "承接力 {0}:{1}"
+ },
+ "흡수력 {0}요소 중 두 가지가 약해져 장기금리 상승 압력이 쌓이고 있어요.": {
+  "en": "Two of the {0} absorption factors have weakened, and upward pressure on long-term yields is building.",
+  "zh": "承接力的 {0} 項要素中有兩項轉弱,長期殖利率的上升壓力正在累積。"
+ },
+ "흡수력 {0}요소 중 한 가지만 약해 아직은 지켜볼 단계예요.": {
+  "en": "Only one of the {0} absorption factors is weak, so it is still a stage to keep watching.",
+  "zh": "承接力的 {0} 項要素中只有一項偏弱,目前仍屬持續觀察階段。"
  },
  "🌊 엔 캐리 트레이드 붕괴 {0}단계": {
   "en": "🌊 Yen carry trade unwind, stage {0}",
@@ -6155,6 +8919,10 @@
   "en": "🎓 Beginner guide: remember just these {0} things",
   "zh": "🎓 初學者指南：只要記住這 {0} 件事"
  },
+ "🎯 Bills Pivot 감지기": {
+  "en": "🎯 Bills Pivot Detector",
+  "zh": "🎯 Bills Pivot 偵測器"
+ },
  "🎯 역발상 지표 종합 읽기": {
   "en": "🎯 Contrarian indicators, read together",
   "zh": "🎯 逆向指標綜合解讀"
@@ -6166,6 +8934,10 @@
  "🏛️ 기관별 말의 무게": {
   "en": "🏛️ How much each institution's words weigh",
   "zh": "🏛️ 各機構發言的份量"
+ },
+ "🏛️ 미 재무부 (발행)": {
+  "en": "🏛️ U.S. Treasury (issuance)",
+  "zh": "🏛️ 美國財政部(發行)"
  },
  "🏛️ 발행 구조": {
   "en": "🏛️ Issuance mix",
@@ -6254,6 +9026,10 @@
  "📈 중장기물(Note·Bond) 응찰배율 흐름": {
   "en": "📈 Bid-to-cover trend for notes and bonds",
   "zh": "📈 中長期公債投標倍數走勢"
+ },
+ "📊 {0}년물 금리 압력계": {
+  "en": "📊 {0}-year yield pressure gauge",
+  "zh": "📊 {0}年期殖利率壓力計"
  },
  "📊 내러티브 vs 실제 자금 흐름": {
   "en": "📊 Narrative vs. actual money flows",
@@ -6363,13 +9139,41 @@
   "en": "🔍 Liquidity cross-check: ⚠ SOFR {1}bp or more over {0} days, or reverse repo below {2}B",
   "zh": "🔍 流動性交叉檢查：⚠ SOFR {0} 日 {1}bp 以上，或逆回購低於 {2}B"
  },
+ "🔎 WTI 원유": {
+  "en": "🔎 WTI crude oil",
+  "zh": "🔎 WTI 原油"
+ },
+ "🔎 구리": {
+  "en": "🔎 Copper",
+  "zh": "🔎 銅"
+ },
+ "🔎 금": {
+  "en": "🔎 Gold",
+  "zh": "🔎 黃金"
+ },
  "🔎 대두": {
   "en": "🔎 Soybeans",
   "zh": "🔎 大豆"
  },
+ "🔎 리튬": {
+  "en": "🔎 Lithium",
+  "zh": "🔎 鋰"
+ },
+ "🔎 백금": {
+  "en": "🔎 Platinum",
+  "zh": "🔎 鉑金"
+ },
+ "🔎 브렌트유": {
+  "en": "🔎 Brent crude oil",
+  "zh": "🔎 布蘭特原油"
+ },
  "🔎 소맥 (SRW)": {
   "en": "🔎 Wheat (SRW)",
   "zh": "🔎 小麥（SRW）"
+ },
+ "🔎 알루미늄": {
+  "en": "🔎 Aluminum",
+  "zh": "🔎 鋁"
  },
  "🔎 옥수수": {
   "en": "🔎 Corn",
@@ -6378,6 +9182,14 @@
  "🔎 원자재별 요점": {
   "en": "🔎 Key points by commodity",
   "zh": "🔎 各原物料重點"
+ },
+ "🔎 은": {
+  "en": "🔎 Silver",
+  "zh": "🔎 白銀"
+ },
+ "🔎 천연가스 (헨리허브)": {
+  "en": "🔎 Natural gas (Henry Hub)",
+  "zh": "🔎 天然氣（亨利港）"
  },
  "🔑 이번 주 핵심": {
   "en": "🔑 This week's key points",
@@ -6403,13 +9215,65 @@
   "en": "🔬 Automatic breakdown of what is driving yields up",
   "zh": "🔬 殖利率上升原因自動拆解"
  },
+ "🔴 Repo 압박 신호 (분기말 효과인지 추세인지 확인)": {
+  "en": "🔴 Repo pressure signal (check whether it is a quarter-end effect or a trend)",
+  "zh": "🔴 附買回壓力訊號(請確認是季底效應還是趨勢)"
+ },
+ "🔴 {0}/{1} 트리거": {
+  "en": "🔴 {0}/{1} triggers",
+  "zh": "🔴 {0}/{1} 觸發"
+ },
+ "🔴 감소": {
+  "en": "🔴 Decline",
+  "zh": "🔴 減少"
+ },
+ "🔴 경계": {
+  "en": "🔴 Caution",
+  "zh": "🔴 警戒"
+ },
+ "🔴 고용 과열 (금리 인하 지연)": {
+  "en": "🔴 Overheated jobs (rate cuts delayed)",
+  "zh": "🔴 就業過熱(降息延後)"
+ },
+ "🔴 긴장": {
+  "en": "🔴 Tense",
+  "zh": "🔴 緊張"
+ },
+ "🔴 긴축 가속": {
+  "en": "🔴 Tightening accelerating",
+  "zh": "🔴 緊縮加速"
+ },
+ "🔴 긴축 압력 큼 (캐리 위험)": {
+  "en": "🔴 Strong tightening pressure (carry risk)",
+  "zh": "🔴 緊縮壓力大(套利風險)"
+ },
+ "🔴 뚜렷한 긴축": {
+  "en": "🔴 Clear tightening",
+  "zh": "🔴 明顯緊縮"
+ },
  "🔴 매파 (긴축적)": {
   "en": "🔴 Hawkish (tightening)",
   "zh": "🔴 鷹派（緊縮）"
  },
+ "🔴 세 가지 동시 악화": {
+  "en": "🔴 Three worsening at once",
+  "zh": "🔴 三項同時惡化"
+ },
+ "🔴 심각한 경계": {
+  "en": "🔴 Serious Caution",
+  "zh": "🔴 嚴重警戒"
+ },
  "🔴 위험": {
   "en": "🔴 Danger",
   "zh": "🔴 危險"
+ },
+ "🔴 인플레 끈적": {
+  "en": "🔴 Sticky inflation",
+  "zh": "🔴 通膨黏著"
+ },
+ "🔴 장기물 대폭 증액": {
+  "en": "🔴 Coupon issuance sharply increased",
+  "zh": "🔴 中長期公債發行大幅增加"
  },
  "🔴 전이성 충격 의심": {
   "en": "🔴 Suspected contagious shock",
@@ -6419,6 +9283,30 @@
   "en": "🔴 Contagious shock (pressure in several areas at once)",
   "zh": "🔴 傳染性衝擊（多個區段同時承壓）"
  },
+ "🔴 활성화": {
+  "en": "🔴 Active",
+  "zh": "🔴 啟動"
+ },
+ "🔵 {0}/{1} 경계": {
+  "en": "🔵 {0}/{1} Caution",
+  "zh": "🔵 {0}/{1} 警戒"
+ },
+ "🔵 {0}Y 금리 안정": {
+  "en": "🔵 {0}Y yield stable",
+  "zh": "🔵 {0}年期殖利率穩定"
+ },
+ "🔵 고용 둔화": {
+  "en": "🔵 Jobs cooling",
+  "zh": "🔵 就業降溫"
+ },
+ "🔵 낮은 경보": {
+  "en": "🔵 Low alert",
+  "zh": "🔵 低度警報"
+ },
+ "🔵 대체로 정상 (일부 경계 지점)": {
+  "en": "🔵 Mostly normal (a few points on Caution)",
+  "zh": "🔵 大致正常(部分節點警戒)"
+ },
  "🔵 보통": {
   "en": "🔵 Moderate",
   "zh": "🔵 中等"
@@ -6426,6 +9314,18 @@
  "🔵 약한 우호": {
   "en": "🔵 Mildly favorable",
   "zh": "🔵 偏正面"
+ },
+ "🔵 완화 조짐": {
+  "en": "🔵 Signs of easing",
+  "zh": "🔵 出現寬鬆跡象"
+ },
+ "🔵 일부 경계": {
+  "en": "🔵 Some Caution",
+  "zh": "🔵 部分警戒"
+ },
+ "🔵 중립": {
+  "en": "🔵 Neutral",
+  "zh": "🔵 中性"
  },
  "🔵 한 가지 약함": {
   "en": "🔵 One weak point",
@@ -6471,13 +9371,65 @@
   "en": "🗾 Bank of Japan",
   "zh": "🗾 日本央行"
  },
+ "🚨 Repo 시장 이중 압박 ({0}년 {1}월 패턴)": {
+  "en": "🚨 Double pressure on the repo market (pattern of {0}-{1})",
+  "zh": "🚨 附買回市場雙重壓力({0}年 {1}月型態)"
+ },
+ "🚨 {0}/{1} 트리거": {
+  "en": "🚨 {0}/{1} triggers",
+  "zh": "🚨 {0}/{1} 觸發"
+ },
+ "🚨 공포": {
+  "en": "🚨 Fear",
+  "zh": "🚨 恐慌"
+ },
+ "🚨 구조적 위기 신호: 기간프리미엄 상승 + 유동성 악화 동시": {
+  "en": "🚨 Structural crisis signal: rising term premium + worsening liquidity at the same time",
+  "zh": "🚨 結構性危機訊號:期限溢酬上升 + 流動性同時惡化"
+ },
  "🚨 극단적 단기 편중": {
   "en": "🚨 Extreme short-end skew",
   "zh": "🚨 極端偏重短端"
  },
+ "🚨 급감": {
+  "en": "🚨 Sharp drop",
+  "zh": "🚨 急劇減少"
+ },
+ "🚨 다중 배관 이상: 시스템 스트레스 확인": {
+  "en": "🚨 Multiple plumbing anomalies: system stress confirmed",
+  "zh": "🚨 多處管線異常:確認系統壓力"
+ },
+ "🚨 매도→매수 전환!": {
+  "en": "🚨 Switch from selling to buying!",
+  "zh": "🚨 由賣轉買!"
+ },
+ "🚨 신용경색": {
+  "en": "🚨 Credit crunch",
+  "zh": "🚨 信用緊縮"
+ },
+ "🚨 신용위기 단계 진입": {
+  "en": "🚨 Entering the credit-crisis stage",
+  "zh": "🚨 進入信用危機階段"
+ },
  "🚨 실전 모니터링": {
   "en": "🚨 Live monitoring",
   "zh": "🚨 即時監控"
+ },
+ "🚨 위기": {
+  "en": "🚨 Crisis",
+  "zh": "🚨 危機"
+ },
+ "🚨 위험 / 청산 임박": {
+  "en": "🚨 Danger / liquidation imminent",
+  "zh": "🚨 危險 / 即將被迫平倉"
+ },
+ "🚨 최고 경보: 구조적 Bills Pivot 진행 중 (장기금리 통제 + 재정 스트레스 동시)": {
+  "en": "🚨 Highest alert: structural Bills Pivot under way (long-term yield control and fiscal stress together)",
+  "zh": "🚨 最高警報:結構性 Bills Pivot 進行中(長期殖利率管控與財政壓力同時出現)"
+ },
+ "🚨 회의 {0}일 전": {
+  "en": "🚨 {0} days before the meeting",
+  "zh": "🚨 距會議 {0} 日"
  },
  "🚰 미국 국채 시스템 배관도": {
   "en": "🚰 US Treasury system plumbing diagram",
@@ -6491,6 +9443,14 @@
   "en": "🛢️ Commodity Radar",
   "zh": "🛢️ 原物料雷達"
  },
+ "🟠 {0}/{1} 트리거": {
+  "en": "🟠 {0}/{1} triggers",
+  "zh": "🟠 {0}/{1} 觸發"
+ },
+ "🟠 {0}개 지점 경계": {
+  "en": "🟠 {0} points on Caution",
+  "zh": "🟠 {0} 個節點進入警戒"
+ },
  "🟠 경계": {
   "en": "🟠 Caution",
   "zh": "🟠 警戒"
@@ -6498,6 +9458,26 @@
  "🟠 경계 수위": {
   "en": "🟠 Caution level",
   "zh": "🟠 警戒水位"
+ },
+ "🟠 긴축 지속": {
+  "en": "🟠 Tightening continues",
+  "zh": "🟠 緊縮持續"
+ },
+ "🟠 다소 끈적": {
+  "en": "🟠 Somewhat sticky",
+  "zh": "🟠 略為黏著"
+ },
+ "🟠 두 가지 동시 약화": {
+  "en": "🟠 Two weakening at once",
+  "zh": "🟠 兩項同時轉弱"
+ },
+ "🟠 둔화": {
+  "en": "🟠 Slowing",
+  "zh": "🟠 放緩"
+ },
+ "🟠 상승": {
+  "en": "🟠 Rising",
+  "zh": "🟠 上升"
  },
  "🟠 선택적 조정(일부 구간만 압력)": {
   "en": "🟠 Selective adjustment (pressure in some areas only)",
@@ -6507,25 +9487,109 @@
   "en": "🟠 Funding pressure on risky companies",
   "zh": "🟠 高風險企業籌資壓力"
  },
+ "🟠 재정/수급 압력: 기간프리미엄 상승 주도": {
+  "en": "🟠 Fiscal/supply pressure: driven by a rising term premium",
+  "zh": "🟠 財政 / 供需壓力:由期限溢酬上升主導"
+ },
  "🟠 조짐": {
   "en": "🟠 Early signs",
   "zh": "🟠 初步跡象"
+ },
+ "🟠 조짐 감지": {
+  "en": "🟠 Signs detected",
+  "zh": "🟠 偵測到跡象"
  },
  "🟠 주의": {
   "en": "🟠 Caution",
   "zh": "🟠 注意"
  },
+ "🟡 {0}/{1} 경계": {
+  "en": "🟡 {0}/{1} Caution",
+  "zh": "🟡 {0}/{1} 警戒"
+ },
  "🟡 긴축 조짐": {
   "en": "🟡 Signs of tightening",
   "zh": "🟡 有緊縮跡象"
+ },
+ "🟡 다중 경계 수위": {
+  "en": "🟡 Multiple indicators near Caution",
+  "zh": "🟡 多項指標接近警戒"
+ },
+ "🟡 소폭 둔화": {
+  "en": "🟡 Slight slowdown",
+  "zh": "🟡 小幅放緩"
+ },
+ "🟡 안정화 조짐": {
+  "en": "🟡 Signs of stabilizing",
+  "zh": "🟡 出現趨穩跡象"
+ },
+ "🟡 약한 부정": {
+  "en": "🟡 Mildly negative",
+  "zh": "🟡 輕微偏負面"
+ },
+ "🟡 인플레 보상 상승": {
+  "en": "🟡 Inflation compensation rising",
+  "zh": "🟡 通膨補償上升"
+ },
+ "🟡 일부 단기": {
+  "en": "🟡 Some short-term tilt",
+  "zh": "🟡 部分偏重短期"
+ },
+ "🟡 장기물 소폭 증액": {
+  "en": "🟡 Coupon issuance slightly increased",
+  "zh": "🟡 中長期公債發行小幅增加"
+ },
+ "🟡 중간 경보: 부분적 Bills 편중": {
+  "en": "🟡 Medium alert: partial tilt toward Bills",
+  "zh": "🟡 中度警報:部分偏重短期國庫券"
+ },
+ "🟡 하락 조짐": {
+  "en": "🟡 Signs of decline",
+  "zh": "🟡 出現下降跡象"
  },
  "🟡 확인 필요": {
   "en": "🟡 Needs check",
   "zh": "🟡 需確認"
  },
+ "🟢 Repo 정상": {
+  "en": "🟢 Repo normal",
+  "zh": "🟢 附買回正常"
+ },
+ "🟢 건강한 상승: 실질금리(성장 기대) 주도": {
+  "en": "🟢 Healthy rise: driven by real yields (growth expectations)",
+  "zh": "🟢 健康上漲:由實質殖利率(成長預期)主導"
+ },
+ "🟢 고용 약함 (금리 인하 기대)": {
+  "en": "🟢 Weak jobs (rate-cut expectations)",
+  "zh": "🟢 就業疲弱(降息預期)"
+ },
+ "🟢 국채 흡수력 양호": {
+  "en": "🟢 Treasury absorption good",
+  "zh": "🟢 公債承接力良好"
+ },
  "🟢 낙관": {
   "en": "🟢 Optimistic",
   "zh": "🟢 樂觀"
+ },
+ "🟢 디스인플레 (물가 걱정 완화)": {
+  "en": "🟢 Disinflation (inflation worries easing)",
+  "zh": "🟢 通膨降溫(物價擔憂減輕)"
+ },
+ "🟢 뚜렷한 완화": {
+  "en": "🟢 Clear easing",
+  "zh": "🟢 明顯寬鬆"
+ },
+ "🟢 물가 안정": {
+  "en": "🟢 Prices stable",
+  "zh": "🟢 物價穩定"
+ },
+ "🟢 비둘기 (완화적)": {
+  "en": "🟢 Dovish (easing)",
+  "zh": "🟢 鴿派(寬鬆)"
+ },
+ "🟢 비활성": {
+  "en": "🟢 Inactive",
+  "zh": "🟢 未啟動"
  },
  "🟢 신용 환경 안정": {
   "en": "🟢 Credit conditions stable",
@@ -6539,13 +9603,33 @@
   "en": "🟢 Good",
   "zh": "🟢 良好"
  },
+ "🟢 완화": {
+  "en": "🟢 Easing",
+  "zh": "🟢 寬鬆"
+ },
+ "🟢 장기물 발행 감액": {
+  "en": "🟢 Coupon issuance cut",
+  "zh": "🟢 中長期公債發行縮減"
+ },
  "🟢 장기물 발행 유지": {
   "en": "🟢 Long-term issuance maintained",
   "zh": "🟢 長天期債券發行維持不變"
  },
+ "🟢 전 배관 정상 (압력 안정)": {
+  "en": "🟢 All plumbing normal (pressure stable)",
+  "zh": "🟢 全部管線正常(壓力穩定)"
+ },
  "🟢 정상": {
   "en": "🟢 Normal",
   "zh": "🟢 正常"
+ },
+ "🟢 평온": {
+  "en": "🟢 Calm",
+  "zh": "🟢 平穩"
+ },
+ "🟣 안전자산 선호 (경기 둔화 걱정)": {
+  "en": "🟣 Flight to safety (recession worries)",
+  "zh": "🟣 避險情緒升溫(擔憂經濟衰退)"
  },
  "🦅 FOMC (연준)": {
   "en": "🦅 FOMC (Fed)",

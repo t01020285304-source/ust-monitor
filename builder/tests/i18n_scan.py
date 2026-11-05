@@ -65,7 +65,7 @@ def main():
         for g in pg.evaluate("[...document.querySelectorAll('[data-grp]')].map(b => b.dataset.grp)"):
             pg.click(f"[data-grp='{g}']")
             grab("radar grp " + g)
-        ids = pg.evaluate("[...new Set([...document.querySelectorAll('[data-rid]')].map(b => b.dataset.rid))]")
+        ids = [x["id"] for x in json.loads((SITE / "data" / "radar.json").read_text(encoding="utf-8"))["items"]]
         for v in ["cycle", "status", "guide"] + ids:
             goto("radar/" + v)
             grab("radar/" + v)

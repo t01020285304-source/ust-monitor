@@ -618,7 +618,7 @@ def summary(items, mac):
     def k3(ko, en, zh):
         key.append(ko)
         xtr[ko] = {"en": en, "zh": zh}
-    nm = lambda L, lang: ", ".join(I18.tl_or(x, lang) for x in L)
+    nm = lambda L, lang: ("、" if lang == "zh" else ", ").join(I18.tl_or(x, lang) for x in L)
     if qs:
         k, L = max(qs.items(), key=lambda kv: (len(kv[1]), kv[0] != "flat"))
         ns = [i["name"] for i in L]

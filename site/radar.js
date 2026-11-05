@@ -342,10 +342,22 @@
     const now = !showCot(it) ? (it.why || '') :
       `${it.name}의 투기자금은 ${mdw(c.obs)} 기준 ${mm.net >= 0 ? `${fN(mm.net, 0)}계약 순매수` : `${fN(-mm.net, 0)}계약 순매도`} 상태이고, 이는 ${pctTxt(mm.pctile)} 수준이에요. 4주 동안 순매수가 ${mm.c4 == null ? '얼마나 바뀌었는지 비교할 자료가 없어요' : mm.c4 === 0 ? '그대로였어요' : fN(Math.abs(mm.c4), 0) + '계약 ' + (mm.c4 > 0 ? '늘었어요' : '줄었어요')}.` +
       (q ? ` 가격과 짝지어 보면 「${q.label}」이에요.` : '') + (it.inv && it.inv.vs5 != null ? (Math.abs(it.inv.vs5) < 0.5 ? ' 실물 재고는 5년 평균과 비슷해요.' : ` 실물 재고는 5년 평균보다 ${fN(Math.abs(it.inv.vs5), 1)}% ${it.inv.vs5 > 0 ? '많아요' : '적어요'}.`) : '');
+    const LG = (window.I18N || {}).lang || 'ko', T = s => window.I18N ? I18N.tr(s) : s;
+    let nowX = null;                       // 영어·번체는 문장을 그 언어 어순으로 직접 만든다 (이름·수준 말이 문장 가운데 들어가서)
+    if (LG !== 'ko' && showCot(it)) {
+      const n = T(it.name), d = T(mdw(c.obs)), lv = T(pctTxt(mm.pctile)), ql = q && T(q.label), iv = it.inv && it.inv.vs5;
+      const side = mm.net >= 0 ? [`net long ${fN(mm.net, 0)} contracts`, `淨買超 ${fN(mm.net, 0)} 口`] : [`net short ${fN(-mm.net, 0)} contracts`, `淨賣超 ${fN(-mm.net, 0)} 口`];
+      const ch = mm.c4 == null ? ['there is no data to compare', '沒有可比較的資料'] : mm.c4 === 0 ? ['it was unchanged', '沒有變化'] :
+        mm.c4 > 0 ? [`it rose by ${fN(mm.c4, 0)} contracts`, `增加了 ${fN(mm.c4, 0)} 口`] : [`it fell by ${fN(-mm.c4, 0)} contracts`, `減少了 ${fN(-mm.c4, 0)} 口`];
+      const inv = iv == null ? ['', ''] : Math.abs(iv) < 0.5 ? [' Physical inventory is about the same as the 5-year average.', '實物庫存與5年平均相近。'] :
+        [` Physical inventory is ${fN(Math.abs(iv), 1)}% ${iv > 0 ? 'above' : 'below'} the 5-year average.`, `實物庫存比5年平均${iv > 0 ? '多' : '少'} ${fN(Math.abs(iv), 1)}%。`];
+      nowX = LG === 'en' ? `As of ${d}, speculative money in ${n} is ${side[0]}, which is ${lv}. Over 4 weeks, ${ch[0]}.` + (q ? ` Paired with price, it reads “${ql}”.` : '') + inv[0]
+        : `截至 ${d}，${n}的投機資金為${side[1]}，屬於${lv}。4週來淨買超${ch[1]}。` + (q ? `與價格配對來看是「${ql}」。` : '') + inv[1];
+    }
     return card('🧭 초보자 해설', `<div class="rd-ex">
       <div>📖 <b>쉽게 말하면</b> — 선물 시장에는 실제로 원자재를 쓰는 회사(생산·실수요)와, 가격 흐름에 돈을 거는 투기자금이 함께 있어요. 미국 CFTC는 매주 “누가 얼마나 사고팔아 두었는지”를 공개해요. 투기자금이 한쪽으로 크게 몰리면 가격이 그 방향으로 밀리기도 하지만, 너무 몰리면 되돌아갈 때 크게 출렁여요.</div>
       <div>💡 <b>왜 중요한가</b> — 가격만 보면 “왜 움직였는지”를 알 수 없어요. 돈의 쏠림(포지션)과 실물 상황(재고)을 같이 보면 그 움직임이 오래갈지, 일시적인지 가늠할 수 있어요.</div>
-      <div>🔍 <b>지금 이 원자재는</b> — ${esc(now)}</div></div>
+      <div>🔍 <b>지금 이 원자재는</b> — ${nowX ? `<span data-noi18n>${esc(nowX)}</span>` : esc(now)}</div></div>
       <div class="mk-foot">자동 생성 해설이에요. 투자 권유가 아니며, 결론보다 근거를 확인하는 용도로 쓰세요.</div>`);
   }
 

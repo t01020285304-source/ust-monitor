@@ -26,23 +26,40 @@
     const k = s.replace(/\s+/g, ' ').trim().replace(NUM, m => { v.push(m); return '{' + (v.length - 1) + '}'; });
     return [k, v];
   }
+  let REC = null;                          // 이번 시도에서 사전에 없던 문장 틀 (고른 시도의 것만 missing 에 남김)
   function one(s, rec) {
     const x = X[s.replace(/\s+/g, ' ').trim()];
     if (x != null) return x;
     const [k, v] = norm(s);
     const t = D[k] ?? X[k];
-    if (t == null) { if (rec) missing.add(k); return null; }
+    if (t == null) { if (rec && REC) REC.push(k); return null; }
     return t.replace(/\{(\d+)\}/g, (_, i) => v[i] ?? '');
   }
-  // 문장 하나를 번역. 통째로 없으면 ' · ' 같은 구분자로 나눠 조각마다 찾는다
-  function tr(s) {
-    if (!D || L === 'ko' || !HAN.test(s)) return s;
-    const lead = s.match(/^\s*/)[0], trail = s.slice(lead.length).match(/\s*$/)[0];
+  // 한 덩어리: 통째로 → 없으면 ' · ' 같은 구분자로 나눠 조각마다 (구분자로 이어 붙인 글은 조각 단위로만 사전에 둔다)
+  function piece(s) {
     const sep = SEP.test(s);
-    let t = one(s, !sep);                // 구분자로 이어 붙인 글은 조각 단위로만 사전에 둔다
+    let t = one(s, !sep);
     if (t == null && sep) {
       const parts = s.split(/( · | — | – | \| | → )/);
       t = parts.map((p, i) => i % 2 || !HAN.test(p) ? p : (one(p, true) ?? p)).join('').trim();
+    }
+    return t;
+  }
+  const hanCount = t => t == null ? 1e9 : (t.match(/[가-힣]/g) || []).length;
+  // 글 하나를 번역 — 덩어리 방식과 문장마다 방식(builder/i18n_data.py 와 같은 규칙) 중 한국어가 덜 남는 쪽
+  function tr(s) {
+    if (!D || L === 'ko' || !HAN.test(s)) return s;
+    const lead = s.match(/^\s*/)[0], trail = s.slice(lead.length).match(/\s*$/)[0], body = s.trim();
+    let t = one(body, false);
+    if (t == null) {
+      REC = []; const a = piece(s), ra = REC;
+      let b = null, rb = [];
+      const ss = body.split(/(?<=[.!?。])\s+(?=\S)/);
+      if (ss.length > 1 && hanCount(a) > 0) {
+        REC = []; b = ss.map(x => HAN.test(x) ? (piece(' ' + x) ?? x).trim() : x).join(L === 'zh' ? '' : ' '); rb = REC;
+      }
+      const useB = b != null && hanCount(b) < hanCount(a);
+      t = useB ? b : a; (useB ? rb : ra).forEach(k => missing.add(k)); REC = null;
     }
     return t == null ? s : lead + t + trail;
   }
@@ -99,6 +116,6 @@
   document.documentElement.classList.add('i18n-wait');
   const st = document.createElement('style'); st.textContent = 'html.i18n-wait body{visibility:hidden}'; document.head.appendChild(st);
   setTimeout(() => document.documentElement.classList.remove('i18n-wait'), 4000);
-  const s = document.createElement('script'); s.src = 'i18n/' + L + '.js?v=8fe100b1'; s.onerror = () => document.documentElement.classList.remove('i18n-wait');
+  const s = document.createElement('script'); s.src = 'i18n/' + L + '.js?v=12b656b4'; s.onerror = () => document.documentElement.classList.remove('i18n-wait');
   document.head.appendChild(s);
 })();

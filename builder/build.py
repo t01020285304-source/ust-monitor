@@ -34,6 +34,12 @@ def main():
     s = _clean(dict(treasury.build_state()))
     s["built_at"] = datetime.now(KST).isoformat(timespec="minutes")
     s.pop("my", None)
+    try:                                   # 화면 번역용 'i18n' 칸 (English · 繁中) — 실패해도 한국어 자료는 그대로 올림
+        import i18n_data
+        s["i18n"], s["i18n_missing"] = i18n_data.attach(s)
+        print(f"번역 {len(s['i18n'])}개 문장 · 사전에 없는 문장 {len(s['i18n_missing'])}개")
+    except Exception as e:  # noqa: BLE001
+        print("번역 붙이기 실패:", e)
     errs = s.get("errors") or []
     print(f"판독 완료 ({time.time() - t0:.0f}초) · 받지 못한 자료 {len(errs)}개 · 자료 기준일 " + ", ".join(f"{a['k']} {a['d']}" for a in (s.get("asof") or [])[:3]))
     for e in errs:
