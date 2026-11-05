@@ -524,93 +524,147 @@ def _srcs(*lists):
     return out
 
 
-def _one(it):
-    """원자재 한 개를 한두 문장으로 — 가격 · 투기자금 · 재고 · 장기 사이클"""
-    t = []
+def _tight(inv):
+    """재고가 5년 같은 주와 비교해 빠듯(-1) · 넉넉(+1) · 보통(0) · 모름(None)"""
+    if not inv or inv.get("vs5") is None:
+        return None
+    if (inv["lo5"] is not None and inv["v"] < inv["lo5"]) or inv["vs5"] <= -5:
+        return -1
+    if (inv["hi5"] is not None and inv["v"] > inv["hi5"]) or inv["vs5"] >= 5:
+        return 1
+    return 0
+
+
+def _take(it):
+    """원자재 하나의 '한 줄 해석' — 서로 다른 자료가 같은/다른 말을 하는지 먼저 보고, 없으면 신호 뜻을 쓴다"""
+    c = it.get("cot") if it["status"] == "ok" else None
+    mm = c and c["groups"]["mm"]
+    pct, c4 = (mm or {}).get("pctile"), (mm or {}).get("c4")
+    ti = _tight(it.get("inv"))
+    lg = (it.get("cycle") or {}).get("long") or {}
+    ph = (lg.get("phase") or {}).get("key")
+    if ti == -1 and c4 is not None and c4 < 0:
+        return "실물 재고는 빠듯한데 투기자금은 빠지는 중 — 가격이 더 밀려도 재고가 버팀목이 될 수 있어요."
+    if ti == 1 and c4 is not None and c4 > 0:
+        return "재고가 넉넉한데 투기자금이 들어오는 중 — 실물 뒷받침이 약한 상승일 수 있어요."
+    if pct is not None and pct <= 10:
+        return "투기자금 비관이 3년 중 극단 — 작은 호재에도 되사기(숏 커버)로 크게 튈 수 있어요."
+    if pct is not None and pct >= 90:
+        return "투기자금 낙관이 3년 중 극단 — 새로 살 사람이 적어 작은 악재에도 밀릴 수 있어요."
+    if ph == "boom":
+        return "20년 기준 비싼 구간에서 더 오르는 중 — 높은 가격은 증산을 불러 오래가지 않는 경우가 많아요."
+    if ph == "trough":
+        return "20년 기준 싼 구간에서 아직 내리는 중 — 재고 감소·투기자금 유입 같은 바닥 신호를 기다리는 자리예요."
+    if it.get("quad"):
+        return it["quad"]["text"]
+    if ph:
+        return lg["phase"]["text"]
+    return "이번 주에는 해석할 만큼의 자료가 모이지 않았어요."
+
+
+def _facts(it):
+    """원자재 하나의 요점 — [아이콘, 항목, 내용] 목록 (화면에서 줄마다 보여 줌)"""
+    out = []
     p, m, c, inv, cy = it.get("price"), it.get("move"), it.get("cot"), it.get("inv"), it.get("cycle") or {}
     if p and not p["freq"].startswith("월평균"):
-        t.append(f"{it['name']} 가격은 {_md(p['obs'])} 기준 {p['v']:,.2f}{p['unit'].replace('달러/', '달러/')}이고 1주 동안 {_p(m and m['w1'])} 움직였어요.")
+        out.append(["💵", "가격", f"{p['v']:,.2f} {p['unit']} ({_md(p['obs'])}) · 1주 {_p(m and m['w1'])}"])
     elif p:
-        t.append(f"{it['name']}의 공식 월평균 가격은 {int(p['obs'][5:7])}월 {p['v']:,.0f}{p['unit']}이에요" + (f"(이번 주 선물 등락률은 참고로 {_p(m['w1'])})." if m else "."))
+        out.append(["💵", "가격", f"{int(p['obs'][5:7])}월 평균 {p['v']:,.0f} {p['unit']}" + (f" · 이번 주 선물 {_p(m['w1'])} (참고)" if m else "")])
     elif m:
-        t.append(f"{it['name']}{_jo(it['name'], '은', '는')} 공식 무료 가격이 없어 참고 등락률만 보면 1주 {_p(m['w1'])}, 4주 {_p(m['w4'])}예요.")
+        out.append(["💵", "가격", f"공식 무료 가격 없음 · 선물 등락률 1주 {_p(m['w1'])}, 4주 {_p(m['w4'])} (참고)"])
     if c and it["status"] == "ok":
         mm = c["groups"]["mm"]
         side = f"{mm['net']:,}계약 순매수" if mm["net"] >= 0 else f"{-mm['net']:,}계약 순매도"
-        t.append(f"투기자금은 {side}로 {_ptxt(mm['pctile'])}에 있고, 4주 동안 순매수가 {_chg(mm['c4'])}." if mm.get("c4") is not None else f"투기자금은 {side}로 {_ptxt(mm['pctile'])}에 있어요.")
+        t = f"{side} — {_ptxt(mm['pctile'])}"
+        if mm.get("c4"):
+            t += f" · 4주 동안 순매수 {abs(mm['c4']):,}계약 {'증가' if mm['c4'] > 0 else '감소'}"
+        out.append(["🧑‍💼", "투기자금", t])
         if it.get("quad"):
-            t.append(f"가격과 짝지어 보면 「{it['quad']['label']}」이에요.")
+            out.append(["🔀", "이번 주 신호", f"「{it['quad']['label']}」"])
+    elif it["status"] == "check":
+        out.append(["🧑‍💼", "투기자금", "대표 계약 문제로 숫자를 빼고 봤어요"])
     if inv and inv.get("vs5") is not None:
-        t.append(f"실물 재고는 {inv['v']:,.0f} {inv['unit']}로 {_vs(inv['vs5'])}" + (". 5년 같은 주 최저치보다도 적어 빠듯한 편이에요." if inv["lo5"] is not None and inv["v"] < inv["lo5"] else ". 5년 같은 주 최고치보다도 많아 넉넉한 편이에요." if inv["hi5"] is not None and inv["v"] > inv["hi5"] else ". 5년 같은 주 범위 안이에요."))
+        ti = _tight(inv)
+        out.append(["🛢️", "재고", f"{inv['v']:,.0f} {inv['unit']} — {_vs(inv['vs5'])}" + (" (빠듯)" if ti == -1 else " (넉넉)" if ti == 1 else "")])
     lg = cy.get("long")
     if lg and lg.get("phase"):
-        t.append(f"물가를 뺀 20년 실질가격으로 보면 지금은 아래에서 {lg['pct']:.0f}% 높이이고, 사이클 규칙으로는 「{lg['phase']['label']}」에 해당해요.")
-    return " ".join(t)
+        out.append(["🔄", "20년 사이클", f"물가 뺀 가격이 20년 중 아래에서 {lg['pct']:.0f}% 높이 → 「{lg['phase']['label']}」"])
+    return out
 
 
 def summary(items, mac):
-    by = {i["id"]: i for i in items}
-    g = lambda grp: [i for i in items if i["group"] == grp]
+    """보드 맨 위 '이번 주 원자재 종합 해설' — 핵심 몇 줄 + 원자재별 요점 + 공통 바람 + 반대 근거 + 다음 일정.
+    표·사이클 지도 같은 도표는 화면(radar.js)이 items 로 직접 그린다."""
     cot_obs = next((i["cot"]["obs"] for i in items if i.get("cot")), None)
-    inv_obs = next((i["inv"]["obs"] for i in items if i.get("inv")), None)
-    paras = []
-    # 0. 한눈에
+    inv_obs = max((i["inv"]["obs"] for i in items if i.get("inv")), default=None)
     ok = [i for i in items if i.get("cot") and i["status"] == "ok"]
-    ext = [i for i in ok if i["cot"]["groups"]["mm"]["pctile"] is not None and (i["cot"]["groups"]["mm"]["pctile"] >= 90 or i["cot"]["groups"]["mm"]["pctile"] <= 10)]
+    pc = lambda i: i["cot"]["groups"]["mm"]["pctile"]
+    hi = [i["name"] for i in ok if pc(i) is not None and pc(i) >= 90]
+    lo = [i["name"] for i in ok if pc(i) is not None and pc(i) <= 10]
     qs = {}
     for i in ok:
         if i.get("quad"):
-            qs.setdefault(i["quad"]["label"], []).append(i["name"])
+            qs.setdefault(i["quad"]["key"], []).append(i)
     ph = {}
     for i in items:
         lg = (i.get("cycle") or {}).get("long")
         if lg and lg.get("phase"):
-            ph.setdefault(lg["phase"]["label"], []).append(i["name"])
-    t0 = (f"이 해설은 CFTC 투기자금 포지션({_md(cot_obs)} 화요일 기준, 금요일 발표), EIA 실물 재고({_md(inv_obs)} 주 기준), 공식 가격(EIA 일간·IMF 월평균)으로 자동 작성했어요. "
-          "원자재 시장은 ‘얼마에 거래되나(가격)’보다 ‘돈이 어느 쪽에 쏠렸나(포지션)’와 ‘실물이 넉넉한가(재고)’를 함께 볼 때 움직임의 이유가 보여요. ")
+            ph.setdefault(lg["phase"]["key"], []).append(i["name"])
+    names = lambda L: ", ".join(L)
+    # ① 핵심 몇 줄
+    key = []
     if qs:
-        t0 += "이번 주 가격과 투기자금 방향을 짝지은 결과는 " + ", ".join(f"「{k}」 {len(v)}개({', '.join(v)})" for k, v in sorted(qs.items())) + "예요. "
-    en = ", ".join(i["name"] for i in ext)
-    t0 += (f"투기자금이 3년 기준으로 한쪽 끝에 몰린 원자재는 {en}{_jo(en, '이에요', '예요')} — 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요. " if ext else
-           "투기자금이 3년 기준 극단(상위·하위 10%)에 몰린 원자재는 없어요. ")
+        k, L = max(qs.items(), key=lambda kv: (len(kv[1]), kv[0] != "flat"))
+        if k == "flat":
+            key.append(f"투기자금이 거의 움직이지 않은 원자재가 {len(L)}개로 가장 많아요 — 이번 주는 큰 자금 이동이 없었어요.")
+        else:
+            key.append(f"이번 주 가장 많은 신호는 「{L[0]['quad']['label']}」({len(L)}개: {names(i['name'] for i in L)})예요 — {L[0]['quad']['text'].split(' — ')[0]}.")
+    if hi or lo:
+        key.append("투기자금이 3년 기준 한쪽 끝에 몰린 원자재: " + " / ".join(x for x in [f"낙관 극단 {names(hi)}" if hi else "", f"비관 극단 {names(lo)}" if lo else ""] if x) +
+                   " — 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요.")
+    else:
+        key.append("투기자금이 3년 기준 극단(상위·하위 10%)까지 몰린 원자재는 없어요.")
     if ph:
-        t0 += "20년 실질가격 사이클로 나누면 " + " / ".join(f"{k}: {', '.join(v)}" for k, v in sorted(ph.items())) + " 쪽이에요."
-    paras.append({"h": "한눈에 보기", "t": t0, "src": _srcs([{"label": "CFTC COT", "url": M.SOURCES["cftc"]["url"]}], [{"label": "EIA 주간 재고", "url": M.SOURCES["eia"]["url"]}], [{"label": "FRED", "url": "https://fred.stlouisfed.org/"}])})
-    # 1~4. 그룹별
-    intro = {"energy": "에너지는 경기와 계절(난방·운전 수요), 산유국 공급 결정에 가장 민감한 원자재예요. ",
-             "precious": "귀금속은 이자가 나오지 않는 자산이라 실질금리와 달러에 크게 반응하고, 불안할 때 피난처 역할을 해요. ",
-             "industrial": "산업금속은 공장·건설·전력망에 쓰여서 세계 경기, 특히 중국 제조업의 체온계 역할을 해요. ",
-             "agri": "농산물은 날씨와 수확 전망(재배 면적·작황)에 따라 계절적으로 크게 움직이고, 투기자금 포지션이 자주 극단까지 가요. "}
+        key.append("20년 실질가격 사이클: " + " / ".join(f"{PHASE[k][0]} {names(v)}" for k, v in sorted(ph.items(), key=lambda kv: PHASE[kv[0]][0])) + ".")
+    u, r = mac.get("usd"), mac.get("real")
+    wind = []
+    if u and u.get("c3m") is not None:
+        d = "강해져 원자재 전반에 역풍" if u["c3m"] >= 3 else "약해져 원자재 전반에 순풍" if u["c3m"] <= -3 else "큰 방향이 없어 영향이 작아요"
+        wind.append({"k": "달러 (연준 달러지수)", "v": f"{u['v']:.1f}", "chg": f"3개월 {_p(u['c3m'])}", "d": u["obs"], "say": f"달러가 {d}" + ("" if d.endswith("요") else "이에요"),
+                     "why": "원자재는 대부분 달러로 거래돼서, 달러가 강해지면 다른 나라에는 비싸져 수요가 줄기 쉬워요. (DXY는 민간 상표 지수라 공식 자료인 연준 달러지수로 봐요.)", "src": u["src"]})
+    if r and r.get("c1y") is not None:
+        d = "올라 금·은에 역풍이에요" if r["c1y"] >= 25 else "내려 금·은에 순풍이에요" if r["c1y"] <= -25 else "큰 변화가 없어요"
+        wind.append({"k": "미국 10년 실질금리 (TIPS)", "v": f"{r['v']:.2f}%", "chg": f"1년 {r['c1y']:+.0f}bp", "d": r["obs"], "say": f"실질금리가 {d}",
+                     "why": "금·은은 이자가 나오지 않아서, 물가를 뺀 금리가 오르면 들고 있는 비용(기회비용)이 커져요.", "src": r["src"]})
+    if wind:
+        key.append(" · ".join(w["say"] for w in wind) + ".")
+    # ② 그룹별 요점
+    intro = {"energy": "경기·계절(난방·운전 수요)·산유국 공급 결정에 가장 민감해요.",
+             "precious": "이자가 없는 자산이라 실질금리·달러에 크게 반응하고, 불안할 때 피난처가 돼요.",
+             "industrial": "공장·건설·전력망에 쓰여서 세계 경기, 특히 중국 제조업의 체온계예요.",
+             "agri": "날씨와 수확 전망에 따라 계절적으로 크게 움직이고, 투기자금이 자주 극단까지 가요."}
+    groups = []
     for grp, name in M.GROUPS.items():
-        its = g(grp)
-        t = intro[grp] + " ".join(x for x in (_one(i) for i in its) if x)
-        if grp == "precious" and mac.get("real") and mac["real"].get("c1y") is not None:
-            r = mac["real"]
-            t += f" 금·은의 기회비용인 미국 10년 실질금리는 {_md(r['obs'])} 기준 {r['v']:.2f}%로 1년 동안 {r['c1y']:+.0f}bp 움직였어요" + (" — 오른 만큼 귀금속에는 역풍이에요." if r["c1y"] >= 25 else " — 내린 만큼 귀금속에는 순풍이에요." if r["c1y"] <= -25 else " — 큰 변화는 아니에요.")
-        for i in its:
-            if i["status"] == "check":
-                t += f" {i['name']}{_jo(i['name'], '은', '는')} 대표 계약 문제로 투기자금 숫자를 빼고 봤어요."
-        srcs = _srcs(*[s for i in its for s in (i.get("src") or {}).values()], (mac.get("real") or {}).get("src") if grp == "precious" else None)
-        paras.append({"h": name, "t": t, "src": srcs})
-    # 5. 달러
-    u = mac.get("usd")
-    if u:
-        t = (f"모든 원자재에 공통으로 영향을 주는 건 달러예요. 원자재는 대부분 달러로 거래돼서, 달러가 강해지면 다른 나라 사람에게는 같은 원자재가 비싸져 수요가 줄고 가격이 눌리기 쉬워요. "
-             f"연준이 발표하는 달러지수(Nominal Broad)는 {_md(u['obs'])} 기준 {u['v']:.1f}로 3개월 동안 {_p(u['c3m'])} 움직였어요" +
-             (f"(최근 5년 중 {u['pct5']:.0f}% 높이)" if u.get("pct5") is not None else "") + ". " +
-             ("달러가 뚜렷하게 강해져 원자재 전반에 역풍이에요." if (u["c3m"] or 0) >= 3 else "달러가 뚜렷하게 약해져 원자재 전반에 순풍이에요." if (u["c3m"] or 0) <= -3 else "달러는 큰 방향 없이 움직여 원자재에 주는 영향이 크지 않아요.") +
-             " (흔히 쓰는 DXY는 민간 거래소 상표 지수라, 공식 자료인 연준 달러지수로 대신 봐요.)")
-        paras.append({"h": "공통 바람 — 달러", "t": t, "src": u["src"]})
-    # 6. 반대 근거와 다음 일정
-    cnt = [f"{i['name']}: {x}" for i in items for x in (i.get("cycle") or {}).get("counter", [])]
+        its = [i for i in items if i["group"] == grp]
+        rows = [{"id": i["id"], "name": i["name"], "take": _take(i), "facts": _facts(i)} for i in its]
+        srcs = _srcs(*[s for i in its for s in (i.get("src") or {}).values()])
+        groups.append({"id": grp, "h": name, "intro": intro[grp], "rows": rows, "src": srcs})
+    # ③ 반대 근거 · 다음 일정
+    tk = {i["id"]: _take(i) for i in items}
+    dup = lambda i, x: ("투기자금" in x and "투기자금" in tk[i["id"]][:12]) or ("재고" in x and "재고" in tk[i["id"]][:12])   # 한 줄 해석에서 이미 말한 것
+    contra = [{"name": i["name"], "t": x} for i in items for x in (i.get("cycle") or {}).get("counter", []) if not dup(i, x)]
     nxt_c = next((i["cot"]["next"] for i in items if i.get("cot")), None)
-    nxt = [f"CFTC 다음 발표 {_md(nxt_c)}(금, 미국 오후 — 한국 토요일 새벽)" if nxt_c else None] + \
-          [f"{i['inv']['name']} 다음 발표 {_md(i['inv']['next'])}" for i in items if i.get("inv")] + ["IMF 월평균 가격(매월 초 전달 값)"]
-    t = ("한 방향으로만 읽지 않도록, 같은 자료에서 반대로 읽히는 신호도 적어 둘게요. " + (" ".join(cnt) if cnt else "이번 주에는 장기 사이클·재고·투기자금이 서로 크게 엇갈리는 원자재가 없어요.") +
-         " 다음에 확인할 일정은 " + ", ".join(x for x in nxt if x) + " 순서예요. 이 해설은 매수·매도 추천이 아니라, 공식 숫자가 지금 무엇을 말하는지 정리한 자동 요약이에요.")
-    paras.append({"h": "반대 근거 · 다음에 볼 것", "t": t, "src": [{"label": "CFTC 발표 일정", "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm"},
-                                                         {"label": "EIA 발표 일정", "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php"}]})
-    return {"paras": paras, "chars": sum(len(x["t"]) for x in paras)}
+    nxt = ([{"k": "CFTC 투기자금 포지션", "d": nxt_c, "note": "미국 금요일 오후 발표 → 한국 토요일 새벽"}] if nxt_c else []) + \
+          [{"k": i["inv"]["name"], "d": i["inv"]["next"], "note": i["inv"].get("pub_rule") or ""} for i in items if i.get("inv")] + \
+          [{"k": "IMF 월평균 가격", "d": None, "note": "매월 초에 전달 평균값 발표"}]
+    basis = {"cot": cot_obs, "inv": inv_obs}
+    S = {"key": key, "groups": groups, "wind": wind, "contra": contra, "next": nxt, "basis": basis,
+         "src": [{"label": "CFTC COT", "url": M.SOURCES["cftc"]["url"]}, {"label": "EIA 주간 재고", "url": M.SOURCES["eia"]["url"]}, {"label": "FRED", "url": "https://fred.stlouisfed.org/"},
+                 {"label": "CFTC 발표 일정", "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm"},
+                 {"label": "EIA 발표 일정", "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php"}]}
+    S["chars"] = sum(len(x) for x in key) + sum(len(g["intro"]) + sum(len(r["take"]) + sum(len(f[2]) for f in r["facts"]) for r in g["rows"]) for g in groups) + \
+        sum(len(w["say"]) + len(w["why"]) for w in wind) + sum(len(c["t"]) for c in contra)
+    return S
 
 
 def build(errs=None):

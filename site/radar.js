@@ -119,9 +119,75 @@
   }
 
   // ══ 화면 A. 원자재 보드 ═══════════════════════════════════════
+  // 종합 해설 — 핵심 몇 줄 → 한눈에 보기 표 → 사이클 지도 → 원자재별 요점 → 공통 바람 → 반대 근거 · 다음 일정
+  const PH = { trough: ['① 바닥권', 'var(--blue)'], recovery: ['② 회복기', 'var(--green)'], boom: ['③ 과열·고점권', 'var(--red)'], downturn: ['④ 하강기', 'var(--amber)'], mid: ['중간 지대', 'var(--dim)'] };
+  const chip = (v, d = 1) => v == null || !isFinite(v) ? '<span class="mk-sub">—</span>' : Math.abs(v) < 0.5 * 10 ** -d ? `<span class="rd-chip">${fN(0, d)}%</span>` : `<span class="rd-chip ${cls(v)}">${pct(v, d)}</span>`;
+  function sumTable(D) {
+    const row = it => {
+      const m = it.move, c = it.status === 'ok' && it.cot, mm = c && c.groups.mm, inv = it.inv, lg = it.cycle && it.cycle.long, ph = lg && lg.phase;
+      return `<tr><td><a href="#" data-rid="${it.id}">${esc(it.name)}</a></td>
+        <td class="num">${m ? chip(m.w1) + (m.ref ? ' <span class="rd-ref">참고</span>' : '') : '<span class="mk-sub">—</span>'}</td>
+        <td>${mm && mm.pctile != null ? `<div class="rd-mini">${pbar(mm.pctile)}<span>${fN(mm.pctile, 0)}%</span></div>` : `<span class="mk-sub">${it.status === 'check' ? '확인 필요' : '—'}</span>`}</td>
+        <td class="num">${mm && mm.c4 != null ? `<span class="${cls(mm.c4)}">${mm.c4 > 0 ? '▲' : mm.c4 < 0 ? '▼' : ''} ${fN(Math.abs(mm.c4), 0)}</span>` : '<span class="mk-sub">—</span>'}</td>
+        <td class="num">${inv && inv.vs5 != null ? chip(inv.vs5) : '<span class="mk-sub">—</span>'}</td>
+        <td>${ph ? `<span class="rd-ph" style="--c:${PH[ph.key][1]}">${esc(ph.label)}</span> <span class="mk-sub">${fN(lg.pct, 0)}%</span>` : '<span class="mk-sub">—</span>'}</td>
+        <td>${c && it.quad ? `<span class="rd-q">${esc(it.quad.label)}</span>` : '<span class="mk-sub">—</span>'}</td></tr>`;
+    };
+    return `<div class="rd-tscroll"><table class="t rd-stbl"><tr><th>원자재</th><th class="num">가격 1주</th><th>투기자금 3년 위치</th><th class="num">투기자금 4주 변화</th><th class="num">재고 vs 5년 평균</th><th>20년 사이클</th><th>이번 주 신호</th></tr>
+      ${Object.entries(D.groups).map(([g, gl]) => `<tr class="rd-grow"><td colspan="7">${esc(gl)}</td></tr>` + D.items.filter(x => x.group === g).map(row).join('')).join('')}</table></div>
+      <div class="mk-foot">가격 1주: <span class="up">빨강</span> 오름 · <span class="dn">파랑</span> 내림 · 투기자금 3년 위치: 막대 오른쪽(초록)일수록 3년 중 가장 많이 사 둔 상태 · 4주 변화 단위는 계약 · 재고는 원유·가스만 · 이름을 누르면 자세히 봐요.</div>`;
+  }
+  // 사이클 지도 — 가로: 20년 실질가격 높이(0~100%), 세로: 1년 실질가격 변화. 국면 규칙(radar.py phase)의 경계선을 그대로 그린다
+  function cycleMap(D) {
+    const pts = D.items.map(it => ({ it, lg: it.cycle && it.cycle.long })).filter(p => p.lg && p.lg.phase && p.lg.mom12 != null);
+    if (!pts.length) return '';
+    const W = 640, H = 300, P = { l: 62, r: 14, t: 16, b: 34 };
+    const lim = Math.max(20, Math.ceil(Math.max(...pts.map(p => Math.abs(p.lg.mom12))) / 10) * 10);
+    const X = v => P.l + v / 100 * (W - P.l - P.r), Y = v => P.t + (lim - v) / (2 * lim) * (H - P.t - P.b);
+    const zone = (x0, x1, y0, y1, k) => `<rect x="${X(x0)}" y="${Y(y1)}" width="${X(x1) - X(x0)}" height="${Y(y0) - Y(y1)}" fill="${PH[k][1]}" opacity=".08"/>`;
+    const zl = (x, y, k, a = 'start') => `<text x="${X(x)}" y="${Y(y)}" text-anchor="${a}" class="rd-zl" fill="${PH[k][1]}">${PH[k][0]}</text>`;
+    const placed = [];          // 이름 겹침 줄이기: 가까운 이름이 이미 있으면 한 줄 아래로
+    const dots = pts.sort((a, b) => a.lg.pct - b.lg.pct).map(({ it, lg }) => {
+      const x = X(lg.pct), y = Y(Math.max(-lim, Math.min(lim, lg.mom12)));
+      let ly = y - 9; while (placed.some(q => Math.abs(q[0] - x) < 80 && Math.abs(q[1] - ly) < 12)) ly += 13;
+      placed.push([x, ly]);
+      const anchor = x > W - 110 ? 'end' : 'start', lx = anchor === 'end' ? x - 7 : x + 7;
+      return `<g class="rd-dot" data-rid="${it.id}"><title>${esc(it.name)} — 20년 중 ${fN(lg.pct, 0)}% 높이 · 1년 ${pct(lg.mom12, 0)} · ${esc(lg.phase.label)}</title>
+        <circle cx="${x}" cy="${y}" r="12" fill="transparent"/><circle cx="${x}" cy="${y}" r="5.5" fill="${PH[lg.phase.key][1]}" stroke="var(--panel)" stroke-width="2"/>
+        <text x="${lx}" y="${ly}" text-anchor="${anchor}" class="rd-dl">${esc(it.name)}</text></g>`;
+    }).join('');
+    return `<svg class="rd-map" viewBox="0 0 ${W} ${H}" role="img" aria-label="원자재 사이클 지도">
+      ${zone(0, 30, -lim, 0, 'trough')}${zone(40, 100, -lim, 0, 'downturn')}${zone(70, 100, 0, lim, 'boom')}${zone(0, 70, 0, lim, 'recovery')}
+      <line x1="${X(0)}" x2="${X(100)}" y1="${Y(0)}" y2="${Y(0)}" class="mk-zero"/>
+      ${[30, 40, 70].map(v => `<line x1="${X(v)}" x2="${X(v)}" y1="${P.t}" y2="${H - P.b}" class="mk-grid"/>`).join('')}
+      ${zl(1, -lim * .9, 'trough')}${zl(99, -lim * .9, 'downturn', 'end')}${zl(99, lim * .88, 'boom', 'end')}${zl(1, lim * .88, 'recovery')}
+      ${[0, 30, 70, 100].map(v => `<text x="${X(v)}" y="${H - P.b + 14}" text-anchor="middle" class="mk-ax">${v}%</text>`).join('')}
+      ${[lim, 0, -lim].map(v => `<text x="${P.l - 6}" y="${Y(v) + 4}" text-anchor="end" class="mk-ax">${v > 0 ? '+' : ''}${v}%</text>`).join('')}
+      <text x="${(P.l + W - P.r) / 2}" y="${H - 4}" text-anchor="middle" class="mk-ax">← 싼 쪽 · 물가 뺀 가격의 20년 중 높이 · 비싼 쪽 →</text>
+      <text transform="translate(11 ${(P.t + H - P.b) / 2}) rotate(-90)" text-anchor="middle" class="mk-ax">1년 변화 (위 = 오르는 중)</text>
+      ${dots}</svg>`;
+  }
   function summaryCard(D) {
-    const S = D.summary; if (!S || !S.paras) return '';
-    return card('📰 이번 주 원자재 종합 해설 <span class="mk-sub">공식 숫자로 자동 작성 · 문단마다 출처</span>', `<div class="rd-sum">${S.paras.map(p => `<div class="rd-sp"><h4>${esc(p.h)}</h4><p>${esc(p.t)}</p>${srcLine(p.src)}</div>`).join('')}</div>
+    const S = D.summary; if (!S) return '';
+    if (!S.key) return S.paras ? card('📰 이번 주 원자재 종합 해설', `<div class="rd-sum">${S.paras.map(p => `<div class="rd-sp"><h4>${esc(p.h)}</h4><p>${esc(p.t)}</p>${srcLine(p.src)}</div>`).join('')}</div>`) : '';   // 예전 형식 자료 (갱신 전 잠깐)
+    const B = S.basis || {};
+    const lnk = (id, n) => `<a href="#" data-rid="${id}">${esc(n)}</a>`;
+    return card(`📰 이번 주 원자재 종합 해설 <span class="mk-sub">CFTC ${mdw(B.cot)} · EIA 재고 ${mdw(B.inv)} 기준 · 공식 숫자로 자동 작성</span>`, `
+      <div class="rd-key"><div class="rd-key-h">🔑 이번 주 핵심</div><ul>${S.key.map(k => `<li>${esc(k)}</li>`).join('')}</ul></div>
+      <h4 class="rd-sh">📊 한눈에 보기 — 원자재 12개를 한 표로</h4>${sumTable(D)}
+      <h4 class="rd-sh">🧭 사이클 지도 — 지금 어느 국면에 있나</h4>
+      <div class="rd-mapbox"><div class="rd-mapwrap">${cycleMap(D)}</div><div class="mk-sub rd-mapnote">점 하나 = 원자재 하나예요. <b>오른쪽</b>일수록 물가를 뺀 가격이 지난 20년 중 비싼 쪽, <b>위쪽</b>일수록 1년 동안 오르는 중이에요.<br><br>원자재 사이클은 보통 <b style="color:var(--blue)">① 바닥</b> → <b style="color:var(--green)">② 회복</b> → <b style="color:var(--red)">③ 과열</b> → <b style="color:var(--amber)">④ 하강</b> 순서로 돌아요. 국면은 규칙으로 나눈 해석이라, 재고·투기자금이 같은 말을 하는지 아래 요점에서 함께 확인하세요. 점을 누르면 그 원자재를 자세히 봐요.</div></div>
+      <h4 class="rd-sh">🔎 원자재별 요점 <span class="mk-sub">— 굵은 줄이 한 줄 해석, 아래는 근거 숫자</span></h4>
+      ${S.groups.map(g => `<div class="rd-grp"><div class="rd-grp-h"><b>${esc(g.h)}</b> <span class="mk-sub">${esc(g.intro)}</span></div>
+        <div class="rd-grp-g">${g.rows.map(r => `<div class="rd-it"><div class="rd-it-h">${lnk(r.id, r.name)}</div><div class="rd-take">${esc(r.take)}</div>
+          <ul class="rd-facts">${r.facts.map(f => `<li><span>${f[0]}</span><span class="k">${esc(f[1])}</span><span>${esc(f[2])}</span></li>`).join('')}</ul></div>`).join('')}</div>
+        ${srcLine(g.src)}</div>`).join('')}
+      ${S.wind && S.wind.length ? `<h4 class="rd-sh">🌬️ 모든 원자재에 부는 공통 바람</h4><div class="ust-g3">${S.wind.map(w => `<div class="ust-kv"><div class="mk-sub">${esc(w.k)}</div><div class="mk-fv">${esc(w.v)} <span class="mk-sub">${esc(w.chg)} · ${mdw(w.d)}</span></div><div><b>${esc(w.say)}</b></div><div class="mk-sub">${esc(w.why)}</div>${srcLine(w.src)}</div>`).join('')}</div>` : ''}
+      <div class="rd-2 rd-last">
+        <div><h4 class="rd-sh">⚖️ 반대 근거</h4>${S.contra && S.contra.length ? `<ul class="rd-ul">${S.contra.map(c => `<li><b>${esc(c.name)}</b> — ${esc(c.t)}</li>`).join('')}</ul>` : '<div class="mk-sub">이번 주에는 위 요점과 따로 적을 만한 반대 신호가 없어요.</div>'}</div>
+        <div><h4 class="rd-sh">📅 다음에 볼 발표</h4><table class="t"><tr><th>자료</th><th>다음 발표</th><th>참고</th></tr>${S.next.map(n => `<tr><td>${esc(n.k)}</td><td>${n.d ? mdw(n.d) : '—'}</td><td class="mk-sub">${esc(n.note)}</td></tr>`).join('')}</table></div>
+      </div>
+      ${srcLine(S.src)}
       <div class="mk-foot">자동 생성 요약이에요 (${fN(S.chars, 0)}자). 매수·매도 추천이 아니며, 숫자 옆 출처 링크로 원문을 꼭 확인하세요.</div>`);
   }
   function board(D) {
