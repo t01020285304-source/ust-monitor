@@ -13,6 +13,7 @@ from datetime import date, datetime, timedelta, timezone
 import requests
 
 import markets
+import i18n_data as I18
 import radar_meta as M
 import radar_store as RS
 import sources
@@ -611,33 +612,49 @@ def summary(items, mac):
         if lg and lg.get("phase"):
             ph.setdefault(lg["phase"]["key"], []).append(i["name"])
     names = lambda L: ", ".join(L)
-    # ① 핵심 몇 줄
-    key = []
+    # ① 핵심 몇 줄 — 이름 목록이 들어가는 문장은 영어·번체도 여기서 같이 만든다 (xtr: 통째 번역표)
+    key, xtr = [], {}
+
+    def k3(ko, en, zh):
+        key.append(ko)
+        xtr[ko] = {"en": en, "zh": zh}
+    nm = lambda L, lang: ", ".join(I18.tl_or(x, lang) for x in L)
     if qs:
         k, L = max(qs.items(), key=lambda kv: (len(kv[1]), kv[0] != "flat"))
+        ns = [i["name"] for i in L]
         if k == "flat":
             key.append(f"투기자금이 거의 움직이지 않은 원자재가 {len(L)}개로 가장 많아요 — 이번 주는 큰 자금 이동이 없었어요.")
         else:
-            key.append(f"이번 주 가장 많은 신호는 「{L[0]['quad']['label']}」({len(L)}개: {names(i['name'] for i in L)})예요 — {L[0]['quad']['text'].split(' — ')[0]}.")
+            lab, txt = L[0]["quad"]["label"], L[0]["quad"]["text"]
+            k3(f"이번 주 가장 많은 신호는 「{lab}」({len(L)}개: {names(ns)})예요 — {txt.split(' — ')[0]}.",
+               f"This week's most common signal is “{I18.tl_or(lab, 'en')}” ({len(L)}: {nm(ns, 'en')}). {I18.tl_or(txt, 'en')}",
+               f"本週最多的訊號是「{I18.tl_or(lab, 'zh')}」（{len(L)} 項：{nm(ns, 'zh')}）。{I18.tl_or(txt, 'zh')}")
     if hi or lo:
-        key.append("투기자금이 3년 기준 한쪽 끝에 몰린 원자재: " + " / ".join(x for x in [f"낙관 극단 {names(hi)}" if hi else "", f"비관 극단 {names(lo)}" if lo else ""] if x) +
-                   " — 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요.")
+        part = lambda a, b, lang: " / ".join(x for x in [f"{a} {nm(hi, lang)}" if hi else "", f"{b} {nm(lo, lang)}" if lo else ""] if x)
+        k3("투기자금이 3년 기준 한쪽 끝에 몰린 원자재: " + part("낙관 극단", "비관 극단", "ko") + " — 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요.",
+           "Commodities where speculative money sits at a 3-year extreme: " + part("bullish extreme", "bearish extreme", "en") + " — when crowding is extreme, even small news can trigger a big move the other way.",
+           "投機資金處於3年極端位置的原物料：" + part("樂觀極端", "悲觀極端", "zh") + " — 擁擠到極端時，小消息也可能引發反向大幅波動。")
     else:
         key.append("투기자금이 3년 기준 극단(상위·하위 10%)까지 몰린 원자재는 없어요.")
     if ph:
-        key.append("20년 실질가격 사이클: " + " / ".join(f"{PHASE[k][0]} {names(v)}" for k, v in sorted(ph.items(), key=lambda kv: PHASE[kv[0]][0])) + ".")
+        order = sorted(ph.items(), key=lambda kv: PHASE[kv[0]][0])
+        cyc = lambda lang: " / ".join(f"{I18.tl_or(PHASE[k][0], lang)} {nm(v, lang)}" for k, v in order)
+        k3("20년 실질가격 사이클: " + " / ".join(f"{PHASE[k][0]} {names(v)}" for k, v in order) + ".",
+           "20-year real-price cycle: " + cyc("en") + ".", "20年實質價格循環：" + cyc("zh") + "。")
     u, r = mac.get("usd"), mac.get("real")
     wind = []
     if u and u.get("c3m") is not None:
-        d = "강해져 원자재 전반에 역풍" if u["c3m"] >= 3 else "약해져 원자재 전반에 순풍" if u["c3m"] <= -3 else "큰 방향이 없어 영향이 작아요"
-        wind.append({"k": "달러 (연준 달러지수)", "v": f"{u['v']:.1f}", "chg": f"3개월 {_p(u['c3m'])}", "d": u["obs"], "say": f"달러가 {d}" + ("" if d.endswith("요") else "이에요"),
+        say = ("달러가 강해져 원자재 전반에 역풍이에요" if u["c3m"] >= 3 else "달러가 약해져 원자재 전반에 순풍이에요" if u["c3m"] <= -3 else
+               "달러가 큰 방향이 없어 영향이 작아요")
+        wind.append({"k": "달러 (연준 달러지수)", "v": f"{u['v']:.1f}", "chg": f"3개월 {_p(u['c3m'])}", "d": u["obs"], "say": say,
                      "why": "원자재는 대부분 달러로 거래돼서, 달러가 강해지면 다른 나라에는 비싸져 수요가 줄기 쉬워요. (DXY는 민간 상표 지수라 공식 자료인 연준 달러지수로 봐요.)", "src": u["src"]})
     if r and r.get("c1y") is not None:
-        d = "올라 금·은에 역풍이에요" if r["c1y"] >= 25 else "내려 금·은에 순풍이에요" if r["c1y"] <= -25 else "큰 변화가 없어요"
-        wind.append({"k": "미국 10년 실질금리 (TIPS)", "v": f"{r['v']:.2f}%", "chg": f"1년 {r['c1y']:+.0f}bp", "d": r["obs"], "say": f"실질금리가 {d}",
+        say = "실질금리가 올라 금·은에 역풍이에요" if r["c1y"] >= 25 else "실질금리가 내려 금·은에 순풍이에요" if r["c1y"] <= -25 else "실질금리가 큰 변화가 없어요"
+        wind.append({"k": "미국 10년 실질금리 (TIPS)", "v": f"{r['v']:.2f}%", "chg": f"1년 {r['c1y']:+.0f}bp", "d": r["obs"], "say": say,
                      "why": "금·은은 이자가 나오지 않아서, 물가를 뺀 금리가 오르면 들고 있는 비용(기회비용)이 커져요.", "src": r["src"]})
     if wind:
-        key.append(" · ".join(w["say"] for w in wind) + ".")
+        j = lambda lang: " · ".join(I18.tl_or(w["say"], lang).rstrip(".。") for w in wind)
+        k3(" · ".join(w["say"] for w in wind) + ".", j("en") + ".", j("zh") + "。")
     # ② 그룹별 요점
     intro = {"energy": "경기·계절(난방·운전 수요)·산유국 공급 결정에 가장 민감해요.",
              "precious": "이자가 없는 자산이라 실질금리·달러에 크게 반응하고, 불안할 때 피난처가 돼요.",
@@ -658,10 +675,12 @@ def summary(items, mac):
           [{"k": i["inv"]["name"], "d": i["inv"]["next"], "note": i["inv"].get("pub_rule") or ""} for i in items if i.get("inv")] + \
           [{"k": "IMF 월평균 가격", "d": None, "note": "매월 초에 전달 평균값 발표"}]
     basis = {"cot": cot_obs, "inv": inv_obs}
-    S = {"key": key, "groups": groups, "wind": wind, "contra": contra, "next": nxt, "basis": basis,
+    S = {"key": key, "_xtr": xtr, "groups": groups, "wind": wind, "contra": contra, "next": nxt, "basis": basis,
          "src": [{"label": "CFTC COT", "url": M.SOURCES["cftc"]["url"]}, {"label": "EIA 주간 재고", "url": M.SOURCES["eia"]["url"]}, {"label": "FRED", "url": "https://fred.stlouisfed.org/"},
                  {"label": "CFTC 발표 일정", "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ReleaseSchedule/index.htm"},
                  {"label": "EIA 발표 일정", "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php"}]}
+    # 예전 화면(문단형)용 — 새 화면이 배포되기 전까지 보드가 비지 않게 (새 화면은 key/groups 를 씀)
+    S["paras"] = [{"h": "한눈에 보기", "t": " ".join(key), "src": S["src"][:3]}] +         [{"h": g["h"], "t": g["intro"] + " " + " ".join(f"{r['name']}: {r['take']}" for r in g["rows"]), "src": g["src"]} for g in groups]
     S["chars"] = sum(len(x) for x in key) + sum(len(g["intro"]) + sum(len(r["take"]) + sum(len(f[2]) for f in r["facts"]) for r in g["rows"]) for g in groups) + \
         sum(len(w["say"]) + len(w["why"]) for w in wind) + sum(len(c["t"]) for c in contra)
     return S
@@ -695,6 +714,15 @@ def build(errs=None):
     since = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%dT%H:%MZ")
     revs = [{"sid": r["sid"], "obs": r["obs"], "prev": r.get("prev"), "v": r["v"], "seen": r["seen"]} for r in RS.revisions(st, since)][-40:]
     print(f"원자재 레이더 ({time.time() - t0:.0f}초) · 추가/정정 {log} · 오류 {len(errs)}개")
-    return {"schema": 1, "built_at": datetime.now(timezone(timedelta(hours=9))).isoformat(timespec="minutes"),
-            "groups": M.GROUPS, "items": items, "macro": mac, "summary": summary(items, mac), "revisions": revs, "errors": errs, "sources": M.SOURCES,
-            "store": {"rows": len(st["rows"])}}
+    out = {"schema": 1, "built_at": datetime.now(timezone(timedelta(hours=9))).isoformat(timespec="minutes"),
+           "groups": M.GROUPS, "items": items, "macro": mac, "summary": summary(items, mac), "revisions": revs, "errors": errs, "sources": M.SOURCES,
+           "store": {"rows": len(st["rows"])}}
+    return with_i18n(out)
+
+
+def with_i18n(out):
+    """화면 번역용 'i18n' 칸 붙이기 (English · 繁中) — 빠진 문장 틀은 i18n_missing 으로 남겨 사전에 보탠다"""
+    xtr = out["summary"].pop("_xtr", {})
+    out["i18n"], out["i18n_missing"] = I18.attach(out, xtr)
+    print(f"원자재 레이더 번역 {len(out['i18n'])}개 문장 · 사전에 없는 문장 {len(out['i18n_missing'])}개")
+    return out

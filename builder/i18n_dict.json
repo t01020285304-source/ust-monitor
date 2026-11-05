@@ -27,6 +27,10 @@
   "en": "(Accepted)",
   "zh": "（得標金額）"
  },
+ "(넉넉)": {
+  "en": "(ample)",
+  "zh": "(充裕)"
+ },
  "(눌러서 접기/펴기)": {
   "en": "(click to collapse/expand)",
   "zh": "（點擊可收合/展開）"
@@ -42,6 +46,10 @@
  "(비경쟁, 해외 중앙은행 등)": {
   "en": "(Non-competitive, foreign central banks, etc.)",
   "zh": "（非競爭性，外國央行等）"
+ },
+ "(빠듯)": {
+  "en": "(tight)",
+  "zh": "(吃緊)"
  },
  "(연방준비제도 보유분)": {
   "en": "(Held by the Federal Reserve)",
@@ -247,6 +255,10 @@
   "en": "CCC and high yield widening",
   "zh": "CCC 與高收益債利差擴大"
  },
+ "CFTC {0} 계약 단위 문구가 기준표와 달라요 — 확인 필요": {
+  "en": "CFTC {0} contract unit wording differs from the reference table — needs check",
+  "zh": "CFTC {0} 的合約單位文字與基準表不同 — 需確認"
+ },
  "CFTC {0}/{1}(화)": {
   "en": "CFTC {0}/{1} (Tue)",
   "zh": "CFTC {0}/{1}（二）"
@@ -254,6 +266,10 @@
  "CFTC 계약": {
   "en": "CFTC contract",
   "zh": "CFTC 合約"
+ },
+ "CFTC 공개 데이터셋": {
+  "en": "CFTC public dataset",
+  "zh": "CFTC 公開資料集"
  },
  "CFTC 공개 데이터셋 ↗": {
   "en": "CFTC public dataset ↗",
@@ -263,13 +279,29 @@
   "en": "CFTC observation",
   "zh": "CFTC 觀察日"
  },
+ "CFTC 발표 일정": {
+  "en": "CFTC release schedule",
+  "zh": "CFTC 公布時程"
+ },
  "CFTC 발표 일정 ↗": {
   "en": "CFTC release schedule ↗",
   "zh": "CFTC 公布時程 ↗"
  },
+ "CFTC 주간 보고서 (원문)": {
+  "en": "CFTC weekly report (original report)",
+  "zh": "CFTC 每週報告(原文)"
+ },
  "CFTC 주간 보고서 (원문) ↗": {
   "en": "CFTC weekly report (original) ↗",
   "zh": "CFTC 每週報告（原文） ↗"
+ },
+ "CFTC 투기자금 포지션": {
+  "en": "CFTC speculative money positions",
+  "zh": "CFTC 投機資金持倉"
+ },
+ "CFTC가 발표 예정일({0})보다 {1}일 늦어요 — 공식 지연일 수 있어 값을 채우지 않았어요": {
+  "en": "CFTC is {1} days later than its scheduled release date ({0}) — this may be an official delay, so values were not filled in",
+  "zh": "CFTC 比預定公布日({0})晚了 {1} 天 — 可能是官方延遲,因此未填入數值"
  },
  "CFTC는 매주 금요일, EIA 재고는 매주 수·목요일 발표": {
   "en": "CFTC is released every Friday; EIA inventories every Wednesday/Thursday",
@@ -278,6 +310,10 @@
  "CFTC는 화요일 기준을 금요일에 발표해서, 보고서가 나올 때 이미 {0}일이 지나 있어요.": {
   "en": "CFTC publishes Tuesday data on Friday, so by the time the report comes out, {0} days have already passed.",
   "zh": "CFTC 在週五公布週二的資料，所以報告出爐時，已經過了{0}天。"
+ },
+ "CFTC에는 수산화리튬 한 종류(COMEX)만 있고 거래도 적어요. 리튬 시장 전체를 대표하지 않아서 '참고로 보기'를 눌러야 나와요. 리튬 가격은 공식 무료 자료가 없어요.": {
+  "en": "CFTC has only one lithium contract (lithium hydroxide on COMEX) and it trades thinly. It does not represent the whole lithium market, so it only appears if you press View for reference. There is no official free lithium price data.",
+  "zh": "CFTC 只有一種氫氧化鋰合約(COMEX),而且交易量很少。它無法代表整個鋰市場,因此要按「參考查看」才會顯示。鋰價沒有官方免費資料。"
  },
  "CRE 대출이 자산의 {0}%를 넘는 중소은행. 사무실·상가·물류센터 순 (지역은행 ETF KRE로 확인).": {
   "en": "Small and mid-sized banks with CRE loans above {0}% of assets. In order: offices, retail, logistics centers (check with the regional bank ETF KRE).",
@@ -307,9 +343,17 @@
   "en": "grade D).",
   "zh": "D 級）。"
  },
+ "EIA 발표 일정": {
+  "en": "EIA release schedule",
+  "zh": "EIA 公布時程"
+ },
  "EIA 발표 일정 ↗": {
   "en": "EIA release schedule ↗",
   "zh": "EIA 公布時程 ↗"
+ },
+ "EIA 원유 현물 (원자료)": {
+  "en": "EIA crude oil spot (raw data)",
+  "zh": "EIA 原油現貨(原始資料)"
  },
  "EIA 원유 현물 (원자료) ↗": {
   "en": "EIA crude oil spot (raw data) ↗",
@@ -323,25 +367,53 @@
   "en": "EIA inventory observation",
   "zh": "EIA 庫存觀察日"
  },
+ "EIA 주간 석유 현황 보고서(WPSR)": {
+  "en": "EIA Weekly Petroleum Status Report (WPSR)",
+  "zh": "EIA 每週石油狀況報告(WPSR)"
+ },
  "EIA 주간 석유 현황 보고서(WPSR) ↗": {
   "en": "EIA Weekly Petroleum Status Report (WPSR) ↗",
   "zh": "EIA 每週石油現況報告（WPSR） ↗"
+ },
+ "EIA 주간 석유·천연가스 재고": {
+  "en": "EIA weekly petroleum and natural gas inventories",
+  "zh": "EIA 每週石油與天然氣庫存"
  },
  "EIA 주간 석유·천연가스 재고 ↗": {
   "en": "EIA weekly petroleum & natural gas inventories ↗",
   "zh": "EIA 每週石油與天然氣庫存 ↗"
  },
+ "EIA 주간 재고": {
+  "en": "EIA weekly inventories",
+  "zh": "EIA 每週庫存"
+ },
  "EIA 주간 재고 ↗": {
   "en": "EIA weekly inventories ↗",
   "zh": "EIA 每週庫存 ↗"
+ },
+ "EIA 주간 천연가스 저장 보고서": {
+  "en": "EIA Weekly Natural Gas Storage Report",
+  "zh": "EIA 每週天然氣儲存報告"
  },
  "EIA 주간 천연가스 저장 보고서 ↗": {
   "en": "EIA weekly natural gas storage report ↗",
   "zh": "EIA 每週天然氣儲存報告 ↗"
  },
+ "EIA 천연가스 현물 (원자료)": {
+  "en": "EIA natural gas spot (raw data)",
+  "zh": "EIA 天然氣現貨(原始資料)"
+ },
  "EIA 천연가스 현물 (원자료) ↗": {
   "en": "EIA natural gas spot (raw data) ↗",
   "zh": "EIA 天然氣現貨（原始資料） ↗"
+ },
+ "EIA_API_KEY 없음 — 재고 자료를 받지 못했어요": {
+  "en": "No EIA_API_KEY — could not fetch inventory data",
+  "zh": "沒有 EIA_API_KEY — 無法取得庫存資料"
+ },
+ "EIA가 발표 예정일({0})보다 {1}일 늦어요 — 공식 지연일 수 있어 값을 채우지 않았어요": {
+  "en": "EIA is {1} days later than its scheduled release date ({0}) — this may be an official delay, so values were not filled in",
+  "zh": "EIA 比預定公布日({0})晚了 {1} 天 — 可能是官方延遲,因此未填入數值"
  },
  "FIMA 비중": {
   "en": "FIMA share",
@@ -375,9 +447,17 @@
   "en": "FRED (NY Fed)",
   "zh": "FRED（紐約聯準銀行）"
  },
+ "FRED (원자료 EIA 현물 가격)": {
+  "en": "FRED (raw data: EIA spot prices)",
+  "zh": "FRED(原始資料:EIA 現貨價格)"
+ },
  "FRED (원자료 EIA 현물 가격) ↗": {
   "en": "FRED (raw data: EIA spot prices) ↗",
   "zh": "FRED（原始資料：EIA 現貨價格） ↗"
+ },
+ "FRED (원자료 IMF Primary Commodity Prices)": {
+  "en": "FRED (raw data: IMF Primary Commodity Prices)",
+  "zh": "FRED(原始資料:IMF Primary Commodity Prices)"
  },
  "FRED (원자료 IMF Primary Commodity Prices) ↗": {
   "en": "FRED (raw data: IMF Primary Commodity Prices) ↗",
@@ -387,6 +467,10 @@
   "en": "FRED CCC spread ↗",
   "zh": "FRED CCC 利差 ↗"
  },
+ "FRED CPIAUCSL (물가 보정)": {
+  "en": "FRED CPIAUCSL (inflation adjustment)",
+  "zh": "FRED CPIAUCSL(物價調整)"
+ },
  "FRED CPIAUCSL (물가 보정) ↗": {
   "en": "FRED CPIAUCSL (inflation adjustment) ↗",
   "zh": "FRED CPIAUCSL（物價調整） ↗"
@@ -395,25 +479,57 @@
   "en": "FRED DFII{0} (real yield) ↗",
   "zh": "FRED DFII{0}（實質利率）↗"
  },
+ "FRED PALUMUSDM (IMF 월평균)": {
+  "en": "FRED PALUMUSDM (IMF monthly avg.)",
+  "zh": "FRED PALUMUSDM(IMF 月平均)"
+ },
+ "FRED PCOPPUSDM (IMF 월평균)": {
+  "en": "FRED PCOPPUSDM (IMF monthly avg.)",
+  "zh": "FRED PCOPPUSDM(IMF 月平均)"
+ },
+ "FRED PMAIZMTUSDM (IMF 월평균)": {
+  "en": "FRED PMAIZMTUSDM (IMF monthly avg.)",
+  "zh": "FRED PMAIZMTUSDM(IMF 月平均)"
+ },
  "FRED PMAIZMTUSDM (IMF 월평균) ↗": {
   "en": "FRED PMAIZMTUSDM (IMF monthly average) ↗",
   "zh": "FRED PMAIZMTUSDM（IMF 月平均） ↗"
+ },
+ "FRED PNGASUSUSDM (IMF 월평균)": {
+  "en": "FRED PNGASUSUSDM (IMF monthly avg.)",
+  "zh": "FRED PNGASUSUSDM(IMF 月平均)"
  },
  "FRED PNGASUSUSDM (IMF 월평균) ↗": {
   "en": "FRED PNGASUSUSDM (IMF monthly average) ↗",
   "zh": "FRED PNGASUSUSDM（IMF 月平均） ↗"
  },
+ "FRED POILBREUSDM (IMF 월평균)": {
+  "en": "FRED POILBREUSDM (IMF monthly avg.)",
+  "zh": "FRED POILBREUSDM(IMF 月平均)"
+ },
  "FRED POILBREUSDM (IMF 월평균) ↗": {
   "en": "FRED POILBREUSDM (IMF monthly average) ↗",
   "zh": "FRED POILBREUSDM（IMF 月平均） ↗"
+ },
+ "FRED POILWTIUSDM (IMF 월평균)": {
+  "en": "FRED POILWTIUSDM (IMF monthly avg.)",
+  "zh": "FRED POILWTIUSDM(IMF 月平均)"
  },
  "FRED POILWTIUSDM (IMF 월평균) ↗": {
   "en": "FRED POILWTIUSDM (IMF monthly average) ↗",
   "zh": "FRED POILWTIUSDM（IMF 月平均） ↗"
  },
+ "FRED PSOYBUSDM (IMF 월평균)": {
+  "en": "FRED PSOYBUSDM (IMF monthly avg.)",
+  "zh": "FRED PSOYBUSDM(IMF 月平均)"
+ },
  "FRED PSOYBUSDM (IMF 월평균) ↗": {
   "en": "FRED PSOYBUSDM (IMF monthly average) ↗",
   "zh": "FRED PSOYBUSDM（IMF 月平均） ↗"
+ },
+ "FRED PWHEAMTUSDM (IMF 월평균)": {
+  "en": "FRED PWHEAMTUSDM (IMF monthly avg.)",
+  "zh": "FRED PWHEAMTUSDM(IMF 月平均)"
  },
  "FRED PWHEAMTUSDM (IMF 월평균) ↗": {
   "en": "FRED PWHEAMTUSDM (IMF monthly average) ↗",
@@ -450,6 +566,10 @@
  "FRED WSHOBL (연준 보유 T-Bill) ↗": {
   "en": "FRED WSHOBL (Fed T-bill holdings) ↗",
   "zh": "FRED WSHOBL（聯準會持有 T-Bill）↗"
+ },
+ "FRED {0} (IMF 월평균)": {
+  "en": "FRED {0} (IMF monthly avg.)",
+  "zh": "FRED {0}(IMF 月平均)"
  },
  "FRED 연방부채 총액 ↗": {
   "en": "FRED total federal debt ↗",
@@ -495,9 +615,25 @@
   "en": "HY spread {0}-day change:",
   "zh": "HY 利差 {0} 日變化："
  },
+ "ICE 거래소 WTI({0})도 있지만 기준 계약인 NYMEX만 보여 줘요 (두 계약을 더하지 않아요).": {
+  "en": "ICE also lists WTI ({0}), but only the benchmark NYMEX contract is shown (the two are not added together).",
+  "zh": "ICE 交易所也有 WTI({0}),但這裡只顯示基準合約 NYMEX(兩種合約不會相加)。"
+ },
+ "ICE 거래소 천연가스({0})는 계약 크기가 {1} MMBtu로 달라서 더하지 않아요.": {
+  "en": "ICE natural gas ({0}) has a different contract size of {1} MMBtu, so it is not added.",
+  "zh": "ICE 交易所的天然氣({0})合約規模不同,為 {1} MMBtu,因此不相加。"
+ },
+ "IMF {0}차 상품 가격 (원자료)": {
+  "en": "IMF primary commodity prices, {0} (raw data)",
+  "zh": "IMF 初級商品價格 {0}(原始資料)"
+ },
  "IMF {0}차 상품 가격 (원자료) ↗": {
   "en": "IMF Primary Commodity Prices, stage {0} (raw data) ↗",
   "zh": "IMF 第{0}階段商品價格（原始資料） ↗"
+ },
+ "IMF — 출처 표시": {
+  "en": "IMF — attribution required",
+  "zh": "IMF — 需標示出處"
  },
  "IMF 국제금융안정보고서 (원본 대시보드 정리)": {
   "en": "IMF Global Financial Stability Report (original dashboard summary)",
@@ -551,6 +687,10 @@
   "en": "MOVE index ({0} months)",
   "zh": "MOVE 指數（{0} 個月）"
  },
+ "Managed Money (투기자금)": {
+  "en": "Managed Money (speculative money)",
+  "zh": "Managed Money(投機資金)"
+ },
  "NFCI (금융여건)": {
   "en": "NFCI (financial conditions)",
   "zh": "NFCI（金融情勢）"
@@ -598,6 +738,10 @@
  "ON RRP (역레포)": {
   "en": "ON RRP (reverse repo)",
   "zh": "ON RRP（逆回購）"
+ },
+ "Other Reportables (기타 대형)": {
+  "en": "Other Reportables (other large traders)",
+  "zh": "Other Reportables(其他大型交易人)"
  },
  "PDF로 저장": {
   "en": "Save as PDF",
@@ -651,6 +795,10 @@
   "en": "Domestic and foreign customer orders placed through Primary Dealers. Includes foreign central banks, but ",
   "zh": "透過 Primary Dealer 進來的國內外客戶委託，也包含外國央行，但"
  },
+ "Producer/Merchant (생산·실수요)": {
+  "en": "Producer/Merchant (producers & end users)",
+  "zh": "Producer/Merchant(生產商與實際需求者)"
+ },
  "QRA(국채 발행 계획)": {
   "en": "QRA (Treasury issuance plan)",
   "zh": "QRA（公債發行計畫）"
@@ -694,6 +842,10 @@
  "SRF 사용액이 늘면 민간 레포가 막혔다는 뜻이에요.": {
   "en": "If SRF usage grows, it means private repo is clogged.",
   "zh": "SRF 使用量增加，代表民間附買回市場塞住了。"
+ },
+ "Swap Dealer (스와프 딜러)": {
+  "en": "Swap Dealer (swap dealers)",
+  "zh": "Swap Dealer(交換交易商)"
  },
  "T-Bill 비중": {
   "en": "T-bill share",
@@ -743,6 +895,10 @@
   "en": "WTI crude oil",
   "zh": "WTI 原油"
  },
+ "Yahoo Finance 선물 시세 (등락률만, 참고)": {
+  "en": "Yahoo Finance futures quotes (change rates only, reference)",
+  "zh": "Yahoo Finance 期貨報價(僅漲跌幅,參考)"
+ },
  "Yahoo Finance 선물 시세 (등락률만, 참고) ↗": {
   "en": "Yahoo Finance futures quotes (% change only, reference) ↗",
   "zh": "Yahoo Finance 期貨報價（僅漲跌幅，參考） ↗"
@@ -751,37 +907,85 @@
   "en": "Yahoo Finance). It is not investment advice; please check the original source via the link next to each number.",
   "zh": "Yahoo Finance）的結果。非投資建議，請務必透過數字旁的資料來源連結確認原文。"
  },
+ "Yahoo GC=F (참고)": {
+  "en": "Yahoo GC=F (reference)",
+  "zh": "Yahoo GC=F(參考)"
+ },
  "Yahoo GC=F (참고) ↗": {
   "en": "Yahoo GC=F (reference) ↗",
   "zh": "Yahoo GC=F（參考） ↗"
+ },
+ "Yahoo HG=F (참고)": {
+  "en": "Yahoo HG=F (reference)",
+  "zh": "Yahoo HG=F(參考)"
  },
  "Yahoo HG=F (참고) ↗": {
   "en": "Yahoo HG=F (reference) ↗",
   "zh": "Yahoo HG=F（參考） ↗"
  },
+ "Yahoo PL=F (참고)": {
+  "en": "Yahoo PL=F (reference)",
+  "zh": "Yahoo PL=F(參考)"
+ },
  "Yahoo PL=F (참고) ↗": {
   "en": "Yahoo PL=F (reference) ↗",
   "zh": "Yahoo PL=F（參考） ↗"
+ },
+ "Yahoo SI=F (참고)": {
+  "en": "Yahoo SI=F (reference)",
+  "zh": "Yahoo SI=F(參考)"
  },
  "Yahoo SI=F (참고) ↗": {
   "en": "Yahoo SI=F (reference) ↗",
   "zh": "Yahoo SI=F（參考） ↗"
  },
+ "Yahoo ZC=F (참고)": {
+  "en": "Yahoo ZC=F (reference)",
+  "zh": "Yahoo ZC=F(參考)"
+ },
  "Yahoo ZC=F (참고) ↗": {
   "en": "Yahoo ZC=F (reference) ↗",
   "zh": "Yahoo ZC=F（參考） ↗"
+ },
+ "Yahoo ZS=F (참고)": {
+  "en": "Yahoo ZS=F (reference)",
+  "zh": "Yahoo ZS=F(參考)"
  },
  "Yahoo ZS=F (참고) ↗": {
   "en": "Yahoo ZS=F (reference) ↗",
   "zh": "Yahoo ZS=F（參考） ↗"
  },
+ "Yahoo ZW=F (참고)": {
+  "en": "Yahoo ZW=F (reference)",
+  "zh": "Yahoo ZW=F(參考)"
+ },
  "Yahoo ZW=F (참고) ↗": {
   "en": "Yahoo ZW=F (reference) ↗",
   "zh": "Yahoo ZW=F（參考） ↗"
  },
+ "Yahoo {0} (참고)": {
+  "en": "Yahoo {0} (reference)",
+  "zh": "Yahoo {0}(參考)"
+ },
  "{0} ({1}달러 기준)": {
   "en": "{0} (per ${1})",
   "zh": "{0}（以每 {1} 美元計）"
+ },
+ "{0} Bcf — {1}년 평균과 비슷해요": {
+  "en": "{0} Bcf — similar to the {1}-year average",
+  "zh": "{0} Bcf — 與 {1} 年平均相近"
+ },
+ "{0} {1} ({2}) · {0}주 {3}": {
+  "en": "{0} {1} ({2}) · {0}W {3}",
+  "zh": "{0} {1}({2})· {0}週 {3}"
+ },
+ "{0} 달러/MMBtu ({1}월 {2}일) · {3}주 {4}%": {
+  "en": "{0} USD/MMBtu ({1}/{2}) · {3}W {4}%",
+  "zh": "{0} 美元/MMBtu({1}/{2})· {3}週 {4}%"
+ },
+ "{0} 달러/배럴 ({1}월 {2}일) · {3}주 {4}%": {
+  "en": "{0} USD/bbl ({1}/{2}) · {3}W {4}%",
+  "zh": "{0} 美元/桶({1}/{2})· {3}週 {4}%"
  },
  "{0} 위면 사 둔 쪽이 많고, 아래면 팔아 둔 쪽이 많아요": {
   "en": "Above {0} means more is bought; below means more is sold",
@@ -798,6 +1002,22 @@
  "{0} 정상": {
   "en": "{0} normal",
   "zh": "{0} 正常"
+ },
+ "{0} 천 배럴": {
+  "en": "{0} thousand barrels",
+  "zh": "{0} 千桶"
+ },
+ "{0} 천 배럴 — {1}년 평균보다 {2}% 적어요 (빠듯)": {
+  "en": "{0} thousand barrels — {2}% below the {1}-year average (tight)",
+  "zh": "{0} 千桶 — 比 {1} 年平均少 {2}%(吃緊)"
+ },
+ "{0}% ({0}년 {1}bp)": {
+  "en": "{0}% ({0}-yr {1}bp)",
+  "zh": "{0}%({0}年 {1}bp)"
+ },
+ "{0}% ({1}년 {2}bp)": {
+  "en": "{0}% ({1}-yr {2}bp)",
+  "zh": "{0}%({1}年 {2}bp)"
  },
  "{0}% 넘으면 ‘이자 악순환(Interest Expense Spiral)’ 경계": {
   "en": "Above {0}%, watch for an “Interest Expense Spiral”",
@@ -1035,6 +1255,14 @@
   "en": "{0} months",
   "zh": "{0} 個月"
  },
+ "{0}개월 {0}": {
+  "en": "{0}-mo {0}",
+  "zh": "{0} 個月 {0}"
+ },
+ "{0}개월 {0}%": {
+  "en": "{0}-mo {0}%",
+  "zh": "{0} 個月 {0}%"
+ },
  "{0}개월 {1}%": {
   "en": "{0} months {1}%",
   "zh": "{0}個月 {1}%"
@@ -1059,9 +1287,37 @@
   "en": "net short {0} contracts",
   "zh": "淨賣超 {0} 口"
  },
+ "{0}계약 순매도 — {1}년 중 가장 낮은 쪽(비관 극단) · {2}주 동안 순매수 {3}계약 감소": {
+  "en": "Net short {0} contracts — the lowest end within {1} years (extreme bearish) · over {2} weeks net long fell by {3} contracts",
+  "zh": "淨賣超 {0} 口 — 處於 {1} 年中最低端(悲觀極端)· {2} 週內淨買超減少 {3} 口"
+ },
+ "{0}계약 순매도 — {1}년 중 중간 · {2}주 동안 순매수 {3}계약 감소": {
+  "en": "Net short {0} contracts — middle within {1} years · over {2} weeks net long fell by {3} contracts",
+  "zh": "淨賣超 {0} 口 — 處於 {1} 年中的中間水準 · {2} 週內淨買超減少 {3} 口"
+ },
  "{0}계약 순매수": {
   "en": "net long {0} contracts",
   "zh": "淨買超 {0} 口"
+ },
+ "{0}계약 순매수 — {1}년 중 가장 낮은 쪽(비관 극단) · {2}주 동안 순매수 {3}계약 감소": {
+  "en": "Net long {0} contracts — the lowest end within {1} years (extreme bearish) · over {2} weeks net long fell by {3} contracts",
+  "zh": "淨買超 {0} 口 — 處於 {1} 年中最低端(悲觀極端)· {2} 週內淨買超減少 {3} 口"
+ },
+ "{0}계약 순매수 — {1}년 중 낮은 편 · {2}주 동안 순매수 {3}계약 감소": {
+  "en": "Net long {0} contracts — on the low side within {1} years · over {2} weeks net long fell by {3} contracts",
+  "zh": "淨買超 {0} 口 — 處於 {1} 年中偏低水準 · {2} 週內淨買超減少 {3} 口"
+ },
+ "{0}계약 순매수 — {1}년 중 높은 편 · {2}주 동안 순매수 {3}계약 감소": {
+  "en": "Net long {0} contracts — on the high side within {1} years · over {2} weeks net long fell by {3} contracts",
+  "zh": "淨買超 {0} 口 — 處於 {1} 年中偏高水準 · {2} 週內淨買超減少 {3} 口"
+ },
+ "{0}계약 순매수 — {1}년 중 중간 · {2}주 동안 순매수 {3}계약 감소": {
+  "en": "Net long {0} contracts — middle within {1} years · over {2} weeks net long fell by {3} contracts",
+  "zh": "淨買超 {0} 口 — 處於 {1} 年中的中間水準 · {2} 週內淨買超減少 {3} 口"
+ },
+ "{0}과 비슷해요": {
+  "en": "Similar to {0}",
+  "zh": "與{0}相近"
  },
  "{0}년": {
   "en": "{0}Y",
@@ -1070,6 +1326,10 @@
  "{0}년 TIPS 금리 (FRED)": {
   "en": "{0}-year TIPS yield (FRED)",
   "zh": "{0}年期 TIPS 殖利率（FRED）"
+ },
+ "{0}년 {0}bp": {
+  "en": "{0}-yr {0}bp",
+  "zh": "{0}年 {0}bp"
  },
  "{0}년 {1}%": {
   "en": "{0} years {1}%",
@@ -1087,6 +1347,18 @@
   "en": "{0}-year term premium trend (%)",
   "zh": "{0} 年期限溢酬走勢（%）"
  },
+ "{0}년 기준 비싼 구간에서 더 오르는 중 — 높은 가격은 증산을 불러 오래가지 않는 경우가 많아요.": {
+  "en": "Still rising in an expensive range based on {0} years — high prices tend to bring more production, so this often does not last long.",
+  "zh": "在 {0} 年基準的高價區間中仍在上漲 — 高價容易帶來增產,往往不會持續太久。"
+ },
+ "{0}년 기준 싼 구간에서 아직 내리는 중 — 재고 감소·투기자금 유입 같은 바닥 신호를 기다리는 자리예요.": {
+  "en": "Cheap range based on {0} years and still falling — this is the spot to wait for trough signals such as falling inventories and speculative money inflows.",
+  "zh": "以 {0} 年為基準處於低價區間,且仍在下跌 — 要等待庫存減少、投機資金流入等谷底訊號出現。"
+ },
+ "{0}년 기준으로 높지도 낮지도 않고, 방향도 뚜렷하지 않아요.": {
+  "en": "Based on {0} years, it is neither high nor low, and the direction is not clear.",
+  "zh": "以 {0} 年為基準,價格不高也不低,方向也不明確。"
+ },
  "{0}년 내 채무 만기": {
   "en": "debt maturing within {0} years,",
   "zh": "{0} 年內到期的債務、"
@@ -1103,6 +1375,14 @@
   "en": "Within {0}-year range",
   "zh": "在{0}年區間內"
  },
+ "{0}년 범위보다 많음 (넉넉)": {
+  "en": "Above the {0}-year range (ample)",
+  "zh": "高於 {0} 年範圍(充裕)"
+ },
+ "{0}년 범위보다 적음 (빠듯)": {
+  "en": "Below the {0}-year range (tight)",
+  "zh": "低於 {0} 年範圍(吃緊)"
+ },
  "{0}년 변화 (위 = 오르는 중)": {
   "en": "{0}Y change (up = rising)",
   "zh": "{0}年變化（上＝上升中）"
@@ -1115,6 +1395,18 @@
   "en": "Rising over {0} years (below {1}%) = ② Recovery",
   "zh": "{0}年上升（低於 {1}%） ＝ ② 復甦期"
  },
+ "{0}년 실질가격 사이클:": {
+  "en": "{0}-year real price cycle:",
+  "zh": "{0} 年實質價格循環:"
+ },
+ "{0}년 실질가격 사이클: ① 바닥권 천연가스 (헨리허브) / ② 회복기 WTI 원유, 브렌트유, 옥수수, 대두, 소맥 (SRW) / ③ 과열·고점권 구리, 알루미늄.": {
+  "en": "{0}-year real price cycle: ① Trough Natural gas (Henry Hub) / ② Recovery WTI crude oil, Brent crude, corn, soybeans, wheat (SRW) / ③ Overheated / near peak copper, aluminum.",
+  "zh": "{0} 年實質價格循環:① 谷底區 天然氣(亨利港)/ ② 復甦期 WTI 原油、布蘭特原油、玉米、黃豆、小麥(SRW)/ ③ 過熱·高點區 銅、鋁。"
+ },
+ "{0}년 실질가격 중 {1}% 높이": {
+  "en": "Higher than {1}% of {0}-year real prices",
+  "zh": "高於 {0} 年實質價格中的 {1}%"
+ },
  "{0}년 안에 다시 빌려야 하는 단기채(Bills) 잔액만으로 계산한 최소치": {
   "en": "Minimum estimate, based only on the T-bills (Bills) that must be rolled over within {0} year",
   "zh": "僅以 {0} 年內必須再借新還舊的短期國庫券（Bills）餘額計算的最低值"
@@ -1123,9 +1415,21 @@
   "en": "Short-term Treasuries of {0} years or less",
   "zh": "{0} 年以下的短期公債"
  },
+ "{0}년 중 {0}% 높이": {
+  "en": "Over {0} years: above {0}% of the period",
+  "zh": "{0} 年中高於 {0}%"
+ },
  "{0}년 중 {1}% 높이": {
   "en": "at {1}% of the {0}-year range",
   "zh": "位於 {0} 年區間的 {1}% 高度"
+ },
+ "{0}년 중 가장 낮은 쪽(비관 극단)": {
+  "en": "Lowest end within {0} years (extreme bearish)",
+  "zh": "處於 {0} 年中最低端(悲觀極端)"
+ },
+ "{0}년 중 가장 높은 쪽(쏠림 극단)": {
+  "en": "Highest end within {0} years (crowding extreme)",
+  "zh": "處於 {0} 年中最高端(擁擠極端)"
  },
  "{0}년 중 낮은 편": {
   "en": "On the low side within {0} years",
@@ -1143,6 +1447,10 @@
   "en": "Middle within {0} years",
   "zh": "在{0}年中屬中段"
  },
+ "{0}년 평균": {
+  "en": "{0}-year average",
+  "zh": "{0} 年平均"
+ },
  "{0}년 평균 재고": {
   "en": "{0}-year average inventory",
   "zh": "{0}年平均庫存"
@@ -1155,9 +1463,45 @@
   "en": "about the same as the {0}-year average",
   "zh": "與 {0} 年平均相近"
  },
+ "{0}년 평균과 비슷해요 (넉넉)": {
+  "en": "about the same as the {0}-year average (ample)",
+  "zh": "與{0}年平均相近（充裕）"
+ },
+ "{0}년 평균과 비슷해요 (빠듯)": {
+  "en": "about the same as the {0}-year average (tight)",
+  "zh": "與{0}年平均相近（吃緊）"
+ },
  "{0}년 평균보다": {
   "en": "vs. the {0}-year average",
   "zh": "相較{0}年平均"
+ },
+ "{0}년 평균보다 {0}%": {
+  "en": "vs. {0}-year average: {0}%",
+  "zh": "對照 {0} 年平均:{0}%"
+ },
+ "{0}년 평균보다 {1}%": {
+  "en": "{1}% vs. the {0}-year average",
+  "zh": "較 {0} 年平均 {1}%"
+ },
+ "{0}년 평균보다 {1}% · {2}년 {3}%": {
+  "en": "{1}% vs. the {0}-year average · {2}-yr {3}%",
+  "zh": "較 {0} 年平均 {1}% · {2}年 {3}%"
+ },
+ "{0}년 평균보다 {1}% 많아요": {
+  "en": "{1}% above the {0}-year average",
+  "zh": "比{0}年平均多 {1}%"
+ },
+ "{0}년 평균보다 {1}% 많아요 (넉넉)": {
+  "en": "{1}% above the {0}-year average (ample)",
+  "zh": "比{0}年平均多 {1}%（充裕）"
+ },
+ "{0}년 평균보다 {1}% 적어요": {
+  "en": "{1}% below the {0}-year average",
+  "zh": "比{0}年平均少 {1}%"
+ },
+ "{0}년 평균보다 {1}% 적어요 (빠듯)": {
+  "en": "{1}% below the {0}-year average (tight)",
+  "zh": "比{0}年平均少 {1}%（吃緊）"
  },
  "{0}년물": {
   "en": "{0}-year yield",
@@ -1223,9 +1567,17 @@
   "en": "{0} times",
   "zh": "{0} 次"
  },
+ "{0}보다 {1}% {2}": {
+  "en": "{1}% {2} than {0}",
+  "zh": "比{0}{2} {1}%"
+ },
  "{0}억엔": {
   "en": "¥{0} hundred million",
   "zh": "{0} 億日圓"
+ },
+ "{0}월 {1}일": {
+  "en": "{0}/{1}",
+  "zh": "{0}/{1}"
  },
  "{0}월 {1}일({2}일)과 비교": {
   "en": "vs. {0}/{1} ({2})",
@@ -1238,6 +1590,18 @@
  "{0}월 평균": {
   "en": "Month {0} average",
   "zh": "{0}月平均"
+ },
+ "{0}월 평균 {1} {2}": {
+  "en": "avg. for month {0}: {1} {2}",
+  "zh": "{0} 月平均 {1} {2}"
+ },
+ "{0}월 평균 {1} 달러/톤": {
+  "en": "Month {0} average {1} USD/t",
+  "zh": "{0} 月平均 {1} 美元/公噸"
+ },
+ "{0}월 평균 {1} 달러/톤 · 이번 주 선물 {2}% (참고)": {
+  "en": "Month {0} average {1} USD/t · this week's futures {2}% (reference)",
+  "zh": "{0} 月平均 {1} 美元/公噸 · 本週期貨 {2}%(參考)"
  },
  "{0}일": {
   "en": "{0} days",
@@ -1291,6 +1655,14 @@
   "en": "{0} weeks {1}bp",
   "zh": "{0} 週 {1}bp"
  },
+ "{0}주 동안 순매수 {1}계약 감소": {
+  "en": "net long down {1} contracts over {0} weeks",
+  "zh": "{0}週來淨買超減少 {1} 口"
+ },
+ "{0}주 동안 순매수 {1}계약 증가": {
+  "en": "net long up {1} contracts over {0} weeks",
+  "zh": "{0}週來淨買超增加 {1} 口"
+ },
  "{0}주 변화": {
   "en": "{0}-week change",
   "zh": "{0} 週變化"
@@ -1331,6 +1703,14 @@
   "en": "· CFTC positions: observed {0}/{1} (Tue)",
   "zh": "· CFTC 持倉：觀察日 {0}/{1}（二）"
  },
+ "· {0}년 {0}%": {
+  "en": "· {0}-yr {0}%",
+  "zh": "· {0}年 {0}%"
+ },
+ "· {0}주 동안 순매수 {0}계약 {1}": {
+  "en": "· {0} weeks: net long {0} contracts, {1}",
+  "zh": "· {0} 週內淨買超 {0} 口,{1}"
+ },
  "· 가격: 관측 {0}월 평균": {
   "en": "· Price: observed monthly average of month {0}",
   "zh": "· 價格：觀察期為{0}月平均"
@@ -1338,6 +1718,10 @@
  "· 등락률: 관측 {0}/{1}(목)": {
   "en": "· % change: observed {0}/{1} (Thu)",
   "zh": "· 漲跌幅：觀察日 {0}/{1}（四）"
+ },
+ "· 이번 주 선물 {0} (참고)": {
+  "en": "· this week's futures {0} (reference)",
+  "zh": "· 本週期貨 {0}(參考)"
  },
  "· 장기 사이클: {0}월 월평균까지": {
   "en": "· Long-term cycle: monthly average through month {0}",
@@ -1354,6 +1738,10 @@
  "— 굵은 줄이 한 줄 해석, 아래는 근거 숫자": {
   "en": "— the bold line is the one-line reading; below are the supporting numbers",
   "zh": "— 粗體為一句話解讀，下方為依據數字"
+ },
+ "— 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요.": {
+  "en": "— when crowding is extreme, even small news can trigger a big move the other way.",
+  "zh": "— 擁擠到極端時,一點小消息也可能引發大幅反向波動。"
  },
  "‘Indirect Bidder = 외국인’이 아니라 실제로 누가 받았는지": {
   "en": "Not \"Indirect Bidder = foreigners\" but who actually took it",
@@ -1707,6 +2095,46 @@
   "en": "⭐ Overall view",
   "zh": "⭐ 綜合意見"
  },
+ "「① 바닥권」": {
+  "en": "“① Trough”",
+  "zh": "「① 谷底區」"
+ },
+ "「① 추세 매수」": {
+  "en": "“① Trend buying”",
+  "zh": "「① 趨勢買進」"
+ },
+ "「② 투기자금 없이 상승」": {
+  "en": "“② Rising without speculative money”",
+  "zh": "「② 無投機資金支撐的上漲」"
+ },
+ "「② 회복기」": {
+  "en": "“② Recovery”",
+  "zh": "「② 復甦期」"
+ },
+ "「③ 과열·고점권」": {
+  "en": "“③ Overheated / near peak”",
+  "zh": "「③ 過熱・高點區」"
+ },
+ "「③ 하락 중 저가 매수」": {
+  "en": "“③ Dip buying during a decline”",
+  "zh": "「③ 下跌中逢低買進」"
+ },
+ "「④ 매도 추세 확인」": {
+  "en": "“④ Selling trend confirmed”",
+  "zh": "「④ 賣壓趨勢確認」"
+ },
+ "「④ 하강기」": {
+  "en": "“④ Downturn”",
+  "zh": "「④ 下行期」"
+ },
+ "「변화 거의 없음」": {
+  "en": "“Little change”",
+  "zh": "「幾乎沒有變化」"
+ },
+ "「중간 지대」": {
+  "en": "“Middle zone”",
+  "zh": "「中間地帶」"
+ },
  "가 {0}%를 떠안았어요": {
   "en": " took {0}%",
   "zh": " 承接了 {0}%"
@@ -1775,6 +2203,10 @@
   "en": "They trade to reduce price risk (hedging). Usually producers, so they are often net short.",
   "zh": "他們交易是為了降低價格風險（避險）。通常是生產商，因此多半持有較多空單。"
  },
+ "가격 자료가 {0}일 지났어요": {
+  "en": "Price data is {0} days old",
+  "zh": "價格資料已過 {0} 天"
+ },
  "가격 하락": {
   "en": "price drop",
   "zh": "價格下跌"
@@ -1803,9 +2235,33 @@
   "en": "Looking at price alone doesn't tell you “why it moved.” Looking at money crowding (positioning) together with the physical situation (inventory) helps you judge whether a move will last or is temporary.",
   "zh": "只看價格，看不出「為什麼會動」。把資金的擁擠程度（持倉）和實物狀況（庫存）一起看，就能判斷這波走勢會持續還是只是一時。"
  },
+ "가격은 약세인데 재고는 {0}년 평균보다 적어요 — 실물은 빠듯해 반등 여지가 있어요.": {
+  "en": "Prices are weak, but inventories are below the {0}-year average — physical supply is tight, so there is room for a rebound.",
+  "zh": "價格偏弱,但庫存低於 {0} 年平均 — 實體供給吃緊,有反彈空間。"
+ },
+ "가격은 오름세인데 재고는 {0}년 평균보다 많아요 — 실물이 받쳐 주지 않는 상승일 수 있어요.": {
+  "en": "Prices are trending up, but inventories are above the {0}-year average — the rise may lack physical support.",
+  "zh": "價格呈上升趨勢,但庫存高於 {0} 年平均 — 這可能是缺乏實體支撐的上漲。"
+ },
+ "가격은 올랐지만 투기자금은 오히려 줄였어요 — 숏 커버(빌려 판 것 되사기)나 실수요가 끌어올린 상승일 수 있어 지속되는지 확인이 필요해요.": {
+  "en": "Prices rose but speculative money actually cut back — the rise may be driven by short covering (buying back what was borrowed and sold) or by end users, so check whether it lasts.",
+  "zh": "價格上漲,但投機資金反而減碼 — 這波上漲可能是空單回補(回頭買回先前借來賣掉的部位)或實際需求者推升,需確認能否持續。"
+ },
  "가격을 맞히려는 화면이 아니라, 가격을 움직이는 구조": {
   "en": "Not a screen for guessing prices, but for the structure that moves them:",
   "zh": "不是用來猜價格的頁面，而是看價格背後的結構："
+ },
+ "가격이 내리고 투기자금도 빠져나갔어요 — 하락 흐름을 돈이 확인해 주는 모습이에요.": {
+  "en": "Prices fell and speculative money left too — money is confirming the downtrend.",
+  "zh": "價格下跌,投機資金也跟著撤出 — 資金印證了下跌趨勢。"
+ },
+ "가격이 내리는데 투기자금은 더 샀어요 — 바닥을 찾는 매수일 수도, 성급한 매수일 수도 있어요.": {
+  "en": "Prices are falling but speculative money bought more — it could be bottom-fishing, or buying too early.",
+  "zh": "價格下跌,投機資金卻加碼買進 — 可能是在找底的買盤,也可能只是太早進場。"
+ },
+ "가격이 오르는데 투기자금도 더 샀어요 — 상승을 돈이 따라붙는 모습이에요.": {
+  "en": "Prices are rising and speculative money bought more too — money is following the rise.",
+  "zh": "價格上漲,投機資金也加碼買進 — 資金跟著上漲趨勢進場。"
  },
  "가로 = 그 주 가격 변화(%), 세로 = 투기자금 순매수 변화(미결제약정 대비 %). 회색 점선은 지난 {0}주 궤적, 주황 점이 이번 주. 가운데 회색 띠(±{1}%)는 “변화 거의 없음”. 가격 변화는 Yahoo 선물 등락률(참고)이에요.": {
   "en": "Horizontal = that week's price change (%), vertical = change in speculative net buying (% of open interest). The gray dotted line is the past {0}-week path and the orange dot is this week. The gray band in the middle (±{1}%) means “little change.” Price change is the Yahoo futures % change (reference).",
@@ -1818,6 +2274,10 @@
  "각 칸 아래": {
   "en": "Under each cell",
   "zh": "各格下方"
+ },
+ "강해져 원자재 전반에 역풍": {
+  "en": "is strengthening, a headwind for commodities overall",
+  "zh": "走強,對原物料整體是逆風"
  },
  "같은 {0}억이라도 Coupon은 Primary Dealer가 먼저 받아 넘기는 과정이 필요해서 레포 충격이 Bill의 약 {1}배예요. 게다가 지금은 역레포 쿠션이 {2}B로 거의 바닥이라, “누가 새 국채를 받아줄지”가 더 중요해졌어요.": {
   "en": "Even for the same {0}, Coupon issuance needs Primary Dealers to take it first and pass it on, so the repo impact is about {1}x that of Bills. On top of that, the reverse repo cushion is now almost gone at {2}B, so \"who will absorb new Treasuries\" matters more.",
@@ -1870,6 +2330,10 @@
  "경계 {0}": {
   "en": "Caution {0}",
   "zh": "警戒 {0}"
+ },
+ "경기·계절(난방·운전 수요)·산유국 공급 결정에 가장 민감해요.": {
+  "en": "Most sensitive to the economy, seasons (heating and driving demand), and oil-producer supply decisions.",
+  "zh": "對景氣、季節(暖氣與開車需求)和產油國的供給決策最敏感。"
  },
  "경로 A(빠른 전이) 상태:": {
   "en": "Path A (fast transmission) status:",
@@ -1951,9 +2415,21 @@
   "en": "Disclosure formats vary",
   "zh": "揭露格式不一"
  },
+ "공식 (EIA 현물, FRED)": {
+  "en": "Official (EIA spot, FRED)",
+  "zh": "官方(EIA 現貨、FRED)"
+ },
  "공식 무료 가격 없음": {
   "en": "No official free price",
   "zh": "無官方免費價格"
+ },
+ "공식 무료 가격 없음 · 선물 등락률 {0}주 {0}, {1}주 {1} (참고)": {
+  "en": "No official free price · futures change {0}W {0}, {1}W {1} (reference)",
+  "zh": "無官方免費價格 · 期貨漲跌幅 {0}週 {0}、{1}週 {1}(參考)"
+ },
+ "공식 무료 가격 없음 · 선물 등락률 {0}주 {1}%, {2}주 {3}% (참고)": {
+  "en": "No official free price · futures change {0}W {1}%, {2}W {3}% (reference)",
+  "zh": "無官方免費價格 · 期貨漲跌幅 {0}週 {1}%、{2}週 {3}%(參考)"
  },
  "공식 무료 자료 없음": {
   "en": "No official free data",
@@ -1974,6 +2450,10 @@
  "공식 추정치": {
   "en": "Official estimate",
   "zh": "官方估計值"
+ },
+ "공장·건설·전력망에 쓰여서 세계 경기, 특히 중국 제조업의 체온계예요.": {
+  "en": "It is used in factories, construction and power grids, so it is a thermometer for the global economy, especially Chinese manufacturing.",
+  "zh": "銅用在工廠、建築和電網上,因此是全球景氣的溫度計,尤其反映中國製造業。"
  },
  "공통 바람": {
   "en": "Common tailwinds/headwinds",
@@ -2107,6 +2587,10 @@
   "en": "As of that week's Tuesday",
   "zh": "以該週週二為基準"
  },
+ "그대로였어요": {
+  "en": "Unchanged",
+  "zh": "沒有變化"
+ },
  "그룹": {
   "en": "Group",
   "zh": "組別"
@@ -2142,6 +2626,14 @@
  "금 ÷ S&P{0}": {
   "en": "Gold ÷ S&P{0}",
   "zh": "黃金 ÷ S&P{0}"
+ },
+ "금·은은 이자가 나오지 않아서, 물가를 뺀 금리가 오르면 들고 있는 비용(기회비용)이 커져요.": {
+  "en": "Gold and silver pay no interest, so when inflation-adjusted rates rise, the cost of holding them (opportunity cost) goes up.",
+  "zh": "黃金和白銀不會產生利息,所以扣除物價後的利率上升時,持有它們的成本(機會成本)就會增加。"
+ },
+ "금·은을 들고 있는 기회비용이 커짐 (역풍)": {
+  "en": "The opportunity cost of holding gold and silver rises (headwind)",
+  "zh": "持有黃金、白銀的機會成本上升(逆風)"
  },
  "금리": {
   "en": "Yields",
@@ -2239,6 +2731,10 @@
   "en": "As-of date",
   "zh": "資料基準日"
  },
+ "기회비용이 줄어듦 (순풍)": {
+  "en": "Opportunity cost falls (tailwind)",
+  "zh": "機會成本下降(順風)"
+ },
  "긴 흐름에서 지금은 어디쯤?": {
   "en": "Where are we in the long cycle?",
   "zh": "在長期循環中，目前在哪個位置？"
@@ -2255,6 +2751,10 @@
   "en": "Optimistic",
   "zh": "樂觀"
  },
+ "낙관 극단 {0}": {
+  "en": "Extreme bullish {0}",
+  "zh": "樂觀極端 {0}"
+ },
  "낙찰금리 > 쿠폰 = 할인 발행(수요 부진), < 쿠폰 = 수요 강함.": {
   "en": "Auction yield > coupon = sold at a discount (weak demand); < coupon = strong demand.",
   "zh": "得標利率 > 票面利率 = 折價發行（需求疲弱）；< 票面利率 = 需求強勁。"
@@ -2262,6 +2762,10 @@
  "낙찰자별 비중 설명": {
   "en": "About the share by winning bidder",
   "zh": "得標者占比說明"
+ },
+ "날씨와 수확 전망에 따라 계절적으로 크게 움직이고, 투기자금이 자주 극단까지 가요.": {
+  "en": "It swings a lot with the seasons depending on weather and harvest outlooks, and speculative money often goes to extremes.",
+  "zh": "價格會隨天氣與收成預期出現明顯的季節性波動,投機資金也常常走到極端。"
  },
  "날짜": {
   "en": "Date",
@@ -2279,6 +2783,10 @@
   "en": "Remaining capacity",
   "zh": "剩餘額度"
  },
+ "낮거나 중간 높이에서 오르기 시작했어요. 재고가 줄고 투기자금이 따라붙는지 확인하는 단계예요.": {
+  "en": "It has started rising from a low or middle level. This is the stage to check whether inventories are falling and speculative money is following.",
+  "zh": "價格從低檔或中間水準開始上漲。這個階段要確認庫存是否減少、投機資金是否跟進。"
+ },
  "낮음": {
   "en": "Low",
   "zh": "低"
@@ -2294,6 +2802,10 @@
  "내러티브 괴리": {
   "en": "Narrative gap",
   "zh": "敘事落差"
+ },
+ "내려 금·은에 순풍이에요": {
+  "en": "fell, a tailwind for gold and silver",
+  "zh": "下降,對黃金、白銀是順風"
  },
  "내림": {
   "en": "down",
@@ -2330,6 +2842,10 @@
  "늘 경고하는 편": {
   "en": "Usually the one sounding alarms",
   "zh": "通常是愛發警告的一方"
+ },
+ "늘었어요": {
+  "en": "Increased",
+  "zh": "增加"
  },
  "늦게 움직임": {
   "en": "Slow to move",
@@ -2403,9 +2919,21 @@
   "en": "US dollar",
   "zh": "美元"
  },
+ "달러 (연준 달러지수)": {
+  "en": "Dollar (Fed dollar index)",
+  "zh": "美元(聯準會美元指數)"
+ },
+ "달러 강세 — 원자재에 역풍": {
+  "en": "Strong dollar — headwind for commodities",
+  "zh": "美元走強 — 對原物料是逆風"
+ },
  "달러 급등 + 위험자산 약세": {
   "en": "Dollar surges + risk assets weaken",
   "zh": "美元急升 + 風險資產走弱"
+ },
+ "달러 약세 — 원자재에 순풍": {
+  "en": "Weak dollar — tailwind for commodities",
+  "zh": "美元走弱 — 對原物料是順風"
  },
  "달러 조달": {
   "en": "Dollar funding",
@@ -2435,9 +2963,29 @@
   "en": "USD/ton",
   "zh": "美元/噸"
  },
+ "달러가 {0}": {
+  "en": "The dollar {0}",
+  "zh": "美元{0}"
+ },
  "달러가 강하면 원자재 전반에 역풍, 실질금리가 오르면 금·은에 역풍이에요.": {
   "en": "A strong dollar is a headwind for commodities overall; rising real yields are a headwind for gold and silver.",
   "zh": "美元強勢對原物料整體是逆風；實質殖利率上升則對黃金與白銀是逆風。"
+ },
+ "달러가 강해져 원자재 전반에 역풍이에요": {
+  "en": "The dollar is strengthening — a headwind for commodities overall",
+  "zh": "美元走強，對原物料整體是逆風"
+ },
+ "달러가 약해져 원자재 전반에 순풍이에요": {
+  "en": "The dollar is weakening — a tailwind for commodities overall",
+  "zh": "美元走弱，對原物料整體是順風"
+ },
+ "달러가 큰 방향이 없어 영향이 작아요": {
+  "en": "The dollar has no clear direction, so its impact is small",
+  "zh": "美元沒有明顯方向，影響不大"
+ },
+ "달러가 큰 방향이 없어 영향이 작아요 · 실질금리가 올라 금·은에 역풍이에요.": {
+  "en": "The dollar has no clear direction, so its effect is small · Real interest rates are rising, a headwind for gold and silver.",
+  "zh": "美元沒有明顯方向,影響不大 · 實質利率上升,對黃金、白銀是逆風。"
  },
  "달러자산 분산 검토": {
   "en": "Consider diversifying away from dollar assets",
@@ -2478,6 +3026,10 @@
  "대출 잔액은 경기에 늦게 반응": {
   "en": "Loan balances react to the economy with a lag",
   "zh": "放款餘額對景氣的反應較慢"
+ },
+ "대표 계약 문제로 숫자를 빼고 봤어요": {
+  "en": "Numbers left out because of a benchmark-contract issue",
+  "zh": "因代表合約的問題,已排除數字"
  },
  "대표 계약이 불확실한 브렌트·알루미늄·리튬은 포지션을 기본으로 숨겨요.": {
   "en": "Positions for Brent, aluminum and lithium, whose representative contract is uncertain, are hidden by default.",
@@ -2651,6 +3203,10 @@
   "en": "Selling / pessimism extreme",
   "zh": "賣壓・悲觀極端"
  },
+ "매수 쏠림 극단": {
+  "en": "Extreme crowded buying",
+  "zh": "買盤擁擠極端"
+ },
  "매수·매도를 추천하지 않아요. 근거와 위험을 보여 주는 화면이에요.": {
   "en": "We do not recommend buying or selling. This screen shows the evidence and the risks.",
   "zh": "本站不推薦買賣。這個畫面呈現的是依據與風險。"
@@ -2666,6 +3222,10 @@
  "매월 (재개행 포함)": {
   "en": "Monthly (incl. reopenings)",
   "zh": "每月（含增額發行）"
+ },
+ "매월 초에 전달 평균값 발표": {
+  "en": "Previous month's average is released at the start of each month",
+  "zh": "每月初公布上個月的平均值"
  },
  "매일": {
   "en": "Daily",
@@ -2698,6 +3258,18 @@
  "매주": {
   "en": "Weekly",
   "zh": "每週"
+ },
+ "매주 금요일 {0}:{1} (미국 동부) — 그 주 화요일 기준": {
+  "en": "Every Friday at {0}:{1} (US Eastern) — as of that week's Tuesday",
+  "zh": "每週五 {0}:{1}(美東時間)— 以該週週二為基準"
+ },
+ "매주 목요일 {0}:{1} (미국 동부)": {
+  "en": "Every Thursday at {0}:{1} (US Eastern)",
+  "zh": "每週四 {0}:{1}(美東時間)"
+ },
+ "매주 수요일 {0}:{1} (미국 동부)": {
+  "en": "Every Wednesday at {0}:{1} (US Eastern)",
+  "zh": "每週三 {0}:{1}(美東時間)"
  },
  "매주(수요일 공개)": {
   "en": "Weekly (published Wednesdays)",
@@ -2750,6 +3322,26 @@
  "물가 뺀 가격의 {0}년 중 높이": {
   "en": "inflation-adjusted price, position within {0} years",
   "zh": "扣除物價後價格在 {0} 年中的高低"
+ },
+ "물가 뺀 가격이 {0}년 중 아래에서 {0}% 높이 → 「{1}」": {
+  "en": "Over {0} years, inflation-adjusted price is higher than {0}% of the time → 「{1}」",
+  "zh": "{0} 年中扣除物價後的價格高於 {0}% → 「{1}」"
+ },
+ "물가 뺀 가격이 {0}년 중 아래에서 {1}% 높이": {
+  "en": "inflation-adjusted price sits at {1}% of its {0}-year range",
+  "zh": "扣除物價後價格位於{0}年區間的 {1}% 高度"
+ },
+ "물가 뺀 가격이 {0}년 중 아래에서 {1}% 높이 → 「① 바닥권」": {
+  "en": "Inflation-adjusted price is higher than {1}% of the past {0} years → 「① Trough」",
+  "zh": "扣除物價後的價格高於 {0} 年中的 {1}% → 「① 谷底區」"
+ },
+ "물가 뺀 가격이 {0}년 중 아래에서 {1}% 높이 → 「② 회복기」": {
+  "en": "Inflation-adjusted price is higher than {1}% of the past {0} years → 「② Recovery」",
+  "zh": "扣除物價後的價格高於 {0} 年中的 {1}% → 「② 復甦期」"
+ },
+ "물가 뺀 가격이 {0}년 중 아래에서 {1}% 높이 → 「③ 과열·고점권」": {
+  "en": "Inflation-adjusted price is higher than {1}% of the past {0} years → 「③ Overheated / near peak」",
+  "zh": "扣除物價後的價格高於 {0} 年中的 {1}% → 「③ 過熱·高點區」"
  },
  "물가를 뺀 실질가격이 지난 {0}년 중 어느 높이인지 봐요. 아주 높으면 생산자들이 증산 투자에 나서 몇 년 뒤 공급이 늘고, 아주 낮으면 투자를 줄여 몇 년 뒤 부족해져요.": {
   "en": "See where the inflation-adjusted real price stands within the past {0} years. When it is very high, producers invest in more output and supply grows a few years later; when it is very low, they cut investment and shortages follow a few years later.",
@@ -2819,6 +3411,14 @@
   "en": "{0}% of open interest",
   "zh": "占未平倉量 {0}%"
  },
+ "미결제약정도 늘어 새 돈이 들어온 움직임이에요.": {
+  "en": "Open interest also rose, which means new money is coming in.",
+  "zh": "未平倉量也增加,代表有新資金進場。"
+ },
+ "미결제약정은 줄어 기존 포지션을 정리하는 움직임이에요.": {
+  "en": "Open interest fell, which means existing positions are being closed out.",
+  "zh": "未平倉量減少,代表正在了結既有部位。"
+ },
  "미결제약정이 함께 늘면 “새 돈이 들어온 움직임”, 줄면 “기존 포지션 정리”로 덧붙여 읽어요. 변화가 미결제약정의 {0}%보다 작으면 “변화 거의 없음”으로 봐요.": {
   "en": "If open interest rises too, read it as “new money entering”; if it falls, as “existing positions being closed.” If the change is smaller than {0}% of open interest, treat it as “little change.”",
   "zh": "若未平倉量同時增加，視為「有新資金進場」；若減少，則視為「既有部位在平倉」。變化若小於未平倉量的 {0}%，就視為「幾乎沒有變化」。"
@@ -2827,6 +3427,14 @@
   "en": "The futures position report that the US CFTC publishes every Friday, as of that week's Tuesday.",
   "zh": "美國 CFTC 每週五公布的期貨持倉報告，以該週週二為基準。"
  },
+ "미국 CFTC에 있는 알루미늄 계약은 알루미늄 값이 아니라 미국 중서부에서 붙는 '웃돈(Midwest Premium)' 계약이에요. 이 포지션을 알루미늄 투기 흐름으로 읽으면 오해할 수 있어 기본으로 숨겨요.": {
+  "en": "The aluminum contract in the US CFTC report is not the aluminum price itself but the Midwest Premium charged in the US Midwest. Reading this position as aluminum speculation could be misleading, so it is hidden by default.",
+  "zh": "美國 CFTC 的鋁合約並不是鋁價本身,而是美國中西部加收的「溢價(Midwest Premium)」合約。把這個持倉當成鋁的投機動向容易造成誤解,因此預設隱藏。"
+ },
+ "미국 {0}년 실질금리 (TIPS)": {
+  "en": "US {0}-year real interest rate (TIPS)",
+  "zh": "美國 {0} 年期實質利率(TIPS)"
+ },
  "미국 국채 시스템 배관도": {
   "en": "US Treasury system plumbing diagram",
   "zh": "美國公債系統管線圖"
@@ -2834,6 +3442,18 @@
  "미국 국채 위기 모니터": {
   "en": "US Treasury Crisis Monitor",
   "zh": "美國公債危機監測"
+ },
+ "미국 금요일 오후 발표 → 한국 토요일 새벽": {
+  "en": "Released Friday afternoon in the US → early Saturday morning in Korea",
+  "zh": "美國週五下午公布 → 韓國週六凌晨"
+ },
+ "미국 소비자물가지수 (CPI)": {
+  "en": "US Consumer Price Index (CPI)",
+  "zh": "美國消費者物價指數(CPI)"
+ },
+ "미국 원유 재고 (전략비축유 제외)": {
+  "en": "US crude oil inventories (excluding the SPR)",
+  "zh": "美國原油庫存(不含 SPR 戰略儲備原油)"
  },
  "미국 재무부": {
   "en": "US Department of the Treasury",
@@ -2846,6 +3466,10 @@
  "미국 정부 공공 자료": {
   "en": "US government public data",
   "zh": "美國政府公開資料"
+ },
+ "미국 천연가스 저장량 (Lower {0})": {
+  "en": "US natural gas storage (Lower {0})",
+  "zh": "美國天然氣儲存量(Lower {0})"
  },
  "민간 완충재": {
   "en": "Private buffers",
@@ -2915,6 +3539,10 @@
   "en": "Pressure gauge of the plumbing",
   "zh": "管線的水壓計"
  },
+ "배럴": {
+  "en": "barrels",
+  "zh": "桶"
+ },
  "배수": {
   "en": "Multiple",
   "zh": "倍數"
@@ -2955,6 +3583,10 @@
   "en": "Defaults ↑",
   "zh": "違約 ↑"
  },
+ "부셸": {
+  "en": "bushels",
+  "zh": "英斗"
+ },
  "부족": {
   "en": "Insufficient",
   "zh": "不足"
@@ -2991,6 +3623,10 @@
   "en": "Brent crude oil",
   "zh": "布蘭特原油"
  },
+ "브렌트유는 영국 ICE 거래소 상품이라 미국 CFTC 보고서에 없어요. 같은 원유인 WTI의 투기자금 흐름을 함께 보세요.": {
+  "en": "Brent is an ICE (UK) product, so it is not in the US CFTC report. Look at the speculative money flow in WTI, which is the same kind of crude oil.",
+  "zh": "布蘭特原油是英國 ICE 交易所的商品,不在美國 CFTC 報告中。請一併參考同為原油的 WTI 投機資金動向。"
+ },
  "비경쟁 입찰자": {
   "en": "Noncompetitive bidders",
   "zh": "非競爭性投標人"
@@ -2998,6 +3634,10 @@
  "비관": {
   "en": "Pessimistic",
   "zh": "悲觀"
+ },
+ "비관 극단 {0}": {
+  "en": "Extreme bearish {0}",
+  "zh": "悲觀極端 {0}"
  },
  "비밀지표 {0}": {
   "en": "Hidden indicator {0}",
@@ -3107,6 +3747,10 @@
   "en": "Producer capital spending trend",
   "zh": "生產企業資本支出趨勢"
  },
+ "생산기업 설비투자 추이 — SEC 공시로 {0}차 개발 예정": {
+  "en": "Producer capex trend — Phase {0} development planned per SEC filings",
+  "zh": "生產企業資本支出趨勢 — 依 SEC 公開文件預計進行第 {0} 期開發"
+ },
  "생산기업이 설비투자를 늘리는지 줄이는지. {0}~{1}년 뒤 공급을 미리 알려 주는 층이에요.": {
   "en": "Whether producers are increasing or cutting capital spending. This layer previews supply {0} to {1} years ahead.",
   "zh": "生產企業是在增加還是減少資本支出。這一層能預告{0}至{1}年後的供給。"
@@ -3126,6 +3770,10 @@
  "세 가지가 동시에 나빠지면 Fed가 아무것도 하지 않아도 장기금리가 스스로 올라갈 수 있어요.": {
   "en": "If all three worsen at once, long-term yields can rise on their own even if the Fed does nothing.",
   "zh": "三者同時惡化時，即使聯準會什麼都不做，長期殖利率也可能自行上升。"
+ },
+ "세계 기준 시장인 런던금속거래소(LME) 구리는 CFTC 보고 대상이 아니라, 미국 COMEX 구리만 보여 줘요.": {
+  "en": "London Metal Exchange (LME) copper, the global benchmark market, is not covered by CFTC reports, so only US COMEX copper is shown.",
+  "zh": "全球基準市場倫敦金屬交易所(LME)的銅不在 CFTC 報告範圍內,因此只顯示美國 COMEX 銅。"
  },
  "세금 환급·지출 시점이 섞여 있어요.": {
   "en": "Tax refunds and spending are mixed in timing.",
@@ -3166,6 +3814,10 @@
  "소진 (구조적)": {
   "en": "Depleted (structural)",
   "zh": "耗盡（結構性）"
+ },
+ "소형 계약(Micro Gold, {0})은 제외했어요.": {
+  "en": "Small contracts (Micro Gold, {0}) are excluded.",
+  "zh": "已排除小型合約(Micro Gold,{0})。"
  },
  "숏 커버·실수요 상승": {
   "en": "Short-covering / real-demand rise",
@@ -3291,6 +3943,10 @@
   "en": "Chicago Fed NFCI",
   "zh": "芝加哥聯準銀行 NFCI"
  },
+ "시카고 연질 적색 겨울밀(SRW) 기준이에요. 경질밀(HRW, {0})·봄밀({1})은 다른 계약이라 더하지 않아요.": {
+  "en": "This is based on Chicago soft red winter wheat (SRW). Hard red winter (HRW, {0}) and spring wheat ({1}) are different contracts, so they are not added.",
+  "zh": "以芝加哥軟紅冬麥(SRW)為基準。硬紅冬麥(HRW,{0})和春麥({1})屬於不同合約,因此不相加。"
+ },
  "신규 레버리지 자제": {
   "en": "Avoid new leverage",
   "zh": "避免新增槓桿"
@@ -3335,6 +3991,10 @@
   "en": "Traffic light:",
   "zh": "紅綠燈："
  },
+ "실물 재고는 빠듯한데 투기자금은 빠지는 중 — 가격이 더 밀려도 재고가 버팀목이 될 수 있어요.": {
+  "en": "Physical inventories are tight while speculative money is leaving — even if prices slide further, inventories may act as a cushion.",
+  "zh": "實體庫存吃緊,但投機資金正在撤出 — 即使價格再下滑,庫存也可能成為支撐。"
+ },
  "실물이 넉넉한지({0}년 평균보다 많은지) 빠듯한지 봐요.": {
   "en": "See whether physical supply is ample (above the {0}-year average) or tight.",
   "zh": "看實物供給是充裕（高於{0}年平均）還是吃緊。"
@@ -3359,6 +4019,14 @@
   "en": "For the actual foreign share, see the allocation by investor type in the \"🧲 Absorption\" tab",
   "zh": "實際的海外占比，請見「🧲 承接力」頁的投資人類型配售"
  },
+ "실질가격이 {0}년 중 낮은 곳에 있고 아직 내려가는 중이에요. 이런 시기에는 생산자가 투자를 줄여서, 수요가 돌아서면 다음 상승의 씨앗이 되기도 해요.": {
+  "en": "The real price is low within {0} years and still falling. At such times producers cut investment, which can plant the seeds of the next rise once demand turns.",
+  "zh": "實質價格處於 {0} 年中的低檔,且仍在下滑。這種時期生產商會減少投資,等需求回升時,反而可能成為下一波上漲的種子。"
+ },
+ "실질가격이 {0}년 중 높은 곳에서 더 오르고 있어요. 높은 가격은 증산 투자와 수요 감소를 부르기 때문에, 이 단계는 오래가지 않는 경우가 많아요.": {
+  "en": "The real price is high within {0} years and still rising. High prices bring more production investment and lower demand, so this stage often does not last long.",
+  "zh": "實質價格處於 {0} 年中的高檔,且仍在上漲。高價會帶來增產投資與需求減少,因此這個階段往往不會持續太久。"
+ },
  "실질금리": {
   "en": "Real yield",
   "zh": "實質殖利率"
@@ -3370,6 +4038,22 @@
  "실질금리 (성장 기대)": {
   "en": "Real yield (growth expectations)",
   "zh": "實質殖利率（成長預期）"
+ },
+ "실질금리가 {0}": {
+  "en": "Real interest rates {0}",
+  "zh": "實質利率{0}"
+ },
+ "실질금리가 내려 금·은에 순풍이에요": {
+  "en": "Real rates have fallen — a tailwind for gold and silver",
+  "zh": "實質利率下降，對金銀是順風"
+ },
+ "실질금리가 올라 금·은에 역풍이에요": {
+  "en": "Real rates have risen — a headwind for gold and silver",
+  "zh": "實質利率上升，對金銀是逆風"
+ },
+ "실질금리가 큰 변화가 없어요": {
+  "en": "Real rates are little changed",
+  "zh": "實質利率變化不大"
  },
  "실질금리만 상승": {
   "en": "Only real yields rise",
@@ -3402,6 +4086,10 @@
  "앞으로 몰린 날 없음": {
   "en": "No crowded days ahead",
   "zh": "未來沒有事件集中的日子"
+ },
+ "약해져 원자재 전반에 순풍": {
+  "en": "is weakening, a tailwind for commodities overall",
+  "zh": "走弱,對原物料整體是順風"
  },
  "양호": {
   "en": "Good",
@@ -3495,6 +4183,10 @@
   "en": "Fed H.{0}",
   "zh": "聯準會 H.{0}"
  },
+ "연준 H.{0} (원자료)": {
+  "en": "Fed H.{0} (raw data)",
+  "zh": "聯準會 H.{0}(原始資料)"
+ },
  "연준 H.{0} (원자료) ↗": {
   "en": "Fed H.{0} (raw data) ↗",
   "zh": "聯準會 H.{0}（原始資料） ↗"
@@ -3518,6 +4210,10 @@
  "연준 기준금리와 크게 벌어지면 레포 스트레스": {
   "en": "A big gap from the Fed's policy rate signals repo stress",
   "zh": "若與聯準會基準利率差距過大，代表附買回市場有壓力"
+ },
+ "연준 달러지수 (Nominal Broad)": {
+  "en": "Fed dollar index (Nominal Broad)",
+  "zh": "聯準會美元指數(Nominal Broad)"
  },
  "연준 대차대조표": {
   "en": "Fed balance sheet",
@@ -3574,6 +4270,14 @@
  "옥수수의 투기자금은 {0}/{1}(화) 기준 {2}계약 순매수 상태이고, 이는 {3}년 중 중간 수준이에요. {4}주 동안 순매수가 {5}계약 줄었어요. 가격과 짝지어 보면 「④ 매도 추세 확인」이에요.": {
   "en": "As of {0}/{1} (Tue), corn speculative money is net long {2} contracts, which is a middle level within {3} years. Over {4} weeks, net buying fell by {5} contracts. Paired with price, it is “④ Selling trend confirmed.”",
   "zh": "截至 {0}/{1}（二），玉米的投機資金淨買超 {2}口，在{3}年中屬中段水準。{4}週來淨買超減少了 {5}口。與價格配對來看，屬於「④ 賣壓趨勢確認」。"
+ },
+ "온스": {
+  "en": "ounces",
+  "zh": "盎司"
+ },
+ "올라 금·은에 역풍이에요": {
+  "en": "rose, a headwind for gold and silver",
+  "zh": "上升,對黃金、白銀是逆風"
  },
  "왜 중요한가": {
   "en": "Why it matters",
@@ -3635,6 +4339,10 @@
   "en": "Commodity",
   "zh": "原物料"
  },
+ "원자재 {0}: {1}": {
+  "en": "Commodity {0}: {1}",
+  "zh": "原物料{0}:{1}"
+ },
  "원자재 {0}개를 한 표로": {
   "en": "all {0} commodities in one table",
   "zh": "{0} 項原物料一張表看完"
@@ -3642,6 +4350,10 @@
  "원자재 레이더": {
   "en": "Commodity Radar",
   "zh": "原物料雷達"
+ },
+ "원자재 레이더 ({0}초) · 추가/정정 {1} · 오류 {2}개": {
+  "en": "Commodity Radar ({0}s) · added/corrected {1} · {2} errors",
+  "zh": "原物料雷達({0} 秒)· 新增/更正 {1} · 錯誤 {2} 項"
  },
  "원자재 사이클 지도": {
   "en": "Commodity cycle map",
@@ -3658,6 +4370,10 @@
  "원자재는": {
   "en": "Commodities cycle through",
   "zh": "原物料會不斷循環："
+ },
+ "원자재는 대부분 달러로 거래돼서, 달러가 강해지면 다른 나라에는 비싸져 수요가 줄기 쉬워요. (DXY는 민간 상표 지수라 공식 자료인 연준 달러지수로 봐요.)": {
+  "en": "Most commodities are priced in dollars, so when the dollar strengthens they get more expensive for other countries and demand tends to fall. (DXY is a privately branded index, so we use the official Fed dollar index instead.)",
+  "zh": "原物料大多以美元計價,美元走強時,其他國家買起來更貴,需求就容易減少。(DXY 是民間商標指數,所以這裡改看官方的聯準會美元指數。)"
  },
  "원자재는 몇 년~십수 년에 걸쳐 “부족": {
   "en": "Commodities go through a repeating pattern over several years to a decade or more: “shortage",
@@ -3678,6 +4394,10 @@
  "월평균": {
   "en": "Monthly average",
   "zh": "月平均"
+ },
+ "월평균 · IMF": {
+  "en": "Monthly average · IMF",
+  "zh": "月平均 · IMF"
  },
  "위 세 그룹에 속하지 않는 대형 보고 대상 거래자.": {
   "en": "Large reportable traders that do not belong to the three groups above.",
@@ -3927,6 +4647,14 @@
   "en": "Estimated net borrowing this quarter",
   "zh": "本季淨借款估計"
  },
+ "이번 주 가장 많은 신호는 「{0}」({1}개: {2})예요 — {3}.": {
+  "en": "The most common signal this week is 「{0}」 ({1}: {2}) — {3}.",
+  "zh": "本週最多的訊號是「{0}」({1} 項:{2})— {3}。"
+ },
+ "이번 주 가장 많은 신호는 「④ 매도 추세 확인」({0}개: 천연가스 (헨리허브), 백금, 옥수수, 대두, 소맥 (SRW))예요 — 가격이 내리고 투기자금도 빠져나갔어요.": {
+  "en": "The most common signal this week is 「④ Selling trend confirmed」 ({0}: Natural gas (Henry Hub), platinum, corn, soybeans, wheat (SRW)) — prices fell and speculative money left too.",
+  "zh": "本週最多的訊號是「④ 賣壓趨勢確認」({0} 項:天然氣(亨利港)、鉑金、玉米、黃豆、小麥(SRW))— 價格下跌,投機資金也跟著撤出。"
+ },
  "이번 주 단기채(Bill) 입찰": {
   "en": "This week's T-bill (Bill) auctions",
   "zh": "本週短期國庫券（Bill）標售"
@@ -3962,6 +4690,10 @@
  "이번 주에는 위 요점과 따로 적을 만한 반대 신호가 없어요.": {
   "en": "No counter-signals worth noting beyond the key points above this week.",
   "zh": "本週除上述重點外，沒有值得另外列出的反向訊號。"
+ },
+ "이번 주에는 해석할 만큼의 자료가 모이지 않았어요.": {
+  "en": "Not enough data has been collected this week to interpret.",
+  "zh": "本週累積的資料還不足以解讀。"
  },
  "이상 {0}": {
   "en": "Danger {0}",
@@ -4007,9 +4739,17 @@
   "en": "Interest↑",
   "zh": "利息↑"
  },
+ "이자가 없는 자산이라 실질금리·달러에 크게 반응하고, 불안할 때 피난처가 돼요.": {
+  "en": "It pays no interest, so it reacts strongly to real interest rates and the dollar, and becomes a safe haven when people are anxious.",
+  "zh": "它不會產生利息,所以對實質利率和美元反應很大,在不安時也會成為避險資產。"
+ },
  "이전 {0}B": {
   "en": "Previously {0}B",
   "zh": "先前 {0}B"
+ },
+ "일간 · EIA": {
+  "en": "Daily · EIA",
+  "zh": "每日 · EIA"
  },
  "일반 투자자, 시장 금리로 응찰 (High Rate 적용)": {
   "en": "Ordinary investors, bidding at the market yield (High Rate applied)",
@@ -4203,6 +4943,10 @@
   "en": "Details ›",
   "zh": "詳情 ›"
  },
+ "장기 가격 사이클: 이 원자재는 공식 무료 장기 가격 자료(IMF·EIA)가 없어 판단하지 않았어요.": {
+  "en": "Long-term price cycle: this commodity has no official free long-term price data (IMF/EIA), so no judgment was made.",
+  "zh": "長期價格循環:這項原物料沒有官方免費的長期價格資料(IMF、EIA),因此未做判斷。"
+ },
  "장기 가격 위치": {
   "en": "Long-term price position",
   "zh": "長期價格位置"
@@ -4286,6 +5030,10 @@
  "재고 vs {0}년 평균": {
   "en": "Inventory vs {0}Y avg",
   "zh": "庫存 vs {0}年平均"
+ },
+ "재고가 넉넉한데 투기자금이 들어오는 중 — 실물 뒷받침이 약한 상승일 수 있어요.": {
+  "en": "Inventories are ample while speculative money is coming in — the rise may lack physical support.",
+  "zh": "庫存充裕,投機資金卻持續流入 — 這可能是缺乏實體支撐的上漲。"
  },
  "재고는 원유·가스만": {
   "en": "inventory for crude oil and gas only",
@@ -4535,6 +5283,10 @@
   "en": "In preparation (stage {0})",
   "zh": "準備中（第{0}階段）"
  },
+ "줄었어요": {
+  "en": "Decreased",
+  "zh": "減少"
+ },
  "중간": {
   "en": "Medium",
   "zh": "中等"
@@ -4542,6 +5294,14 @@
  "중간 낙찰 할인율": {
   "en": "Median discount rate",
   "zh": "中位得標貼現率"
+ },
+ "중간 이상 높이에서 내려오는 중이에요. 늘어난 공급이나 줄어든 수요가 가격을 누르는 단계예요.": {
+  "en": "It is coming down from a middle or higher level. This is the stage where increased supply or reduced demand pushes prices down.",
+  "zh": "價格從中間以上的水準回落。這個階段是供給增加或需求減少壓低價格的時期。"
+ },
+ "중간 지대": {
+  "en": "Middle zone",
+  "zh": "中間地帶"
  },
  "중기채 비중": {
   "en": "Notes share",
@@ -4703,6 +5463,14 @@
   "en": "Note",
   "zh": "備註"
  },
+ "참고 (Yahoo 선물 등락률)": {
+  "en": "Reference (Yahoo futures change)",
+  "zh": "參考(Yahoo 期貨漲跌幅)"
+ },
+ "참고 등락률 {0}: {1}": {
+  "en": "Reference change {0}: {1}",
+  "zh": "參考漲跌幅 {0}:{1}"
+ },
  "참고: SOMA란?": {
   "en": "Note: What is SOMA?",
   "zh": "補充：什麼是 SOMA？"
@@ -4710,6 +5478,10 @@
  "참고용": {
   "en": "For reference only",
   "zh": "僅供參考"
+ },
+ "참고용 — 가격 숫자는 싣지 않음": {
+  "en": "For reference only — no price figures shown",
+  "zh": "僅供參考 — 不顯示價格數字"
  },
  "채권 ETF": {
   "en": "Bond ETFs",
@@ -4939,9 +5711,17 @@
   "en": "Cross-currency basis",
   "zh": "跨幣別基差"
  },
+ "큰 방향이 없어 영향이 작아요": {
+  "en": "has no clear direction, so its effect is small",
+  "zh": "沒有明顯方向,影響不大"
+ },
  "큰 변화 없음": {
   "en": "No big change",
   "zh": "無明顯變化"
+ },
+ "큰 변화가 없어요": {
+  "en": "show little change",
+  "zh": "沒有太大變化"
  },
  "클러스터 경보일 (최근 {0}주 + 앞으로 {1}주)": {
   "en": "Cluster alert days (last {0} weeks + next {1} weeks)",
@@ -4959,6 +5739,10 @@
   "en": "Tail (approx.)",
   "zh": "尾差（近似值）"
  },
+ "톤": {
+  "en": "tons",
+  "zh": "公噸"
+ },
  "투기자금": {
   "en": "Spec. money",
   "zh": "投機資金"
@@ -4975,9 +5759,25 @@
   "en": "Spec. money {0}W change",
   "zh": "投機資金 {0}週變化"
  },
+ "투기자금 낙관이 {0}년 중 극단 — 새로 살 사람이 적어 작은 악재에도 밀릴 수 있어요.": {
+  "en": "Speculative money bullishness is at an extreme within {0} years — few new buyers are left, so even small bad news could push prices down.",
+  "zh": "投機資金的樂觀程度在 {0} 年中達到極端 — 新的買家不多,一點壞消息也可能讓價格下跌。"
+ },
+ "투기자금 매수가 {0}년 중 극단이라, 새로 살 사람이 적어 되돌림 위험이 커요.": {
+  "en": "Speculative money buying is at an extreme within {0} years, so few new buyers are left and the risk of a pullback is high.",
+  "zh": "投機資金的買進程度在 {0} 年中達到極端,新的買家不多,回檔風險很高。"
+ },
  "투기자금 백분위": {
   "en": "Speculative-money percentile",
   "zh": "投機資金百分位"
+ },
+ "투기자금 비관이 {0}년 중 극단 — 작은 호재에도 되사기(숏 커버)로 크게 튈 수 있어요.": {
+  "en": "Speculative money bearishness is at an extreme within {0} years — even small good news could cause a big jump from short covering.",
+  "zh": "投機資金的悲觀程度在 {0} 年中達到極端 — 一點利多就可能因空單回補而大幅彈升。"
+ },
+ "투기자금 비관이 {0}년 중 극단이라, 조금만 좋아져도 되사기(숏 커버)로 튈 수 있어요.": {
+  "en": "Speculative money bearishness is at an extreme within {0} years, so even a slight improvement could trigger a jump from short covering.",
+  "zh": "投機資金的悲觀程度在 {0} 年中達到極端,只要稍微好轉,就可能因空單回補而彈升。"
  },
  "투기자금 순매수": {
   "en": "Speculative net buying",
@@ -4991,6 +5791,14 @@
   "en": "Speculative net buying ↓",
   "zh": "投機資金淨買超 ↓"
  },
+ "투기자금 순매수가 {0}년 중 상위 {1}% 안이에요 — 이미 많이 쏠려 있어 반대로 움직일 위험이 커요.": {
+  "en": "Speculative net long is in the top {1}% of the past {0} years — it is already heavily crowded, so the risk of a move the other way is high.",
+  "zh": "投機資金淨買超處於 {0} 年中的前段 {1}% 以內 — 已經相當擁擠,反向波動的風險很高。"
+ },
+ "투기자금 순매수가 {0}년 중 하위 {1}% 안이에요 — 비관이 극단이라 반대로 튈 위험이 있어요.": {
+  "en": "Speculative net long is in the bottom {1}% of the past {0} years — bearishness is extreme, so there is a risk of a reversal.",
+  "zh": "投機資金淨買超處於 {0} 年中的後段 {1}% 以內 — 悲觀已到極端,有反向彈升的風險。"
+ },
  "투기자금 쏠림": {
   "en": "Speculative-money crowding",
   "zh": "投機資金擁擠度"
@@ -4999,6 +5807,10 @@
   "en": "Speculative-money crowding (multi-week)",
   "zh": "投機資金擁擠度（以數週為單位）"
  },
+ "투기자금 포지션이 거의 그대로예요 ({0}주 변화가 전체 미결제약정의 {1}% 미만).": {
+  "en": "Speculative money positions are almost unchanged (the {0}-week change is under {1}% of total open interest).",
+  "zh": "投機資金的持倉幾乎沒變({0}週的變化不到整體未平倉量的 {1}%)。"
+ },
  "투기자금(": {
   "en": "Speculative money (",
   "zh": "投機資金（"
@@ -5006,6 +5818,22 @@
  "투기자금의 쏠림(CFTC)과 실물 재고(EIA)": {
   "en": "speculative-money crowding (CFTC) and physical inventories (EIA)",
   "zh": "投機資金的擁擠程度（CFTC）與實物庫存（EIA）"
+ },
+ "투기자금이 {0}년 기준 극단(상위·하위 {1}%)까지 몰린 원자재는 없어요.": {
+  "en": "No commodity has speculative money pushed to an extreme (top/bottom {1}%) of its {0}-year range.",
+  "zh": "沒有任何原物料的投機資金在 {0} 年區間中被推到極端(前段/後段 {1}%)。"
+ },
+ "투기자금이 {0}년 기준 한쪽 끝에 몰린 원자재:": {
+  "en": "Commodities where speculative money is piled at one end of its {0}-year range:",
+  "zh": "投機資金在 {0} 年區間中集中於一端的原物料:"
+ },
+ "투기자금이 {0}년 기준 한쪽 끝에 몰린 원자재: 비관 극단 천연가스 (헨리허브), 은 — 쏠림이 극단이면 작은 소식에도 반대로 크게 움직일 수 있어요.": {
+  "en": "Commodities where speculative money is piled at one end of its {0}-year range: extreme bearish Natural gas (Henry Hub), silver — when crowding is extreme, even small news can trigger a big move the other way.",
+  "zh": "投機資金在 {0} 年區間中集中於一端的原物料:悲觀極端 天然氣(亨利港)、白銀 — 擁擠到極端時,一點小消息也可能引發大幅反向波動。"
+ },
+ "투기자금이 거의 움직이지 않은 원자재가 {0}개로 가장 많아요 — 이번 주는 큰 자금 이동이 없었어요.": {
+  "en": "The most common case is {0} commodities where speculative money barely moved — no big money shifts this week.",
+  "zh": "投機資金幾乎沒有動的原物料有 {0} 項,是最多的 — 本週沒有大規模的資金移動。"
  },
  "투자 감소": {
   "en": "investment cuts",
@@ -5054,6 +5882,10 @@
  "파랑": {
   "en": "blue",
   "zh": "藍色"
+ },
+ "파운드": {
+  "en": "pounds",
+  "zh": "磅"
  },
  "판정": {
   "en": "Verdict",
@@ -5122,6 +5954,10 @@
  "폭락이 언제 오는지 아는 사람보다, 폭락이 와도 팔지 않아도 되는 사람이 훨씬 강하다": {
   "en": "Someone who doesn't have to sell even when a crash comes is far stronger than someone who knows when a crash will come",
   "zh": "比起知道崩盤何時來的人，崩盤來了也不必賣出的人強得多"
+ },
+ "표본 부족": {
+  "en": "Insufficient sample",
+  "zh": "樣本不足"
  },
  "표시는 Yahoo 선물 시세에서 계산한 비율이에요(가격 숫자는 싣지 않아요).": {
   "en": "mark means the ratio is calculated from Yahoo futures quotes (price figures are not shown).",
