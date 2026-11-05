@@ -90,7 +90,7 @@
     route(rest);
     main.innerHTML = `<h1 class="mk-h1">🛢️ 원자재 레이더 <span class="mk-sub">가격을 맞히려는 화면이 아니라, 가격을 움직이는 구조 — 투기자금의 쏠림(CFTC)과 실물 재고(EIA) — 를 공식 자료로 보는 화면이에요</span></h1>
       <div id="rBody"><div class="mk-loading">원자재 자료를 불러오는 중…</div></div>`;
-    try { ST.D = await api(); } catch (e) { $('#rBody').innerHTML = `<div class="mk-err">원자재 자료를 불러오지 못했어요 — ${esc(e.message)}. 첫 자동 갱신이 끝나면 나타나요.</div>`; return; }
+    try { ST.D = await api(); window.I18N && I18N.extend(ST.D.i18n); } catch (e) { $('#rBody').innerHTML = `<div class="mk-err">원자재 자료를 불러오지 못했어요 — ${esc(e.message)}. 첫 자동 갱신이 끝나면 나타나요.</div>`; return; }
     draw();
   }
   function route(rest) {

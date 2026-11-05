@@ -18,6 +18,7 @@
   const ATTRS = ['title', 'aria-label', 'placeholder', 'alt'];
   let D = null;
   const missing = new Set();
+  const X = {};          // 자료(JSON)가 함께 보낸 번역 — 매일 바뀌는 해설용 (I18N.extend)
 
   // 숫자를 자리표로 뺀 문장 틀 (사전 키) — 사전 만들 때도 이 함수를 그대로 쓴다
   function norm(s) {
@@ -26,14 +27,16 @@
     return [k, v];
   }
   function one(s, rec) {
+    const x = X[s.replace(/\s+/g, ' ').trim()];
+    if (x != null) return x;
     const [k, v] = norm(s);
-    const t = D[k];
+    const t = D[k] ?? X[k];
     if (t == null) { if (rec) missing.add(k); return null; }
     return t.replace(/\{(\d+)\}/g, (_, i) => v[i] ?? '');
   }
   // 문장 하나를 번역. 통째로 없으면 ' · ' 같은 구분자로 나눠 조각마다 찾는다
   function tr(s) {
-    if (!D || !HAN.test(s)) return s;
+    if (!D || L === 'ko' || !HAN.test(s)) return s;
     const lead = s.match(/^\s*/)[0], trail = s.slice(lead.length).match(/\s*$/)[0];
     const sep = SEP.test(s);
     let t = one(s, !sep);                // 구분자로 이어 붙인 글은 조각 단위로만 사전에 둔다
@@ -85,7 +88,12 @@
   }
   document.addEventListener('DOMContentLoaded', bar);
 
-  window.I18N = { lang: L, norm, tr: s => tr(s), missing, load(dict) { D = dict; if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start(); } };
+  // 자료 파일의 "i18n": { 한국어 문장(또는 숫자 자리표 문장 틀): { en, zh } } 를 받아 둔다 — 화면을 그리기 전에 부른다
+  function extend(map) {
+    if (L === 'ko' || !map) return;
+    for (const k in map) { const t = map[k] && map[k][L]; if (t) X[k.replace(/\s+/g, ' ').trim()] = t; }
+  }
+  window.I18N = { lang: L, norm, tr: s => tr(s), missing, extend, load(dict) { D = dict; if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start(); } };
   if (L === 'ko') return;
   // 사전을 받는 동안 한국어가 번쩍 보이지 않게 잠깐 숨김 (4초 넘으면 그냥 보여 줌)
   document.documentElement.classList.add('i18n-wait');

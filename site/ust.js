@@ -55,10 +55,10 @@
   // 화면을 열어 둔 동안 10분마다 새 판독 결과가 있는지 확인 (바뀌었을 때만 다시 그림)
   setInterval(async () => {
     if (document.hidden || !ST.D || location.protocol === 'file:') return;
-    try { const d = await api(); if ((d.built_at || d.fetched_at) !== (ST.D.built_at || ST.D.fetched_at)) { ST.D = d; draw(); } } catch (e) { }
+    try { const d = await api(); if ((d.built_at || d.fetched_at) !== (ST.D.built_at || ST.D.fetched_at)) { ST.D = d; window.I18N && I18N.extend(d.i18n); draw(); } } catch (e) { }
   }, 6e5);
   async function load(force) {
-    try { ST.D = await api(); } catch (e) { $('#uBody').innerHTML = `<div class="mk-err">불러오지 못했어요 — ${esc(e.message)}</div>`; return; }
+    try { ST.D = await api(); window.I18N && I18N.extend(ST.D.i18n); } catch (e) { $('#uBody').innerHTML = `<div class="mk-err">불러오지 못했어요 — ${esc(e.message)}</div>`; return; }
     draw();
   }
   function draw() {
